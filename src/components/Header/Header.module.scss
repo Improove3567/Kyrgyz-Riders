@@ -1,0 +1,49 @@
+.main {
+  background-image: url(../../../public/assets/images/mainImg.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #ffffff;
+    padding: 23px 0 12px 0;
+    img {
+      width: 64px;
+      height: 24px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      a {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ffffff;
+      }
+    }
+  }
+  .buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 84px;
+    a {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      color: #ffffff;
+      padding: 17px 80px;
+      border: 1px solid #ffffff;
+    }
+  }
+}
