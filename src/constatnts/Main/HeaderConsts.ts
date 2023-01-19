@@ -1,4 +1,4 @@
-import { IHeader } from "../components/Header/Header";
+import { IHeader } from "../../components/Header/Header";
 export const HeaderLinks: IHeader[] = [
   {
     id: 1,

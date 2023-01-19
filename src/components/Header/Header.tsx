@@ -1,9 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import scss from "./Header.module.scss";
 import Link from "next/link";
-import { HeaderLinks, MainLinks } from "../../constatnts/Main";
-import Image from "next/image";
-import Logo from "../../assets/LOGO.svg";
+import { HeaderLinks } from "../../constatnts/Main/HeaderConsts";
 
 export interface IHeader {
   id: number;
@@ -12,6 +10,18 @@ export interface IHeader {
 }
 
 const Header: React.FC = () => {
+  const [isActive, setActive] = useState(false);
+  
+  useEffect(() => {
+    addEventListener("scroll", () => {
+      if (window.scrollY > 10) {
+        setActive(true);
+      } else {
+        setActive(false);
+      }
+    });
+  }, [isActive]);
+
   const renderLinks = React.useMemo(
     () =>
       HeaderLinks.map((item) => (
@@ -21,24 +31,14 @@ const Header: React.FC = () => {
       )),
     []
   );
-  const renderBtns = React.useMemo(
-    () =>
-      MainLinks.map((item) => (
-        <Link href={item.link} key={item.id}>
-          {item.title}
-        </Link>
-      )),
-    []
-  );
   return (
-    <main className={scss.main}>
-      <header>
-        <Image src={Logo} alt="Logo"></Image>
+    <>
+      <header className={isActive ? scss.active : scss.nonActive}>
+        <h1>Logo</h1>
         <nav>{renderLinks}</nav>
         <div></div>
       </header>
-      <div className={scss.buttons}>{renderBtns}</div>
-    </main>
+    </>
   );
 };
 
