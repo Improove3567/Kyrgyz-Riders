@@ -1,8 +1,8 @@
 import React from "react";
 import scss from "./Header.module.scss";
 import Image from "next/image";
-import Logo from "../../../public/assets/images/Logo.svg";
 import Link from "next/link";
+import { HeaderLinks, MainLinks } from "../../constatnts/Main";
 
 export interface IHeader {
   id: number;
@@ -10,51 +10,8 @@ export interface IHeader {
   link: string;
 }
 
-const HeaderLinks: IHeader[] = [
-  {
-    id: 1,
-    title: "Tours",
-    link: "tours",
-  },
-  {
-    id: 2,
-    title: "Sights",
-    link: "sights",
-  },
-  {
-    id: 3,
-    title: "Travel stories",
-    link: "travelstories",
-  },
-  {
-    id: 4,
-    title: "About Us",
-    link: "aboutus",
-  },
-  {
-    id: 5,
-    title: "Blog & news",
-    link: "blognews",
-  },
-];
-const MainLinks: IHeader[] = [
-  {
-    id: 1,
-    title: "Create your tour",
-    link: "createtour",
-  },
-  {
-    id: 2,
-    title: "Watch video",
-    link: "watchvideo",
-  },
-  {
-    id: 3,
-    title: "Find Tours",
-    link: "findtours",
-  },
-];
 const Header: React.FC = () => {
+  const Logo = require("public/assets/images/Logo.svg");
   const renderLinks = React.useMemo(
     () =>
       HeaderLinks.map((item) => (
@@ -76,7 +33,7 @@ const Header: React.FC = () => {
   return (
     <main className={scss.main}>
       <header>
-        <Image src={Logo} alt="LOgo"></Image>
+        <Image src={Logo} alt="Logo"></Image>
         <nav>{renderLinks}</nav>
         <div></div>
       </header>
