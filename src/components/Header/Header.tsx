@@ -11,7 +11,7 @@ export interface IHeader {
 
 const Header: React.FC = () => {
   const [isActive, setActive] = useState(false);
-  
+
   useEffect(() => {
     addEventListener("scroll", () => {
       if (window.scrollY > 10) {
@@ -32,13 +32,11 @@ const Header: React.FC = () => {
     []
   );
   return (
-    <>
-      <header className={isActive ? scss.active : scss.nonActive}>
-        <h1>Logo</h1>
-        <nav>{renderLinks}</nav>
-        <div></div>
-      </header>
-    </>
+    <header className={isActive ? scss.active : scss.nonActive}>
+      <h1>Logo</h1>
+      <nav>{renderLinks}</nav>
+      <div></div>
+    </header>
   );
 };
 
