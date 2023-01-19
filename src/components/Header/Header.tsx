@@ -1,8 +1,9 @@
 import React from "react";
 import scss from "./Header.module.scss";
-import Image from "next/image";
 import Link from "next/link";
 import { HeaderLinks, MainLinks } from "../../constatnts/Main";
+import Image from "next/image";
+import Logo from "../../assets/LOGO.svg";
 
 export interface IHeader {
   id: number;
@@ -11,7 +12,6 @@ export interface IHeader {
 }
 
 const Header: React.FC = () => {
-  const Logo = require("public/assets/images/Logo.svg");
   const renderLinks = React.useMemo(
     () =>
       HeaderLinks.map((item) => (
