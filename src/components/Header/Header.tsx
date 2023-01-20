@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import scss from "./Header.module.scss";
-import Image from "next/image";
-import Logo from "../../../public/assets/images/Logo.svg";
 import Link from "next/link";
+import { HeaderLinks } from "../../constatnts/Main/HeaderConsts";
 
 export interface IHeader {
   id: number;
@@ -10,51 +9,19 @@ export interface IHeader {
   link: string;
 }
 
-const HeaderLinks: IHeader[] = [
-  {
-    id: 1,
-    title: "Tours",
-    link: "tours",
-  },
-  {
-    id: 2,
-    title: "Sights",
-    link: "sights",
-  },
-  {
-    id: 3,
-    title: "Travel stories",
-    link: "travelstories",
-  },
-  {
-    id: 4,
-    title: "About Us",
-    link: "aboutus",
-  },
-  {
-    id: 5,
-    title: "Blog & news",
-    link: "blognews",
-  },
-];
-const MainLinks: IHeader[] = [
-  {
-    id: 1,
-    title: "Create your tour",
-    link: "createtour",
-  },
-  {
-    id: 2,
-    title: "Watch video",
-    link: "watchvideo",
-  },
-  {
-    id: 3,
-    title: "Find Tours",
-    link: "findtours",
-  },
-];
 const Header: React.FC = () => {
+  const [isActive, setActive] = useState(false);
+
+  useEffect(() => {
+    addEventListener("scroll", () => {
+      if (window.scrollY > 10) {
+        setActive(true);
+      } else {
+        setActive(false);
+      }
+    });
+  }, [isActive]);
+
   const renderLinks = React.useMemo(
     () =>
       HeaderLinks.map((item) => (
@@ -64,24 +31,12 @@ const Header: React.FC = () => {
       )),
     []
   );
-  const renderBtns = React.useMemo(
-    () =>
-      MainLinks.map((item) => (
-        <Link href={item.link} key={item.id}>
-          {item.title}
-        </Link>
-      )),
-    []
-  );
   return (
-    <main className={scss.main}>
-      <header>
-        <Image src={Logo} alt="LOgo"></Image>
-        <nav>{renderLinks}</nav>
-        <div></div>
-      </header>
-      <div className={scss.buttons}>{renderBtns}</div>
-    </main>
+    <header className={isActive ? scss.active : scss.nonActive}>
+      <h1>Logo</h1>
+      <nav>{renderLinks}</nav>
+      <div></div>
+    </header>
   );
 };
 
