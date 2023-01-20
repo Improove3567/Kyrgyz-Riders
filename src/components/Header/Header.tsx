@@ -33,9 +33,10 @@ const Header: React.FC = () => {
   );
   return (
     <header className={isActive ? scss.active : scss.nonActive}>
-      <h1>Logo</h1>
-      <nav>{renderLinks}</nav>
-      <div></div>
+        <h1>Logo</h1>
+        <nav>{renderLinks}</nav>
+        <div></div>
+      
     </header>
   );
 };
