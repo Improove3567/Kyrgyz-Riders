@@ -1,0 +1,35 @@
+.section {
+  width: 100%;
+  padding: 30px 32px 40px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .line {
+    width: 50%;
+    height: 1px;
+    background-color: #c3c3c3;
+  }
+  .yourTour {
+    margin: 0 30px 0 20px;
+    position: relative;
+    .front {
+      width: 280px;
+      height: 51px;
+      background: white;
+      border: 1px solid #333333;
+      z-index: 1000 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .back {
+        width: 280px;
+        height: 51px;
+        border: 1px solid #c3c3c3;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        z-index: -1000;
+      }
+    }
+  }
+}

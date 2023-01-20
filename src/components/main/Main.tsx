@@ -17,7 +17,9 @@ const Main: React.FC = () => {
   return (
     <main className={scss.main}>
       <Header />
-      <div className={scss.buttons}>{renderBtns}</div>
+      <div className="container">
+        <div className={scss.buttons}>{renderBtns}</div>
+      </div>
     </main>
   );
 };
