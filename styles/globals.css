@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root {
   --max-width: 1400px;
@@ -17,16 +17,12 @@
   --card-border-rgb: 131, 134, 135;
 }
 
-@font-face {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 a {

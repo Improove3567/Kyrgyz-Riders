@@ -1,0 +1,119 @@
+.nonActive {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #ffffff;
+  padding: 23px 0 12px 0;
+  position: sticky;
+  background: none;
+  top: 0;
+  transition: 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    width: 62px;
+    height: 24px;
+    color: #ffffff;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    a {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #ffffff;
+    }
+  }
+  &:hover {
+    background-color: white;
+    h1 {
+      color: black;
+    }
+    nav {
+      a {
+        color: black;
+        display: inline-block;
+        transition: color 0.2s ease;
+        position: relative;
+        &:hover {
+          &::before {
+            width: 100%;
+            left: 100;
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          top: calc(100% + 85%);
+          width: 0;
+          right: 0;
+          height: 2px;
+        }
+        &::before {
+          transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
+          background: black;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+.active {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #ffffff;
+  padding: 23px 0 12px 0;
+  position: sticky;
+  top: 0;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #ffffff;
+  z-index: 9999;
+  h1 {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    width: 62px;
+    height: 24px;
+    color: black;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    a {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: black;
+      display: inline-block;
+      transition: color 0.2s ease;
+      position: relative;
+      &:hover {
+        &::before {
+          width: 100%;
+          left: 100;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 85%);
+        width: 0;
+        right: 0;
+        height: 2px;
+      }
+      &::before {
+        transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
+        background: black;
+        left: 0;
+      }
+    }
+  }
+}
