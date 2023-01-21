@@ -1,29 +1,38 @@
 export const filterData = [
   {
-    title: 'Most popular'
+    title: 'Most popular',
+    id: '1',
   },
   {
-    title: 'Upcoming'
+    title: 'Upcoming',
+    id: '2',
   },
   {
-    title: 'Multi - active'
+    title: 'Multi - active',
+    id: '3',
   },
   {
-    title: 'Road trip'
+    title: 'Road trip',
+    id: '4',
   },
   {
-    title: 'Horse riding'
+    title: 'Horse riding',
+    id: '5',
   },
   {
-    title: 'Trekking'
+    title: 'Trekking',
+    id: '6',
   },
   {
-    title: 'Winter tours'
+    title: 'Winter tours',
+    id: '7',
   },
   {
-    title: 'Cultural'
+    title: 'Cultural',
+    id: '8',
   },
   {
-    title: 'Day tours'
+    title: 'Day tours',
+    id: '9',
   },
 ]
