@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
-import scss from './Filter.module.scss'
-import { filterData } from "../../constants/FilterConst";
+import scss from './FilterTour.module.scss';
+import { filterData } from "../../constants/FilterTour";
 import { useRouter } from 'next/router'
 
-const Filter: React.FC = () => {
+const FilterTour: React.FC = () => {
   const router = useRouter();
   const { tour } = router.query
 
@@ -28,4 +28,4 @@ const Filter: React.FC = () => {
   )
 };
 
-export default Filter;
+export default FilterTour;
