@@ -1,0 +1,65 @@
+@import "../../../styles/variables.scss";
+
+.wrapper {
+  width: 85%;
+  display: flex;
+  justify-content: space-around;
+  transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
+
+  .inactive_title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: $filter-text;
+    margin-top: 25px;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      &::before {
+        width: 100%;
+        left: 100;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      width: 0;
+      right: 0;
+      height: 1px;
+      border-radius: 8px;
+    }
+  }
+
+  p:hover {
+    color: $active-text;
+  }
+}
+
+.active_title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: $active-text;
+  margin-top: 25px;
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    width: 100%;
+    left: 0;
+    height: 1px;
+    border-radius: 8px;
+    background: $active-text;
+    z-index: 2;
+  }
+}
