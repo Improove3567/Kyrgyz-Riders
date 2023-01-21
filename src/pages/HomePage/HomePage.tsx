@@ -1,8 +1,6 @@
 import React from "react";
-import Divider from "../../components/Divider/Divider";
-import MoreBlock from "../../components/Divider/More block/MoreBlock";
-import Header from "../../components/Header/Header";
 import Main from "../../components/main/Main";
+import Sights from "../../components/Sights/Sights";
 import YourTours from "../../components/yourTour/YourTours";
 
 const HomePage = () => {
@@ -10,9 +8,7 @@ const HomePage = () => {
     <>
       <Main />
       <YourTours />
-      <Divider title="Sights" variant="light">
-        <MoreBlock title="More Sights" />
-      </Divider>
+      <Sights/>
     </>
   );
 };
