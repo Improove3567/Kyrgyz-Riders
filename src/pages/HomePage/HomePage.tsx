@@ -7,8 +7,8 @@ const HomePage = () => {
   return (
     <>
       <Main />
+      <Sights />
       <YourTours />
-      <Sights/>
     </>
   );
 };

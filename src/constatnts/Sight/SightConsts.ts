@@ -1,29 +1,29 @@
 import { ISights } from "../../components/Sights/Sights";
-import second from "../../assets/imgg.jpg";
+import first from "../../../public/assets/images/first.svg";
 
 export const sightCards: ISights[] = [
   {
     id: 1,
-    img: second.src,
+    img: first,
     isEdgeLeft: true,
     title: "San Tash",
     tours: 4,
   },
   {
     id: 2,
-    img: second.src,
+    img: first,
     title: "Talas",
     tours: 21,
   },
   {
     id: 3,
-    img: second.src,
+    img: first,
     title: "Bishkek",
     tours: 4,
   },
   {
     id: 4,
-    img: second.src,
+    img: first,
     title: "Karakol",
     tours: 34,
     isEdgeRight: true,
