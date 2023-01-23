@@ -19,7 +19,7 @@ const FilterTour: React.FC = () => {
         {el.title}
       </p>
     ))
-  ), [filterData, tour])
+  ), [router , tour])
   return (
     <div className={scss.wrapper}>
       {render}
