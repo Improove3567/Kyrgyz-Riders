@@ -5,17 +5,20 @@ import Main from "../../components/main/Main";
 import Sights from "../../components/Sights/Sights";
 import YourTours from "../../components/yourTour/YourTours";
 import Feedback from "../../components/FeedBack/Feedback";
+import Footer from "../../components/Footer/Footer";
 
 const HomePage = () => {
   return (
     <>
       <Main />
       <Sights />
-      <YourTours />
-      <Feedback />
-      <Divider title="Select Tours" variant="light">``
+
+      <Divider title="Select Tours" variant="light">
         <FilterTour />
       </Divider>
+      <Feedback />
+      <YourTours />
+      <Footer />
     </>
   );
 };
