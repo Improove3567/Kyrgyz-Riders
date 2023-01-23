@@ -6,11 +6,13 @@
 }
 .nextArrow_container {
   position: absolute;
-  right: 1.5%;
+  right: 1.7%;
   top: 42%;
+
   img {
     width: 70px;
     height: 70px;
+    cursor: pointer;
   }
 }
 
@@ -20,9 +22,11 @@
   left: -1.5%;
   top: 42%;
   z-index: 5;
+
   img {
     width: 70px;
     height: 70px;
+    cursor: pointer;
   }
 }
 
