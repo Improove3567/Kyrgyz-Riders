@@ -3,12 +3,14 @@ import Divider from "../../components/Divider/Divider";
 import MoreBlock from "../../components/Divider/More block/MoreBlock";
 import FilterTour from "../../components/Tour filter/FilterTour";
 import Main from "../../components/main/Main";
+import Sights from "../../components/Sights/Sights";
 import YourTours from "../../components/yourTour/YourTours";
 
 const HomePage = () => {
   return (
     <>
       <Main />
+      <Sights />
       <YourTours />
       <Divider title="Select Tours" variant="light">
         <FilterTour />

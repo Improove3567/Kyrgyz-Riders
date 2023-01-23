@@ -36,7 +36,6 @@ const Header: React.FC = () => {
         <h1>Logo</h1>
         <nav>{renderLinks}</nav>
         <div></div>
-      
     </header>
   );
 };
