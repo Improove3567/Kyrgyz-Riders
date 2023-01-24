@@ -10,17 +10,20 @@ interface TeamCardProps {
 
 const TeamCard: React.FC<TeamCardProps> = ({ title, subtitle, img }) => {
   return (
-    <div className={scss.wrapper}>
+    <div className={scss.container}>
+      <div className={scss.wrapper}>
+        <div className={scss.avatarContainer}>
+          <hr />
+          <Image src={img} width={70} height={70} alt="avatar" />
+          <hr />
+        </div>
+        <div className={scss.textContainer}>
+          <p className={scss.title}>{title}</p>
+          <p className={scss.subtitle}>{subtitle}</p>
+        </div>
+      </div>
       <div className={scss.back}></div>
-      <div className={scss.avatarContainer}>
-        <hr />
-        <Image src={img} width={70} height={70} alt="avatar" />
-        <hr />
-      </div>
-      <div className={scss.textContainer}>
-        <p className={scss.title}>{title}</p>
-        <p className={scss.subtitle}>{subtitle}</p>
-      </div>
+
     </div>
   );
 };

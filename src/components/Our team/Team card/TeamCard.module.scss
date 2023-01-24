@@ -1,66 +1,75 @@
 @import "../../../../styles//variables.scss";
 
-.wrapper {
+.container {
+  position: relative;
   width: 280px;
   height: 153px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-  background-color: $white;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-  z-index: 100;
+  cursor: pointer;
 
   .back {
     position: absolute;
-    width: 280px;
-    height: 153px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #c3c3c3;
     left: -10px;
     bottom: -10px;
-    z-index: 1;
+    z-index: 0;
   }
 
-  .avatarContainer {
+  .wrapper {
     width: 100%;
+    height: 100%;
+    position: absolute;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    background-color: $white;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    z-index: 100;
 
-    img {
-      margin-right: 5px;
-      margin-left: 5px;
-      border-radius: 100%;
+
+
+    .avatarContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        margin-right: 5px;
+        margin-left: 5px;
+        border-radius: 100%;
+      }
+
+      hr {
+        height: 1px;
+        width: 63px;
+        border: 1px solid #C3C3C3;
+
+      }
     }
 
-    hr {
-      height: 1px;
-      width: 63px;
-      border: 1px solid #C3C3C3;
+    .textContainer {
+      text-align: center;
+      margin-top: 10px;
 
-    }
-  }
+      .title {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #333333;
+      }
 
-  .textContainer {
-    text-align: center;
-    margin-top: 10px;
-
-    .title {
-      font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 17px;
-      color: #333333;
-    }
-
-    .subtitle {
-      font-family: 'Montserrat';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 17px;
-      color: #6F6F6F;
+      .subtitle {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #6F6F6F;
+      }
     }
   }
 }
