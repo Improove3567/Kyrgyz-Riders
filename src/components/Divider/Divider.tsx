@@ -1,5 +1,5 @@
 import React from "react";
-import scss from "./Divider.module.scss"
+import scss from "./Divider.module.scss";
 
 interface DividerProps {
   children?: React.ReactNode;
@@ -8,9 +8,9 @@ interface DividerProps {
 }
 
 const Divider: React.FC<DividerProps> = ({ children, title, variant }) => {
-  let className = scss.title
-  if (variant === 'dark') {
-    className = scss.dark_title
+  let className = scss.title;
+  if (variant === "dark") {
+    className = scss.dark_title;
   }
   return (
     <div className={scss.wrapper}>
@@ -19,7 +19,7 @@ const Divider: React.FC<DividerProps> = ({ children, title, variant }) => {
         {children}
       </div>
     </div>
-  )
+  );
 };
 
 export default Divider;
