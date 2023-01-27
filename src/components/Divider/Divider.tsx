@@ -2,7 +2,7 @@ import React from "react";
 import scss from "./Divider.module.scss";
 
 interface DividerProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   title: string;
   variant: "light" | "dark";
 }
