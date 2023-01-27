@@ -6,14 +6,16 @@ import Sights from "../../components/Sights/Sights";
 import YourTours from "../../components/yourTour/YourTours";
 import OurTeam from "../../components/Our team/OurTeam";
 import Feedback from "../../components/FeedBack/Feedback";
+import TourSlider from "../../components/Tour slider/TourSLider";
 import Footer from "../../components/Footer/Footer";
-
 
 const HomePage = () => {
   return (
     <>
       <Main />
       <YourTours />
+      <Feedback />
+      <TourSlider />
       <OurTeam />
       <Sights />
       <Divider title="Select Tours" variant="light">

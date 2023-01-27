@@ -1,0 +1,51 @@
+.wrapper {
+  padding: 40px 32px;
+  background-color: #efefef;
+  height: 100%;
+
+  .cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding: 10px;
+  }
+}
+
+.nextArrow_container {
+  position: absolute;
+  right: 1.7%;
+  top: 42%;
+
+  img {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+}
+
+.prevArrow_container {
+  position: absolute;
+  transform: rotate(180deg);
+  left: -1.5%;
+  top: 42%;
+  z-index: 5;
+
+  img {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.dots {
+  position: absolute;
+  top: 320px;
+  li {
+    margin: 0 0 3rem !important;
+  }
+}
