@@ -4,7 +4,6 @@ export const CardList = [
     subtitle: 'Off road',
     days: 9,
     stars: 4,
-    isEdgeLeft: true,
   },
   {
     title: 'BLUE SKY',
@@ -23,7 +22,6 @@ export const CardList = [
     subtitle: 'Off road',
     days: 9,
     stars: 4,
-    isEdgeRight: true,
   },
   {
     title: 'BLUE SKY',

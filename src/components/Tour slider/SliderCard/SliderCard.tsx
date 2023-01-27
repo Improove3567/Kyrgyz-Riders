@@ -8,8 +8,6 @@ interface CardProps {
   subtitle: string,
   days: number,
   stars: number,
-  isEdgeRight?: boolean,
-  isEdgeLeft?: boolean,
 }
 
 const SliderCard: React.FC<CardProps> = ({
@@ -17,25 +15,12 @@ const SliderCard: React.FC<CardProps> = ({
   subtitle,
   days,
   stars,
-  isEdgeLeft,
-  isEdgeRight,
 }) => {
-
-  const isBack = (): string => {
-    if (isEdgeLeft) {
-      return scss.SightbackLeft;
-    } else if (isEdgeRight) {
-      return scss.SightBackRight;
-    } else {
-      return scss.SightBack;
-    }
-  };
   return (
     <div className={scss.card}>
       <div className={scss.days}>
         <p>{days} days</p>
       </div>
-      <div className={isBack()}></div>
       <div className={scss.front}>
         <Image src={""} alt="img" className={scss.bgImage} />
         <div className={scss.bottomContent}>

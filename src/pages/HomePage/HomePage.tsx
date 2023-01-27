@@ -8,20 +8,18 @@ import OurTeam from "../../components/Our team/OurTeam";
 import Feedback from "../../components/FeedBack/Feedback";
 import TourSlider from "../../components/Tour slider/TourSLider";
 import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Modal from "../../components/FeedBack/Feedback modal/Modal";
 
 const HomePage = () => {
   return (
     <>
+      <Header />
       <Main />
-      <YourTours />
-      <Feedback />
       <TourSlider />
-      <OurTeam />
       <Sights />
-      <Divider title="Select Tours" variant="light">
-        <FilterTour />
-      </Divider>
       <Feedback />
+      <OurTeam />
       <YourTours />
       <Footer />
     </>

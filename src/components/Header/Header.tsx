@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     addEventListener("scroll", () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 50) {
         setActive(true);
       } else {
         setActive(false);

@@ -14,12 +14,11 @@ interface ArrowProps {
 }
 
 const FeedbackCarousel = () => {
-  const [arrow, setArrow] = React.useState(true);
 
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
       <div
-        className={arrow ? scss.nextArrow_container : scss.hide}
+        className={scss.nextArrow_container}
         onClick={onClick}
       >
         <Image
@@ -28,7 +27,6 @@ const FeedbackCarousel = () => {
           alt="NextArrow"
           width="25"
           height="25"
-          onClick={() => setArrow(false)}
         />
       </div>
     );
@@ -37,7 +35,7 @@ const FeedbackCarousel = () => {
   function SamplePrevArrow({ onClick }: ArrowProps) {
     return (
       <div
-        className={arrow ? scss.hide : scss.prevArrow_container}
+        className={scss.prevArrow_container}
         onClick={onClick}
       >
         <Image
@@ -46,7 +44,6 @@ const FeedbackCarousel = () => {
           alt="PrevArrow"
           width="25"
           height="25"
-          onClick={() => setArrow(true)}
         />
       </div>
     );
@@ -57,6 +54,8 @@ const FeedbackCarousel = () => {
     infinite: false,
     slidesToShow: 3,
     slidesToScroll: 3,
+    className: "center",
+    variableWidth: true,
     speed: 500,
     nextArrow: (
       <SampleNextArrow

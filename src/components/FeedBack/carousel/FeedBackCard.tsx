@@ -3,6 +3,7 @@ import scss from "./FeedBackCard.module.scss";
 import { IFeedback } from "../Feedback";
 import Image from "next/image";
 import Link from "next/link";
+import Modal from "../Feedback modal/Modal";
 
 const FeedbackCard: React.FC<IFeedback> = ({
   desc,
@@ -12,7 +13,6 @@ const FeedbackCard: React.FC<IFeedback> = ({
   link,
   stars,
 }) => {
-  const [isActive, setActive] = React.useState(false);
   return (
     <div className={scss.wrapper}>
       <header>
@@ -34,12 +34,11 @@ const FeedbackCard: React.FC<IFeedback> = ({
         </div>
       </header>
       <div className={scss.line}></div>
-      <p className={isActive ? scss.active : scss.nonActive}>{desc}</p>
+      <p className={scss.nonActive}>{desc}</p>
       <p
-        className={isActive ? scss.readAc : scss.read}
-        onClick={() => setActive(!isActive)}
+        className={scss.read}
       >
-        {isActive ? "Read all" : "go back"}
+        <Modal desc={desc} />
       </p>
       <div className={scss.line}></div>
       <Link href={link}>{link}</Link>

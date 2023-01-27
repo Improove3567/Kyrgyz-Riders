@@ -1,9 +1,9 @@
 @import "../../../styles/variables.scss";
 
 .wrapper {
-  width: 85%;
+  width: 100%;
+  gap: 35px;
   display: flex;
-  justify-content: space-around;
   transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
 
   .inactive_title {

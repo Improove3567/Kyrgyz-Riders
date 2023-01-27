@@ -4,18 +4,19 @@ import { CardList } from "../../constants/TourSlider";
 import SliderCard from "./SliderCard/SliderCard";
 import Slider from "react-slick";
 import Image from "next/image";
+import Divider from "../Divider/Divider";
+import FilterTour from "../Tour filter/FilterTour";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>
 }
 
 const TourSlider: React.FC = () => {
-  const [arrow, setArrow] = React.useState(true);
 
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
       <div
-        className={arrow ? scss.nextArrow_container : scss.hide}
+        className={scss.nextArrow_container}
         onClick={onClick}
       >
         <Image
@@ -24,7 +25,6 @@ const TourSlider: React.FC = () => {
           alt="NextArrow"
           width="25"
           height="25"
-          onClick={() => setArrow(false)}
         />
       </div>
     );
@@ -33,7 +33,7 @@ const TourSlider: React.FC = () => {
   function SamplePrevArrow({ onClick }: ArrowProps) {
     return (
       <div
-        className={arrow ? scss.hide : scss.prevArrow_container}
+        className={scss.prevArrow_container}
         onClick={onClick}
       >
         <Image
@@ -42,7 +42,6 @@ const TourSlider: React.FC = () => {
           alt="PrevArrow"
           width="25"
           height="25"
-          onClick={() => setArrow(true)}
         />
       </div>
     );
@@ -53,7 +52,7 @@ const TourSlider: React.FC = () => {
     arrows: true,
     infinite: false,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     speed: 500,
     nextArrow: (
       <SampleNextArrow
@@ -81,6 +80,9 @@ const TourSlider: React.FC = () => {
 
   return (
     <div className={scss.wrapper}>
+      <Divider title="Select Tour" variant="light">
+        <FilterTour />
+      </Divider>
       <Slider {...settings}>
         {render}
       </Slider>
