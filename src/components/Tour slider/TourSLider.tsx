@@ -49,12 +49,12 @@ const TourSlider: React.FC = () => {
   }
 
   const settings = {
+    dots: true,
     arrows: true,
     infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
     speed: 500,
-    // variableWidth: true,
     nextArrow: (
       <SampleNextArrow
         onClick={function (): void {
@@ -71,6 +71,7 @@ const TourSlider: React.FC = () => {
         }}
       />
     ),
+    dotsClass: `slick-dots dots`
   };
 
   const render = useMemo(
@@ -80,10 +81,10 @@ const TourSlider: React.FC = () => {
 
   return (
     <div className={scss.wrapper}>
-        <Slider {...settings}>
-          {render}
-        </Slider>
-      </div>
+      <Slider {...settings}>
+        {render}
+      </Slider>
+    </div>
 
 
   );

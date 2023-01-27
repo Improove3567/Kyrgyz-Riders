@@ -1,6 +1,7 @@
 import React from "react";
 import scss from './SliderCard.module.scss';
 import Image from "next/image";
+import StarsRating from "../stars/StarsRating";
 
 interface CardProps {
   title: string,
@@ -32,23 +33,19 @@ const SliderCard: React.FC<CardProps> = ({
   return (
     <div className={scss.card}>
       <div className={scss.days}>
-        <p>5 days</p>
+        <p>{days} days</p>
       </div>
       <div className={isBack()}></div>
       <div className={scss.front}>
         <Image src={""} alt="img" className={scss.bgImage} />
-        <div className={scss.btm}>
+        <div className={scss.bottomContent}>
           <div className={scss.textContainer}>
             <p>{title}</p>
             <p>{subtitle}</p>
           </div>
           <hr />
           <div className={scss.stars}>
-            <Image src='/images/star.svg' alt="star" width={15} height={15} />
-            <Image src='/images/star.svg' alt="star" width={15} height={15} />
-            <Image src='/images/star.svg' alt="star" width={15} height={15} />
-            <Image src='/images/star.svg' alt="star" width={15} height={15} />
-            <Image src='/images/star.svg' alt="star" width={15} height={15} />
+            <StarsRating data={stars} />
           </div>
         </div>
       </div>

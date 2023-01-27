@@ -10,37 +10,13 @@ export const CardList = [
     title: 'BLUE SKY',
     subtitle: 'Off road',
     days: 9,
-    stars: 4
+    stars: 4,
   },
   {
     title: 'BLUE SKY',
     subtitle: 'Off road',
     days: 9,
-    stars: 4
-  },
-  {
-    title: 'BLUE SKY',
-    subtitle: 'Off road',
-    days: 9,
-    stars: 4
-  },
-  {
-    title: 'BLUE SKY',
-    subtitle: 'Off road',
-    days: 9,
-    stars: 4
-  },
-  {
-    title: 'BLUE SKY',
-    subtitle: 'Off road',
-    days: 9,
-    stars: 4
-  },
-  {
-    title: 'BLUE SKY',
-    subtitle: 'Off road',
-    days: 9,
-    stars: 4
+    stars: 4,
   },
   {
     title: 'BLUE SKY',
@@ -48,5 +24,11 @@ export const CardList = [
     days: 9,
     stars: 4,
     isEdgeRight: true,
+  },
+  {
+    title: 'BLUE SKY',
+    subtitle: 'Off road',
+    days: 9,
+    stars: 4,
   },
 ]

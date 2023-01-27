@@ -41,3 +41,11 @@
 .hide {
   display: none;
 }
+
+.dots {
+  position: absolute;
+  top: 320px;
+  li {
+    margin: 0 0 3rem !important;
+  }
+}
