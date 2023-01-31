@@ -10,7 +10,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ desc }) => {
     const submit = () => {
         confirmAlert({
-            message: desc ,
+            message: desc,
             buttons: [
                 {
                     label: "Close",
@@ -19,11 +19,8 @@ const Modal: React.FC<ModalProps> = ({ desc }) => {
         });
     };
 
-    return (
-        <div className={scss.wrapper}>
-            <p onClick={submit}>Read all</p>
-        </div>
-    );
+    return <button className={scss.title} onClick={submit}>Read all</button>
+
 }
 
 export default Modal;
