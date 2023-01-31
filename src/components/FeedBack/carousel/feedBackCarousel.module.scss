@@ -6,7 +6,7 @@
 }
 .nextArrow_container {
   position: absolute;
-  right: 1.7%;
+  right: 2.7%;
   top: 42%;
 
   img {
@@ -33,3 +33,22 @@
 .hide {
   display: none;
 }
+
+@media(min-width: 1440px) {
+  .nextArrow_container {
+    right: 2.3%;
+  }
+  .prevArrow_container{
+    left: -1.3%;
+  }
+}
+
+@media(min-width: 1530px) {
+  .nextArrow_container {
+    right: 2.2%;
+  }
+  .prevArrow_container{
+    left: -1.2%;
+  }
+}
+

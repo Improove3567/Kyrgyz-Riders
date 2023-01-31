@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import scss from "./Divider.module.scss";
 
@@ -12,11 +13,12 @@ const Divider: React.FC<DividerProps> = ({ children, title, variant }) => {
   if (variant === "dark") {
     className = scss.dark_title;
   }
+
   return (
     <div className={scss.wrapper}>
       <div className={scss.content}>
         <p className={className}>{title}</p>
-        {children}
+        <Link href={`/${title}`}>{children}</Link>
       </div>
     </div>
   );

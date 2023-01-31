@@ -14,7 +14,7 @@
 
 .nextArrow_container {
   position: absolute;
-  right: 1.7%;
+  right: -2% !important; 
   top: 42%;
 
   img {
@@ -47,5 +47,23 @@
   top: 320px;
   li {
     margin: 0 0 3rem !important;
+  }
+}
+
+@media(min-width: 1440px) {
+  .nextArrow_container {
+    right: -1.9%;
+  }
+  .prevArrow_container{
+    left: -1.9%;
+  }
+}
+
+@media(min-width: 1530px) {
+  .nextArrow_container {
+    right: -1.6%;
+  }
+  .prevArrow_container{
+    left: -1.8%;
   }
 }

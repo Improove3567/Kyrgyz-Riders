@@ -68,6 +68,20 @@ a {
 
 /* end of tour slider styles */
 
+/* pop-up */
+
+.react-confirm-alert-body {
+  text-align: center !important;
+}
+
+.react-confirm-alert-button-group button {
+  width: 100%;
+  height: 35px;
+  border: none;
+}
+
+/* end of pop-up */
+
 .container,
 .container-fluid,
 .container-lg,
