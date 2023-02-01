@@ -1,9 +1,9 @@
 .nonActive {
-  color: white;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #fff;
   padding: 23px 0 12px 0;
   position: fixed;
   z-index: 100;
@@ -27,11 +27,11 @@
       font-weight: 500;
       font-size: 14px;
       line-height: 17px;
-      color: #ffffff;
+      color: #fff;
     }
   }
   &:hover {
-    background-color: white;
+    background-color: #fff;
     h1 {
       color: black;
     }
