@@ -4,12 +4,13 @@ import Link from "next/link";
 import { HeaderLinks } from "../../constatnts/Main/HeaderConsts";
 
 export interface IHeader {
+  isMain: boolean;
   id: number;
   title: string;
   link: string;
 }
 
-const Header: React.FC = () => {
+const Header: React.FC<IHeader> = ({ isMain }) => {
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
@@ -31,11 +32,18 @@ const Header: React.FC = () => {
       )),
     []
   );
+
+  let className = isActive ? scss.active : scss.nonActive;
+
+  if (!isMain) {
+    className = isActive ? scss.renderActive : scss.renderNonActive;
+  }
+
   return (
-    <header className={isActive ? scss.active : scss.nonActive}>
-        <h1>Logo</h1>
-        <nav>{renderLinks}</nav>
-        <div></div>
+    <header className={className}>
+      <h1>Logo</h1>
+      <nav>{renderLinks}</nav>
+      <div></div>
     </header>
   );
 };
