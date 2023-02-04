@@ -10,7 +10,7 @@ const OurTeam: React.FC = () => {
     TeamData.map((el) => (
       <TeamCard {...el} key={el.title} />
     ))
-  ), [TeamData])
+  ), [])
 
   return (
     <div className={scss.wrapper}>
