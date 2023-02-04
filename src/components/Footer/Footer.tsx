@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
     <>
       <footer className={scss.footer}>{render}</footer>
       <div className={scss.underFooter}>
-        <p>@ 2023 Kyrgyz Riders. All rights reserved</p>
+        <p>@ 2023 Kyrgyz Riders. All rights r eserved</p>
         <p>Design by @SolidDevs</p>
       </div>
     </>

@@ -3,11 +3,8 @@ import scss from "./Header.module.scss";
 import Link from "next/link";
 import { HeaderLinks } from "../../constatnts/Main/HeaderConsts";
 
-export interface IHeader {
-  isMain: boolean;
-  id: number;
-  title: string;
-  link: string;
+interface IHeader {
+  isMain?: boolean;
 }
 
 const Header: React.FC<IHeader> = ({ isMain }) => {
