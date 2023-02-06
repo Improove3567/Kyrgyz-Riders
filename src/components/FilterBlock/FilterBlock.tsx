@@ -5,7 +5,6 @@ import Link from "next/link";
 const FilterBlock = () => {
   return (
     <div className={scss.filter}>
-      <div className="container">
         <div className={scss.block}>
           <div className={scss.filters}>
             <div className={scss.arrows}>
@@ -17,7 +16,6 @@ const FilterBlock = () => {
             <Link href={"/types"}>Search by types</Link>
             <Link href={"/details"}>Search by details</Link>
           </div>
-        </div>
       </div>
     </div>
   );
