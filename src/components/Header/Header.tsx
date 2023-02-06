@@ -3,13 +3,11 @@ import scss from "./Header.module.scss";
 import Link from "next/link";
 import { HeaderLinks } from "../../constatnts/Main/HeaderConsts";
 
-export interface IHeader {
-  id: number;
-  title: string;
-  link: string;
+interface IHeader {
+  isMain?: boolean;
 }
 
-const Header: React.FC = () => {
+const Header: React.FC<IHeader> = ({ isMain }) => {
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
@@ -29,13 +27,20 @@ const Header: React.FC = () => {
           {item.title}
         </Link>
       )),
-    []
+    [HeaderLinks]
   );
+
+  let HeaderStyles = isActive ? scss.active : scss.nonActive;
+
+  if (!isMain) {
+    HeaderStyles = isActive ? scss.renderActive : scss.renderNonActive;
+  }
+
   return (
-    <header className={isActive ? scss.active : scss.nonActive}>
-        <h1>Logo</h1>
-        <nav>{renderLinks}</nav>
-        <div></div>
+    <header className={HeaderStyles}>
+      <h1>Logo</h1>
+      <nav>{renderLinks}</nav>
+      <div></div>
     </header>
   );
 };

@@ -14,7 +14,7 @@ import Modal from "../../components/FeedBack/Feedback modal/Modal";
 const HomePage = () => {
   return (
     <>
-      <Header />
+      <Header/>
       <Main />
       <TourSlider />
       <Sights />

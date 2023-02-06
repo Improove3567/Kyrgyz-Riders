@@ -1,5 +1,9 @@
-import { IHeader } from "../../components/Header/Header";
-export const HeaderLinks: IHeader[] = [
+interface IHeaderLinks {
+  id: number;
+  title: string;
+  link: string
+}
+export const HeaderLinks: IHeaderLinks[] = [
   {
     id: 1,
     title: "Tours",
@@ -26,7 +30,7 @@ export const HeaderLinks: IHeader[] = [
     link: "blognews",
   },
 ];
-export const MainLinks: IHeader[] = [
+export const MainLinks: IHeaderLinks[] = [
   {
     id: 1,
     title: "Create your tour",
