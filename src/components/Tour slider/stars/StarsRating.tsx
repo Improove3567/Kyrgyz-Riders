@@ -14,12 +14,12 @@ const StarsRating: React.FC<StarsProps> = ({ data }) => {
     <div className={scss.wrapper}>
       {
         [...Array(data)].map((el) => (
-          <Image src='/images/star.svg' alt="star" width={15} height={15} key={el} />
+          <Image src='/images/star.svg' alt="star" width={18} height={18} key={el} />
         ))
       }
       {
         [...Array(emptyStars)].map((el) => (
-          <Image src='/images/emptyStar.svg' alt="empty star" width={15} height={15} key={el} />
+          <Image src='/images/emptyStar.svg' alt="empty star" width={18} height={18} key={el} />
         ))
       }
     </div>

@@ -19,14 +19,14 @@ const SliderCard: React.FC<CardProps> = ({
   return (
     <div className={scss.card}>
       <div className={scss.days}>
-        <p>{days} days</p>
+        <p className={scss.days_title}>{days} days</p>
       </div>
       <div className={scss.front}>
-        <Image src={""} alt="img" className={scss.bgImage} />
+        <Image src="" width={100} height={100} alt="img" className={scss.bgImage} />
         <div className={scss.bottomContent}>
           <div className={scss.textContainer}>
-            <p>{title}</p>
-            <p>{subtitle}</p>
+            <p className={scss.title}>{title}</p>
+            <p className={scss.subtitle}>{subtitle}</p>
           </div>
           <hr />
           <div className={scss.stars}>

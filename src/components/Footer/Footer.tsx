@@ -36,9 +36,9 @@ const Footer: React.FC = () => {
           )}
 
           {item.desc ? (
-            <p className={scss.read} onClick={() => setActive(!isActive)}>
-              {isActive ? "Go Back" : "Read More"}
-            </p>
+            <Link href="/about-us" className={scss.read}>
+              Read More
+            </Link>
           ) : (
             ""
           )}
