@@ -13,8 +13,8 @@ const FilterBlock = () => {
             <h1>Filters</h1>
           </div>
           <div className={scss.types}>
-            <Link href={"/types"}>Search by types</Link>
-            <Link href={"/details"}>Search by details</Link>
+            <button>Search by types</button>
+            <button>Search by details</button>
           </div>
       </div>
     </div>
