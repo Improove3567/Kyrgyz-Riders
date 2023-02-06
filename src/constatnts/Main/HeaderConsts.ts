@@ -34,7 +34,6 @@ export const MainLinks: IHeaderLinks[] = [
   {
     id: 1,
     title: "Create your tour",
-    title: "Create your tour",
     link: "createtour",
   },
   {
