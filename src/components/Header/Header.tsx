@@ -30,14 +30,14 @@ const Header: React.FC<IHeader> = ({ isMain }) => {
     [HeaderLinks]
   );
 
-  let className = isActive ? scss.active : scss.nonActive;
+  let HeaderStyles = isActive ? scss.active : scss.nonActive;
 
   if (!isMain) {
-    className = isActive ? scss.renderActive : scss.renderNonActive;
+    HeaderStyles = isActive ? scss.renderActive : scss.renderNonActive;
   }
 
   return (
-    <header className={className}>
+    <header className={HeaderStyles}>
       <h1>Logo</h1>
       <nav>{renderLinks}</nav>
       <div></div>
