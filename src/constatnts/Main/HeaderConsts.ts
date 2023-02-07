@@ -7,22 +7,22 @@ export const HeaderLinks: IHeaderLinks[] = [
   {
     id: 1,
     title: "Tours",
-    link: "Tours",
+    link: "tours",
   },
   {
     id: 2,
     title: "Sights",
-    link: "Sights",
+    link: "sights",
   },
   {
     id: 3,
     title: "Travel stories",
-    link: "Travelstories",
+    link: "travelstories",
   },
   {
     id: 4,
     title: "About Us",
-    link: "Aboutus",
+    link: "aboutus",
   },
   {
     id: 5,
