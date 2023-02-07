@@ -31,6 +31,7 @@ const FilterBlock = () => {
             <button
               onClick={() => setActive(index)}
               className={active === index ? scss.active : scss.nonActive}
+              key={el.id}
             >
               {el.text}
             </button>
