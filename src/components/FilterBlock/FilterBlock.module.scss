@@ -56,7 +56,17 @@
     display: flex;
     justify-content: space-between;
     button {
-      padding: 17px 260px;
+      padding: 17px 250px;
+      font-style: normal;
+      background-color: #ffff;
+      font-weight: 600;
+      font-size: 14px;
+      color: #2e325a;
+      line-height: 17px;
+      border: 1px solid #c3c3c3;
+    }
+    .nonActive {
+      padding: 17px 250px;
       font-style: normal;
       background-color: #ffff;
       font-weight: 600;
