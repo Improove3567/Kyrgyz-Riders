@@ -7,27 +7,27 @@ export const HeaderLinks: IHeaderLinks[] = [
   {
     id: 1,
     title: "Tours",
-    link: "tours",
+    link: "Tours",
   },
   {
     id: 2,
     title: "Sights",
-    link: "sights",
+    link: "Sights",
   },
   {
     id: 3,
     title: "Travel stories",
-    link: "travelstories",
+    link: "Travelstories",
   },
   {
     id: 4,
     title: "About Us",
-    link: "aboutus",
+    link: "Aboutus",
   },
   {
     id: 5,
     title: "Blog & news",
-    link: "blognews",
+    link: "Blognews",
   },
 ];
 export const MainLinks: IHeaderLinks[] = [
