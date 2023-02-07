@@ -1,22 +1,10 @@
 import React, { useState } from "react";
+import { FilterRenderType } from "../../constants/FilterBlockBtn";
 import scss from "./FilterBlock.module.scss";
 
-interface IArr {
-  id: number;
-  text: string;
-}
 const FilterBlock = () => {
   const [active, setActive] = useState<number>(0);
-  const category: IArr[] = [
-    {
-      text: "Search by tour type",
-      id: 0,
-    },
-    {
-      text: "Search by details",
-      id: 1,
-    },
-  ];
+
   return (
     <div className={scss.filter}>
       <div className={scss.block}>
@@ -27,7 +15,7 @@ const FilterBlock = () => {
           <h1>Filters</h1>
         </div>
         <div className={scss.types}>
-          {category.map((el, index) => (
+          {FilterRenderType.map((el, index) => (
             <button
               onClick={() => setActive(index)}
               className={active === index ? scss.active : scss.nonActive}
