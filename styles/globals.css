@@ -70,7 +70,6 @@ a {
 /* Слайды */
 .slick-slide {
   width: 460px !important;
-
   margin: 0 5px;
 }
 
@@ -80,9 +79,6 @@ a {
 
 /* Родительский элемент */
 .slick-list {
-  /* display: flex; */
-  /* overflow: hidden; */
-  /* width: 150%; */
   margin: 0 -2px;
 }
 
