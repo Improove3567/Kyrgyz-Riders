@@ -24,6 +24,12 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.slick-slider {
+  margin: 0 !important;
+  padding: 0 !important;
+  right: 0 !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -36,16 +42,20 @@ a {
 }
 
 .dots li.slick-active button:before {
-  background: #FFFFFF !important;
-  border: 1px solid #2E325A !important;
-  width: 10px !important;
-  height: 10px !important;
+  content: '' !important;
+  background: #2E325A !important;
+  border-radius: 20px !important;
+  width: 11px !important;
+  height: 11px !important;
+  margin: 0 !important;
+  opacity: 1 !important;
 }
 
 
 .dots li button:before {
   content: '' !important;
-  background: #2E325A !important;
+  background: #FFFFFF;
+  border: 1px solid #2E325A;
   border-radius: 20px !important;
   width: 11px !important;
   height: 11px !important;
@@ -57,9 +67,27 @@ a {
   width: 100px;
 }
 
+/* Слайды */
+.slick-slide {
+  width: 460px !important;
+  margin: 0 5px;
+}
+
+.slick-slide>div {
+  width: 10px;
+}
+
+/* Родительский элемент */
+.slick-list {
+  margin: 0 -2px;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
 .slick-list {
   height: 300px !important;
-  padding-left: 10px !important;
 }
 
 .dots li button {
@@ -150,7 +178,7 @@ a {
 
 .SightBack {
   position: absolute;
-  width: 105%;
+  width: 107%;
   height: 330px;
   border: 1px solid #c3c3c3;
   right: -10px;
