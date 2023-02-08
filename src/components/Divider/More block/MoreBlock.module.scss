@@ -12,49 +12,21 @@
     font-size: 20px;
     line-height: 24px;
     color: $subtitle-divider;
+    margin-right: 10px;
   }
 
   img {
-    margin-left: 10px;
-  }
-
-  .arrow {
-    height: 20px;
     position: relative;
-    bottom: -5px;
-    left: -10px;
-    width: 50px;
+    left: 0;
     transition: ease-in-out .3s;
 
-    &::after {
-      content: "";
-      width: 12px;
-      left: 100%;
-      height: 12px;
-      position: absolute;
-      border-bottom: 1px solid #B1B1B1;
-      border-right: 1px solid #B1B1B1;
-      transform: rotate(-45deg);
-    }
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 30px;
-      height: 1px;
-      background-color: #B1B1B1;
-      top: 6px;
-      right: -15px;
-      transition: ease-in-out .3s;
-    }
+  &:hover {
+    img {
 
-    &:hover:before {
-      width: 60px;
-    }
-
-    &:hover {
-      left: 15px;
-      width: 50px;
+      position: relative;
+      left: 10px;
     }
   }
 }

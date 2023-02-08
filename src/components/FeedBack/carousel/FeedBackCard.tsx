@@ -41,7 +41,9 @@ const FeedbackCard: React.FC<IFeedback> = ({
         <Modal desc={desc} />
       </p>
       <div className={scss.line}></div>
-      <Link href={link}>{link}</Link>
+      <Link href={link}>
+        <Image src={"/images/tripLogo.svg"} alt={""} width={100} height={100} />
+      </Link>
     </div>
   );
 };

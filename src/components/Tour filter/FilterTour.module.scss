@@ -2,6 +2,7 @@
 
 .wrapper {
   width: 100%;
+  margin-right: 15px;
   gap: 35px;
   display: flex;
   transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
@@ -37,6 +38,29 @@
 
   p:hover {
     color: $active-text;
+
+    &:hover {
+      &::before {
+        width: 100%;
+        left: 100;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 21.5px;
+      width: 0;
+      right: 0;
+      z-index: 10;
+      height: 2px;
+    }
+
+    &::before {
+      transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
+      background: black;
+      left: 0;
+    }
   }
 }
 
@@ -50,16 +74,4 @@
   margin-top: 25px;
   cursor: pointer;
   position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 18px;
-    width: 100%;
-    left: 0;
-    height: 1px;
-    border-radius: 8px;
-    background: $active-text;
-    z-index: 2;
-  }
 }

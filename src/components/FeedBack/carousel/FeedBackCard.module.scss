@@ -104,7 +104,6 @@
   font-size: 100%;
   line-height: 24px;
   color: #2e325a;
-
   transition: ease 0.3s;
 }
 
@@ -119,7 +118,11 @@
 
 @media(min-width: 1440px) {
   .wrapper {
-    width: 416px !important;
+    width: 438px !important;
+  }
+
+  .read {
+    margin-bottom: 10px;
   }
 }
 
