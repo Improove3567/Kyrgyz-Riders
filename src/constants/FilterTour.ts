@@ -31,4 +31,8 @@ export const filterData = [
     title: 'Cultural',
     id: '8',
   },
+  {
+    title: 'All tours',
+    id: '9',
+  },
 ]

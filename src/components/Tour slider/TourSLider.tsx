@@ -82,9 +82,11 @@ const TourSlider: React.FC = () => {
       <Divider title="Select Tour" variant="light">
         <FilterTour />
       </Divider>
-      <Slider {...settings} >
-        {render}
-      </Slider>
+      <div className="mainSliders">
+        <Slider {...settings} >
+          {render}
+        </Slider>
+      </div>
     </div>
 
 
