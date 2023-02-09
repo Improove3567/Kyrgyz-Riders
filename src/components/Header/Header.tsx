@@ -27,12 +27,12 @@ const Header: React.FC<IHeader> = ({ isMain }) => {
           {item.title}
         </Link>
       )),
-    []
+    [HeaderLinks]
   );
 
   let HeaderStyles = isActive ? scss.active : scss.nonActive;
 
-  if (!isMain) {
+  if (isMain === false) {
     HeaderStyles = isActive ? scss.renderActive : scss.renderNonActive;
   }
 
