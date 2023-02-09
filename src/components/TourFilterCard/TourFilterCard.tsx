@@ -13,6 +13,9 @@ const TourFilterCard: FC = () => {
     <div className={scss.tour_card}>
         <div className={scss.tour_container}>
             {renderLinks}
+            <div className={scss.btn_more}>
+                <button>More Tours</button>
+            </div>
         </div>
     </div>
   );
