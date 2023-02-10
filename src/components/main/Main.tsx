@@ -5,7 +5,11 @@ import Link from "next/link";
 import Slider from "react-slick";
 import Image from "next/image";
 
-const Main: React.FC = () => {
+interface MainProps {
+  background?: string;
+}
+
+const Main: React.FC<MainProps> = ({ background }) => {
 
   const renderBtns = React.useMemo(
     () =>
@@ -37,27 +41,28 @@ const Main: React.FC = () => {
     },
     {
       className: scss.tours,
-      title: "/images/Tours_text.svg"
+      title: "/images/MainTexts/tours.svg"
     },
     {
-      className: scss.sights,
-      title: "/images/Sights_text.svg"
+      className: "sights",
+      title: "/images/MainTexts/sights.svg"
     },
     {
-      className: scss.travel,
-      title: "/images/Travel_text.svg"
+      className: "travel",
+      title: "/images/MainTexts/travel.svg"
     },
     {
-      className: scss.about,
-      title: "/images/About_text.svg"
+      className: "about",
+      title: "/images/MainTexts/about.svg"
     },
     {
-      className: scss.blog,
-      title: "/images/test.svg"
+      className: "blog",
+      title: "/images/MainTexts/blog.svg"
     },
   ]
-
-  const render = useMemo(
+  let test = background;
+  console.log(test)
+  const renderSlider = useMemo(
     () => imgList.map((el) => (
       <main className={el.className} key={el.className}>
         <div className="container">
@@ -73,10 +78,23 @@ const Main: React.FC = () => {
     [imgList, renderBtns]
   );
 
+  const render = useMemo(() => (
+    <main className={background}>
+      <div className="container">
+        <div className={scss.buttons}>
+          {
+            <Image className={scss.imgText} src={`/images/MainTexts/${background}.svg`} width={100} height={100} alt={""} />
+          }
+          {renderBtns}
+        </div>
+      </div>
+    </main>
+  ), [background, renderBtns])
+
   return (
     <div className="main">
       <Slider {...settings} className={scss.slider}>
-        {render}
+        {background ? render : renderSlider}
       </Slider>
     </div>
   );
