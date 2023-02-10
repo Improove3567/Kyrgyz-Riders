@@ -59,7 +59,7 @@ const Main: React.FC = () => {
 
   const render = useMemo(
     () => imgList.map((el) => (
-      <main className={el.className}>
+      <main className={el.className} key={el.className}>
         <div className="container">
           <div className={scss.buttons}>
             {
@@ -70,7 +70,7 @@ const Main: React.FC = () => {
         </div>
       </main>
     )),
-    []
+    [imgList, renderBtns]
   );
 
   return (
