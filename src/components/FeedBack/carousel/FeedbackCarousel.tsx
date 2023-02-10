@@ -80,7 +80,9 @@ const FeedbackCarousel = () => {
 
   return (
     <div className={scss.container}>
-      <Slider {...settings}>{render}</Slider>
+      <div className="mainSliders">
+        <Slider {...settings}>{render}</Slider>
+      </div>
     </div>
   );
 };

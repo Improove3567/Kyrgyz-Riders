@@ -67,30 +67,39 @@ a {
   width: 100px;
 }
 
+.main .slick-slide {
+  width: 14.3.4% !important;
+  margin: 0 !important;
+}
+
+.main .slick-list {
+  height: 100% !important;
+}
+
 /* Слайды */
-.slick-slide {
+.mainSliders .slick-slide {
   width: 460px !important;
   margin: 0 5px;
 }
 
-.slick-slide>div {
+.mainSliders .slick-slide>div {
   width: 10px;
 }
 
 /* Родительский элемент */
-.slick-list {
+.mainSliders .slick-list {
   margin: 0 -2px;
 }
 
-.slick-track {
+.mainSliders .slick-track {
   display: flex !important;
 }
 
-.slick-list {
+.mainSliders .slick-list {
   height: 300px !important;
 }
 
-.dots li button {
+.mainSliders .dots li button {
   width: 50px;
 }
 

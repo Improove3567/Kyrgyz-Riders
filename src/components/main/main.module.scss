@@ -1,3 +1,9 @@
+.slider {
+  width: 100% !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
+
 .main {
   background-image: url(../../../public/assets/images/mainImg.png);
   background-position: center;
@@ -9,7 +15,94 @@
   flex-direction: column;
   justify-content: space-between;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  >div{
+
+  >div {
+    height: 100%;
+  }
+}
+
+.tours {
+  background-image: url(../../../public/assets/images/tours.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0px !important;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  >div {
+    height: 100%;
+  }
+}
+
+.sights {
+  background-image: url(../../../public/assets/images/sights.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  >div {
+    height: 100%;
+  }
+}
+
+.travel {
+  background-image: url(../../../public/assets/images/travel.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  >div {
+    height: 100%;
+  }
+}
+
+.about {
+  background-image: url(../../../public/assets/images/about.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  >div {
+    height: 100%;
+  }
+}
+
+.blog {
+  background-image: url(../../../public/assets/images/blog.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  >div {
     height: 100%;
   }
 }
@@ -23,18 +116,29 @@
   margin-bottom: 84px;
   height: 90%;
 
+  .imgText {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    position: absolute;
+    top: 45%;
+    width: 50%;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+
   a {
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
     color: #ffffff;
     padding: 17px 80px;
+    background: rgba(255, 255, 255, 0.3);
     border: 1px solid #ffffff;
     transition: 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 280px;
+    width: 282px;
 
     &:hover {
       background: white;
@@ -46,6 +150,15 @@
     }
   }
 }
+
+// .buttons::before{
+//   content: "Tourse";
+//   position: absolute;
+//   top: 50%;
+//   width: 50px;
+//   height: 50px;
+//   color: white;
+// }
 
 .scroll_buttons {
   pointer-events: none;
