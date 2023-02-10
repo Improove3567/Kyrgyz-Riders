@@ -106,7 +106,7 @@ a {
 
 /* main background */
 .sights {
-  background-image: url(../public/assets/images/sights.png);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/solid-wiki.appspot.com/o/sights.png?alt=media&token=287ece1e-3b73-4401-bbdd-ef0467675a7c);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
