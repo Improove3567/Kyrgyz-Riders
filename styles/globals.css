@@ -123,7 +123,7 @@ a {
 }
 
 .travel {
-  background-image: url(../public/assets/images/travel.png);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/solid-wiki.appspot.com/o/travel.png?alt=media&token=59794dec-fa98-44ec-aa43-87c15665df61);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -140,7 +140,7 @@ a {
 }
 
 .about {
-  background-image: url(../public/assets/images/about.png);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/solid-wiki.appspot.com/o/about.png?alt=media&token=452707ee-45fd-4d01-8368-5fe456a3d013);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -157,7 +157,7 @@ a {
 }
 
 .blog {
-  background-image: url(../public/assets/images/blog.png);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/solid-wiki.appspot.com/o/blog.png?alt=media&token=054af216-d7b4-48bb-b71a-d113af47bad7);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
