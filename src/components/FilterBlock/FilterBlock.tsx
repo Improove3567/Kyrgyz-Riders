@@ -4,15 +4,15 @@ import scss from "./FilterBlock.module.scss";
 import Filter from "../../pages/ToursPage/Filter sorted/Filter/Filter";
 
 interface Function {
-  change : () => void
+  change : (value:number) => void
 }
 
 const FilterBlock = ({change}:Function) => {
   const [active, setActive] = useState<number>(0);
 
-
-  const click = () => {
-    change()
+  
+  const click = (value:number) => {
+    change(value)
   }
 
   return (
@@ -29,7 +29,7 @@ const FilterBlock = ({change}:Function) => {
             <button
               onClick={() => {
                 setActive(index)
-                click()
+                click(index)
               }}
               className={active === index ? scss.active : scss.nonActive}
               key={el.id}

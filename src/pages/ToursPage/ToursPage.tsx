@@ -5,16 +5,15 @@ import DetailFilter from './DetailFIlter/FilterDetail/DetailFilter';
 import scss from './ToursPage.module.scss'
 
 const ToursPage = () => {
-    const [index,setIndex] = useState(false)
+    const [index,setIndex] = useState<number>(0)
 
-    const change = () => {
-        setIndex(!index)
-        console.log('ff')
+    const change = (value:number): void => {
+        setIndex(value)
     }
     return (
         <div className={scss.div}>
             <FilterBlock change={change}/>
-            {!index? <Filter/> : <DetailFilter/>}
+            {index == 0? <Filter/> : <DetailFilter/>}
         </div>
         
     );
