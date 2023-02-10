@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import { FilterRenderType } from "../../constants/FilterBlockBtn";
 import scss from "./FilterBlock.module.scss";
+import Filter from "../../pages/ToursPage/Filter sorted/Filter/Filter";
 
-const FilterBlock = () => {
+interface Function {
+  change : () => void
+}
+
+const FilterBlock = ({change}:Function) => {
   const [active, setActive] = useState<number>(0);
+
+
+  const click = () => {
+    change()
+  }
 
   return (
     <div className={scss.filter}>
@@ -17,7 +27,10 @@ const FilterBlock = () => {
         <div className={scss.types}>
           {FilterRenderType.map((el, index) => (
             <button
-              onClick={() => setActive(index)}
+              onClick={() => {
+                setActive(index)
+                click()
+              }}
               className={active === index ? scss.active : scss.nonActive}
               key={el.id}
             >

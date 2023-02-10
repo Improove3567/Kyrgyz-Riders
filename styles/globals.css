@@ -42,7 +42,12 @@ a {
   height: 10px !important;
 }
 
-
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
 .dots li button:before {
   content: '' !important;
   background: #2E325A !important;
