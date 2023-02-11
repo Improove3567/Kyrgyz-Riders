@@ -7,7 +7,7 @@ import Divider from "../Divider/Divider";
 const SightsBlock: React.FC = () => {
     const sightsList = useMemo(() => (
         SightsList.map((el) => (
-            <SightCard {...el} />
+            <SightCard {...el} key={el.days} />
         ))
     ), [])
     return (
