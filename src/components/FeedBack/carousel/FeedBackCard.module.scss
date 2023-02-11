@@ -80,7 +80,7 @@
 
 .nonActive {
   font-weight: 500;
-  line-height: 110%;
+  line-height: 24px;
   color: #6f6f6f;
   overflow: hidden;
   font-size: 100%;
@@ -104,7 +104,6 @@
   font-size: 100%;
   line-height: 24px;
   color: #2e325a;
-
   transition: ease 0.3s;
 }
 
@@ -117,33 +116,25 @@
   transition: ease 0.3s;
 }
 
-@media(max-width: 1200px) {
+@media(min-width: 1440px) {
   .wrapper {
-    width: 295px !important;
+    width: 438px !important;
+  }
+
+  .read {
+    margin-bottom: 10px;
   }
 }
+
 
 @media(max-width: 1335px) {
   .wrapper {
-    width: 345px;
+    width: 380px;
   }
 }
 
-@media(min-width: 1670px) {
+@media(max-width: 1200px) {
   .wrapper {
-    width: 470px;
-  }
-}
-
-@media(min-width: 1440px) {
-  .wrapper {
-    width: 435px;
-    height: 283px;
-  }
-}
-
-@media(min-width: 1920px) {
-  .wrapper {
-    width: 575px;
+    width: 335px !important;
   }
 }

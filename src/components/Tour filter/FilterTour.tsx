@@ -12,7 +12,7 @@ const FilterTour: React.FC = () => {
       <p className={tour === el.id ? scss.active_title : scss.inactive_title} key={el.id} onClick={() => {
         router.push({
           pathname: '/',
-          search: `?tour=${el.id}`
+          search:`?tour=${el.id}`
         }, undefined, { scroll: false })
 
       }}>

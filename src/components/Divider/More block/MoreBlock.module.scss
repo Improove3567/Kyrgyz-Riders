@@ -12,9 +12,21 @@
     font-size: 20px;
     line-height: 24px;
     color: $subtitle-divider;
+    margin-right: 10px;
   }
 
   img {
-    margin-left: 10px;
+    position: relative;
+    left: 0;
+    transition: ease-in-out .3s;
+
+  }
+
+  &:hover {
+    img {
+
+      position: relative;
+      left: 10px;
+    }
   }
 }

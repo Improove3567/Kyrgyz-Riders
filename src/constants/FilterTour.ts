@@ -32,7 +32,7 @@ export const filterData = [
     id: '8',
   },
   {
-    title: 'Day tours',
+    title: 'All tours',
     id: '9',
   },
 ]

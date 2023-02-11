@@ -1,32 +1,65 @@
 .container {
   width: 100%;
   height: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   position: absolute;
 }
+
 .nextArrow_container {
   position: absolute;
-  right: 2.7%;
+  right: 2.8% !important;
   top: 42%;
+  background: #2E325A;
+  border: 1px solid #9F9F9F;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  transform: rotate(-360deg);
+  width: 54px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: ease-in-out 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
 
   img {
-    width: 70px;
-    height: 70px;
-    cursor: pointer;
+    position: relative;
+    left: 1px;
   }
 }
 
 .prevArrow_container {
   position: absolute;
-  transform: rotate(180deg);
-  left: -1.5%;
+  left: -0.8% !important;
   top: 42%;
-  z-index: 5;
+  background: #2E325A;
+  border: 1px solid #9F9F9F;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  transform: rotate(-180deg);
+  width: 54px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: ease-in-out 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
 
   img {
-    width: 70px;
-    height: 70px;
-    cursor: pointer;
+    position: relative;
+    left: 1px;
   }
 }
 
@@ -38,7 +71,8 @@
   .nextArrow_container {
     right: 2.3%;
   }
-  .prevArrow_container{
+
+  .prevArrow_container {
     left: -1.3%;
   }
 }
@@ -47,8 +81,8 @@
   .nextArrow_container {
     right: 2.2%;
   }
-  .prevArrow_container{
+
+  .prevArrow_container {
     left: -1.2%;
   }
 }
-

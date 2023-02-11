@@ -22,12 +22,11 @@ const FeedbackCarousel = () => {
         onClick={onClick}
       >
         <Image
-          src="/images/arrow.svg"
-          className={scss.nextArrow}
+          src="/images/Vector.svg"
           alt="NextArrow"
-          width="25"
-          height="25"
-        />
+          width="6"
+          height="12" />
+
       </div>
     );
   }
@@ -39,11 +38,10 @@ const FeedbackCarousel = () => {
         onClick={onClick}
       >
         <Image
-          src="/images/arrow.svg"
-          className={scss.prevArrow}
+          src="/images/Vector.svg"
           alt="PrevArrow"
-          width="25"
-          height="25"
+          width="6"
+          height="12"
         />
       </div>
     );
@@ -82,7 +80,9 @@ const FeedbackCarousel = () => {
 
   return (
     <div className={scss.container}>
-      <Slider {...settings}>{render}</Slider>
+      <div className="mainSliders">
+        <Slider {...settings}>{render}</Slider>
+      </div>
     </div>
   );
 };
