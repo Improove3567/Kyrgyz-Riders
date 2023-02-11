@@ -7,7 +7,7 @@ interface IHeader {
   isMain?: boolean;
 }
 
-const Header: React.FC<IHeader> = ({ isMain = true }) => {
+const Header: React.FC<IHeader> = ({ isMain = false }) => {
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Header: React.FC<IHeader> = ({ isMain = true }) => {
           {item.title}
         </Link>
       )),
-    [HeaderLinks]
+    []
   );
 
   let HeaderStyles = isActive ? scss.active : scss.nonActive;
