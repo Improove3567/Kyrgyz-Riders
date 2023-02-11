@@ -5,16 +5,16 @@ import { SightsList } from "../../constants/SightsBlock";
 import Divider from "../Divider/Divider";
 
 const SightsBlock: React.FC = () => {
-    const render = useMemo(() => (
+    const sightsList = useMemo(() => (
         SightsList.map((el) => (
-            <SightCard days={el.days} title={el.title} key={el.days} />
+            <SightCard {...el} />
         ))
     ), [])
     return (
         <div className={scss.wrapper}>
             <Divider title={"Sights"} variant={"dark"} />
             <div className={scss.card_container}>
-                {render}
+                {sightsList}
             </div>
             <div className={scss.button}>
                 <p>More Sights</p>

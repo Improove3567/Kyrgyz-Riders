@@ -8,7 +8,7 @@ import YourTours from '../../components/yourTour/YourTours';
 const SightsPage = () => {
     return (
         <>
-            <Header isMain={false} />
+            <Header />
             <Main background='sights' />
             <SightsBlock />
             <YourTours />

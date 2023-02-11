@@ -2,11 +2,7 @@ import React from 'react';
 import SightsPage from '../src/pages/SightsPage/SightsPage';
 
 const Sights = () => {
-    return (
-        <>
-            <SightsPage />
-        </>
-    );
+    return <SightsPage />
 };
 
 export default Sights;

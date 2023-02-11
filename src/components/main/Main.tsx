@@ -60,9 +60,8 @@ const Main: React.FC<MainProps> = ({ background }) => {
       title: "/images/MainTexts/blog.svg"
     },
   ]
-  let test = background;
-  console.log(test)
-  const renderSlider = useMemo(
+
+  const sliderList = useMemo(
     () => imgList.map((el) => (
       <main className={el.className} key={el.className}>
         <div className="container">
@@ -78,7 +77,7 @@ const Main: React.FC<MainProps> = ({ background }) => {
     [imgList, renderBtns]
   );
 
-  const render = useMemo(() => (
+  const main = useMemo(() => (
     <main className={background}>
       <div className="container">
         <div className={scss.buttons}>
@@ -94,7 +93,7 @@ const Main: React.FC<MainProps> = ({ background }) => {
   return (
     <div className="main">
       <Slider {...settings} className={scss.slider}>
-        {background ? render : renderSlider}
+        {background ? main : sliderList}
       </Slider>
     </div>
   );
