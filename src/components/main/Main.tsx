@@ -82,7 +82,7 @@ const Main: React.FC<MainProps> = ({ background }) => {
       <div className="container">
         <div className={scss.buttons}>
           {
-            <Image className={scss.imgText} src={`/images/MainTexts/${background}.svg`} width={100} height={100} alt={""} />
+            <Image className={scss.imgText} src={`/images/MainTexts/${background}.svg`} width={100} height={100} alt="text" />
           }
           {renderBtns}
         </div>
