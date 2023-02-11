@@ -1,10 +1,9 @@
 import React from 'react';
-import BlogNewsText from '../../components/BlogNewsText/BlogNewsText';
-
+import BlogNewsText from '../../components/BlogNewsTextBlock/BlogNewsText';
 const BlogNewsPage = () => {
     return (
         <>
-          <BlogNewsText/>   
+        <BlogNewsText/>
         </>
     );
 };

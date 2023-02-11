@@ -27,7 +27,7 @@ export const HeaderLinks: IHeaderLinks[] = [
   {
     id: 5,
     title: "Blog & news",
-    link: "Blognews",
+    link: "blognews",
   },
 ];
 export const MainLinks: IHeaderLinks[] = [

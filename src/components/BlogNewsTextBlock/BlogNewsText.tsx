@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import { isTemplateMiddle } from 'typescript';
-import { BlogNewsTextArr } from '../../constants/BlogNewsText';
-import scss from './BlogNewsText.module.scss'
+import { BlogNewsTextArr } from '../../constants/BlogNewsTextBlock';
+import scss from './BlogNewsTextBlock.module.scss'
 const BlogNewsText: FC = () => {
     const renderText = React.useMemo(
         () =>
