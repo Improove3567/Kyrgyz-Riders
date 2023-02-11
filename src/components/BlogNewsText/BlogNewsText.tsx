@@ -5,7 +5,7 @@ const BlogNewsText: FC = () => {
     const renderText = React.useMemo(
         () =>
           BlogNewsTextArr.map((item) => (
-            <div className={scss.title}>
+            <div className={scss.title} key={item.id}>
               <h1>{item.title}</h1>
               <div className={scss.text}>
                 <div className={scss.paragraph}>

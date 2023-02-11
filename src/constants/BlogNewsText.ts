@@ -1,6 +1,7 @@
 interface BlogNewsText {
     title: string;
-    textArr: textArray[]
+    textArr: textArray[];
+    id: number
 }
 
 interface textArray {
@@ -11,6 +12,7 @@ interface textArray {
 
 export const BlogNewsTextArr: BlogNewsText[] = [
     {
+        id: 1,
         title: 'Arctic Wild is a family owned',
         textArr: [
             {
@@ -21,6 +23,7 @@ export const BlogNewsTextArr: BlogNewsText[] = [
         ]
     },
     {
+        id: 2,
         title: 'Arctic Wild is a family owned',
         textArr: [
             {
@@ -31,6 +34,7 @@ export const BlogNewsTextArr: BlogNewsText[] = [
         ]
     },
     {
+        id: 3,
         title: 'Arctic Wild is a family owned',
         textArr: [
             {
