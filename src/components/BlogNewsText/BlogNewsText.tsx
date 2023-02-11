@@ -10,13 +10,7 @@ const BlogNewsText: FC = () => {
               <div className={scss.text}>
                 <div className={scss.paragraph}>
                     {item.textArr.map((el) => (
-                        <div>{el.paragraphOne}</div>
-                    ))}
-                    {item.textArr.map((el) => (
-                        <div>{el.paragraphTwo}</div>
-                    ))}
-                    {item.textArr.map((el) => (
-                        <div>{el.paragraphThree}</div>
+                        <div>{el.paragraph}</div>
                     ))}
                 </div>
               </div>
