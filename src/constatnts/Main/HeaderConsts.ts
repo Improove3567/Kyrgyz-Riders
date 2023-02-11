@@ -17,7 +17,7 @@ export const HeaderLinks: IHeaderLinks[] = [
   {
     id: 3,
     title: "Travel stories",
-    link: "travelstories",
+    link: "travel",
   },
   {
     id: 4,

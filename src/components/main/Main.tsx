@@ -6,10 +6,10 @@ import Slider from "react-slick";
 import Image from "next/image";
 
 interface MainProps {
-  background?: string;
+  backgroundClassName?: string;
 }
 
-const Main: React.FC<MainProps> = ({ background }) => {
+const Main: React.FC<MainProps> = ({ backgroundClassName }) => {
 
   const renderBtns = React.useMemo(
     () =>
@@ -78,22 +78,22 @@ const Main: React.FC<MainProps> = ({ background }) => {
   );
 
   const main = useMemo(() => (
-    <main className={background}>
+    <main className={backgroundClassName}>
       <div className="container">
         <div className={scss.buttons}>
           {
-            <Image className={scss.imgText} src={`/images/MainTexts/${background}.svg`} width={100} height={100} alt="text" />
+            <Image className={scss.imgText} src={`/images/MainTexts/${backgroundClassName}.svg`} width={100} height={100} alt="text" />
           }
           {renderBtns}
         </div>
       </div>
     </main>
-  ), [background, renderBtns])
+  ), [backgroundClassName, renderBtns])
 
   return (
     <div className="main">
       <Slider {...settings} className={scss.slider}>
-        {background ? main : sliderList}
+        {backgroundClassName ? main : sliderList}
       </Slider>
     </div>
   );
