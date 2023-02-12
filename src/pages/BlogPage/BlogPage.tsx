@@ -7,7 +7,7 @@ const BlogPage = () => {
     return (
         <>
             <Header />
-            <Main background="blog" />
+            <Main backgroundClassName="blog" />
             <BlogMain />
         </>
     );

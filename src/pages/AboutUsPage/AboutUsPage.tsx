@@ -10,7 +10,7 @@ const AboutUsPage = () => {
     return (
         <>
             <Header />
-            <Main background='about' />
+            <Main backgroundClassName='about' />
             <AboutUsText />
             <OurTeam />
             <YourTours />
