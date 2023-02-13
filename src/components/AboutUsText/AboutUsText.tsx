@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import scss from './AboutUstext.module.scss'
 import { AboutUsTextArr } from '../../constants/AboutUsText';
+import Divider from '../Divider/Divider';
 const AboutUsText: FC = () => {
     const renderText = React.useMemo(
         () =>
@@ -14,7 +15,7 @@ const AboutUsText: FC = () => {
     return (
         <div className={scss.title_block}>
             <div className={scss.title}>
-                <h1>About us</h1>
+                <Divider title='About us' variant='dark'/>
             </div>
             <div className={scss.text}>
                 <div className={scss.paragraph}>
