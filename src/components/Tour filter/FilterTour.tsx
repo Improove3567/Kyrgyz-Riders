@@ -14,12 +14,12 @@ const FilterTour: React.FC = () => {
           router.push({
             pathname: '/',
             search: "?tours"
-          }, undefined, { scroll: false })
+          })
         ) : (
           router.push({
             pathname: '/',
             search: `?tour=${el.id}`
-          }, undefined, { scroll: false })
+          })
         )
 
       }}>
