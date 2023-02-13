@@ -10,16 +10,23 @@ const FilterTour: React.FC = () => {
   const render = useMemo(() => (
     filterData.map((el) => (
       <p className={tour === el.id ? scss.active_title : scss.inactive_title} key={el.id} onClick={() => {
-        router.push({
-          pathname: '/',
-          search:`?tour=${el.id}`
-        }, undefined, { scroll: false })
+        el.id === '9' ? (
+          router.push({
+            pathname: '/',
+            search: "?tours"
+          }, undefined, { scroll: false })
+        ) : (
+          router.push({
+            pathname: '/',
+            search: `?tour=${el.id}`
+          }, undefined, { scroll: false })
+        )
 
       }}>
         {el.title}
       </p>
     ))
-  ), [router , tour])
+  ), [router, tour])
   return (
     <div className={scss.wrapper}>
       {render}
