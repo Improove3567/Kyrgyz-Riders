@@ -3,7 +3,7 @@
 .moreBlock {
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 1 0px;
 
   .subtitle {
     font-family: 'Montserrat';
@@ -19,12 +19,10 @@
     position: relative;
     left: 0;
     transition: ease-in-out .3s;
-
   }
 
   &:hover {
     img {
-
       position: relative;
       left: 10px;
     }

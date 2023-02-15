@@ -14,7 +14,7 @@ const Main: React.FC<MainProps> = ({ backgroundClassName }) => {
   const renderBtns = React.useMemo(
     () =>
       MainLinks.map((item) => (
-        <Link href={item.link} key={item.id}>
+        <Link href={item.link} key={item.id} className={scss.button}>
           {item.title}
         </Link>
       )),
