@@ -4,17 +4,15 @@ import Image from "next/image";
 import StarsRating from "../stars/StarsRating";
 
 interface CardProps {
-  title: string,
-  subtitle: string,
-  days: number,
-  stars: number,
+  title?: string,
+  subtitle?: string,
+  days?: number,
 }
 
 const SliderCard: React.FC<CardProps> = ({
   title,
   subtitle,
   days,
-  stars,
 }) => {
   return (
     <div className={scss.card}>
@@ -28,9 +26,9 @@ const SliderCard: React.FC<CardProps> = ({
             <p className={scss.subtitle}>{subtitle}</p>
           </div>
           <hr />
-          <div className={scss.stars}>
+          {/* <div className={scss.stars}>
             <StarsRating data={stars} />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
