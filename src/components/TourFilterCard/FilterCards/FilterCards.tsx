@@ -1,6 +1,6 @@
-import Img from "next/image";
 import React, { FC } from "react";
 import scss from './FilterCards.module.scss'
+import Image from "next/image";
 
  interface TourFilterCardArr{
   title: string;
@@ -34,7 +34,7 @@ const FilterCads: FC<TourFilterCardArr> = ({
   return (
     <div className={scss.block}>
       <div className={scss.img}>
-        <Img src={img} alt="img" width={392} height={293} />
+        <Image src={img} alt="img" width={392} height={293} />
         <div className={scss.days}>
         <span>{days}</span>
         </div>
@@ -43,7 +43,7 @@ const FilterCads: FC<TourFilterCardArr> = ({
         <div className={scss.title}>
           <h1>{title}</h1>
           <div className={scss.raiting}>
-            <Img src={starImg} width={20} height={20} alt="raiting" />
+            <Image src={starImg} width={20} height={20} alt="raiting" />
             <p>{stars}</p>
           </div>
         </div>
