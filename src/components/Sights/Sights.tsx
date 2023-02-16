@@ -5,9 +5,10 @@ import MoreBlock from "../Divider/More block/MoreBlock";
 import SightCard from "./SightCard/SightCard";
 import useSights from "../../hooks/useSights";
 
+
 export interface ISights {
   id: number;
-  img: string | undefined;
+  img: string | undefined | any;
   title: string;
   tours: Array<string>;
   isEdgeRight?: boolean;
