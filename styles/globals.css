@@ -51,6 +51,16 @@ a {
   opacity: 1 !important;
 }
 
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.hideSelect{
+  display: none;
+}
 .dots li button:before {
   content: "" !important;
   background: #ffffff;
@@ -89,7 +99,7 @@ a {
   margin: 0 -2px;
 }
 
-.mainSliders .slick-track {
+.slick-track {
   display: flex !important;
 }
 

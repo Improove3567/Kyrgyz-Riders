@@ -7,7 +7,7 @@ interface IHeader {
   isMain?: boolean;
 }
 
-const Header: React.FC<IHeader> = ({ isMain = false }) => {
+const Header: React.FC<IHeader>= ({ isMain = false }) => {
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
