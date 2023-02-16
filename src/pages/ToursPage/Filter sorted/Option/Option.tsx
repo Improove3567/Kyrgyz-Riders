@@ -30,11 +30,10 @@ const Option: React.FC<Input> = ({value,valueIndex}) => {
         return <Input myKey={el.id} value={router.query.tour} key={el.id} name={el.name} inputName="tour" changeStatus={changeStatus} statusEl={el.status}/>
     })
 
-    if (value.length == 0){
-    }
+    
 
     return(
-        <div className={valueIndex == 0 ? scss.option : scss.optionD}>
+        <div className={scss.option}>
             <div onChange={(e:React.FormEvent<HTMLInputElement>):void => {
                 router.query.tour = (e.target as HTMLButtonElement).value
                 router.push(router)

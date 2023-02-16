@@ -1,16 +1,72 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import scss from "./main.module.scss";
 import { MainLinks } from "../../constatnts/Main/HeaderConsts";
 import Link from "next/link";
 import Slider from "react-slick";
 import Image from "next/image";
+import { useRouter } from "next/router";
+
+const imgList = [
+  {
+    className: scss.tours,
+    title: "/images/MainTexts/tours.svg"
+  },
+  {
+    className: "sights",
+    title: "/images/MainTexts/sights.svg"
+  },
+  {
+    className: "travel",
+    title: "/images/MainTexts/travel.svg"
+  },
+  {
+    className: "about",
+    title: "/images/MainTexts/about.svg"
+  },
+  {
+    className: "blog",
+    title: "/images/MainTexts/blog.svg"
+  },
+]
+
+const mainSlide = [
+  {
+    className: scss.main,
+  },
+]
+const toursSlides = [
+  {
+    className: scss.tours,
+    title: "/images/MainTexts/tours.svg"
+  },
+  {
+    className: "sights",
+    title: "/images/MainTexts/sights.svg"
+  },
+  {
+    className: "travel",
+    title: "/images/MainTexts/travel.svg"
+  },
+]
+
+
 
 interface MainProps {
   background?: string;
 }
 
 const Main: React.FC<MainProps> = ({ background }) => {
-
+  const  {route} = useRouter();
+  const [slides, setSlides] = useState<typeof imgList>([]);
+  
+  useEffect(() => {
+    if (route === '/'){
+      setSlides(mainSlide as typeof imgList)
+    } else if(route === '/tours') {
+      setSlides(toursSlides)
+    }
+  }, [route])
+  
   const renderBtns = React.useMemo(
     () =>
       MainLinks.map((item) => (
@@ -27,42 +83,16 @@ const Main: React.FC<MainProps> = ({ background }) => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    arrows: true,
+    arrows: false,
     slidesToScroll: 1,
     className: "slides",
     autoplay: true,
     autoplaySpeed: 5000,
     cssEase: "linear"
   };
-
-  const imgList = [
-    {
-      className: scss.main,
-    },
-    {
-      className: scss.tours,
-      title: "/images/MainTexts/tours.svg"
-    },
-    {
-      className: "sights",
-      title: "/images/MainTexts/sights.svg"
-    },
-    {
-      className: "travel",
-      title: "/images/MainTexts/travel.svg"
-    },
-    {
-      className: "about",
-      title: "/images/MainTexts/about.svg"
-    },
-    {
-      className: "blog",
-      title: "/images/MainTexts/blog.svg"
-    },
-  ]
-
+  
   const sliderList = useMemo(
-    () => imgList.map((el) => (
+    () => slides.map((el) => (
       <main className={el.className} key={el.className}>
         <div className="container">
           <div className={scss.buttons}>
@@ -74,7 +104,7 @@ const Main: React.FC<MainProps> = ({ background }) => {
         </div>
       </main>
     )),
-    [imgList, renderBtns]
+    [slides, renderBtns]
   );
 
   const main = useMemo(() => (

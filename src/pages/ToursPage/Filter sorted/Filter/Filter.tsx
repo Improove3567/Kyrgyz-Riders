@@ -165,6 +165,105 @@ const Filter : React.FC<Index> = ({value}) => {
             status : false
         }
     ]
+    const Duraion:Option[] = [
+        {
+            name: "Horse riding",
+            id: 1,
+            status:false
+        },
+        {
+            name: "High-trekking",
+            id: 2,
+            status:false
+        },
+        {
+            name: "Camping",
+            id: 3,
+            status:false
+        },
+        {
+            name: "Sleeping at yurt",
+            id: 4,
+            status:false
+        },
+        {
+            name: "Off-road expedition",
+            id: 5,
+            status:false
+        },
+        {
+            name: "Self-driving , sking",
+            id: 6,
+            status:false
+        },
+        {
+            name: "Rafting",
+            id: 7,
+            status:false
+        },
+    ]
+    const ActivateDuration:Option[] = [
+        {
+            name: "Vising the locals",
+            id: 1,
+            status:false
+        },
+        {
+            name: "Swimming in hot springs",
+            id: 2,
+            status:false
+        },
+        {
+            name: "Souvenir shopping ",
+            id: 3,
+            status:false
+        },
+        {
+            name: "Boat riding ",
+            id: 4,
+            status:false
+        },
+        {
+            name: "Relaxing on beach",
+            id: 5,
+            status:false
+        },
+        {
+            name: "Excurisons to museum",
+            id: 6,
+            status:false
+        },
+        {
+            name: "City tour",
+            id: 7,
+            status:false
+        },
+        {
+            name: "Visiting animal market ",
+            id: 8,
+            status:false
+        },
+        {
+            name: "Visiting local bazzars",
+            id: 9,
+            status:false
+        },
+        {
+            name: "Photograhy on nat-al Kyrgyz clothes",
+            id: 10,
+            status:false
+        },
+        {
+            name: "Agro-tourism",
+            id: 11,
+            status:false
+        },
+        {
+            name: "Watching Kyrgyz movies ",
+            id: 12,
+            status:false
+        }
+    ]
     const Tours:ToursSelect[] = [
         {
             name : 'Tours',
@@ -174,7 +273,7 @@ const Filter : React.FC<Index> = ({value}) => {
         },
         {
             name : 'Duration',
-            option: [],
+            option: Duraion,
             status : false,
             id: 2
 
@@ -190,13 +289,13 @@ const Filter : React.FC<Index> = ({value}) => {
         },
         {
             name : 'Activities i want to do',
-            option: [],
+            option: ActivateDuration,
             status : false,
             id: 2
         },
         {
             name : 'Duration',
-            option: [],
+            option: Duraion,
             status : false,
             id : 3
         },
@@ -231,10 +330,10 @@ const Filter : React.FC<Index> = ({value}) => {
     return(
         <div className={css.filter}>
             <div className={value == 1 ? 'hideSelect' : ''}>
-                {status.map ((el)=> <Select {...el} valueIndex={value} change={statusChangeTours}/>)}
+                {status.map ((el)=> <Select  {...el} key={el.id} valueIndex={value} change={statusChangeTours}/>)}
             </div>
              <div className={value == 0 ? 'hideSelect' : ''}>
-               {statusD.map((el) => <Select {...el} valueIndex = {value } change={statusChangeDetailTours}/>)}
+               {statusD.map((el) => <Select {...el} key={el.id} valueIndex = {value } change={statusChangeDetailTours}/>)}
             </div>
         </div>
     )

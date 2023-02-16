@@ -9,21 +9,24 @@ import FilterToursCardBlock from './FilterToursCard/FilterToursCardBlock';
 import Header from '../../components/Header/Header';
 import Main from '../../components/main/Main';
 
+
+
 const ToursPage = () => {
     const [index,setIndex] = useState<number>(0)
 
+    
     const change = (value:number): void => {
         setIndex(value)
     }
     return (
         <>
         <div className={scss.div}>
-            <Header/>
-            <Main />
+            <Header isMain={true}/>
+            <Main/>
             <FilterBlock change={change}/>
             <FilterToursCardBlock index={index}/>
             <YourTours/>
-            <Footer />
+            <Footer  />
             
         </div>  
         </>

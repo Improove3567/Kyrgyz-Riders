@@ -99,7 +99,7 @@ a {
   margin: 0 -2px;
 }
 
-.mainSliders .slick-track {
+.slick-track {
   display: flex !important;
 }
 
