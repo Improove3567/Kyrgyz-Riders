@@ -5,8 +5,8 @@ import TourFilterCard from '../../components/TourFilterCard/TourFilterCard';
 const ToursPage = () => {
     return (
         <>
-        <FilterBlock/>
-        <TourFilterCard/>
+            <FilterBlock/>
+            <TourFilterCard/>
         </>
     );
 };
