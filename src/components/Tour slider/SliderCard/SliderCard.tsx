@@ -22,7 +22,6 @@ const SliderCard: React.FC<CardProps> = ({
         <p className={scss.days_title}>{days} days</p>
       </div>
       <div className={scss.front}>
-        <Image src="" width={100} height={100} alt="img" className={scss.bgImage} />
         <div className={scss.bottomContent}>
           <div className={scss.textContainer}>
             <p className={scss.title}>{title}</p>

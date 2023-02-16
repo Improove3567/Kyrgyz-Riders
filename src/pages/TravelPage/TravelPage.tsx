@@ -2,19 +2,19 @@ import React from 'react';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Main from '../../components/main/Main';
-import SightsBlock from '../../components/Sights block/SightsBlock';
+import TravelBlock from '../../components/TravelBlock/TravelBlock';
 import YourTours from '../../components/yourTour/YourTours';
 
-const SightsPage = () => {
+const TravelPage = () => {
     return (
         <>
             <Header />
-            <Main backgroundClassName='sights' />
-            <SightsBlock />
+            <Main backgroundClassName='travel' />
+            <TravelBlock />
             <YourTours />
             <Footer />
         </>
     );
 };
 
-export default SightsPage;
+export default TravelPage;
