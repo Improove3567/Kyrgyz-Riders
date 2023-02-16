@@ -27,10 +27,6 @@ const SliderCard: React.FC<CardProps> = ({
             <p className={scss.title}>{title}</p>
             <p className={scss.subtitle}>{subtitle}</p>
           </div>
-          <hr />
-          <div className={scss.stars}>
-            <StarsRating data={stars} />
-          </div>
         </div>
       </div>
     </div>
