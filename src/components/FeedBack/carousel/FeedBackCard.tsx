@@ -16,7 +16,8 @@ const FeedbackCard: React.FC<IFeedback> = ({
   return (
     <div className={scss.wrapper}>
       <header>
-        <Image width={90} height={90} src={img} alt="img" />
+        {/* eslint-disable-next-line no-use-before-define */}
+        <img width={90} height={90} src={img} alt="avatar" />
         <div className={scss.title}>
           <h1>
             {title}
@@ -41,7 +42,7 @@ const FeedbackCard: React.FC<IFeedback> = ({
         <Modal desc={desc} />
       </p>
       <div className={scss.line}></div>
-      <Link href={link}>
+      <Link href={`${link}`}>
         <Image src={"/images/tripLogo.svg"} alt={""} width={100} height={100} />
       </Link>
     </div>

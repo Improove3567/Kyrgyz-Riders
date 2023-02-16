@@ -1,13 +1,11 @@
 import React, { useMemo, useEffect, useState } from "react";
 import scss from './TourSlider.module.scss';
-import { CardList } from "../../constants/TourSlider";
 import SliderCard from "./SliderCard/SliderCard";
 import Slider from "react-slick";
 import Image from "next/image";
 import Divider from "../Divider/Divider";
 import FilterTour from "../Tour filter/FilterTour";
-import { db } from "../../firebase/firebase-config";
-import { collection, getDocs, doc, query, DocumentData, SnapshotOptions } from "firebase/firestore";
+import useTours from "../../hooks/useTours";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>
@@ -15,21 +13,11 @@ interface ArrowProps {
 
 const TourSlider: React.FC = () => {
 
-  const touSliderData: ((options?: SnapshotOptions | undefined) => DocumentData)[] = []
-
-  const getFireStore = query(collection(db, "slider-tour-data"))
-
-  let [test, setTest] = useState<any | undefined>([])
-  const getTests = async () => {
-    const querySnapshot = await getDocs(getFireStore);
-    querySnapshot.forEach((doc: any) => touSliderData.push(doc.data()));
-    setTest(touSliderData);
-  }
+  const { tours, getTours } = useTours()
 
   useEffect(() => {
-    getTests();
+    getTours()
   }, [])
-
 
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
@@ -62,7 +50,6 @@ const TourSlider: React.FC = () => {
       </div>
     );
   }
-  console.log(test);
 
 
   const settings = {
@@ -93,8 +80,8 @@ const TourSlider: React.FC = () => {
   };
 
   const render = useMemo(
-    () => test.map((el: any) => <SliderCard key={"test"} {...el} />),
-    []
+    () => tours.map((el: any) => <SliderCard key={"test"} {...el} />),
+    [tours]
   );
 
 

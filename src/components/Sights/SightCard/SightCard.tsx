@@ -19,14 +19,17 @@ const SightCard: React.FC<ISights> = ({
       return "SightBack";
     }
   };
-  
+
+
   return (
     <div className={scss.card}>
       <div className={isBack()}></div>
       <div className={scss.front}>
+        {/* eslint-disable-next-line no-use-before-define */}
+        <img src={img} alt="image" />
         <div className={scss.btm}>
           <p>{title}</p>
-          <p>{tours} tours</p>
+          <p>{tours.length} tours</p>
         </div>
       </div>
     </div>

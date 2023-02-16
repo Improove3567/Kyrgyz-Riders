@@ -1,16 +1,22 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import Divider from "../Divider/Divider";
 import scss from "./OurTeam.module.scss"
 import TeamCard from "./Team card/TeamCard";
-import { TeamData } from './../../constants/TeamData';
+import useTeam from "../../hooks/useTeam";
 
 const OurTeam: React.FC = () => {
 
+  const { team, getTeam } = useTeam();
+
+  useEffect(() => {
+    getTeam()
+  }, [])
+
   const render = useMemo(() => (
-    TeamData.map((el) => (
+    team.map((el: any) => (
       <TeamCard {...el} key={el.title} />
     ))
-  ), [])
+  ), [team])
 
   return (
     <div className={scss.wrapper}>
