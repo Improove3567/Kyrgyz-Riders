@@ -24,7 +24,6 @@ const SightCard: React.FC<ISights> = ({
     <div className={scss.card}>
       <div className={isBack()}></div>
       <div className={scss.front}>
-        <Image src={""} alt="img" />
         <div className={scss.btm}>
           <p>{title}</p>
           <p>{tours} tours</p>

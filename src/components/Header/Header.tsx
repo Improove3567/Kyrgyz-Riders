@@ -7,7 +7,7 @@ interface IHeader {
   isMain?: boolean;
 }
 
-const Header: React.FC<IHeader> = ({ isMain = false }) => {
+const Header: React.FC<IHeader>= ({ isMain = false }) => {
   const [isActive, setActive] = useState(false);
 
   useEffect(() => {
@@ -38,7 +38,9 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
 
   return (
     <header className={HeaderStyles}>
-      <h1>Logo</h1>
+      <Link href='/'>
+        <h1>Logo</h1>
+      </Link>
       <nav>{renderLinks}</nav>
       <div></div>
     </header>

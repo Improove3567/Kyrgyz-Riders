@@ -18,7 +18,7 @@ const Divider: React.FC<DividerProps> = ({ children, title, variant }) => {
     <div className={scss.wrapper}>
       <div className={scss.content}>
         <p className={className}>{title}</p>
-        <Link href={`/${title}`}>{children}</Link>
+        <div>{children}</div>
       </div>
     </div>
   );
