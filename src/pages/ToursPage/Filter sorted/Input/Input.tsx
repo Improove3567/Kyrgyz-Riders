@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import scss from './input.module.scss'
+import scss from './Input.module.scss'
 
 interface Iname {
     name:string, 

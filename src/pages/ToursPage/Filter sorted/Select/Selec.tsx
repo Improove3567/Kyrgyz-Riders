@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import scss from './select.module.scss';
+import scss from './Select.module.scss';
 import Option from "../Option/Option";
 
 interface Tours{
