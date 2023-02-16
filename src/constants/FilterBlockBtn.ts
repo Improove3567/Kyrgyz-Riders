@@ -1,4 +1,4 @@
- interface IArr {
+interface IArr {
     id: number;
     text: string
 }

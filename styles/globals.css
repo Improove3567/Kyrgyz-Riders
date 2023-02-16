@@ -42,8 +42,8 @@ a {
 }
 
 .dots li.slick-active button:before {
-  content: '' !important;
-  background: #2E325A !important;
+  content: "" !important;
+  background: #2e325a !important;
   border-radius: 20px !important;
   width: 11px !important;
   height: 11px !important;
@@ -51,11 +51,20 @@ a {
   opacity: 1 !important;
 }
 
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
 
+.hideSelect{
+  display: none;
+}
 .dots li button:before {
-  content: '' !important;
-  background: #FFFFFF;
-  border: 1px solid #2E325A;
+  content: "" !important;
+  background: #ffffff;
+  border: 1px solid #2e325a;
   border-radius: 20px !important;
   width: 11px !important;
   height: 11px !important;
@@ -81,7 +90,7 @@ a {
   margin: 0 5px;
 }
 
-.mainSliders .slick-slide>div {
+.mainSliders .slick-slide > div {
   width: 10px;
 }
 
@@ -90,7 +99,7 @@ a {
   margin: 0 -2px;
 }
 
-.mainSliders .slick-track {
+.slick-track {
   display: flex !important;
 }
 
@@ -118,7 +127,7 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.sights>div {
+.sights > div {
   height: 100%;
 }
 
@@ -135,7 +144,7 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.travel>div {
+.travel > div {
   height: 100%;
 }
 
@@ -152,7 +161,7 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.about>div {
+.about > div {
   height: 100%;
 }
 
@@ -169,7 +178,7 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.blog>div {
+.blog > div {
   height: 100%;
 }
 
@@ -206,7 +215,6 @@ a {
 }
 
 @media (min-width: 576px) {
-
   .container,
   .container-sm {
     max-width: 540px;
@@ -214,7 +222,6 @@ a {
 }
 
 @media (min-width: 768px) {
-
   .container,
   .container-md,
   .container-sm {
@@ -223,7 +230,6 @@ a {
 }
 
 @media (min-width: 992px) {
-
   .container,
   .container-lg,
   .container-md,
@@ -233,7 +239,6 @@ a {
 }
 
 @media (min-width: 1200px) {
-
   .container,
   .container-lg,
   .container-md,
@@ -244,7 +249,6 @@ a {
 }
 
 @media (min-width: 1400px) {
-
   .container,
   .container-lg,
   .container-md,
