@@ -15,7 +15,6 @@ const useFeedback = () => {
         const querySnapshot = await getDocs(getFireStore);
         querySnapshot.forEach((doc: DocumentData) => touSliderData.push(doc.data()));
         setFeedback(touSliderData);
-        console.log(feedback)
     }
 
     return {

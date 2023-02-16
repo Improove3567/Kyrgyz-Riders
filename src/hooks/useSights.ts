@@ -15,7 +15,6 @@ const useSights = () => {
         const querySnapshot = await getDocs(getFireStore);
         querySnapshot.forEach((doc: DocumentData) => touSliderData.push(doc.data()));
         setSights(touSliderData);
-        console.log(sights)
     }
 
     return {

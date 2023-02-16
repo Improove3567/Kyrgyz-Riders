@@ -15,7 +15,6 @@ const useTours = () => {
         const querySnapshot = await getDocs(getFireStore);
         querySnapshot.forEach((doc: DocumentData) => touSliderData.push(doc.data()));
         setTours(touSliderData);
-        console.log(tours)
     }
     return {
         tours,

@@ -15,7 +15,6 @@ const useTeam = () => {
         const querySnapshot = await getDocs(getFireStore);
         querySnapshot.forEach((doc: DocumentData) => touSliderData.push(doc.data()));
         setTeam(touSliderData);
-        console.log(team)
     }
     return {
         team,
