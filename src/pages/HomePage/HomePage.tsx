@@ -5,9 +5,8 @@ import YourTours from "../../components/yourTour/YourTours";
 import OurTeam from "../../components/Our team/OurTeam";
 import Feedback from "../../components/FeedBack/Feedback";
 import TourSlider from "../../components/Tour slider/TourSLider";
-import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-
+import Footer from "../../components/Footer/Footer";
 
 const HomePage = () => {
 
@@ -20,7 +19,7 @@ const HomePage = () => {
       <Feedback />
       <OurTeam />
       <YourTours />
-      <Footer />
+      <Footer/>
     </>
   );
 };
