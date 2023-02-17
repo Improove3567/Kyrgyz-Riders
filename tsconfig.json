@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/Tours"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.css", "**/*.scss", "**/*.svg"],
   "exclude": ["node_modules"]
 }

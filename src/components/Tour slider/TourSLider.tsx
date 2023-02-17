@@ -1,17 +1,23 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import scss from './TourSlider.module.scss';
-import { CardList } from "../../constants/TourSlider";
 import SliderCard from "./SliderCard/SliderCard";
 import Slider from "react-slick";
 import Image from "next/image";
 import Divider from "../Divider/Divider";
 import FilterTour from "../Tour filter/FilterTour";
+import useTours from "../../hooks/useTours";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>
 }
 
 const TourSlider: React.FC = () => {
+
+  const { tours, getTours } = useTours()
+
+  useEffect(() => {
+    getTours()
+  }, [])
 
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
@@ -45,6 +51,7 @@ const TourSlider: React.FC = () => {
     );
   }
 
+
   const settings = {
     className: "center",
     dots: true,
@@ -73,9 +80,10 @@ const TourSlider: React.FC = () => {
   };
 
   const render = useMemo(
-    () => CardList.map((el) => <SliderCard key={el.title} {...el} />),
-    []
+    () => tours.map((el: any) => <SliderCard key={"test"} {...el} />),
+    [tours]
   );
+
 
   return (
     <div className={scss.wrapper}>
