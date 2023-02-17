@@ -21,7 +21,7 @@ const SliderCard: React.FC<CardProps> = ({
       </div>
       <div className={scss.front}>
         {/* eslint-disable-next-line no-use-before-define */}
-        <img src={img} alt="bcakground-image" />
+        <img src={img} alt="bcakground-image" height={280} />
         <div className={scss.bottomContent}>
           <div className={scss.textContainer}>
             <p className={scss.title}>{title}</p>
