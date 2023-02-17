@@ -41,11 +41,11 @@ const toursSlides = [
   },
   {
     className: "sights",
-    title: "/images/MainTexts/sights.svg"
+    title: "/images/MainTexts/tours.svg"
   },
   {
     className: "travel",
-    title: "/images/MainTexts/travel.svg"
+    title: "/images/MainTexts/tours.svg"
   },
 ]
 
