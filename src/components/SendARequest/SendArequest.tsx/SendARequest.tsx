@@ -29,7 +29,7 @@ const SendARequest: React.FC = () => {
       },
       {
         placeholder: "What`s up number",
-        text: '+996',
+        text: '',
         id:4
       },
     ];

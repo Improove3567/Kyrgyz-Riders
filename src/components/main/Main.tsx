@@ -49,12 +49,7 @@ const toursSlides = [
   },
 ];
 
-const tourSlide = [
-  {
-    className: scss.tour,
-    title: "/images/MainTexts/tour.svg",
-  },
-];
+
 
 interface MainProps {
   backgroundClassName?: string;
@@ -69,9 +64,7 @@ const Main: React.FC<MainProps> = ({ backgroundClassName }) => {
       setSlides(mainSlide as typeof imgList);
     } else if (route === "/tours") {
       setSlides(toursSlides);
-    } else if (route === "/tour") {
-      setSlides(tourSlide as typeof imgList)
-    }
+    } 
   }, [route]);
 
   const renderBtns = React.useMemo(
