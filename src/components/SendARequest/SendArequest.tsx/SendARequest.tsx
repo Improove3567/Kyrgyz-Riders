@@ -1,0 +1,63 @@
+import React from "react";
+import FormInput from "../FormInput/FormInput";
+import scss from "./SendARequest.module.scss";
+import Divider from "../../Divider/Divider";
+import { TourAboutTextArr } from "../../../constants/TourAboutText";
+
+interface Inputs {
+  placeholder: string;
+  text:string;
+}
+
+const SendARequest: React.FC = () => {
+    const FormInputs: Inputs[] = [
+      {
+        placeholder: "First name",
+        text: ''
+      },
+      {
+        placeholder: "Last name",
+        text:''
+      },
+      {
+        placeholder: "E-mail",
+        text: ''
+      },
+      {
+        placeholder: "What`s up number",
+        text: '+996'
+      },
+    ];
+ 
+
+  const showText = React.useMemo(
+    () =>
+      TourAboutTextArr.map((item) => (
+        <div className={scss.paragraph} key={item.id}>
+          {item.title}
+        </div>
+      )),
+    [TourAboutTextArr]
+  );
+
+  return (
+    <div className={scss.wrapper}>
+      <div className={scss.header}>
+        <Divider title="Send a request" variant="dark" />
+      </div>
+      <div className={scss.description}>{showText}</div>
+      <div className={scss.footer}>
+        <div className={scss.inputs}>
+          {FormInputs.map((el) => (
+            <FormInput {...el} />
+          ))}
+        </div>
+        <div className={scss.button}>
+          <p className={scss.text}>Send now</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SendARequest;

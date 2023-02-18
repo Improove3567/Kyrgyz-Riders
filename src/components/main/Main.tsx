@@ -9,63 +9,70 @@ import { useRouter } from "next/router";
 const imgList = [
   {
     className: scss.tours,
-    title: "/images/MainTexts/tours.svg"
+    title: "/images/MainTexts/tours.svg",
   },
   {
     className: "sights",
-    title: "/images/MainTexts/sights.svg"
+    title: "/images/MainTexts/sights.svg",
   },
   {
     className: "travel",
-    title: "/images/MainTexts/travel.svg"
+    title: "/images/MainTexts/travel.svg",
   },
   {
     className: "about",
-    title: "/images/MainTexts/about.svg"
+    title: "/images/MainTexts/about.svg",
   },
   {
     className: "blog",
-    title: "/images/MainTexts/blog.svg"
+    title: "/images/MainTexts/blog.svg",
   },
-]
+];
 
 const mainSlide = [
   {
     className: scss.main,
   },
-]
+];
 const toursSlides = [
   {
     className: scss.tours,
-    title: "/images/MainTexts/tours.svg"
+    title: "/images/MainTexts/tours.svg",
   },
   {
     className: "sights",
-    title: "/images/MainTexts/tours.svg"
+    title: "/images/MainTexts/tours.svg",
   },
   {
     className: "travel",
-    title: "/images/MainTexts/tours.svg"
+    title: "/images/MainTexts/tours.svg",
   },
-]
+];
 
-
+const tourSlide = [
+  {
+    className: scss.tour,
+    title: "/images/MainTexts/tour.svg",
+  },
+];
 
 interface MainProps {
   backgroundClassName?: string;
 }
 
 const Main: React.FC<MainProps> = ({ backgroundClassName }) => {
-  const  {route} = useRouter();
+  const { route } = useRouter();
   const [slides, setSlides] = useState<typeof imgList>([]);
-  
+
   useEffect(() => {
-    if (route === '/'){
-      setSlides(mainSlide as typeof imgList)
-    } else if(route === '/tours') {
-      setSlides(toursSlides)
+    if (route === "/") {
+      setSlides(mainSlide as typeof imgList);
+    } else if (route === "/tours") {
+      setSlides(toursSlides);
+    } else if (route === "/tour") {
+      setSlides(tourSlide as typeof imgList)
     }
-  }, [route])
+  }, [route]);
 
   const renderBtns = React.useMemo(
     () =>
@@ -88,37 +95,53 @@ const Main: React.FC<MainProps> = ({ backgroundClassName }) => {
     className: "slides",
     autoplay: true,
     autoplaySpeed: 5000,
-    cssEase: "linear"
+    cssEase: "linear",
   };
-  
+
   const sliderList = useMemo(
-    () => slides.map((el) => (
-      <main className={el.className} key={el.className}>
+    () =>
+      slides.map((el) => (
+        <main className={el.className} key={el.className}>
+          <div className="container">
+            <div className={scss.buttons}>
+              {el.title && (
+                <Image
+                  className={scss.imgText}
+                  src={el.title}
+                  width={100}
+                  height={100}
+                  alt={""}
+                />
+              )}
+              {renderBtns}
+            </div>
+          </div>
+        </main>
+      )),
+    [slides, renderBtns]
+  );
+
+  const main = useMemo(
+    () => (
+      <main className={backgroundClassName}>
         <div className="container">
           <div className={scss.buttons}>
             {
-              el.title && <Image className={scss.imgText} src={el.title} width={100} height={100} alt={""} />
+              <Image
+                className={scss.imgText}
+                src={`/images/MainTexts/${backgroundClassName}.svg`}
+                width={100}
+                height={100}
+                alt="text"
+              />
             }
             {renderBtns}
           </div>
         </div>
       </main>
-    )),
-    [slides, renderBtns]
+    ),
+    [backgroundClassName, renderBtns]
   );
-
-  const main = useMemo(() => (
-    <main className={backgroundClassName}>
-      <div className="container">
-        <div className={scss.buttons}>
-          {
-            <Image className={scss.imgText} src={`/images/MainTexts/${backgroundClassName}.svg`} width={100} height={100} alt="text" />
-          }
-          {renderBtns}
-        </div>
-      </div>
-    </main>
-  ), [backgroundClassName, renderBtns])
 
   return (
     <div className="main">
