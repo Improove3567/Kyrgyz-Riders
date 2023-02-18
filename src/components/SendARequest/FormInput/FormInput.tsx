@@ -14,12 +14,11 @@ const FormInput: React.FC<Form> = ({ placeholder,text }) => {
 
     const change = (event: React.ChangeEvent<HTMLInputElement>):void => {
         setValue(event.target.value)
-        console.log(event.target.value)
     }
 
   return (
     <div className={scss.inputsSmall}>
-      <input className={scss.input} placeholder={placeholder} value={value} type='text' onChange={change} />
+      <input className={scss.input}  placeholder={placeholder} value={value} type='text' onChange={change} />
     </div>
   );
 };

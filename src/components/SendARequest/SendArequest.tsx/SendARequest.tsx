@@ -7,25 +7,30 @@ import { TourAboutTextArr } from "../../../constants/TourAboutText";
 interface Inputs {
   placeholder: string;
   text:string;
+  id: number;
 }
 
 const SendARequest: React.FC = () => {
     const FormInputs: Inputs[] = [
       {
         placeholder: "First name",
-        text: ''
+        text: '',
+        id: 1
       },
       {
         placeholder: "Last name",
-        text:''
+        text:'',
+        id:2
       },
       {
         placeholder: "E-mail",
-        text: ''
+        text: '',
+        id:3
       },
       {
         placeholder: "What`s up number",
-        text: '+996'
+        text: '+996',
+        id:4
       },
     ];
  
@@ -49,7 +54,7 @@ const SendARequest: React.FC = () => {
       <div className={scss.footer}>
         <div className={scss.inputs}>
           {FormInputs.map((el) => (
-            <FormInput {...el} />
+            <FormInput key={el.id} {...el}  />
           ))}
         </div>
         <div className={scss.button}>
