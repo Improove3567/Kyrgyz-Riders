@@ -3,13 +3,14 @@ import { TourFeaturesArr } from "../../constants/TourFeatures";
 import Divider from "../Divider/Divider";
 import scss from './TourFeatures.module.scss'
 import Image from "next/image";
+import checkMark from "../../../public/images/TourFeatures/checkMark.svg"
 const TourFeatures: FC = () => {
     const showText = React.useMemo(
         () =>
             TourFeaturesArr.map((item) => (
                 <div className={scss.paragraph} key={item.id}>
                     <div className={scss.title_mark}>
-                        <Image src={item.img} alt='dasd' width={16} height={12} />
+                        <Image src={checkMark} alt='checkmark' width={16} height={12} />
                         <p>{item.title}</p>
                     </div>
                 </div>
