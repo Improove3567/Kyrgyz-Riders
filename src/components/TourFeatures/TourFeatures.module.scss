@@ -1,0 +1,30 @@
+.title_block {
+    height: 508px;
+    background-color: #EFEFEF;
+    margin: 0px auto;
+    .title {
+        margin: 0px auto;
+        padding-top: 2%;
+        width: 95%;
+      }
+    .text {
+      div {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 33px;
+        color: #757575;
+        text-align: left;
+        left: 26px;
+      }
+    }
+  }
+  .title_mark {
+    display: flex;
+    align-items: center;
+    margin-left: 45px;
+    p {
+        padding: 10px;
+    }
+  }

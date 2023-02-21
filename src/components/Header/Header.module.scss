@@ -155,7 +155,8 @@
       display: inline-block;
       transition: color 0.2s ease;
       position: relative;
-      &:hover {
+      &:hover,
+      &.activeLink {
         &::before {
           width: 100%;
           left: 100;
@@ -211,7 +212,8 @@
       display: inline-block;
       transition: color 0.2s ease;
       position: relative;
-      &:hover {
+      &:hover,
+      &.activeLink {
         &::before {
           width: 100%;
           left: 100;

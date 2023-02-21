@@ -14,7 +14,8 @@ const TeamCard: React.FC<TeamCardProps> = ({ title, subtitle, img }) => {
       <div className={scss.wrapper}>
         <div className={scss.avatarContainer}>
           <hr />
-          <Image src={img} width={70} height={70} alt="avatar" />
+          {/* eslint-disable-next-line no-use-before-define */}
+          <img src={img} width={70} height={70} alt="avatar" />
           <hr />
         </div>
         <div className={scss.textContainer}>

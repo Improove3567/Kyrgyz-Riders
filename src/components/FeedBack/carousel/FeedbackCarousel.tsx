@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import scss from "./feedBackCarousel.module.scss";
 import Image from "next/image";
 import FeedBackCard from "./FeedBackCard";
-import { FeedBackCards } from "../../../constants/FeedBack";
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
+import useFeedback from "../../../hooks/useFeedback";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const FeedbackCarousel = () => {
+
+  const { feedback, getFeedback } = useFeedback();
+
+  useEffect(() => {
+    getFeedback()
+  }, [])
+
+  const render = React.useMemo(
+    () => feedback.map((item: any) => <FeedBackCard key={item.id} {...item} />),
+    [feedback]
+  );
 
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
@@ -72,11 +83,6 @@ const FeedbackCarousel = () => {
       />
     ),
   };
-
-  const render = React.useMemo(
-    () => FeedBackCards.map((item) => <FeedBackCard key={item.id} {...item} />),
-    []
-  );
 
   return (
     <div className={scss.container}>
