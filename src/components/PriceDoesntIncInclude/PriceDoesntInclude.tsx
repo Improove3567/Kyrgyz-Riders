@@ -10,7 +10,7 @@ const PriceDoesntInclude: FC = () => {
             PriceDoesntIncludeArr.map((item) => (
                 <div className={scss.paragraph} key={item.id}>
                     <div className={scss.title_mark}>
-                        <Image src={cross} alt='dasd' width={16} height={12} />
+                        <Image src={cross} alt='cross' width={16} height={12} />
                         <p>{item.title}</p>
                     </div>
                 </div>
