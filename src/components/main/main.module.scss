@@ -38,6 +38,27 @@
   }
 }
 
+.tour {
+  background-image: url(../../../public/assets/images/tour.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  left: 0px !important;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  >div {
+    height: 100%;
+  }
+  img{
+    width: 80vh;
+  }
+}
+
+
 .sights {
   background-image: url(../../../public/assets/images/sights.png);
   background-position: center;
@@ -118,11 +139,39 @@
 
   .imgText {
     font-family: 'Montserrat', sans-serif;
+    // font-family: 'Patua One', cursive;
+    text-transform: uppercase;
     font-style: normal;
     position: absolute;
-    top: 45%;
-    width: 50%;
+    top: 35%;
+    font-size: 140px;
+    font-weight: 900;
+    text-align: center;
+    width: 100%;
     color: rgba(255, 255, 255, 0.8);
+    
+  }
+  .imgText::first-letter{
+    font-size: 150px;
+  }
+
+
+  .imgTextTour {
+    font-family: 'Montserrat', sans-serif;
+    // font-family: 'Patua One', cursive;
+    text-transform: uppercase;
+    font-style: normal;
+    position: absolute;
+    top: 35%;
+    font-size: 90px;
+    font-weight: 900;
+    text-align: center;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    
+  }
+  .imgTextTour::first-letter{
+    font-size: 100px;
   }
 
 
