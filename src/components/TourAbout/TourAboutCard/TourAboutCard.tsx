@@ -4,6 +4,7 @@ import Image from "next/image";
 interface TourAboutCardProps {
   title?: string;
   text?: textProps[];
+  id: number
 }
 
 interface textProps {
@@ -16,14 +17,15 @@ interface Tour {
 const TourAboutCard: FC<TourAboutCardProps> = ({
   title,
   text,
+  id
 }) => {
 //   let heightClassName = scss.card;
 //   if (title == 'Time of year') {
 //     heightClassName = scss.card_height;
 //   }
   return (
-    <div className={scss.card}>
-      <div className={scss.img}>
+    <div className={scss.card} key={id}>
+      <div className={scss.img} key={id}>
         <Image
           src="/images/calendar.svg"
           width={23}
@@ -32,20 +34,20 @@ const TourAboutCard: FC<TourAboutCardProps> = ({
         />
         <p>{title}</p>
       </div>
-      <div className={scss.card_bottom}>
+      <div className={scss.card_bottom} key={id}>
         {text?.map((el) => (
-          <div>
+          <div key={id}>
             <p>{el.description}</p>
             {title === "Itinerary" ? (
               <ol>
                 {el.arrayText?.map((elem) => (
-                  <li>{elem.description}</li>
+                  <li key={id}>{elem.description}</li>
                 ))}
               </ol>
             ) : (
               <ul>
                 {el.arrayText?.map((elem) => (
-                  <li>{elem.description}</li>
+                  <li key={id}>{elem.description}</li>
                 ))}
               </ul>
             )}
