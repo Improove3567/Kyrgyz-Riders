@@ -1,5 +1,6 @@
 interface TourAboutArrProps {
   title?: string;
+  id: number
   text?: textProps[];
 }
 interface textProps {
@@ -32,6 +33,7 @@ interface arrayTextProps {
 export const TourAboutArr: TourAboutArrProps[] = [
   {
     title: "Time of year",
+    id: 1,
     text: [
       {
         description: "May to october",
@@ -40,6 +42,7 @@ export const TourAboutArr: TourAboutArrProps[] = [
   },
   {
     title: "Tour category",
+    id: 2,
     text: [
       {
         description: "Multi-active",
@@ -48,6 +51,7 @@ export const TourAboutArr: TourAboutArrProps[] = [
   },
   {
     title: "Duration",
+    id: 3,
     text: [
       {
         description: "7 days",
@@ -56,6 +60,7 @@ export const TourAboutArr: TourAboutArrProps[] = [
   },
   {
     title: "Itinerary",
+    id: 4,
     text: [
       {
         arrayText: [
@@ -90,6 +95,7 @@ export const TourAboutArr: TourAboutArrProps[] = [
   },
   {
     title: "Accommodation",
+    id: 5,
     text: [
       {
         arrayText: [
@@ -108,6 +114,7 @@ export const TourAboutArr: TourAboutArrProps[] = [
   },
   {
     title: "What to bring?",
+    id: 6,
     text: [
       {
         arrayText: [

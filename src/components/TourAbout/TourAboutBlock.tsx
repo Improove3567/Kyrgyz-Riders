@@ -10,7 +10,7 @@ const TourAbout: FC = () => {
   const renderCard = useMemo(
     () =>
       TourAboutArr.map((el) => (
-        <TourAboutCard {...el}/>
+        <TourAboutCard {...el} key={el.id}/>
       )),
     []
   );
