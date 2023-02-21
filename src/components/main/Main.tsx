@@ -37,17 +37,32 @@ const mainSlide = [
 const toursSlides = [
   {
     className: scss.tours,
-    title: "/images/MainTexts/tours.svg",
+    title: "Tours",
   },
   {
     className: "sights",
-    title: "/images/MainTexts/tours.svg",
+    title: "Tours",
   },
   {
     className: "travel",
-    title: "/images/MainTexts/tours.svg",
+    title: "Tours",
   },
 ];
+
+
+const tourSlide = [
+  {
+    className: scss.tour,
+    title: "Highlights of Kyrgyzstan 7 days"
+  },
+]
+
+const sightSlide = [
+  {
+    className: "sights",
+    title: "Sights",
+  },
+]
 
 
 
@@ -64,7 +79,11 @@ const Main: React.FC<MainProps> = ({ backgroundClassName }) => {
       setSlides(mainSlide as typeof imgList);
     } else if (route === "/tours") {
       setSlides(toursSlides);
-    } 
+    }else if ( route == "/tour"){
+      setSlides(tourSlide)
+    }else if (route == "/sights"){
+      setSlides(sightSlide)
+    }
   }, [route]);
 
   const renderBtns = React.useMemo(
@@ -98,13 +117,9 @@ const Main: React.FC<MainProps> = ({ backgroundClassName }) => {
           <div className="container">
             <div className={scss.buttons}>
               {el.title && (
-                <Image
-                  className={scss.imgText}
-                  src={el.title}
-                  width={100}
-                  height={100}
-                  alt={""}
-                />
+               <div className={route != "/tour" ? scss.imgText : scss.imgTextTour }>
+                {el.title}
+               </div>
               )}
               {renderBtns}
             </div>
@@ -120,13 +135,9 @@ const Main: React.FC<MainProps> = ({ backgroundClassName }) => {
         <div className="container">
           <div className={scss.buttons}>
             {
-              <Image
-                className={scss.imgText}
-                src={`/images/MainTexts/${backgroundClassName}.svg`}
-                width={100}
-                height={100}
-                alt="text"
-              />
+               <div className={scss.imgText}>
+               
+              </div>
             }
             {renderBtns}
           </div>

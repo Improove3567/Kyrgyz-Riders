@@ -43,7 +43,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80vh;
+  height: 90vh;
   font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
@@ -139,11 +139,39 @@
 
   .imgText {
     font-family: 'Montserrat', sans-serif;
+    // font-family: 'Patua One', cursive;
+    text-transform: uppercase;
     font-style: normal;
     position: absolute;
-    top: 45%;
-    width: 50%;
+    top: 35%;
+    font-size: 140px;
+    font-weight: 900;
+    text-align: center;
+    width: 100%;
     color: rgba(255, 255, 255, 0.8);
+    
+  }
+  .imgText::first-letter{
+    font-size: 150px;
+  }
+
+
+  .imgTextTour {
+    font-family: 'Montserrat', sans-serif;
+    // font-family: 'Patua One', cursive;
+    text-transform: uppercase;
+    font-style: normal;
+    position: absolute;
+    top: 35%;
+    font-size: 90px;
+    font-weight: 900;
+    text-align: center;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.8);
+    
+  }
+  .imgTextTour::first-letter{
+    font-size: 100px;
   }
 
 

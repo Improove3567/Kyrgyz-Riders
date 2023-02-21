@@ -10,29 +10,31 @@ interface Inputs {
   id: number;
 }
 
+const FormInputs: Inputs[] = [
+  {
+    placeholder: "First name",
+    text: '',
+    id: 1
+  },
+  {
+    placeholder: "Last name",
+    text:'',
+    id:2
+  },
+  {
+    placeholder: "E-mail",
+    text: '',
+    id:3
+  },
+  {
+    placeholder: "What`s up number",
+    text: '',
+    id:4
+  },
+];
+
 const SendARequest: React.FC = () => {
-    const FormInputs: Inputs[] = [
-      {
-        placeholder: "First name",
-        text: '',
-        id: 1
-      },
-      {
-        placeholder: "Last name",
-        text:'',
-        id:2
-      },
-      {
-        placeholder: "E-mail",
-        text: '',
-        id:3
-      },
-      {
-        placeholder: "What`s up number",
-        text: '',
-        id:4
-      },
-    ];
+    
  
 
   const showText = React.useMemo(
