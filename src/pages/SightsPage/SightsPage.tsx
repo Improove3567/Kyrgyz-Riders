@@ -9,7 +9,7 @@ const SightsPage = () => {
     return (
         <>
             <Header />
-            <Main backgroundClassName='sights' />
+            <Main  />
             <SightsBlock />
             <YourTours />
             <Footer />
