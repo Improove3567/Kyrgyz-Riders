@@ -37,8 +37,6 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({
             ) : (
               <Image src={ArrowUP} alt="arrowUp" />
             )}
-            {/* <Image src={ArrowDown} alt="arrowDown" /> */}
-            {/* <Image src={ArrowUP} alt="arrowUp" /> */}
           </div>
         </div>
       </div>
@@ -50,22 +48,11 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({
           </div>
           <div className={scss.line}></div>
           <div className={scss.shortDescItinerary}>
-            <p>{shortDesc1}</p>
-            <p>{shortDesc2}</p>
+            <p className={scss.shortDesc1}>{shortDesc1}</p>
+            <p className={scss.shortDesc2}>{shortDesc2}</p>
           </div>
         </div>
       )}
-      {/* <div id={scss.accordionContentMain}>
-        <p>{desc}</p>
-        <div className={scss.accordionImg}>
-          <img src={image} alt="image" />
-        </div>
-        <div className={scss.line}></div>
-        <div className={scss.shortDescItinerary}>
-          <p>{shortDesc1}</p>
-          <p>{shortDesc2}</p>
-        </div>
-      </div> */}
     </>
   );
 };

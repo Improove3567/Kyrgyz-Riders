@@ -1,4 +1,4 @@
-  .accordionHeader {
+.accordionHeader {
   width: 100%;
   left: 32px;
   margin-bottom: 20px;
@@ -10,6 +10,14 @@
     background: #ffffff;
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+
+    .accordionTitleMain h3 {
+      font-family: "Montserrat";
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #333333;
+    }
   }
 }
 
@@ -20,9 +28,10 @@
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
 
   p {
+    font-family: "Montserrat";
     font-weight: 500;
-    font-size: 18px;
-    line-height: 33px;
+    font-size: 20px;
+    line-height: 36px;
     color: #757575;
   }
 
@@ -42,16 +51,21 @@
   .shortDescItinerary {
     margin: 20px 0;
 
-    p {
+    .shortDesc1 {
+      font-family: "Montserrat";
       font-weight: 500;
       font-size: 16px;
       line-height: 20px;
       color: #b50000;
       margin-bottom: 10px;
     }
+
+    .shortDesc2 {
+      font-family: "Montserrat";
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      color: #b50000;
+    }
   }
 }
-
-// .active {
-
-// }
