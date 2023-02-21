@@ -1,4 +1,5 @@
 import React from 'react';
+import ItineraryBlock from '../../components/ItineraryBlock/ItineraryBlock';
 import PriceDoesntInclude from '../../components/PriceDoesntIncInclude/PriceDoesntInclude';
 import TourAboutText from '../../components/TourAboutText/TourAboutText';
 
@@ -16,13 +17,11 @@ const TourPage = () => {
             <Header/>
             <Main/>
             <TourAboutText />
-
+            <TourFeatures/>
+            <ItineraryBlock/>
             <SendARequest/>
-            
-
             <TourFeatures />
             <PriceDoesntInclude />
-
         </>
     );
 };
