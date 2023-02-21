@@ -1,26 +1,27 @@
 import React, { FC } from "react";
-import { TourFeaturesArr } from "../../constants/TourFeatures";
+import { PriceDoesntIncludeArr } from "../../constants/PriceDoesntInclude";
 import Divider from "../Divider/Divider";
-import scss from './TourFeatures.module.scss'
+import scss from './PriceDoesntInclude.module.scss'
 import Image from "next/image";
-import checkMark from "../../../public/images/TourFeatures/checkMark.svg"
-const TourFeatures: FC = () => {
+import cross from "../../../public/images/PriceDoesntInclude/cross.svg"
+const PriceDoesntInclude: FC = () => {
     const showText = React.useMemo(
         () =>
-            TourFeaturesArr.map((item) => (
+            PriceDoesntIncludeArr.map((item) => (
                 <div className={scss.paragraph} key={item.id}>
                     <div className={scss.title_mark}>
-                        <Image src={checkMark} alt='checkmark' width={16} height={12} />
+                        <Image src={cross} alt='cross' width={16} height={12} />
                         <p>{item.title}</p>
                     </div>
                 </div>
             )),
-        [TourFeaturesArr]
+        [PriceDoesntIncludeArr]
+        
     )
     return (
         <div className={scss.title_block}>
             <div className={scss.title}>
-                <Divider title='Why you will love this tour' variant='dark' />
+                <Divider title='Price does not include' variant='dark' />
             </div>
             <div className={scss.text}>
                 <div className={scss.paragraph}>
@@ -30,4 +31,4 @@ const TourFeatures: FC = () => {
         </div>
     )
 }
-export default TourFeatures;
+export default PriceDoesntInclude;
