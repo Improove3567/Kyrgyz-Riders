@@ -1,0 +1,49 @@
+.DImage {
+  display: flex;
+
+.blocDPage {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  .divider {
+    padding-top: 20px;
+  }
+
+  .description {
+    width: 76%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: #757575;
+    margin-left: 40px;
+  }
+}
+}
+
+.title_block {
+    height: 500px;
+    padding: 0px 32px 0px 110px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin: 0px auto;
+    .title {
+        margin: 0px auto;
+        padding-top: 2%;
+        width: 95%;
+      }
+    .text {
+      div {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 33px;
+        color: #757575;
+        text-align: left;
+        left: 26px;
+      }
+    }
+  }

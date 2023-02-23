@@ -63,6 +63,12 @@ const sightSlide = [
     title: "Sights",
   },
 ]
+const ourTeamSlide = [
+  {
+    className: "about",
+    title: "Monica Candano",
+  },
+]
 
 
 
@@ -83,6 +89,8 @@ const Main: React.FC<MainProps> = ({ backgroundClassName }) => {
       setSlides(tourSlide)
     }else if (route == "/sights"){
       setSlides(sightSlide)
+    }else{
+      setSlides(ourTeamSlide)
     }
   }, [route]);
 

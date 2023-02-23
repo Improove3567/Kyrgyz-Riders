@@ -19,7 +19,7 @@ const HomePage = () => {
       <Feedback />
       <OurTeam />
       <YourTours />
-      <Footer/>
+      <Footer />
     </>
   );
 };
