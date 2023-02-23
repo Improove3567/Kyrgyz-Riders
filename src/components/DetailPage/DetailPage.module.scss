@@ -1,16 +1,14 @@
 .DImage {
   display: flex;
 
-.blockMonica {
+.blocDPage {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
   .divider {
     padding-top: 20px;
   }
-  // p {
-  //   width: 72%;
-  // }
+
   .description {
     width: 76%;
     font-family: 'Montserrat';

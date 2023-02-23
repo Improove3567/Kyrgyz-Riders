@@ -11,7 +11,7 @@ const DetailPageMonica: FC = () => {
                 <div className={scss.paragraph} key={item.id}>
                     <div className={scss.DImage}>
                         <Image src={detailImage} alt='detail image' width={384} height={384} />
-                        <div className={scss.blockMonica}>
+                        <div className={scss.blocDPage}>
                             <div className={scss.divider}><Divider title='Monica Candamo' variant='dark' /></div>
                             <p className={scss.description}>{item.description}</p>
                         </div>
