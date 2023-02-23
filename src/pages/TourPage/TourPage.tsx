@@ -13,13 +13,13 @@ import TourFeatures from '../../components/TourFeatures/TourFeatures';
 const TourPage = () => {
 
     return (
-        <>  
-            <Header/>
-            <Main/>
+        <>
+            <Header />
+            <Main />
             <TourAboutText />
-            <TourFeatures/>
-            <ItineraryBlock/>
-            <SendARequest/>
+            <TourFeatures />
+            <ItineraryBlock />
+            <SendARequest />
             <TourFeatures />
             <PriceDoesntInclude />
         </>

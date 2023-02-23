@@ -12,23 +12,23 @@ import Main from '../../components/main/Main';
 
 
 const ToursPage = () => {
-    const [index,setIndex] = useState<number>(0)
+    const [index, setIndex] = useState<number>(0)
 
-    
-    const change = (value:number): void => {
+
+    const change = (value: number): void => {
         setIndex(value)
     }
     return (
         <>
-        <div className={scss.div}>
-            <Header isMain={true}/>
-            <Main/>
-            <FilterBlock change={change}/>
-            <FilterToursCardBlock index={index}/>
-            <YourTours/>
-            <Footer  />
-            
-        </div>  
+            <div className={scss.div}>
+                <Header isMain={true} />
+                <Main />
+                <FilterBlock change={change} />
+                <FilterToursCardBlock index={index} />
+                <YourTours />
+                <Footer />
+
+            </div>
         </>
     );
 };

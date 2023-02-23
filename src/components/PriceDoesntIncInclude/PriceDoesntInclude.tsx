@@ -16,7 +16,7 @@ const PriceDoesntInclude: FC = () => {
                 </div>
             )),
         [PriceDoesntIncludeArr]
-        
+
     )
     return (
         <div className={scss.title_block}>
