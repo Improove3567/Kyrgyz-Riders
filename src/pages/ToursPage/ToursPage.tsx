@@ -12,10 +12,10 @@ import Main from '../../components/main/Main';
 
 
 const ToursPage = () => {
-    const [index,setIndex] = useState<number>(0)
+    const [index, setIndex] = useState<number>(0)
 
-    
-    const change = (value:number): void => {
+
+    const change = (value: number): void => {
         setIndex(value)
     }
     return (
@@ -29,6 +29,7 @@ const ToursPage = () => {
             <Footer  />
             
         </div>  
+
         </>
     );
 };
