@@ -20,7 +20,7 @@ const ToursPage = () => {
     }
     return (
         <>
-        <div className={scss.div}>
+        <div className={scss.toursPage}>
             <Header isMain={false}/>
             <Main/>
             <FilterBlock change={change}/>
