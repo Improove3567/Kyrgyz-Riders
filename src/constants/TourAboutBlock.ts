@@ -42,7 +42,7 @@ export const TourAboutArr: TourAboutArrProps[] = [
   },
   {
     title: "Tour category",
-    id: 2,
+    id: 1,
     text: [
       {
         description: "Multi-active",
@@ -51,7 +51,7 @@ export const TourAboutArr: TourAboutArrProps[] = [
   },
   {
     title: "Duration",
-    id: 3,
+    id: 1,
     text: [
       {
         description: "7 days",

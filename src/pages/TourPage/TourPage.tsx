@@ -14,14 +14,14 @@ import TourAbout from '../../components/TourAbout/TourAboutBlock';
 const TourPage = () => {
 
     return (
-        <>  
-            <Header/>
-            <Main/>
+        <>
+            <Header />
+            <Main />
             <TourAbout/>
             <TourAboutText />
-            <TourFeatures/>
-            <ItineraryBlock/>
-            <SendARequest/>
+            <TourFeatures />
+            <ItineraryBlock />
+            <SendARequest />
             <TourFeatures />
             <PriceDoesntInclude />
         </>

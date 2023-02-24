@@ -19,12 +19,12 @@ const TourAboutCard: FC<TourAboutCardProps> = ({
   text,
   id
 }) => {
-//   let heightClassName = scss.card;
-//   if (title == 'Time of year') {
-//     heightClassName = scss.card_height;
-//   }
+  let heightClassName = scss.card;
+  if (id == 1) {
+    heightClassName = scss.card_height;
+  }
   return (
-    <div className={scss.card} key={id}>
+    <div className={heightClassName} key={id}>
       <div className={scss.img} key={id}>
         <Image
           src="/images/calendar.svg"
