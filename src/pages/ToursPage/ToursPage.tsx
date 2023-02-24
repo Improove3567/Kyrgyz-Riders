@@ -21,7 +21,7 @@ const ToursPage = () => {
     return (
         <>
         <div className={scss.div}>
-            <Header isMain={true}/>
+            <Header isMain={false}/>
             <Main/>
             <FilterBlock change={change}/>
             <FilterToursCardBlock index={index}/>
