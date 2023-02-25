@@ -10,26 +10,6 @@ interface textProps {
 interface arrayTextProps {
   description?: string;
 }
-// export const T = {
-//   id: 1,
-//   title: "Hello",
-//   tourInfo: {
-//     time: "May",
-//     category: "active",
-//     duration: {
-//       type: "day",
-//       time: 7,
-//     },
-//     itinery: [{ id: 1, label: "Bishkek" }],
-//     acc: [{ id: 1, label: "2 nights" }],
-//     bring: ["Hat"],
-//   },
-//   about: "About us",
-//   sights: [{}, {}],
-//   love: [""],
-//   photos: [""],
-// };
-
 export const TourAboutArr: TourAboutArrProps[] = [
   {
     title: "Time of year",

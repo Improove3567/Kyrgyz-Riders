@@ -13,9 +13,6 @@ const Divider: React.FC<DividerProps> = ({ children, title, variant }) => {
   if (variant === "dark") {
     className = scss.dark_title;
   }
-  if(variant === 'light'){
-    className = scss.light_title
-  }
 
   return (
     <div className={scss.wrapper}>
