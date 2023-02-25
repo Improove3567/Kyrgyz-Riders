@@ -10,6 +10,11 @@ import SendARequest from '../../components/SendARequest/SendArequest.tsx/SendARe
 import TourFeatures from '../../components/TourFeatures/TourFeatures';
 import TourAbout from '../../components/TourAbout/TourAboutBlock';
 import PriceIncludes from '../../components/TourPriceIncludes/PriceIncludes';
+import Footer from '../../components/Footer/Footer';
+import YourTours from '../../components/yourTour/YourTours';
+import TourSlider from '../../components/Tour slider/TourSLider';
+import SliderCard from '../../components/Tour slider/SliderCard/SliderCard';
+import TourSights from '../../components/TourSights/TourSights';
 
 
 const TourPage = () => {
@@ -20,11 +25,14 @@ const TourPage = () => {
             <Main />
             <TourAbout/>
             <TourAboutText />
-            <PriceIncludes/>
-            <ItineraryBlock />
-            <SendARequest />
+            <TourSights/>
             <TourFeatures />
+            <ItineraryBlock />
+            <PriceIncludes/>
             <PriceDoesntInclude />
+            <SendARequest />
+            <YourTours/>
+            <Footer/>
         </>
     );
 };
