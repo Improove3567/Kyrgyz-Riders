@@ -20,15 +20,16 @@ const ToursPage = () => {
     }
     return (
         <>
-            <div className={scss.TsPage}>
-                <Header isMain={true} />
-                <Main />
-                <FilterBlock change={change} />
-                <FilterToursCardBlock index={index} />
-                <YourTours />
-                <Footer />
+        <div className={scss.div}>
+            <Header isMain={false}/>
+            <Main/>
+            <FilterBlock change={change}/>
+            <FilterToursCardBlock index={index}/>
+            <YourTours/>
+            <Footer  />
+            
+        </div>  
 
-            </div>
         </>
     );
 };
