@@ -9,6 +9,7 @@ import SendARequest from '../../components/SendARequest/SendArequest.tsx/SendARe
 
 import TourFeatures from '../../components/TourFeatures/TourFeatures';
 import TourAbout from '../../components/TourAbout/TourAboutBlock';
+import PriceIncludes from '../../components/TourPriceIncludes/PriceIncludes';
 
 
 const TourPage = () => {
@@ -19,7 +20,7 @@ const TourPage = () => {
             <Main />
             <TourAbout/>
             <TourAboutText />
-            <TourFeatures />
+            <PriceIncludes/>
             <ItineraryBlock />
             <SendARequest />
             <TourFeatures />
