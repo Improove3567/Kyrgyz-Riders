@@ -19,6 +19,7 @@ const TourFeatures: FC = () => {
     )
     return (
         <div className={scss.title_block}>
+            <div className={scss.container}>
             <div className={scss.title}>
                 <Divider title='Why you will love this tour' variant='dark' />
             </div>
@@ -26,6 +27,7 @@ const TourFeatures: FC = () => {
                 <div className={scss.paragraph}>
                     {showText}
                 </div>
+            </div>
             </div>
         </div>
     )

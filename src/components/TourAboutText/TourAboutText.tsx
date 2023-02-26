@@ -16,7 +16,7 @@ const TourAboutText: FC = () => {
     return (
         <div className={scss.title_block}>
             <div className={scss.title}>
-                <Divider title='About tour' variant='dark' />
+                <Divider title='About tour' variant='light' />
             </div>
             <div className={scss.text}>
                 <div className={scss.paragraph}>
