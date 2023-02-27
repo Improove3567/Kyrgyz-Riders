@@ -27,7 +27,7 @@ const BlogMain = () => {
     []
   );
   const renderCard = useMemo(
-    () => BlogsCardArr.map((el) => <BlogCard {...el} />),
+    () => BlogsCardArr.map((el) => <BlogCard {...el} key={el.id}/>),
     []
   );
   return (

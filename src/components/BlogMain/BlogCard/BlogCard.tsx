@@ -10,7 +10,7 @@ interface BlogCardProps{
 }
 const BlogCard: FC<BlogCardProps> = ({img, title, id, heading, btn}) => {
     return (
-        <div className={scss.card}>
+        <div className={scss.card} key={id}>
             <div className={scss.img}>
             <Image src={img} width={280} height={280} alt='news'/>
             </div>
