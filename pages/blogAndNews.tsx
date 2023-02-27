@@ -1,8 +1,8 @@
 import React from 'react';
-import BlogPage from '../src/pages/BlogPage/BlogPage';
+import BlogsPage from '../src/pages/AllBlogsPage/BlogsPage';
 
 const BlogAndNews = () => {
-    return <BlogPage />
+    return <BlogsPage />
 };
 
 export default BlogAndNews;
