@@ -2,11 +2,11 @@
   background-color: #efefef;
   padding: 40px 62px;
   padding-top: 3%;
-  border: 2px solid #C3C3C3;
+  border: 2px solid #c3c3c3;
   .container {
     width: 95%;
     margin: 0 auto;
-    background-color: #EFEFEF;
+    background-color: #efefef;
     .title {
       position: absolute;
       width: 95%;
@@ -28,17 +28,19 @@
         padding: 0 0 0 26px;
         margin-top: 57px;
         position: absolute;
-    .line {
-      margin-bottom: 1%;
-        p {
-          margin-left: 1%;
-          font-family: "Montserrat";
-          font-style: normal;
-          font-weight: 500;
-          font-size: 20px;
-          line-height: 36px;
-          color: #757575;
+        .line {
+          margin-bottom: 1%;
+          p {
+            margin-left: 1%;
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 36px;
+            color: #757575;
+          }
         }
       }
     }
   }
+}
