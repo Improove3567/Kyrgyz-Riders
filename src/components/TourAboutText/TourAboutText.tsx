@@ -7,19 +7,17 @@ const TourAboutText: FC = () => {
     const showText = React.useMemo(
         () =>
             TourAboutTextArr.map((item) => (
-                <div className={scss.paragraph} key={item.id}>
-                    {item.title}
+                <div className={scss.line} key={item.id}>
+                    <p>{item.title}</p>
                 </div>
             )),
         [TourAboutTextArr]
     )
     return (
         <div className={scss.title_block}>
-            <div className={scss.title}>
-                <Divider title='About tour' variant='dark' />
-            </div>
-            <div className={scss.text}>
-                <div className={scss.paragraph}>
+            <div className={scss.container}>
+                <Divider title='Overview' variant='dark' />
+                <div className={scss.text}>
                     {showText}
                 </div>
             </div>

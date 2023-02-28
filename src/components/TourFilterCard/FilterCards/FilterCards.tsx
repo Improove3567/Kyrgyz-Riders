@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import scss from './FilterCards.module.scss'
 import Image from "next/image";
 
- interface TourFilterCardArr{
+interface TourFilterCardArr {
   title: string;
   img: string;
   id: number;
@@ -16,8 +16,8 @@ import Image from "next/image";
 }
 
 interface typeOf {
-  title:string;
-  text:string;
+  title: string;
+  text: string;
 }
 
 const FilterCads: FC<TourFilterCardArr> = ({
@@ -36,16 +36,12 @@ const FilterCads: FC<TourFilterCardArr> = ({
       <div className={scss.img}>
         <Image src={img} alt="img" width={392} height={293} />
         <div className={scss.days}>
-        <span>{days}</span>
+          <span>{days}</span>
         </div>
       </div>
       <div className={scss.textContainer}>
         <div className={scss.title}>
           <h1>{title}</h1>
-          <div className={scss.raiting}>
-            <Image src={starImg} width={20} height={20} alt="raiting" />
-            <p>{stars}</p>
-          </div>
         </div>
         <div className={scss.typeof}>
           <div className={scss.type}>
