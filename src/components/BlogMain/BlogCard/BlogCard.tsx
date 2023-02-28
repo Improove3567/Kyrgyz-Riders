@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import scss from './BlogCard.module.scss'
 import Image from 'next/image';
+import Link from 'next/link';
 interface BlogCardProps{
     img: string;
     title: string;
@@ -17,7 +18,7 @@ const BlogCard: FC<BlogCardProps> = ({img, title, id, heading, btn}) => {
             <div className={scss.card_bottom}>
                 <p>{heading}</p>
                 <h1>{title}</h1>
-                <button>{btn}</button>
+                <Link href={`/blogAndNews/${id}`}>{btn}</Link>
             </div>
         </div>
     );
