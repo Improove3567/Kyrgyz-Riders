@@ -8,9 +8,9 @@
   transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
 
   .inactive_title {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     line-height: 17px;
     color: $filter-text;
@@ -65,13 +65,23 @@
 }
 
 .active_title {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
   color: $active-text;
-  margin-top: 25px;
+  margin-top: 20px;
   cursor: pointer;
   position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 21.5px;
+    width: 100%;
+    z-index: 11;
+    height: 2px;
+    background: black;
+  }
 }
