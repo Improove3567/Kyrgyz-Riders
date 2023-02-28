@@ -8,7 +8,7 @@ const TourFeatures: FC = () => {
     const showText = React.useMemo(
         () =>
             TourFeaturesArr.map((item) => (
-                <div className={scss.paragraph} key={item.id}>
+                <div className={scss.line} key={item.id}>
                     <div className={scss.title_mark}>
                         <Image src={checkMark} alt='checkmark' width={16} height={12} />
                         <p>{item.title}</p>
@@ -18,16 +18,10 @@ const TourFeatures: FC = () => {
         [TourFeaturesArr]
     )
     return (
-        <div className={scss.title_block}>
-            <div className={scss.container}>
-            <div className={scss.title}>
+        <div className={scss.content}>
+            <div className={scss.title_block}>
                 <Divider title='Why you will love this tour' variant='dark' />
-            </div>
-            <div className={scss.text}>
-                <div className={scss.paragraph}>
-                    {showText}
-                </div>
-            </div>
+                {showText}
             </div>
         </div>
     )
