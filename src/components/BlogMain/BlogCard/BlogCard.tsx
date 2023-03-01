@@ -10,6 +10,7 @@ interface BlogCardProps{
     btn: string;
 }
 const BlogCard: FC<BlogCardProps> = ({img, title, id, heading, btn}) => {
+
     return (
         <div className={scss.card} key={id}>
             <div className={scss.img}>

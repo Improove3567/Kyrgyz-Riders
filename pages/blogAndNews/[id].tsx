@@ -1,7 +1,7 @@
 import React from 'react';
 import BlogPage from '../../src/pages/BlogPage/BlogPage';
 
-const BlogItemPage = () => {
+const item = () => {
     return (
         <>
           <BlogPage/>  
@@ -9,4 +9,4 @@ const BlogItemPage = () => {
     );
 };
 
-export default BlogItemPage;
+export default item;
