@@ -115,6 +115,10 @@ a {
 /* end of tour slider styles */
 
 /* main background */
+.main, .tours, .tour {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
+}
+
 .sights {
   background-image: url(https://firebasestorage.googleapis.com/v0/b/solid-wiki.appspot.com/o/sights.png?alt=media&token=287ece1e-3b73-4401-bbdd-ef0467675a7c);
   background-position: center;

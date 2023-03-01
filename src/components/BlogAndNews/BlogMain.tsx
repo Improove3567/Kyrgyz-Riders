@@ -30,7 +30,7 @@ const BlogMain: React.FC = () => {
                     <div className={scss.mainBtn}>
                         <p>How Lake Issyk - Kul appeared</p>
                     </div>
-                    <iframe width="100%" height="508" src="https://www.youtube.com/embed/ACuLf_AYixU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                    <iframe className={scss.frameForVideo} width="100%" height="508" src="https://www.youtube.com/embed/ACuLf_AYixU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
                 </div>
                 <div className={scss.rightBlock}>
                     <div className={scss.networksBlock}>
