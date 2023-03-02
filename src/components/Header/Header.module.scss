@@ -51,14 +51,14 @@
         &::before {
           content: "";
           position: absolute;
-          top: calc(100% + 85%);
+          top: calc(100% + 67%);
           width: 0;
           right: 0;
-          height: 2px;
+          height: 5px;
         }
         &::before {
           transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-          background: black;
+          background: #2E325A;
           left: 0;
         }
       }
@@ -110,14 +110,14 @@
       &::before {
         content: "";
         position: absolute;
-        top: calc(100% + 85%);
+        top: calc(100% + 67%);
         width: 0;
         right: 0;
-        height: 2px;
+        height: 5px;
       }
       &::before {
         transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-        background: black;
+        background: #2E325A;
         left: 0;
       }
     }
@@ -167,14 +167,14 @@
       &::before {
         content: "";
         position: absolute;
-        top: calc(100% + 85%);
+        top: calc(100% + 67%);
         width: 0;
         right: 0;
-        height: 2px;
+        height: 5px;
       }
       &::before {
         transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-        background: black;
+        background: #2E325A;
         left: 0;
       }
     }
@@ -210,12 +210,13 @@
       font-weight: 500;
       font-size: 14px;
       line-height: 17px;
-      color: black;
+      color: #6F6F6F;
       display: inline-block;
       transition: color 0.2s ease;
       position: relative;
       &:hover,
       &.activeLink {
+        color: #2E325A;
         &::before {
           width: 100%;
           left: 100;
@@ -224,14 +225,14 @@
       &::before {
         content: "";
         position: absolute;
-        top: calc(100% + 85%);
+        top: calc(100% + 67%);
         width: 0;
         right: 0;
-        height: 2px;
+        height: 5px;
       }
       &::before {
         transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-        background: black;
+        background: #2E325A;
         left: 0;
       }
     }
