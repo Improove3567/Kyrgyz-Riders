@@ -11,18 +11,17 @@ import { mainSlider } from "../../constants/MainSliders";
 
 
 interface MainProps {
-  imgPageSliders?: typeof imgList;
+  imgPageSliders: Sliders[];
+}
+interface Sliders{
+  className : any;
+  title?: string;
 }
 
 const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
   const { route } = useRouter();
   const [slides, setSlides] = useState( imgPageSliders || []);
 
-  useEffect(() => {
-    if (route === "/") {
-      setSlides(mainSlider as typeof imgList);
-    }
-  }, [route]);
 
   const renderBtns = React.useMemo(
     () =>
