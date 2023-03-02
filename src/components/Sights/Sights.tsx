@@ -29,7 +29,7 @@ const Sights: React.FC = () => {
   );
   return (
     <section className={scss.sights}>
-      <Divider title="Sights" variant="light">
+      <Divider title="Sights" variant="dark">
         <MoreBlock title="More Sights" />
       </Divider>
       <div className={scss.cards}>{renderCards}</div>
