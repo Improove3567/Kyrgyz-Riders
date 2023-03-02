@@ -5,12 +5,13 @@ import Header from '../../components/Header/Header';
 import Main from '../../components/main/Main';
 import OurTeam from '../../components/Our team/OurTeam';
 import YourTours from '../../components/yourTour/YourTours';
+import { aboutSlider } from '../../constants/MainSliders';
 
 const AboutUsPage = () => {
     return (
         <>
             <Header />
-            <Main backgroundClassName='about' />
+            <Main imgPageSliders={aboutSlider} />
             <AboutUsText />
             <OurTeam />
             <YourTours />

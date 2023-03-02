@@ -4,12 +4,13 @@ import Header from '../../components/Header/Header';
 import Main from '../../components/main/Main';
 import TravelBlock from '../../components/TravelBlock/TravelBlock';
 import YourTours from '../../components/yourTour/YourTours';
+import { travelSlider } from '../../constants/MainSliders';
 
 const TravelPage = () => {
     return (
         <>
             <Header />
-            <Main backgroundClassName='travel' />
+            <Main imgPageSliders={travelSlider} />
             <TravelBlock />
             <YourTours />
             <Footer />
