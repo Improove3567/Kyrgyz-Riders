@@ -14,7 +14,7 @@ interface MainProps {
   imgPageSliders: Sliders[];
 }
 interface Sliders{
-  className : any;
+  className : string;
   title?: string;
 }
 
