@@ -77,7 +77,7 @@ export const aboutSlider = [
 export const blogNewsSlider = [
     {
       className: "blog",
-      title: "Blog && news",
+      title: "Blog & news",
     },
   ];
 
