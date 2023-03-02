@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <>
       <Header isMain={true} />
-      <Main />
+      <Main/>
       <TourSlider />
       <Sights />
       <Feedback />

@@ -11,8 +11,7 @@ import { mainSlider } from "../../constants/MainSliders";
 
 
 interface MainProps {
-  backgroundClassName?: string;
-  imgPageSliders: typeof imgList;
+  imgPageSliders?: typeof imgList;
 }
 
 const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
