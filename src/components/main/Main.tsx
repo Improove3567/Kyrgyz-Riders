@@ -16,7 +16,7 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
   const { route } = useRouter();
-  const [slides, setSlides] = useState<typeof imgList>( imgPageSliders || []);
+  const [slides, setSlides] = useState( imgPageSliders || []);
 
   useEffect(() => {
     if (route === "/") {
