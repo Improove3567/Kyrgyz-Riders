@@ -1,10 +1,10 @@
 import React from 'react';
-import BlogPage from '../../src/pages/BlogPage/BlogPage';
+import BlogDetailPage from '../../src/pages/BlogDetailPage/BlogDetailPage';
 
 const item = () => {
     return (
         <>
-          <BlogPage/>  
+          <BlogDetailPage/>  
         </>
     );
 };

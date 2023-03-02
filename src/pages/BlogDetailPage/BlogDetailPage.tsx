@@ -5,14 +5,15 @@ import Header from "../../components/Header/Header";
 import BlogNewsText from "../../components/BlogNewsTextBlock/BlogNewsText";
 import YourTours from "../../components/yourTour/YourTours";
 import Footer from "../../components/Footer/Footer";
+import { BlogsCardArr } from "../../constants/BlogsCard";
 
 const BlogPage = () => {
     return (
         <>
             <Header />
             <Main backgroundClassName="blog" />
-            <BlogMain />
-            <BlogNewsText/>
+            <BlogMain/>
+            <BlogNewsText description={BlogsCardArr}/>
            <YourTours/>
            <Footer/>
         </>

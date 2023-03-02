@@ -19,7 +19,10 @@ const BlogCard: FC<BlogCardProps> = ({img, title, id, heading, btn}) => {
             <div className={scss.card_bottom}>
                 <p>{heading}</p>
                 <h1>{title}</h1>
+                <div className={scss.btn}>
                 <Link href={`/blogAndNews/${id}`}>{btn}</Link>
+                <Image src='/images/vectorBlogCard.svg' width={4} height={7} alt={'vector'}/>
+                </div>
             </div>
         </div>
     );

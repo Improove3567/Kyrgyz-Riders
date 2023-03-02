@@ -30,16 +30,23 @@
       color: #333333;
       margin-bottom: 15%;
     }
-    a {
-      font-family: "Montserrat";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 17px;
-      color: #333333;
-      border: none;
-      background: none;
-      cursor: pointer;
+    .btn {
+      display: flex;
+      align-items: center;
+      a {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #333333;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+      img{
+        margin-left: 3%;
+      }
     }
   }
 }

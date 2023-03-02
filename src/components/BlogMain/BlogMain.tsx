@@ -37,7 +37,7 @@ const BlogMain = () => {
         <div className={scss.wrapperCard}>
           <div className={scss.wrap}>{renderCard}</div>
           <div className={scss.btn_more}>
-            <button>More Tours</button>
+            <button>More</button>
           </div>
         </div>
 
