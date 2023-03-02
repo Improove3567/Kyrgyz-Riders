@@ -20,7 +20,7 @@ interface Sliders{
 
 const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
   const { route } = useRouter();
-  const [slides, setSlides] = useState( imgPageSliders || []);
+  
 
 
   const renderBtns = React.useMemo(
@@ -49,7 +49,7 @@ const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
 
   const sliderList = useMemo(
     () =>
-      slides.map((el) => (
+      imgPageSliders.map((el) => (
         <main className={el.className} key={el.className}>
           <div className="container">
             <div className={scss.buttons}>
@@ -63,7 +63,7 @@ const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
           </div>
         </main>
       )),
-    [slides, renderBtns]
+    [imgPageSliders, renderBtns]
   );
 
   
