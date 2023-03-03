@@ -1,11 +1,10 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, {useMemo } from "react";
 import scss from "./main.module.scss";
 import { MainLinks } from "../../constatnts/Main/HeaderConsts";
 import Link from "next/link";
 import Slider from "react-slick";
 import { useRouter } from "next/router";
-import { imgList } from "../../constants/MainSliders";
-import { mainSlider } from "../../constants/MainSliders";
+
 
 
 
