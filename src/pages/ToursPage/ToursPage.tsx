@@ -8,6 +8,7 @@ import Footer from '../../components/Footer/Footer';
 import FilterToursCardBlock from './FilterToursCard/FilterToursCardBlock';
 import Header from '../../components/Header/Header';
 import Main from '../../components/main/Main';
+import { toursSliders } from '../../constants/MainSliders';
 
 
 
@@ -22,7 +23,7 @@ const ToursPage = () => {
         <>
         <div className={scss.toursPage}>
             <Header isMain={false}/>
-            <Main/>
+            <Main imgPageSliders={toursSliders}/>
             <FilterBlock change={change}/>
             <FilterToursCardBlock index={index}/>
             <YourTours/>

@@ -4,12 +4,13 @@ import Header from '../../components/Header/Header';
 import Main from '../../components/main/Main';
 import SightsBlock from '../../components/Sights block/SightsBlock';
 import YourTours from '../../components/yourTour/YourTours';
+import { sightSlider} from '../../constants/MainSliders';
 
 const SightsPage = () => {
     return (
         <>
             <Header />
-            <Main  />
+            <Main imgPageSliders={sightSlider} />
             <SightsBlock />
             <YourTours />
             <Footer />
