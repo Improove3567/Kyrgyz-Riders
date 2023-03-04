@@ -43,7 +43,6 @@
             
         }
         .button{
-            transition: all .5s;
             margin: 30px;
             margin-left: 23%;
             display: flex;
@@ -63,12 +62,6 @@
                 line-height: 20px;
                 color: #FFFFFF;
             }
-        }
-        .button:hover{
-            background: #242848;
-            -webkit-transform: scale(1.1);
-            -ms-transform: scale(1.1);
-            transform: scale(1.1);
         }
     }
 
