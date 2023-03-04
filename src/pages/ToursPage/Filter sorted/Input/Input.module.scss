@@ -19,7 +19,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      .inputBD {
+      .inputSome {
         height: 14px;
         width: 14px;
         border-radius: 50%;
@@ -28,11 +28,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        .checkedD {
+        .checkedSome {
           background: #333333;
         }
       }
-      .inputB {
+      .inputOne {
         height: 14px;
         width: 14px;
         border-radius: 50%;
@@ -41,7 +41,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        .checked {
+        .checkedOne{
           border-top: 1px solid #FFFFFF;;
           border-right: 1px solid #FFFFFF;;
           width: 8px;
@@ -52,7 +52,7 @@
         }
       }
     }
-    .inputW {
+    .inputEmpty {
       height: 14px;
       width: 14px;
       border-radius: 50%;

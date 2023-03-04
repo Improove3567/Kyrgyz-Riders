@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import scss from './Input.module.scss'
+import { Option } from "../../../../constants/FilterToursBlock";
 
 interface Iname {
     name: string;
-    changeStatus: any;
+    changeStatus: (id: number | string) => void ;
     statusEl: boolean;
-    myKey: string | number;
+    myKey: number | string;
     valueIndex: number;
     select:boolean
   }
@@ -28,12 +29,12 @@ interface Iname {
       <label className={scss.label} onClick={click}>
         <div className={scss.input}>
           { !select ? (
-            <div className={index ? scss.inputB : scss.inputW}>
-              <div className={scss.checked}></div>
+            <div className={index ? scss.inputOne : scss.inputW}>
+              <div className={scss.checkedOne}></div>
             </div>
           ) : (
-            <div className={statusEl ? scss.inputBD : scss.inputW}>
-              <div className={scss.checkedD}></div>
+            <div className={statusEl ? scss.inputSome : scss.inputW}>
+              <div className={scss.checkedSome}></div>
             </div>
           )}
         </div>

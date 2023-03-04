@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import Input from "../Input/Input";
 import scss from './Option.module.scss'
+import { Option } from "../../../../constants/FilterToursBlock";
 
 interface Input {
-    value: any[];
+    value: Option[];
     valueIndex: number;
     select: boolean
   }
   
   const Option: React.FC<Input> = ({ value, select, valueIndex }) => {
     const [arrayO, setArray] = useState(value);
-    const changeStatus = (myKey: number) => {
+    const changeStatus = (myKey: number | string) => {
       const newArrOptions = arrayO.map((item) => {
         if (item.id === myKey) {
           return { ...item, status: true };

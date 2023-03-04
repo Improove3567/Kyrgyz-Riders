@@ -1,11 +1,11 @@
-interface Option{
+export interface Option{
     name : string;
     id : number | string;
     status: boolean;
 }
 interface ToursSelect{
     name : string;
-    option : any[];
+    option : Option[];
     status: boolean;
     id : number;
     select:boolean
