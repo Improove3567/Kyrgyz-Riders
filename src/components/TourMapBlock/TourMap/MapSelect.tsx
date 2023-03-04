@@ -9,11 +9,6 @@ interface TourSelect {
   status: boolean;
 }
 
-interface ILogo {
-  src: string;
-  className?: string;
-}
-
 const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
   const [arrow, setArrow] = useState(status);
 

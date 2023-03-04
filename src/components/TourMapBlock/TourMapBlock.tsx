@@ -4,14 +4,6 @@ import TourMap from "./TourMap/MapSelect";
 import Divider from "../Divider/Divider";
 import { TourSelectMap } from "../../constants/TourMapBlock";
 
-interface ToursSelect {
-    title : string;
-    option : string[];
-    status: boolean;
-}
-
-
-
 
 const TourMapsBlock: React.FC = () => {
   return (
