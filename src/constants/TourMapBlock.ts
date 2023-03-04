@@ -5,7 +5,7 @@ const ImgMap = ['/assets/images/map.jpg']
 export const TourSelectMap  = [
     {
         title : "Map of the tour",
-        status: true,
+        status: false,
         option: ImgMap,
         id: 1
 
