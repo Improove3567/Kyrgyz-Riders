@@ -1,0 +1,51 @@
+.select{
+    width: 97%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    height: 50px;
+    padding: 0 2%;
+    margin: 20px 0;
+    .text{
+        width: 51%;
+        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    
+    .arrowDown{
+        border-top: 2px solid #757575;
+        border-right: 2px solid #757575;
+        width: 8px;
+        margin-left: 10px;
+        height: 8px;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+    
+
+}
+.map{
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+    width: 97%;
+    animation: 1s show ease;
+    padding: 30px 0;
+    padding-left: 1%;
+    img{
+        width: 60%;
+        height: 30%;
+    }   
+}
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
