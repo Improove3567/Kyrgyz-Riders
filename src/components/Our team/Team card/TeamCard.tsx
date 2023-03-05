@@ -3,12 +3,13 @@ import scss from "./TeamCard.module.scss"
 import Image from "next/image";
 
 interface TeamCardProps {
-  title: string,
-  subtitle: string,
+  name: string,
+  surname: string,
   image: string,
+  speciality: string,
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({ title, subtitle, image }) => {
+const TeamCard: React.FC<TeamCardProps> = ({ name, surname, speciality, image }) => {
   return (
     <div className={scss.container}>
       <div className={scss.wrapper}>
@@ -19,8 +20,8 @@ const TeamCard: React.FC<TeamCardProps> = ({ title, subtitle, image }) => {
           <hr />
         </div>
         <div className={scss.textContainer}>
-          <p className={scss.title}>{title}</p>
-          <p className={scss.subtitle}>{subtitle}</p>
+          <p className={scss.title}>{name + " " + surname}</p>
+          <p className={scss.subtitle}>{speciality}</p>
         </div>
       </div>
       <div className={scss.back}></div>
