@@ -5,17 +5,17 @@ import Image from "next/image";
 interface TeamCardProps {
   title: string,
   subtitle: string,
-  img: string,
+  image: string,
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({ title, subtitle, img }) => {
+const TeamCard: React.FC<TeamCardProps> = ({ title, subtitle, image }) => {
   return (
     <div className={scss.container}>
       <div className={scss.wrapper}>
         <div className={scss.avatarContainer}>
           <hr />
           {/* eslint-disable-next-line no-use-before-define */}
-          <img src={img} width={70} height={70} alt="avatar" />
+          <img src={image} width={70} height={70} alt="avatar" />
           <hr />
         </div>
         <div className={scss.textContainer}>

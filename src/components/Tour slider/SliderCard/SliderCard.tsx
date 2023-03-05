@@ -5,14 +5,14 @@ interface CardProps {
   title?: string,
   subtitle?: string,
   days?: number,
-  img: string;
+  image: string;
 }
 
 const SliderCard: React.FC<CardProps> = ({
   title,
   subtitle,
   days,
-  img
+  image
 }) => {
   return (
     <div className={scss.card}>
@@ -21,7 +21,7 @@ const SliderCard: React.FC<CardProps> = ({
       </div>
       <div className={scss.front}>
         {/* eslint-disable-next-line no-use-before-define */}
-        <img src={img} alt="bcakground-image" height={280} />
+        <img src={image} alt="bcakground-image" height={280} />
         <div className={scss.bottomContent}>
           <div className={scss.textContainer}>
             <p className={scss.title}>{title}</p>
