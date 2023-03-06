@@ -1,10 +1,11 @@
 import React, { FC } from "react";
-import { BlogsCardProps } from "../../constants/BlogsCard";
+import { BlogsCardProps, descriptionArrProps } from "../../constants/BlogsCard";
 import scss from "./BlogNewsTextBlock.module.scss";
 interface BlogNewsTextProps {
   description: BlogsCardProps[];
 }
-const BlogNewsText: FC<BlogNewsTextProps> = ({description}) => {
+const BlogNewsText: FC<BlogNewsTextProps> = ({ description }) => {
+
   const renderText = React.useMemo(
     () =>
       description.map((item) => (
@@ -21,12 +22,22 @@ const BlogNewsText: FC<BlogNewsTextProps> = ({description}) => {
           ))}
         </div>
       )),
-    []
+    [description]
   );
-  console.log(description)
-  return (  
+  console.log(description);
+
+  // const render = useMemo(() => {
+  //   description.map((item) => {
+  //     item.descriptionArr.map(() => (
+
+  //     ))
+  //   })
+  // }, [description])
+  return (
     <div className={scss.title_block}>
       {renderText}
+      {/* <p>{text}</p> */}
+      {/* <h1>{description.descriptionArr.text}</h1>     */}
     </div>
   );
 };

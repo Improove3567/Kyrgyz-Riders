@@ -1,15 +1,16 @@
 export interface BlogsCardProps{
+    text: Key | null | undefined;
     heading: string;
     img: string;
     title: string;
     btn: string;
     id: number;
-    descriptionArr: descriptionArrProps[]
+    p?: string;
+    descriptionArr: descriptionArrProps[];
 }
-interface descriptionArrProps{  
+export interface descriptionArrProps{  
     text: string;
-    textArr:textArrProps[]
-
+    textArr:textArrProps[];
 }
 interface textArrProps{
     paragraph: string;
@@ -36,7 +37,9 @@ export const BlogsCardArr:BlogsCardProps[] = [
                     }
                 ]
             },
-        ]
+        ],
+        p: 'dsadsadsad'
+        
     },
     {
         id: 2,
@@ -61,165 +64,165 @@ export const BlogsCardArr:BlogsCardProps[] = [
             },
         ]
     },
-    {
-        id: 3,
-        heading: 'Blog',
-        img: "/images/imgBlogs.svg",
-        title: 'How Lake Issyk - Kul appeared ',
-        btn: 'Read more',
-        descriptionArr: [
-            {
-                text: 'Arctic Wild is a family owned',
-                textArr: [
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    }
-                ]
-            },
-        ]
-    },
-    {
-        id: 4,
-        heading: 'News',
-        img: "/images/imgBlogs.svg",
-        title: 'How Lake Issyk - Kul appeared ',
-        btn: 'Read more',
-        descriptionArr: [
-            {
-                text: 'Arctic Wild is a family owned',
-                textArr: [
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    }
-                ]
-            },
-        ]
-    },
-    {
-        id: 5,
-        heading: 'Blog',
-        img: "/images/imgBlogs.svg",
-        title: 'How Lake Issyk - Kul appeared ',
-        btn: 'Read more',
-        descriptionArr: [
-            {
-                text: 'Arctic Wild is a family owned',
-                textArr: [
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    }
-                ]
-            },
-        ]
-    },
-    {
-        id: 6,
-        heading: 'News',
-        img: "/images/imgBlogs.svg",
-        title: 'How Lake Issyk - Kul appeared ',
-        btn: 'Read more',
-        descriptionArr: [
-            {
-                text: 'Arctic Wild is a family owned',
-                textArr: [
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    }
-                ]
-            },
-        ]
-    },
-    {
-        id: 7,
-        heading: 'Blog',
-        img: "/images/imgBlogs.svg",
-        title: 'How Lake Issyk - Kul appeared ',
-        btn: 'Read more',
-        descriptionArr: [
-            {
-                text: 'Arctic Wild is a family owned',
-                textArr: [
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    }
-                ]
-            },
-        ]
-    },
-    {
-        id: 8,
-        heading: 'News',
-        img: "/images/imgBlogs.svg",
-        title: 'How Lake Issyk - Kul appeared ',
-        btn: 'Read more',
-        descriptionArr: [
-            {
-                text: 'Arctic Wild is a family owned',
-                textArr: [
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    }
-                ]
-            },
-        ]
-    },
-    {
-        id: 9,
-        heading: 'Blog',
-        img: "/images/imgBlogs.svg",
-        title: 'How Lake Issyk - Kul appeared ',
-        btn: 'Read more',
-        descriptionArr: [
-            {
-                text: 'Arctic Wild is a family owned',
-                textArr: [
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    },
-                    {
-                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
-                    }
-                ]
-            },
-        ]
-    }
+    // {
+    //     id: 3,
+    //     heading: 'Blog',
+    //     img: "/images/imgBlogs.svg",
+    //     title: 'How Lake Issyk - Kul appeared ',
+    //     btn: 'Read more',
+    //     descriptionArr: [
+    //         {
+    //             text: 'Arctic Wild is a family owned',
+    //             textArr: [
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 }
+    //             ]
+    //         },
+    //     ]
+    // },
+    // {
+    //     id: 4,
+    //     heading: 'News',
+    //     img: "/images/imgBlogs.svg",
+    //     title: 'How Lake Issyk - Kul appeared ',
+    //     btn: 'Read more',
+    //     descriptionArr: [
+    //         {
+    //             text: 'Arctic Wild is a family owned',
+    //             textArr: [
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 }
+    //             ]
+    //         },
+    //     ]
+    // },
+    // {
+    //     id: 5,
+    //     heading: 'Blog',
+    //     img: "/images/imgBlogs.svg",
+    //     title: 'How Lake Issyk - Kul appeared ',
+    //     btn: 'Read more',
+    //     descriptionArr: [
+    //         {
+    //             text: 'Arctic Wild is a family owned',
+    //             textArr: [
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 }
+    //             ]
+    //         },
+    //     ]
+    // },
+    // {
+    //     id: 6,
+    //     heading: 'News',
+    //     img: "/images/imgBlogs.svg",
+    //     title: 'How Lake Issyk - Kul appeared ',
+    //     btn: 'Read more',
+    //     descriptionArr: [
+    //         {
+    //             text: 'Arctic Wild is a family owned',
+    //             textArr: [
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 }
+    //             ]
+    //         },
+    //     ]
+    // },
+    // {
+    //     id: 7,
+    //     heading: 'Blog',
+    //     img: "/images/imgBlogs.svg",
+    //     title: 'How Lake Issyk - Kul appeared ',
+    //     btn: 'Read more',
+    //     descriptionArr: [
+    //         {
+    //             text: 'Arctic Wild is a family owned',
+    //             textArr: [
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 }
+    //             ]
+    //         },
+    //     ]
+    // },
+    // {
+    //     id: 8,
+    //     heading: 'News',
+    //     img: "/images/imgBlogs.svg",
+    //     title: 'How Lake Issyk - Kul appeared ',
+    //     btn: 'Read more',
+    //     descriptionArr: [
+    //         {
+    //             text: 'Arctic Wild is a family owned',
+    //             textArr: [
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 }
+    //             ]
+    //         },
+    //     ]
+    // },
+    // {
+    //     id: 9,
+    //     heading: 'Blog',
+    //     img: "/images/imgBlogs.svg",
+    //     title: 'How Lake Issyk - Kul appeared ',
+    //     btn: 'Read more',
+    //     descriptionArr: [
+    //         {
+    //             text: 'Arctic Wild is a family owned',
+    //             textArr: [
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 },
+    //                 {
+    //                     paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+    //                 }
+    //             ]
+    //         },
+    //     ]
+    // }
 ]
