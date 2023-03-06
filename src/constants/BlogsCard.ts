@@ -62,4 +62,28 @@ export const BlogsCardArr: BlogsCardProps[] = [
             },
         ]
     },
+    {
+        id: 2,
+        heading: 'News',
+        img: "/images/imgBlogs.svg",
+        title: 'How Lake Issyk - Kul appeared ',
+        btn: 'Read more',
+        descriptionArr: [
+            {
+                text: 'Arctic Wild is a family owned',
+                textArr: [
+                    {
+                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+                    },
+                    {
+                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+                    },
+                    {
+                        paragraph: 'Arctic Wild is a family owned and operated, wilderness guiding company based in Fairbanks, Alaska. We specialize in 1 to 3 week, fully guided and outfitted adventures across Alaska. Our professional guides can take you to the most remote',
+                    }
+                ]
+            },
+        ]
+    },
+    
 ]
