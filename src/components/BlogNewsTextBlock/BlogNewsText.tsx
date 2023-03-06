@@ -14,8 +14,8 @@ const BlogNewsText: FC<BlogNewsTextProps> = ({ description }) => {
             <>
               <h1>{el.text}</h1>
               <div className={scss.text}>
-                {el.textArr.map((al) => (
-                  <div className={scss.paragraph}>{al.paragraph}</div>
+                {el.textArr.map((al, index) => (
+                  <div className={scss.paragraph} key={`${al.paragraph}_${index}`}>{al.paragraph}</div>
                 ))}
               </div>
             </>
@@ -26,18 +26,9 @@ const BlogNewsText: FC<BlogNewsTextProps> = ({ description }) => {
   );
   console.log(description);
 
-  // const render = useMemo(() => {
-  //   description.map((item) => {
-  //     item.descriptionArr.map(() => (
-
-  //     ))
-  //   })
-  // }, [description])
   return (
     <div className={scss.title_block}>
       {renderText}
-      {/* <p>{text}</p> */}
-      {/* <h1>{description.descriptionArr.text}</h1>     */}
     </div>
   );
 };

@@ -1,5 +1,4 @@
-export interface BlogsCardProps{
-    text: Key | null | undefined;
+export interface BlogsCardProps {
     heading: string;
     img: string;
     title: string;
@@ -8,14 +7,14 @@ export interface BlogsCardProps{
     p?: string;
     descriptionArr: descriptionArrProps[];
 }
-export interface descriptionArrProps{  
+export interface descriptionArrProps {
     text: string;
-    textArr:textArrProps[];
+    textArr: textArrProps[];
 }
-interface textArrProps{
+interface textArrProps {
     paragraph: string;
 }
-export const BlogsCardArr:BlogsCardProps[] = [
+export const BlogsCardArr: BlogsCardProps[] = [
     {
         id: 1,
         heading: 'Blog',
@@ -39,7 +38,6 @@ export const BlogsCardArr:BlogsCardProps[] = [
             },
         ],
         p: 'dsadsadsad'
-        
     },
     {
         id: 2,
