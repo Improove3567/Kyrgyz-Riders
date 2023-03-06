@@ -12,7 +12,7 @@ const SightsBlock: React.FC = () => {
     ), [])
     return (
         <div className={scss.wrapper}>
-            <Divider title={"Sights"} variant={"dark"} />
+            <Divider title={"Sights"} />
             <div className={scss.card_container}>
                 {sightsList}
             </div>

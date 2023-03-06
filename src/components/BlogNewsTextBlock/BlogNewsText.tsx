@@ -24,7 +24,6 @@ const BlogNewsText: FC<BlogNewsTextProps> = ({ description }) => {
       )),
     [description]
   );
-  console.log(description);
 
   return (
     <div className={scss.title_block}>

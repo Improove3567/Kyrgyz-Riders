@@ -1,35 +1,47 @@
 import React, { useState } from "react";
 import scss from './Input.module.scss'
+import { Option } from "../../../../constants/FilterToursBlock";
 
 interface Iname {
-    name:string, 
-    changeStatus: any,
-    statusEl:boolean,
-    myKey : string | number;
-    inputName: string;
-    value?: string | string[]
-}
-const Input: React.FC<Iname> = ({name , inputName,  changeStatus ,myKey,statusEl, value}) => {
-    
-
-    const [index,setIndex] = useState(false)
-
+    name: string;
+    changeStatus: (id: number | string) => void ;
+    statusEl: boolean;
+    myKey: number | string;
+    valueIndex: number;
+    select:boolean
+  }
+  const Input: React.FC<Iname> = ({
+    name,
+    valueIndex,
+    changeStatus,
+    myKey,
+    statusEl,
+    select
+  }) => {
+    const [index, setIndex] = useState(false);
+  
     const click = () => {
-        changeStatus(myKey)
-        setIndex(statusEl)
-    }
-
-    return(
-        <label className={scss.label}>
-            <div className={scss.input}>
-                <div className={value === myKey.toString() || (!value && myKey === 1) ? scss.inputB : scss.inputW}></div>
+      changeStatus(myKey);
+      valueIndex == 1 ?  setIndex(!index): ''
+    };
+  
+    return (
+      <label className={scss.label} onClick={click}>
+        <div className={scss.input}>
+          { !select ? (
+            <div className={index ? scss.inputOne : scss.inputW}>
+              <div className={scss.checkedOne}></div>
             </div>
-            <input className={'hide'} type={"radio"} name={inputName} value={myKey} />
-            <span className={scss.span}>{name}</span>
-
-        </label>
-    )
-}
-
-
-export default Input
+          ) : (
+            <div className={statusEl ? scss.inputSome : scss.inputW}>
+              <div className={scss.checkedSome}></div>
+            </div>
+          )}
+        </div>
+        <span className={scss.span}>{name}</span>
+      </label>
+    );
+  };
+  
+  export default Input;
+  

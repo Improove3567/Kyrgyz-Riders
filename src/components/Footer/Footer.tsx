@@ -29,19 +29,21 @@ const Footer: React.FC = () => {
           <h1>{item.title}</h1>
           {item.desc ? (
             <p className={isActive ? scss.descAc : scss.desc}>
-              {item.desc && item.desc + " "}
+              {item.desc && item.desc + " " && item.desc.length > 129
+                ? `${item.desc.substring(0, 129)}...`
+                : item.desc}{" "}
+              {item.desc ? (
+                <Link href="/about-us" className={scss.read}>
+                  Read More
+                </Link>
+              ) : (
+                ""
+              )}
             </p>
           ) : (
             ""
           )}
 
-          {item.desc ? (
-            <Link href="/about-us" className={scss.read}>
-              Read More
-            </Link>
-          ) : (
-            ""
-          )}
           {item.email ? (
             <div className={scss.second}>
               <div>
