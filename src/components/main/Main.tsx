@@ -19,10 +19,7 @@ interface Sliders{
 
 const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
   const { route } = useRouter();
-  console.log(route)
   
-
-
   const renderBtns = React.useMemo(
     () =>
       MainLinks.map((item) => (
