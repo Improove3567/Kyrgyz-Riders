@@ -19,7 +19,7 @@ interface Sliders{
 
 const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
   const { route } = useRouter();
-  
+
   const renderBtns = React.useMemo(
     () =>
       MainLinks.map((item) => (
@@ -51,7 +51,7 @@ const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
           <div className="container">
             <div className={scss.buttons}>
               {el.title && (
-               <div className={route != "/tours/[id]" ? scss.imgText : scss.imgTextTour }>
+               <div className={(route != "/tour/[id]") && (route != "/our-team/[id]")   ? scss.imgText : scss.imgTextTour }>
                 {el.title}
                </div>
               )}

@@ -64,7 +64,7 @@ const FilterCads: FC<TourFilterCardArr> = ({
           </div>
         </div>
         <div className={scss.btn}>
-          <Link href={`/tours/${id}`}>{btn}</Link>
+          <Link href={`/tour/${id}`}>{btn}</Link>
         </div>
       </div>
     </div>
