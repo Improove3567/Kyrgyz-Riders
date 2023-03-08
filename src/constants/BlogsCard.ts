@@ -1,5 +1,4 @@
 export interface BlogsCardProps{
-    text: Key | null | undefined;
     heading: string;
     img: string;
     title: string;
