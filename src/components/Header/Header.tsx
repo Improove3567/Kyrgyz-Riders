@@ -29,7 +29,7 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
       HeaderLinks.map((item) => (
         <Link
           className={currentRoute == `/${item.link}` ? scss.activeLink : ""}
-          href={'/'+item.link}
+          href={'/' + item.link}
           key={item.id}
         >
           {item.title}
