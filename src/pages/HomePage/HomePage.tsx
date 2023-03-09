@@ -7,13 +7,14 @@ import Feedback from "../../components/FeedBack/Feedback";
 import TourSlider from "../../components/Tour slider/TourSLider";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import { mainSlider } from "../../constants/MainSliders";
 
 const HomePage = () => {
 
   return (
     <>
       <Header isMain={true} />
-      <Main />
+      <Main imgPageSliders={mainSlider}/>
       <TourSlider />
       <Sights />
       <Feedback />

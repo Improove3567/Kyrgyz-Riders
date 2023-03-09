@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import scss from './Select.module.scss';
 import Option from "../Option/Option";
 
@@ -8,27 +8,26 @@ interface Tours{
     valueIndex : number
     status : boolean
     id:number;
-    change: (id:number) => void
+    select:boolean
 }
 
-const Select : React.FC<Tours> = ({name,option,id,valueIndex,status,change}) => {
+const Select : React.FC<Tours> = ({name,option,valueIndex,select}) => {
 
-    
-
+    const [arrow,setArrow] = useState(false)
 
     const click = ():void => {
-        change(id)
+        setArrow(!arrow)
     }
 
     return (
         <div>
             <div onClick = {click} className={scss.select}>
                 <span className={scss.span}>{name}</span>
-                <div className={status ? scss.arrowUp : scss.arrowDown}></div>
+                <div className={scss.arrowDown}></div>
             </div>
             {
-            status && (
-            <Option valueIndex={valueIndex}  value={option} />
+            arrow && (
+            <Option valueIndex={valueIndex}  select={select} value={option} />
 
             )}
         </div>

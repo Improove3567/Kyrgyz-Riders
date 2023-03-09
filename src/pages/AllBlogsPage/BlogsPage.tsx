@@ -4,15 +4,16 @@ import Footer from '../../components/Footer/Footer';
 import Header from "../../components/Header/Header";
 import Main from '../../components/main/Main';
 import YourTours from '../../components/yourTour/YourTours';
+import { blogNewsSlider } from '../../constants/MainSliders';
 
 const BlogsPage = () => {
     return (
         <>
-            <Header/>      
-            <Main  backgroundClassName='blog'/>  
-            <BlogMain/>    
-            <YourTours/>
-            <Footer/>
+            <Header />
+            <Main imgPageSliders={blogNewsSlider} />
+            <BlogMain />
+            <YourTours />
+            <Footer />
         </>
     );
 };

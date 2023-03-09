@@ -87,7 +87,7 @@ const TourSlider: React.FC = () => {
 
   return (
     <div className={scss.wrapper}>
-      <Divider title="Select Tour" variant="light">
+      <Divider title="Select Tour">
         <FilterTour />
       </Divider>
       <div className="mainSliders">
