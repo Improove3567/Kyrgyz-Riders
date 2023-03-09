@@ -1,28 +1,16 @@
-import React, { useEffect } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import scss from "./feedBackCarousel.module.scss";
 import Image from "next/image";
-import FeedBackCard from "./FeedBackCard";
-import useFeedback from "../../../hooks/useFeedback";
+import React, { FC, useMemo } from "react";
+import Slider from "react-slick";
+import { PhotosItem } from "../../constants/PhotosItems";
+import Divider from "../Divider/Divider";
+import PhotosItems from "./PhotosItems/PhotosItems";
+import scss from "./PhotosSlider.module.scss";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const FeedbackCarousel = () => {
-  const { feedback, getFeedback } = useFeedback();
-
-  useEffect(() => {
-    getFeedback();
-  }, []);
-
-  const render = React.useMemo(
-    () => feedback.map((item: any) => <FeedBackCard key={item.id} {...item} />),
-    [feedback]
-  );
-
+const PhotosSlider: FC = () => {
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
       <div className={scss.nextArrow_container} onClick={onClick}>
@@ -40,12 +28,12 @@ const FeedbackCarousel = () => {
   }
 
   const settings = {
+    className: "center",
+    dots: true,
     arrows: true,
     infinite: false,
-    slidesToShow: 3,
+    slidesToShow: 3.5,
     slidesToScroll: 3,
-    className: "center",
-    variableWidth: true,
     speed: 500,
     nextArrow: (
       <SampleNextArrow
@@ -63,15 +51,25 @@ const FeedbackCarousel = () => {
         }}
       />
     ),
+    dotsClass: `slick-dots dots`,
   };
 
+  const render = useMemo(
+    () =>
+      PhotosItem.map((item) => (
+        <PhotosItems key={item.id} image={item.image} />
+      )),
+    []
+  );
+
   return (
-    <div className={scss.container}>
-      <div className="mainSliders">
+    <div className={scss.photosMain}>
+      <Divider title="Photos" />
+      <div className="mainSliders" id={scss.mainSliders}>
         <Slider {...settings}>{render}</Slider>
       </div>
     </div>
   );
 };
 
-export default FeedbackCarousel;
+export default PhotosSlider;
