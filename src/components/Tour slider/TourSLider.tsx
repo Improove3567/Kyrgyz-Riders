@@ -30,7 +30,6 @@ const TourSlider: React.FC = () => {
           alt="NextArrow"
           width="6"
           height="12" />
-
       </div>
     );
   }

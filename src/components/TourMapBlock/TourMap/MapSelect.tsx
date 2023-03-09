@@ -40,7 +40,7 @@ const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
       {arrow && (
         <div className={scss.map}>
           {title == "Map of the tour" && (
-            <PhotoProvider>{newImg}</PhotoProvider>
+            <div className={scss.photo}><PhotoProvider>{newImg}</PhotoProvider></div>
           )}
           {title == "Text" && <span>{newImg}</span>}
         </div>
