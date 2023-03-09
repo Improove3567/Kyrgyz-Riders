@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import scss from "./TourMap.module.scss";
 import "react-photo-view/dist/react-photo-view.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
-
+import Image from "next/image";
 interface TourSelect {
   title: string;
   option: string[];
@@ -23,7 +23,7 @@ const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
         } else {
           return (
             <PhotoView src={el} key={id}>
-              <img src={el} alt="Map of the Kyrgyzstan" />
+              <Image src={el} alt="Map of the Kyrgyzstan" width={780} height={376} />
             </PhotoView>
           );
         }
