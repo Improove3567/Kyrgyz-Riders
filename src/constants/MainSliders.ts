@@ -46,6 +46,7 @@ export const toursSliders = [
 export const tourSlider = [
   {
     className: scss.tour,
+    name : 'tour',
     title: "Highlights of Kyrgyzstan 7 days",
   },
 ];

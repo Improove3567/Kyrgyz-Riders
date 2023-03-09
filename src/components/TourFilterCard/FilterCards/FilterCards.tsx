@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import scss from './FilterCards.module.scss'
 import Image from "next/image";
+import Link from "next/link";
 
 interface TourFilterCardArr {
   title: string;
@@ -30,6 +31,7 @@ const FilterCads: FC<TourFilterCardArr> = ({
   typeOf,
   stars,
   btn,
+  id
 }) => {
   return (
     <div className={scss.block}>
@@ -62,7 +64,7 @@ const FilterCads: FC<TourFilterCardArr> = ({
           </div>
         </div>
         <div className={scss.btn}>
-          <button>{btn}</button>
+          <Link href={`/tour/${id}`}>{btn}</Link>
         </div>
       </div>
     </div>
