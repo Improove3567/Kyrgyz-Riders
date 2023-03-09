@@ -1,32 +1,26 @@
-export const SightsList = [
+export const SightCards = [
   {
-    days: 7,
     title: "Cholpon-Ata",
-    id: 1,
+    id: "1",
   },
   {
-    days: 7,
     title: "Cholpon-Ata",
-    id: 2,
+    id: "2",
   },
   {
-    days: 7,
     title: "Cholpon-Ata",
-    id: 3,
+    id: "3",
   },
   {
-    days: 7,
     title: "Cholpon-Ata",
-    id: 4,
+    id: "4",
   },
   {
-    days: 7,
     title: "Cholpon-Ata",
-    id: 5,
+    id: "5",
   },
   {
-    days: 7,
     title: "Cholpon-Ata",
-    id: 6,
+    id: "6",
   },
 ];

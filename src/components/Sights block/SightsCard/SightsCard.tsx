@@ -1,21 +1,24 @@
 import React, { useMemo } from "react";
 import scss from "./SightsCard.module.scss";
+import Link from "next/link";
 
 interface SightCardProps {
     days: number;
     title: string;
+    id: number
 }
-
-const SightsCard: React.FC<SightCardProps> = ({ days, title }) => {
+const SightsCard: React.FC<SightCardProps> = ({ days, title, id }) => {
     return (
-        <div className={scss.wrapper}>
-            <div className={scss.days}>
-                <p>{days} days</p>
+        <Link href={`/sight/${id}`}  className={scss.wrapper}>
+            <div>
+                <div className={scss.days}>
+                    <p>{days} days</p>
+                </div>
+                <div className={scss.bottomBlock}>
+                    <p>{title}</p>
+                </div>
             </div>
-            <div className={scss.bottomBlock}>
-                <p>{title}</p>
-            </div>
-        </div>
+        </Link>
     );
 };
 
