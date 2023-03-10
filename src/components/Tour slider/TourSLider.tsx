@@ -19,6 +19,9 @@ const TourSlider: React.FC = () => {
     getTours()
   }, [])
 
+  console.log(tours)
+
+
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
       <div
@@ -30,7 +33,6 @@ const TourSlider: React.FC = () => {
           alt="NextArrow"
           width="6"
           height="12" />
-
       </div>
     );
   }

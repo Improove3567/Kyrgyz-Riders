@@ -1,0 +1,23 @@
+.title_block {
+  border: 2px solid #c3c3c3;
+  padding: 70px 32px 70px 32px;
+  .container {
+    width: 100%;
+      div {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 36px;
+        color: #757575;
+        text-align: left;
+        .line {
+          margin-bottom: 1%;
+          p {
+            padding-left: 20px;
+            width: 100%;
+          }
+        }
+      }
+  }
+}

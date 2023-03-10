@@ -1,5 +1,5 @@
 import React from 'react';
-import TourPage from '../src/pages/TourPage/TourPage';
+import TourPage from '../../src/pages/TourPage/TourPage';
 
 const Tour = () => {
     return (
