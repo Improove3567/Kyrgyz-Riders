@@ -6,6 +6,7 @@ import Main from '../../components/main/Main';
 import { OneSightSlider, ourTeamSlider } from '../../constants/MainSliders';
 import SightsPage from '../../components/SightsPage/SightsPage';
 import SightMap from '../../components/SightMap/SightMap';
+import SightTourBlock from '../../components/SightTourBlock/SightTourBlock';
 const SightPage = () => {
 
     return (
@@ -13,6 +14,7 @@ const SightPage = () => {
             <Header isMain={true} />
             <Main imgPageSliders={OneSightSlider} />
             <SightsPage />
+            <SightTourBlock/>
             <SightMap/>
             <YourTours />
             <Footer />
