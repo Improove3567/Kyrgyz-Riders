@@ -46,6 +46,7 @@ export const toursSliders = [
 export const tourSlider = [
   {
     className: scss.tour,
+    name : 'tour',
     title: "Highlights of Kyrgyzstan 7 days",
   },
 ];
@@ -69,15 +70,20 @@ export const travelSlider = [
   },
 ];
 export const aboutSlider = [
-    {
-      className: "about",
-      title: "About us",
-    },
-  ];
+  {
+    className: "about",
+    title: "About us",
+  },
+];
 export const blogNewsSlider = [
-    {
-      className: "blog",
-      title: "Blog & news",
-    },
-  ];
-
+  {
+    className: "blog",
+    title: "Blog & news",
+  },
+];
+export const OneSightSlider = [
+  {
+    className: "sights",
+    title: "Cholpon-Ata",
+  },
+];
