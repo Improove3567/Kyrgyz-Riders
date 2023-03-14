@@ -64,7 +64,7 @@ const PhotosSlider: FC = () => {
 
   return (
     <div className={scss.photoesMain}>
-      <Divider title="Photoes" />
+      <Divider title="Photos" />
       <div id={scss.mainSliders}>
         <Slider {...settings}>{renderPhotoesItems}</Slider>
       </div>
