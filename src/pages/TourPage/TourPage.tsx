@@ -12,7 +12,7 @@ import Footer from '../../components/Footer/Footer';
 import YourTours from '../../components/yourTour/YourTours';
 import TourSights from '../../components/TourSights/TourSights';
 import { tourSlider } from '../../constants/MainSliders';
-import PhotosSlider from '../../components/PhotosSlider/PhotosSlider';
+import PhotoesSlider from '../../components/PhotoesSlider/PhotoesSlider';
 import TourMapsBlock from '../../components/TourMapBlock/TourMapBlock';
 
 
@@ -27,7 +27,7 @@ const TourPage = () => {
             <TourAboutText />
             <TourSights/>
             <TourFeatures />
-            <PhotosSlider/>
+            <PhotoesSlider/>
             <ItineraryBlock />
             <TourMapsBlock/>
             <PriceIncludes/>

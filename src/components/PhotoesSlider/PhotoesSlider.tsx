@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React, { FC, useMemo } from "react";
 import Slider from "react-slick";
-import { PhotosItem } from "../../constants/PhotosItems";
+import { PhotoesItem } from "../../constants/PhotoesItems";
 import Divider from "../Divider/Divider";
-import PhotosItems from "./PhotosItems/PhotosItems";
-import scss from "./PhotosSlider.module.scss";
+import PhotoesItems from "./PhotoesItems/PhotoesItems";
+import scss from "./PhotoesSlider.module.scss";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -54,19 +54,19 @@ const PhotosSlider: FC = () => {
     dotsClass: `slick-dots dots`,
   };
 
-  const render = useMemo(
+  const renderPhotoesItems = useMemo(
     () =>
-      PhotosItem.map((item) => (
-        <PhotosItems key={item.id} image={item.image} />
+      PhotoesItem.map((item) => (
+        <PhotoesItems key={item.id} image={item.image} />
       )),
     []
   );
 
   return (
-    <div className={scss.photosMain}>
-      <Divider title="Photos" />
+    <div className={scss.photoesMain}>
+      <Divider title="Photoes" />
       <div id={scss.mainSliders}>
-        <Slider {...settings}>{render}</Slider>
+        <Slider {...settings}>{renderPhotoesItems}</Slider>
       </div>
     </div>
   );

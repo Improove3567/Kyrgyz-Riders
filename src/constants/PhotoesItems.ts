@@ -1,4 +1,4 @@
-export const PhotosItem = [
+export const PhotoesItem = [
   {
     id: 1,
     image:
