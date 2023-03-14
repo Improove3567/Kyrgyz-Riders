@@ -32,7 +32,7 @@ const PhotosSlider: FC = () => {
     dots: true,
     arrows: true,
     infinite: false,
-    slidesToShow: 3.5,
+    slidesToShow: 3,
     slidesToScroll: 3,
     speed: 500,
     nextArrow: (
@@ -65,7 +65,7 @@ const PhotosSlider: FC = () => {
   return (
     <div className={scss.photosMain}>
       <Divider title="Photos" />
-      <div className="mainSliders" id={scss.mainSliders}>
+      <div id={scss.mainSliders}>
         <Slider {...settings}>{render}</Slider>
       </div>
     </div>

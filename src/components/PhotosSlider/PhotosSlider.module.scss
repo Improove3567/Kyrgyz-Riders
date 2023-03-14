@@ -1,11 +1,10 @@
 .photosMain {
-  padding: 70px 32px 20px 32px;
-  position: relative;
+  padding: 70px 32px;
 }
 
 .nextArrow_container {
   position: absolute;
-  right: -1.6% !important;
+  right: -0.4% !important;
   top: 35%;
   background: #2E325A;
   border: 1px solid #9F9F9F;
@@ -25,16 +24,11 @@
   &:hover {
     opacity: 1;
   }
-
-  img {
-    position: relative;
-    left: 1px;
-  }
 }
 
 .prevArrow_container {
   position: absolute;
-  left: -1.2% !important;
+  left: -0.9% !important;
   top: 35%;
   background: #2E325A;
   border: 1px solid #9F9F9F;
@@ -53,24 +47,6 @@
 
   &:hover {
     opacity: 1;
-  }
-
-  img {
-    position: relative;
-    left: 1px;
-  }
-}
-
-.hide {
-  display: none;
-}
-
-.dots {
-  position: absolute;
-  top: 320px;
-
-  li {
-    margin: 0 0 3rem !important;
   }
 }
 
