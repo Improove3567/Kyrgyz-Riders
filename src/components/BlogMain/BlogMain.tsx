@@ -32,6 +32,7 @@ const BlogMain = () => {
   );
   return (
     <div className={scss.wrapper}>
+      <div className="conteiner">
       <Divider title="Blog and news" variant="dark" />
       <div className={scss.container}>
         <div className={scss.wrapperCard}>
@@ -53,6 +54,7 @@ const BlogMain = () => {
             <div className={scss.cardContainer}>{newsList}</div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

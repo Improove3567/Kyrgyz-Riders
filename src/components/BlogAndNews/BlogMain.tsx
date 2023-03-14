@@ -25,6 +25,7 @@ const BlogMain: React.FC = () => {
   );
   return (
     <div className={scss.wrapper}>
+      <div className="conteiner">
       <Divider title="Blog and news" variant={"dark"} />
       <div className={scss.mainContent}>
         <div className={scss.videoContainer}>
@@ -45,6 +46,7 @@ const BlogMain: React.FC = () => {
             <div className={scss.cardContainer}>{newsList}</div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

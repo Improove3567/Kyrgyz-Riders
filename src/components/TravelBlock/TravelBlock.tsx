@@ -12,12 +12,14 @@ const TravelBlock: React.FC = () => {
     ), [])
     return (
         <div className={scss.wrapper}>
+            <div className="conteiner">
             <Divider title={"Travel & Stories"} variant={"dark"} />
             <div className={scss.card_container}>
                 {sightsList}
             </div>
             <div className={scss.button}>
                 <p>More Sights</p>
+            </div>
             </div>
         </div>
     );

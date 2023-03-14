@@ -15,7 +15,7 @@ const SightsPage: FC = () => {
     )
     return (
         <div className={scss.title_block}>
-            <div className={scss.container}>
+            <div className='conteiner'>
                 <Divider title='Sights / Cholpon - Ata' variant='light' />
                 <div className={scss.text}>
                     {showWork}

@@ -200,7 +200,10 @@ a {
   height: 35px;
   border: none;
 }
-
+.conteiner{
+  width: 95%;
+  margin: 0 auto;
+}
 /* end of pop-up */
 
 .container,

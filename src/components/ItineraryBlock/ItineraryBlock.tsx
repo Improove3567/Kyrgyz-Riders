@@ -15,8 +15,10 @@ const ItineraryBlock: FC = () => {
 
   return (
     <div className={scss.itineraryBlockMain}>
+      <div className="conteiner">
       <Divider title="Itinerary" variant="dark" />
       <>{render}</>
+      </div>
     </div>
   );
 };

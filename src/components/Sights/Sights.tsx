@@ -5,7 +5,6 @@ import MoreBlock from "../Divider/More block/MoreBlock";
 import SightCard from "./SightCard/SightCard";
 import useSights from "../../hooks/useSights";
 
-
 export interface ISights {
   id: number;
   img: string | undefined | any;
@@ -16,12 +15,11 @@ export interface ISights {
 }
 
 const Sights: React.FC = () => {
-
-  const { sights, getSights } = useSights()
+  const { sights, getSights } = useSights();
 
   useEffect(() => {
-    getSights()
-  }, [])
+    getSights();
+  }, []);
 
   const renderCards = React.useMemo(
     () => sights.map((item: any) => <SightCard key={item.id} {...item} />),
@@ -29,10 +27,12 @@ const Sights: React.FC = () => {
   );
   return (
     <section className={scss.sights}>
-      <Divider title="Sights" variant="dark">
-        <MoreBlock title="More Sights" />
-      </Divider>
-      <div className={scss.cards}>{renderCards}</div>
+      <div className="conteiner">
+        <Divider title="Sights" variant="dark">
+          <MoreBlock title="More Sights" />
+        </Divider>
+        <div className={scss.cards}>{renderCards}</div>
+      </div>
     </section>
   );
 };

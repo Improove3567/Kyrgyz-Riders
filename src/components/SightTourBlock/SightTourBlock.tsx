@@ -12,12 +12,14 @@ const SightTourBlock = () => {
   );
   return (
     <div className={scss.wrapper}>
+      <div className="conteiner">
       <div className={scss.container}>
         <Divider title="Tours in Cholpon-Ata" variant="dark">
           <MoreBlock title="More tours" />
         </Divider>
 
         <div className={scss.cards}>{renderCards}</div>
+      </div>
       </div>
     </div>
   );

@@ -16,11 +16,13 @@ const TourAbout: FC = () => {
   );
   return (
     <div className={scss.content}>
+      <div className="conteiner">
       <Divider title="Tours / Highlights around Isskyk - kol lake" variant="light">
       <MoreBlock title={"More tours"}/>
       </Divider>
       <div className={scss.wrapper}>
         {renderCard}
+      </div>
       </div>
     </div>
   );
