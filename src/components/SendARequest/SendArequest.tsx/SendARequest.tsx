@@ -49,7 +49,8 @@ const SendARequest: React.FC = () => {
 
   return (
     <div className={scss.wrapper}>
-      <div className={scss.header}>
+     <div className={scss.container}>
+     <div className={scss.header}>
         <Divider title="Send a request" variant="dark" />
       </div>
       <div className={scss.description}>{showText}</div>
@@ -63,6 +64,7 @@ const SendARequest: React.FC = () => {
           <p className={scss.text}>Send now</p>
         </div>
       </div>
+     </div>
     </div>
   );
 };

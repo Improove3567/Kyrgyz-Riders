@@ -7,7 +7,7 @@ const SightTourCard: FC<SightTourArrProps> = ({ img, title, days, desc }) => {
     <div className={scss.card}>
       <div className={scss.front}>
         <div className={scss.img}>
-          <Image src={img} alt="image" width={280} height={280} />
+          <Image src={img} alt={title} width={280} height={280} />
           <div className={scss.days}>
             <span>{days}</span>
           </div>

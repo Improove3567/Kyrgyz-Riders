@@ -24,6 +24,7 @@ const TourPage = () => {
             <TourAbout/>
             <TourAboutText />
             <TourSights/>
+
             <TourFeatures />
             <ItineraryBlock />
             <TourMapsBlock/>

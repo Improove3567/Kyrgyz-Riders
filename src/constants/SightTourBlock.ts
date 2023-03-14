@@ -6,25 +6,25 @@ export interface SightTourArrProps{
 };
 export const SightTourArr: SightTourArrProps[] = [
     {
-        img: '/images/SightTourImg.svg',
+        img: '/images/testjpg.jpg',
         days: '9 days',
         title: 'BLUE SKY',
         desc: 'Off road'
     },
     {
-        img: '/images/SightTourImg.svg',
+        img: '/images/testjpg.jpg',
         days: '9 days',
         title: 'BLUE SKY',
         desc: 'Off road'
     },
     {
-        img: '/images/SightTourImg.svg',
+        img: '/images/testjpg.jpg',
         days: '9 days',
         title: 'BLUE SKY',
         desc: 'Off road'
     },
     {
-        img: '/images/SightTourImg.svg',
+        img: '/images/testjpg.jpg',
         days: '9 days',
         title: 'BLUE SKY',
         desc: 'Off road'
