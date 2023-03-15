@@ -29,7 +29,7 @@ interface Iname {
       <label className={scss.label} onClick={click}>
         <div className={scss.input}>
           { !select ? (
-            <div className={index ? scss.inputOne : scss.inputW}>
+            <div className={index ? scss.inputOne : ''}>
               <div className={scss.checkedOne}></div>
             </div>
           ) : (

@@ -12,7 +12,7 @@
   
     .input {
       height: 22px;
-      width:8%;
+      width: 22px;
       border: 1px solid #333333;
       margin-right: 5px;
       border-radius: 50%;
@@ -51,13 +51,6 @@
           -webkit-transform: rotate(135deg);
         }
       }
-    }
-    .inputEmpty {
-      height: 14px;
-      width: 14px;
-      border-radius: 50%;
-      background: white;
-      position: absolute;
     }
   }
   
