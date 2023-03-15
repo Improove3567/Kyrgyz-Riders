@@ -19,8 +19,6 @@ const TourSlider: React.FC = () => {
     getTours()
   }, [])
 
-  console.log(tours)
-
 
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
