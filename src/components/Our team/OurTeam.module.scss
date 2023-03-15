@@ -11,6 +11,18 @@
   margin-top: 50px;
   margin-bottom: 50px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
   grid-template-columns: repeat(4, 1fr);
+}
+@media(max-width: 1440px) {
+  .content {
+    gap: 64px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content {
+    gap: 44px;
+  }
 }
