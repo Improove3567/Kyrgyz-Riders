@@ -1,56 +1,60 @@
 .label {
+  display: flex;
+  align-items: center;
+  margin: 14px 15px;
+  height: 17px;
+  cursor: pointer;
+  width: 100%;
+
+  .span {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #333333;
+  }
+
+  .input {
+    height: 22px;
+    width: 22px;
+    border: 1px solid #333333;
+    margin-right: 5px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    margin: 14px 15px;
-    height: 17px;
-    cursor: pointer;
-    width: 100%;
-  
-    .span {
-      font-size: 13px;
-    }
-  
-    .input {
-      height: 22px;
-      width: 22px;
-      border: 1px solid #333333;
-      margin-right: 5px;
+    justify-content: center;
+    .inputSome {
+      height: 13px;
+      width: 13px;
       border-radius: 50%;
+      background: #333333;
+      position: absolute;
       display: flex;
-      align-items: center;
       justify-content: center;
-      .inputSome {
-        height: 14px;
-        width: 14px;
-        border-radius: 50%;
-        background: #333333;;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .checkedSome {
-          background: #333333;
-        }
+      align-items: center;
+      .checkedSome {
+        background: #333333;
       }
-      .inputOne {
-        height: 14px;
-        width: 14px;
-        border-radius: 50%;
-        background: #2E325A;;
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .checkedOne{
-          border-top: 1px solid #FFFFFF;;
-          border-right: 1px solid #FFFFFF;;
-          width: 8px;
-          height: 5px;
-          margin-bottom: 2px;
-          transform: rotate(135deg);
-          -webkit-transform: rotate(135deg);
-        }
+    }
+    .inputOne {
+      height: 13px;
+      width: 13px;
+      border-radius: 50%;
+      background: #2e325a;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .checkedOne {
+        border-top: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+        width: 8px;
+        height: 5px;
+        margin-bottom: 2px;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
       }
     }
   }
-  
+}
