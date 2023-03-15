@@ -1,57 +1,58 @@
 .wrapper {
-    width: calc(33.3% - 20px);
-    height: 283px;
-    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
-    background-image: url(https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_500,h_500/https://norfolkpathways.ca/wp-content/uploads/2000/02/img_0246-384x384.jpg);
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    cursor: pointer;
+  width: calc(33.3% - 20px);
+  height: 283px;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+  background-image: url(https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_500,h_500/https://norfolkpathways.ca/wp-content/uploads/2000/02/img_0246-384x384.jpg);
+  position: relative;
+  transition: 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
 
-    &:hover {
-        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.4);
+  &:hover {
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.4);
+  }
+
+  .days {
+    position: absolute;
+    width: 90px;
+    height: 80px;
+    right: 0px;
+    background: #2e325a;
+    border-radius: 0px 0px 0px 32px;
+    display: flex;
+    align-items: center;
+
+    p {
+      height: 17px;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: #ffffff;
+      margin: 0 auto;
     }
+  }
 
-    .days {
-        position: absolute;
-        width: 90px;
-        height: 80px;
-        right: 0px;
-        background: #2E325A;
-        border-radius: 0px 0px 0px 32px;
-        display: flex;
-        align-items: center;
+  .bottomBlock {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 63px;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
 
-        p {
-            height: 17px;
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 17px;
-            color: #FFFFFF;
-            margin: 0 auto;
-        }
+    p {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0 auto;
+      color: #ffffff;
     }
-
-    .bottomBlock {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        height: 63px;
-        background: rgba(0, 0, 0, 0.6);
-        display: flex;
-        align-items: center;
-
-        p {
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 20px;
-            margin: 0 auto;
-            color: #FFFFFF;
-        }
-    }
+  }
 }
