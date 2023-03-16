@@ -14,7 +14,7 @@ const AboutUsText: FC = () => {
   );
   return (
     <div className={scss.title_block}>
-      <div className="conteiner">
+      <div className="container">
         <div className={scss.title}>
           <Divider title="About us" variant="dark" />
         </div>

@@ -18,7 +18,7 @@ const OurTeam: React.FC = () => {
 
   return (
     <div className={scss.wrapper}>
-      <div className="conteiner">
+      <div className="container">
         <Divider title="Our Team" variant={"dark"} />
         <div className={scss.content}>{render}</div>
       </div>

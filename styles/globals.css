@@ -59,9 +59,10 @@ a {
   width: 0;
 }
 
-.hideSelect{
+.hideSelect {
   display: none;
 }
+
 .dots li button:before {
   content: "" !important;
   background: #ffffff;
@@ -91,7 +92,7 @@ a {
   margin: 0 5px;
 }
 
-.mainSliders .slick-slide > div {
+.mainSliders .slick-slide>div {
   width: 10px;
 }
 
@@ -115,8 +116,10 @@ a {
 /* end of tour slider styles */
 
 /* main background */
-.main, .tours, .tour {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
+.main,
+.tours,
+.tour {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .sights {
@@ -132,7 +135,7 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.sights > div {
+.sights>div {
   height: 100%;
 }
 
@@ -149,7 +152,7 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.travel > div {
+.travel>div {
   height: 100%;
 }
 
@@ -166,7 +169,7 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.about > div {
+.about>div {
   height: 100%;
 }
 
@@ -183,7 +186,7 @@ a {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.blog > div {
+.blog>div {
   height: 100%;
 }
 
@@ -200,69 +203,9 @@ a {
   height: 35px;
   border: none;
 }
-.conteiner{
+.container{
   width: 95%;
   margin: 0 auto;
 }
 /* end of pop-up */
 
-.container,
-.container-fluid,
-.container-lg,
-.container-md,
-.container-sm,
-.container-xl,
-.container-xxl {
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@media (min-width: 576px) {
-  .container,
-  .container-sm {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container,
-  .container-md,
-  .container-sm {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl,
-  .container-xxl {
-    max-width: 1320px;
-  }
-}

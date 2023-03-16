@@ -17,7 +17,7 @@ const FilterBlock = ({change}:Function) => {
 
   return (
     <div className={scss.filter}>
-      <div className="conteiner">
+      <div className="container">
       <div className={scss.block}>
         <div className={scss.filters}>
           <div className={scss.arrows}>

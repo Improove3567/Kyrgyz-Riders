@@ -19,8 +19,6 @@ const TourSlider: React.FC = () => {
     getTours()
   }, [])
 
-  console.log(tours)
-
 
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
@@ -89,7 +87,7 @@ const TourSlider: React.FC = () => {
 
   return (
     <div className={scss.wrapper}>
-      <div className="conteiner">
+      <div className="container">
       <Divider title="Select Tour">
         <FilterTour />
       </Divider>

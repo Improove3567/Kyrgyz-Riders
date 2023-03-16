@@ -19,7 +19,7 @@ const Feedback: React.FC = () => {
 
   return (
     <section className={scss.section}>
-      <div className="conteiner">
+      <div className="container">
       <Divider title="Travelers Love Kyrgyz Riders" variant="light">
         <MoreBlock title="More reviews on Tripadvisor" />
       </Divider>

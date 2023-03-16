@@ -12,7 +12,7 @@ const TourMapsBlock: React.FC = () => {
 
   return (
     <div className={scss.wrapper}>
-      <div className="conteiner">
+      <div className="container">
       <div className={scss.header}>
         <Divider title="Maps" variant="light" />
       </div>

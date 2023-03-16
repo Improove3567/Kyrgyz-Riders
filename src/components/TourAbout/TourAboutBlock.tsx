@@ -16,7 +16,7 @@ const TourAbout: FC = () => {
   );
   return (
     <div className={scss.content}>
-      <div className="conteiner">
+      <div className="container">
       <Divider title="Tours / Highlights around Isskyk - kol lake" variant="light">
       <MoreBlock title={"More tours"}/>
       </Divider>

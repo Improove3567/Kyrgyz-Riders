@@ -25,7 +25,7 @@ const BlogMain: React.FC = () => {
   );
   return (
     <div className={scss.wrapper}>
-      <div className="conteiner">
+      <div className="container">
       <Divider title="Blog and news" variant={"dark"} />
       <div className={scss.mainContent}>
         <div className={scss.videoContainer}>

@@ -21,7 +21,7 @@
         width: 80%;
         height: 3px;
         border-radius: 32px;
-        top: 9px;
+        top: 7px;
       }
       &::before {
         background-color: #c3c3c3;
@@ -45,7 +45,7 @@
         top: 0;
       }
       &::after {
-        bottom: 0;
+        bottom: 3px;
       }
     }
     h1 {

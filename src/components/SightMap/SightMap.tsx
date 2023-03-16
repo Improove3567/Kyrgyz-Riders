@@ -7,7 +7,7 @@ import Image from "next/image";
 const SightMap = () => {
   return (
     <div className={scss.wrapper}>
-      <div className="conteiner">
+      <div className="container">
       <Divider title="Map" variant="dark" />
       <div className={scss.map}>
         <PhotoProvider>

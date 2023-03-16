@@ -9,7 +9,7 @@
     position: absolute;
     width: 80px;
     height: 71px;
-    background: #2E325A;
+    background: #2e325a;
     border-radius: 0px 0px 0px 32px;
     z-index: 100;
     right: 0;
@@ -19,12 +19,12 @@
 
     .days_title {
       margin: 0 auto;
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
       font-style: normal;
       font-weight: 600;
       font-size: 14px;
       line-height: 17px;
-      color: #FFFFFF;
+      color: #ffffff;
     }
   }
 
@@ -38,10 +38,11 @@
     background-color: #333333;
     margin: 4px 0;
     filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+    transition: 0.3s ease-in-out;
 
-    &:hover{
+    &:hover {
       box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.4);
-      transition: .3s;
+      transition: 0.3s;
     }
 
     .bgImage {
@@ -95,40 +96,37 @@
   }
 }
 
-
-@media(min-width: 1440px) {
+@media (min-width: 1440px) {
   .card {
     width: 340px !important;
   }
 }
 
-@media(max-width: 1335px) {
+@media (max-width: 1335px) {
   .card {
     width: 270px !important;
   }
 }
 
-@media(max-width: 1200px) {
+@media (max-width: 1200px) {
   .card {
     width: 245px !important;
   }
 }
 
-
-@media(max-width: 1470px) {
+@media (max-width: 1470px) {
   .card {
     width: 305px;
   }
 }
 
-@media(min-width: 1530px) {
+@media (min-width: 1530px) {
   .card {
     width: 340px;
   }
 }
 
-
-@media(min-width: 1920px) {
+@media (min-width: 1920px) {
   .card {
     width: 445px;
   }

@@ -31,7 +31,7 @@ const BlogNewsText: FC<BlogNewsTextProps> = ({ description }) => {
 
   return (
     <div className={scss.title_block}>
-      <div className="conteiner">{renderText}</div>
+      <div className="container">{renderText}</div>
     </div>
   );
 };

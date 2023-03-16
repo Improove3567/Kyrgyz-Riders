@@ -32,7 +32,7 @@ const BlogMain = () => {
   );
   return (
     <div className={scss.wrapper}>
-      <div className="conteiner">
+      <div className="container">
       <Divider title="Blog and news" variant="dark" />
       <div className={scss.container}>
         <div className={scss.wrapperCard}>

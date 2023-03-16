@@ -27,7 +27,7 @@ const Sights: React.FC = () => {
   );
   return (
     <section className={scss.sights}>
-      <div className="conteiner">
+      <div className="container">
         <Divider title="Sights" variant="dark">
           <MoreBlock title="More Sights" />
         </Divider>

@@ -11,9 +11,9 @@ const DetailPage = () => {
     return (
         <>
             <Header isMain={true} />
-            <Main imgPageSliders={ourTeamSlider}/>
+            <Main imgPageSliders={ourTeamSlider} />
             <DetailPageMonica />
-            <OurTeam/>
+            <OurTeam />
             <YourTours />
             <Footer />
         </>

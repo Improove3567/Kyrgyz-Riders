@@ -13,7 +13,7 @@ const TourSights = () => {
   ), [])
   return (
     <div className={scss.Toursights}>
-      <div className='conteiner'>
+      <div className='container'>
         <Divider title="Sights visited on this tour" variant="dark" />
         <div className={scss.Tourcards}>{renderCards}</div>
       </div>
