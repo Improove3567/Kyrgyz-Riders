@@ -1,4 +1,4 @@
-export interface BlogsCardProps {
+export interface BlogsCardProps{
     heading: string;
     img: string;
     title: string;
@@ -63,8 +63,8 @@ export const BlogsCardArr: BlogsCardProps[] = [
         ]
     },
     {
-        id: 2,
-        heading: 'News',
+        id: 3,
+        heading: 'Blog',
         img: "/images/imgBlogs.svg",
         title: 'How Lake Issyk - Kul appeared ',
         btn: 'Read more',

@@ -14,7 +14,7 @@ const BlogPage = () => {
       <Header />
       <Main imgPageSliders={blogNewsSlider} />
       <BlogMain />
-      <BlogNewsText description={BlogsCardArr} />
+      <BlogNewsText description={BlogsCardArr}/>
       <YourTours />
       <Footer />
     </>

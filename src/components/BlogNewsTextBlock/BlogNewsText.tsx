@@ -5,7 +5,6 @@ interface BlogNewsTextProps {
   description: BlogsCardProps[];
 }
 const BlogNewsText: FC<BlogNewsTextProps> = ({ description }) => {
-
   const renderText = React.useMemo(
     () =>
       description.map((item) => (
@@ -15,7 +14,12 @@ const BlogNewsText: FC<BlogNewsTextProps> = ({ description }) => {
               <h1>{el.text}</h1>
               <div className={scss.text}>
                 {el.textArr.map((al, index) => (
-                  <div className={scss.paragraph} key={`${al.paragraph}_${index}`}>{al.paragraph}</div>
+                  <div
+                    className={scss.paragraph}
+                    key={`${al.paragraph}_${index}`}
+                  >
+                    {al.paragraph}
+                  </div>
                 ))}
               </div>
             </>
@@ -27,7 +31,7 @@ const BlogNewsText: FC<BlogNewsTextProps> = ({ description }) => {
 
   return (
     <div className={scss.title_block}>
-      {renderText}
+      <div className="container">{renderText}</div>
     </div>
   );
 };

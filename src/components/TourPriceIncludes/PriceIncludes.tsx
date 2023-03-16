@@ -16,7 +16,7 @@ const PriceIncludes = () => {
     ), [])
     return (
         <div className={scss.content}>
-            <div className={scss.container}>
+            <div className='container'>
             <Divider title='Price includes' variant='dark'/>
             {renderIncludes}
             </div>
