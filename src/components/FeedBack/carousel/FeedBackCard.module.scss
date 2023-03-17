@@ -75,6 +75,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      background: #34e0a1;
+      border: 1px solid #767676;
+    }
   }
 }
 
@@ -116,7 +121,7 @@
   transition: ease 0.3s;
 }
 
-@media(min-width: 1440px) {
+@media (min-width: 1440px) {
   .wrapper {
     width: 438px !important;
   }
@@ -126,14 +131,13 @@
   }
 }
 
-
-@media(max-width: 1335px) {
+@media (max-width: 1335px) {
   .wrapper {
     width: 380px;
   }
 }
 
-@media(max-width: 1200px) {
+@media (max-width: 1200px) {
   .wrapper {
     width: 335px !important;
   }
