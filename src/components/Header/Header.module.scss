@@ -12,6 +12,7 @@
   transition: 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   width: 100%;
   h1 {
+    font-family: "Montserra" sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
@@ -58,7 +59,7 @@
         }
         &::before {
           transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-          background: #2E325A;
+          background: #2e325a;
           left: 0;
         }
       }
@@ -117,7 +118,7 @@
       }
       &::before {
         transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-        background: #2E325A;
+        background: #2e325a;
         left: 0;
       }
     }
@@ -174,7 +175,7 @@
       }
       &::before {
         transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-        background: #2E325A;
+        background: #2e325a;
         left: 0;
       }
     }
@@ -210,13 +211,13 @@
       font-weight: 500;
       font-size: 14px;
       line-height: 17px;
-      color: #6F6F6F;
+      color: #6f6f6f;
       display: inline-block;
       transition: color 0.2s ease;
       position: relative;
       &:hover,
       &.activeLink {
-        color: #2E325A;
+        color: #2e325a;
         &::before {
           width: 100%;
           left: 100;
@@ -232,7 +233,7 @@
       }
       &::before {
         transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-        background: #2E325A;
+        background: #2e325a;
         left: 0;
       }
     }

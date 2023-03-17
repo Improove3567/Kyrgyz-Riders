@@ -47,7 +47,7 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
   return (
     <header className={HeaderStyles}>
       <Link href="/">
-        <h1>Logo</h1>
+        <h1>LOGO</h1>
       </Link>
       <nav>{renderLinks}</nav>
       <div></div>
