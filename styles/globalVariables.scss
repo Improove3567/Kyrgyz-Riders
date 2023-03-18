@@ -1,0 +1,19 @@
+@mixin breackpoint($point) {
+  @if $point==xxl {
+    @media (max-width: 1600px) {
+      @content;
+    }
+  } @else if $point==md {
+    @media (max-width: 997px) {
+      @content;
+    }
+  } @else if $point==sm {
+    @media (max-width: 776px) {
+      @content;
+    }
+  } @else if $point==xs {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
+}
