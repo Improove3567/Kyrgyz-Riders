@@ -10,8 +10,7 @@
 .content {
   margin-top: 50px;
   margin-bottom: 50px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 32px;
   grid-template-columns: repeat(4, 1fr);
 }
