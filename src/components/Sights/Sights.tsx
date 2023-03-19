@@ -21,8 +21,10 @@ const Sights: React.FC = () => {
     getSights();
   }, []);
 
+  const sightList = sights.slice(0, 4)
+
   const renderCards = React.useMemo(
-    () => sights.map((item: any) => <SightCard key={item.id} {...item} />),
+    () => sightList.map((item: any) => <SightCard key={item.id} {...item} />),
     [sights]
   );
   return (

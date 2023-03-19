@@ -1,20 +1,27 @@
 import React, { FC } from "react";
-import { SightTourArrProps } from "../../../constants/SightTourBlock";
 import scss from "./SightTourCard.module.scss";
-import Image from "next/image";
-const SightTourCard: FC<SightTourArrProps> = ({ img, title, days, desc }) => {
+import TourInfoTypes from "../../../constants/SightTourBlock";
+
+interface SightTourProps {
+  image: string;
+  title: string;
+  subtitle: string;
+  tourInfo: TourInfoTypes;
+}
+
+const SightTourCard: FC<SightTourProps> = ({ image, title, subtitle, tourInfo }) => {
   return (
-    <div className={scss.card}>
+    <div className={scss.card} key={title + image}>
       <div className={scss.front}>
         <div className={scss.img}>
-          <Image src={img} alt={title} width={280} height={280} />
+          <img src={image} alt={title} width={280} height={280} />
           <div className={scss.days}>
-            <span>{days}</span>
+            <span>{tourInfo?.duration.days} days</span>
           </div>
         </div>
         <div className={scss.btm}>
           <p>{title}</p>
-          <p>{desc}</p>
+          <p>{subtitle}</p>
         </div>
       </div>
     </div>

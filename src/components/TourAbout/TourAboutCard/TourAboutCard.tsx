@@ -3,28 +3,40 @@ import scss from "./TourAboutCard.module.scss";
 import Image from "next/image";
 interface TourAboutCardProps {
   title?: string;
-  text?: textProps[];
-  id: number
+  text?: string | Array<string>;
+  isSmall?: boolean;
 }
 
-interface textProps {
-  description?: string;
-  arrayText?: Tour[];
-}
-interface Tour {
-  description?: string;
-}
 const TourAboutCard: FC<TourAboutCardProps> = ({
   title,
   text,
-  id
+  isSmall,
 }) => {
-  let heightClassName = scss.card;
-  if (id == 1) {
-    heightClassName = scss.card_height;
+  const id = 0
+
+  const renderCards = useMemo(() => {
+    if (!Array.isArray(text)) {
+      return (
+        <p>{text}</p>
+      )
+    } else {
+      return (
+        text.map((el) => (
+          <li key={id}>{el}</li>
+        ))
+      )
+    }
+  }, [text])
+
+
+  let cardClassName = scss.card
+  if (isSmall) {
+    cardClassName = scss.card_height
   }
+
+
   return (
-    <div className={heightClassName} key={id}>
+    <div className={cardClassName} key={id}>
       <div className={scss.img} key={id}>
         <Image
           src="/images/calendar.svg"
@@ -35,24 +47,11 @@ const TourAboutCard: FC<TourAboutCardProps> = ({
         <p>{title}</p>
       </div>
       <div className={scss.card_bottom} key={id}>
-        {text?.map((el) => (
-          <div key={id}>
-            <p>{el.description}</p>
-            {title === "Itinerary" ? (
-              <ol>
-                {el.arrayText?.map((elem) => (
-                  <li key={id}>{elem.description}</li>
-                ))}
-              </ol>
-            ) : (
-              <ul>
-                {el.arrayText?.map((elem) => (
-                  <li key={id}>{elem.description}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
+        <div key={id}>
+          <ul>
+            {renderCards}
+          </ul>
+        </div>
       </div>
     </div>
   );

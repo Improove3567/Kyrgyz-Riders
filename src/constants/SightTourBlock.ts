@@ -1,33 +1,36 @@
+export interface durationTypes {
+    days: string,
+    durationType: string,
+}
+
+export interface itenerariesTypes {
+    desc: string,
+    facts: string,
+    image: string,
+    itinerary: string,
+    overnight: string,
+}
+
+export default interface TourInfoTypes {
+    slice(arg0: number, arg1: number): unknown;
+    aboutTour: string,
+    accommodaton:Array<string>,
+    bringThings: Array<string>,
+    category: string,
+    PriceDoesntInclude: string,
+    duration: durationTypes,
+    include: string,
+    itenerariesDays: itenerariesTypes,
+    itinerary: Array<string>,
+    loveReasons: Array<string>,
+    photoes: Array<string>,
+    time: string,
+}
+
 export interface SightTourArrProps{
-    img: string;
-    days: string;
+    createdAt: any;
+    image: string;
+    subtitle: string;
     title: string;
-    desc: string;
+    tourInfo: TourInfoTypes[];
 };
-export const SightTourArr: SightTourArrProps[] = [
-    {
-        img: '/images/testjpg.jpg',
-        days: '9 days',
-        title: 'BLUE SKY',
-        desc: 'Off road'
-    },
-    {
-        img: '/images/testjpg.jpg',
-        days: '9 days',
-        title: 'BLUE SKY',
-        desc: 'Off road'
-    },
-    {
-        img: '/images/testjpg.jpg',
-        days: '9 days',
-        title: 'BLUE SKY',
-        desc: 'Off road'
-    },
-    {
-        img: '/images/testjpg.jpg',
-        days: '9 days',
-        title: 'BLUE SKY',
-        desc: 'Off road'
-    },
-    
-]

@@ -5,7 +5,7 @@ interface IPhotoesItemsProps {
   image: string;
 }
 
-const PhotoesItems: React.FC<IPhotoesItemsProps> = ({image}) => {
+const PhotoesItems: React.FC<IPhotoesItemsProps> = ({ image }) => {
 
   return (
     <div className={scss.photoesItemsMain}>

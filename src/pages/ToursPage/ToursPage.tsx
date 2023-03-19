@@ -11,25 +11,25 @@ import { toursSliders } from '../../constants/MainSliders';
 
 
 const ToursPage = () => {
-    const [index, setIndex] = useState<number>(0)
+  const [index, setIndex] = useState<number>(0)
 
 
-    const change = (value: number): void => {
-        setIndex(value)
-    }
-    return (
-        <>
-        <div className={scss.toursPage}>
-            <Header isMain={false}/>
-            <Main imgPageSliders={toursSliders}/>
-            <FilterBlock change={change}/>
-            <FilterToursCardBlock index={index}/>
-            <YourTours/>
-            <Footer/>
-        </div>  
+  const change = (value: number): void => {
+    setIndex(value)
+  }
+  return (
+    <>
+      <div className={scss.toursPage}>
+        <Header isMain={false} />
+        <Main imgPageSliders={toursSliders} />
+        <FilterBlock change={change} />
+        <FilterToursCardBlock index={index} />
+        <YourTours />
+        <Footer />
+      </div>
 
-        </>
-    );
+    </>
+  );
 };
 
 export default ToursPage;

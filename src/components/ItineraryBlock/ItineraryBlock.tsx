@@ -4,20 +4,33 @@ import Divider from "../Divider/Divider";
 import { AccordionData } from "../../constants/ItineraryContent";
 import ItineraryContentBlock from "./ItineraryHeaderContent/ItineraryContentBlock";
 
-const ItineraryBlock: FC = () => {
+interface ItinerariesTypes {
+  itinerary: string;
+  desc: string;
+  image: string;
+  facts: string;
+  overnight: string;
+}
+
+interface ItineraryProps {
+  itineraries: any;
+}
+
+const ItineraryBlock: FC<ItineraryProps> = ({ itineraries }) => {
   const render = useMemo(
     () =>
-      AccordionData.map((item) => (
-        <ItineraryContentBlock key={item.id} {...item} />
+      itineraries?.map((item: any) => (
+        <ItineraryContentBlock  {...item} />
       )),
-    []
+    [itineraries]
   );
+
 
   return (
     <div className={scss.itineraryBlockMain}>
       <div className="container">
-      <Divider title="Itinerary" variant="dark" />
-      <>{render}</>
+        <Divider title="Itinerary" variant="dark" />
+        <>{render}</>
       </div>
     </div>
   );
