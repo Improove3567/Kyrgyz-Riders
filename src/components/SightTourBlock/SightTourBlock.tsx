@@ -11,15 +11,17 @@ import TourInfoTypes from "../../constants/SightTourBlock";
 
 
 interface TourProps {
-  tours: string[];
+  tours: Array<object>;
 }
 
 const SightTourBlock: React.FC<TourProps> = ({ tours }) => {
 
   const renderCards = useMemo(
-    () => tours?.map((el: any) => <SightTourCard {...el} key={el.createdAt} />),
+    () => tours?.map((el, index) => <SightTourCard {...el} key={index} />),
     [tours]
   );
+
+  console.log(tours)
 
   return (
     <div className={scss.wrapper}>

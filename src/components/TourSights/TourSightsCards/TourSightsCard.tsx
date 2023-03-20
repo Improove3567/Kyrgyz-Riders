@@ -7,7 +7,7 @@ const TourSightsCard: FC<TourSightsArrProps> = ({ img, title, aboutSight }) => {
     <div className={scss.card}>
       <div className={scss.front}>
         <div className={scss.img}>
-          <Image src={img} alt={title} width={280} height={280} />
+          <img src={img} alt={title} width={280} height={280} />
         </div>
         <div className={scss.btm}>
           <p>{title}</p>

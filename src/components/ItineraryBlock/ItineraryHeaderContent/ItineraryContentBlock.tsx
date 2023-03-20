@@ -5,11 +5,11 @@ import ArrowDown from "../../../../public/images/TourFeatures/VectorDown.svg";
 import ArrowUP from "../../../../public/images/TourFeatures/VectorUp.svg";
 
 interface ItineraryProps {
-  itinerary: string;
-  desc: string;
-  image: string;
-  facts: string;
-  overnight: string;
+  itinerary?: string;
+  desc?: string;
+  image?: string;
+  facts?: string;
+  overnight?: string;
 }
 
 const ItineraryContentBlock: React.FC<ItineraryProps> = ({

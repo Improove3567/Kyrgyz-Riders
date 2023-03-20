@@ -1,5 +1,5 @@
 export interface TourSightsArrProps {
-    img: string;
-    title: string;
-    aboutSight: string;
+    img?: string;
+    title?: string;
+    aboutSight?: string;
 }

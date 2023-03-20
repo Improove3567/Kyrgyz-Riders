@@ -12,7 +12,7 @@ const TourFilterCard: FC = () => {
   }, [])
 
   const CardList = React.useMemo(
-    () => tours?.slice(0, 4).map((el: any) => <FilterCads {...el} key={el.tid} id={el.tid} />),
+    () => tours?.slice(0, 4).map((el, index) => <FilterCads {...el} key={index} />),
     [tours]
   );
 

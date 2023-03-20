@@ -5,17 +5,17 @@ import Link from "next/link";
 import TourInfoTypes from "../../../constants/SightTourBlock";
 
 interface TourFilterCardArr {
-  title: string;
-  image: string;
-  tourInfo: TourInfoTypes;
-  id: string;
+  title?: string;
+  image?: string;
+  tourInfo?: TourInfoTypes;
+  tid?: string;
 }
 
 const FilterCads: FC<TourFilterCardArr> = ({
   title,
   image,
   tourInfo,
-  id,
+  tid,
 }) => {
   return (
     <div className={scss.block}>
@@ -48,7 +48,7 @@ const FilterCads: FC<TourFilterCardArr> = ({
           </div>
         </div>
         <div className={scss.btn}>
-          <Link href={`/tour/${id}`}>View trip</Link>
+          <Link href={`/tour/${tid}`}>View trip</Link>
         </div>
       </div>
     </div>

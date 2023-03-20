@@ -5,7 +5,7 @@ import { AccordionData } from "../../constants/ItineraryContent";
 import ItineraryContentBlock from "./ItineraryHeaderContent/ItineraryContentBlock";
 
 interface ItinerariesTypes {
-  [x: string]: any;
+  map(arg0: (item: any, index: any) => JSX.Element): any;
   itinerary: string;
   desc: string;
   image: string;
@@ -20,12 +20,11 @@ interface ItineraryProps {
 const ItineraryBlock: FC<ItineraryProps> = ({ itineraries }) => {
   const render = useMemo(
     () =>
-      itineraries?.map((item: any) => (
-        <ItineraryContentBlock  {...item} key={item.createdAt} />
+      itineraries?.map((item, index) => (
+        <ItineraryContentBlock  {...item} key={index} />
       )),
     [itineraries]
   );
-
 
   return (
     <div className={scss.itineraryBlockMain}>

@@ -3,15 +3,15 @@ import scss from "./SightTourCard.module.scss";
 import TourInfoTypes from "../../../constants/SightTourBlock";
 
 interface SightTourProps {
-  image: string;
-  title: string;
-  subtitle: string;
-  tourInfo: TourInfoTypes;
+  image?: string;
+  title?: string;
+  subtitle?: string;
+  tourInfo?: TourInfoTypes;
 }
 
 const SightTourCard: FC<SightTourProps> = ({ image, title, subtitle, tourInfo }) => {
   return (
-    <div className={scss.card} key={title + image}>
+    <div className={scss.card}>
       <div className={scss.front}>
         <div className={scss.img}>
           <img src={image} alt={title} width={280} height={280} />

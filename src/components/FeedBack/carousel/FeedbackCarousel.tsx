@@ -19,7 +19,7 @@ const FeedbackCarousel = () => {
   }, []);
 
   const render = React.useMemo(
-    () => feedback.map((item: any) => <FeedBackCard key={item.id} {...item} />),
+    () => feedback.map((item, index) => <FeedBackCard key={index} {...item} />),
     [feedback]
   );
 

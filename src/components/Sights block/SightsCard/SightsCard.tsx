@@ -4,11 +4,11 @@ import Link from "next/link";
 
 
 interface SightCardProps {
-    title: string;
-    img: string;
-    tid: string;
+    title?: string;
+    img?: string;
+    tid?: string;
 }
-const SightsCard: React.FC<SightCardProps> = ({ title, img, tid,  }) => {
+const SightsCard: React.FC<SightCardProps> = ({ title, img, tid, }) => {
     return (
         <Link href={`/sight/${tid}`} className={scss.wrapper}>
             <div>

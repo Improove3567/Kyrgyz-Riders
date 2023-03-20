@@ -28,7 +28,7 @@ export default interface TourInfoTypes {
 }
 
 export interface SightTourArrProps{
-    createdAt: any;
+    createdAt: Date;
     image: string;
     subtitle: string;
     title: string;
