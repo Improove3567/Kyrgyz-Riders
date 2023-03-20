@@ -6,7 +6,7 @@ interface CardProps {
   title?: string;
   subtitle?: string;
   days?: number;
-  img: string;
+  img?: string;
 }
 
 const SliderCard: React.FC<CardProps> = ({ title, subtitle, days, img }) => {

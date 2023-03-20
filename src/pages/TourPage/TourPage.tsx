@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ItineraryBlock from '../../components/ItineraryBlock/ItineraryBlock';
 import PriceDoesntInclude from '../../components/PriceDoesntIncInclude/PriceDoesntInclude';
 import TourAboutText from '../../components/TourAboutText/TourAboutText';
@@ -14,27 +14,37 @@ import TourSights from '../../components/TourSights/TourSights';
 import { tourSlider } from '../../constants/MainSliders';
 import PhotoesSlider from '../../components/PhotoesSlider/PhotoesSlider';
 import TourMapsBlock from '../../components/TourMapBlock/TourMapBlock';
+import { useRouter } from 'next/router';
+import useTours from '../../hooks/useTours';
 
 
 
 const TourPage = () => {
+    const router = useRouter();
+    const { id }: any = router.query
+    const { getTourDetail, tourDetail }: any = useTours();
+    useEffect(() => {
+        if (id != undefined) {
+            getTourDetail(id)
+        }
+    }, [id])
 
     return (
         <>
             <Header />
             <Main imgPageSliders={tourSlider} />
-            <TourAbout/>
-            <TourAboutText />
-            <TourSights/>
-            <TourFeatures />
-            <PhotoesSlider/>
-            <ItineraryBlock />
-            <TourMapsBlock/>
-            <PriceIncludes/>
+            <TourAbout tour={tourDetail} />
+            <TourAboutText aboutTour={tourDetail?.tourInfo.aboutTour} />
+            <TourSights sights={tourDetail?.tourInfo.sights} />
+            <TourFeatures reasons={tourDetail?.tourInfo.loveReasons} />
+            <PhotoesSlider photos={tourDetail?.tourInfo.photoes} />
+            <ItineraryBlock itineraries={tourDetail?.tourInfo.itenerariesDays} />
+            <TourMapsBlock />
+            <PriceIncludes />
             <PriceDoesntInclude />
             <SendARequest />
-            <YourTours/>
-            <Footer/>
+            <YourTours />
+            <Footer />
         </>
     );
 };
