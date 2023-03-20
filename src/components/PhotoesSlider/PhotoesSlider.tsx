@@ -62,7 +62,7 @@ const PhotosSlider: FC<PhotosProps> = ({ photos }) => {
   const renderPhotoesItems = useMemo(
     () =>
       photos?.map((item) => (
-        <PhotoesItems image={item} />
+        <PhotoesItems image={item} key={item} />
       )),
     [photos]
   );

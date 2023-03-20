@@ -5,6 +5,7 @@ import { AccordionData } from "../../constants/ItineraryContent";
 import ItineraryContentBlock from "./ItineraryHeaderContent/ItineraryContentBlock";
 
 interface ItinerariesTypes {
+  [x: string]: any;
   itinerary: string;
   desc: string;
   image: string;
@@ -13,14 +14,14 @@ interface ItinerariesTypes {
 }
 
 interface ItineraryProps {
-  itineraries: any;
+  itineraries: ItinerariesTypes;
 }
 
 const ItineraryBlock: FC<ItineraryProps> = ({ itineraries }) => {
   const render = useMemo(
     () =>
       itineraries?.map((item: any) => (
-        <ItineraryContentBlock  {...item} />
+        <ItineraryContentBlock  {...item} key={item.createdAt} />
       )),
     [itineraries]
   );

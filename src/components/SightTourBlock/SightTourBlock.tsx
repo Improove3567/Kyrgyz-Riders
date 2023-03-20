@@ -17,7 +17,7 @@ interface TourProps {
 const SightTourBlock: React.FC<TourProps> = ({ tours }) => {
 
   const renderCards = useMemo(
-    () => tours?.map((el: any) => <SightTourCard {...el} />),
+    () => tours?.map((el: any) => <SightTourCard {...el} key={el.createdAt} />),
     [tours]
   );
 

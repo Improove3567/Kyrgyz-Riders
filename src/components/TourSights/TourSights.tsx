@@ -9,8 +9,8 @@ interface SightsTypes {
 
 const TourSights: React.FC<SightsTypes> = ({ sights }) => {
   const renderCards = useMemo(() => (
-    sights?.map((el) => (
-      <TourSightsCard img={""} title={""} aboutSight={""} {...el} />
+    sights?.map((el: any) => (
+      <TourSightsCard img={""} title={""} aboutSight={""} {...el} key={el.createdAt} />
     ))
   ), [sights])
   console.log(sights)

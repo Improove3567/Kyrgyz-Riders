@@ -12,8 +12,8 @@ const SightsBlock: React.FC = () => {
         getSights();
     }, [])
     const sightsList = useMemo(() => (
-        sights.map((el) => (
-            <SightCard tid={""} title={""} img={""} {...el} />
+        sights.map((el:any) => (
+            <SightCard tid={""} title={""} img={""} {...el} key={el.createdAt} />
         ))
     ), [sights])
 
