@@ -16,8 +16,7 @@ const SightsBlock: React.FC = () => {
             <SightCard {...el} key={index} />
         ))
     ), [sights])
-
-    console.log(sights)
+    
     return (
         <div className={scss.wrapper}>
             <div className="container">
