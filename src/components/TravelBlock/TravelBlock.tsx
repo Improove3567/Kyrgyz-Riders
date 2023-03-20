@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import scss from "./TravelBlock.module.scss";
 import Divider from "../Divider/Divider";
 import { TravelData } from "../../constants/TravelData";
