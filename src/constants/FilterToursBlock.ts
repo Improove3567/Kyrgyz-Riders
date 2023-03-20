@@ -1,7 +1,7 @@
 export interface Option{
-    name : string;
-    id : number | string;
-    status: boolean;
+    name ?: string;
+    id ?: number | string;
+    status?: boolean;
 }
 interface ToursSelect{
     name : string;

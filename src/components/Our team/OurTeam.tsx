@@ -12,7 +12,7 @@ const OurTeam: React.FC = () => {
   }, []);
 
   const render = useMemo(
-    () => team.map((el: any) => <TeamCard {...el} key={el.title} />),
+    () => team.map((el, index) => <TeamCard {...el} key={index} />),
     [team]
   );
 

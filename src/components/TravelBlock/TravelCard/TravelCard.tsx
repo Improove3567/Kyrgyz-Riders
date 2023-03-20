@@ -3,8 +3,9 @@ import scss from "./TravelCard.module.scss";
 import Image from "next/image";
 
 interface SightCardProps {
-    date: string;
-    title: string;
+    date?: string;
+    title?: string;
+    link?: string;
 }
 
 const TravelCard: React.FC<SightCardProps> = ({ date, title }) => {

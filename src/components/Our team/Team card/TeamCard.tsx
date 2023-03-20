@@ -3,10 +3,10 @@ import scss from "./TeamCard.module.scss"
 import Image from "next/image";
 
 interface TeamCardProps {
-  name: string,
-  surname: string,
-  image: string,
-  speciality: string,
+  name?: string,
+  surname?: string,
+  image?: string,
+  speciality?: string,
 }
 
 const TeamCard: React.FC<TeamCardProps> = ({ name, surname, speciality, image }) => {
