@@ -66,74 +66,64 @@ const TourSlider: React.FC = () => {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 3.9,
-          slidesToScroll: 4,
-          infinite: false,
+          slidesToShow: 3.5,
+          slidesToScroll: 3,
           dots: true
         }
       },
       {
-        breakpoint: 1024,
+        breakpoint: 992,
         settings: {
-          slidesToShow: 3.7,
+          slidesToShow: 3.5,
           slidesToScroll: 3,
-          infinite: false,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 997,
-        settings: {
-          slidesToShow: 3.3,
-          slidesToScroll: 3,
-          infinite: false,
+          initialSlide: 2,
           dots: true
         }
       },
       
       {
-        breakpoint: 845,
+        breakpoint: 938,
         settings: {
-          slidesToShow: 2.8,
+          slidesToShow: 3.2,
           slidesToScroll: 2,
-          infinite: false,
-          dots: true
+          initialSlide: 2,
         }
       },
-      
       {
-        breakpoint: 740,
+        breakpoint: 854,
+        settings: {
+          slidesToShow: 2.9,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        }
+      },
+      {
+        breakpoint: 768,
         settings: {
           slidesToShow: 2.5,
-          slidesToScroll: 2,
-          infinite: false,
-          dots: true
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 674,
+        settings: {
+          slidesToShow: 2.4,
+          slidesToScroll: 2
         }
       },
       
       {
-        breakpoint: 685,
+        breakpoint: 644,
         settings: {
           slidesToShow: 2.2,
-          slidesToScroll: 2,
-          infinite: false,
-          dots: true
+          slidesToScroll: 2
         }
       },
       {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2.1,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 576,
+        breakpoint: 608,
         settings: {
           slidesToShow: 1.9,
-          slidesToScroll: 1,
-          initialSlide: 2
+          slidesToScroll: 1
         }
       },
       {
@@ -144,7 +134,29 @@ const TourSlider: React.FC = () => {
         }
       },
       {
-        breakpoint: 385,
+        breakpoint: 410,
+        settings: {
+          slidesToShow: 1.4,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 380,
+        settings: {
+          slidesToShow: 1.2,
+          slidesToScroll: 1
+        }
+      },
+      
+      {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 1.1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 300,
         settings: {
           slidesToShow: 1.1,
           slidesToScroll: 1
