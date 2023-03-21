@@ -1,6 +1,8 @@
 import React, {  useState } from "react";
 import scss from './Select.module.scss';
 import Option from "../Option/Option";
+import Image from "next/image";
+
 
 interface Tours{
     name:string
@@ -23,7 +25,7 @@ const Select : React.FC<Tours> = ({name,option,valueIndex,select}) => {
         <div>
             <div onClick = {click} className={scss.select}>
                 <span className={scss.span}>{name}</span>
-                <div className={scss.arrowDown}></div>
+                {arrow ? <Image src={'assets/images/arrow.svg'} width={10} height={5} alt={"arrow"}/> : <Image src={'assets/images/arrowUp.svg'} width={10} height={5} alt={"arrow"}/>}
             </div>
             {
             arrow && (
