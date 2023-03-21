@@ -27,7 +27,7 @@ const SliderCard: React.FC<CardProps> = ({ title, subtitle, days, img }) => {
           </div>
         </div>
       </div>
-    </Link>
+    </Link>  
   );
 };
 

@@ -67,7 +67,7 @@ const TourSlider: React.FC = () => {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 2,
           infinite: true,
           dots: true
         }
@@ -75,7 +75,7 @@ const TourSlider: React.FC = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 2.1,
           slidesToScroll: 2,
           initialSlide: 2
         }
@@ -83,7 +83,7 @@ const TourSlider: React.FC = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.5,
           slidesToScroll: 1
         }
       }
@@ -121,7 +121,6 @@ const TourSlider: React.FC = () => {
       </Divider>
       <div className="mainSliders">
         <Slider {...settings} >
-          {render}
           {render}
         </Slider>
       </div>
