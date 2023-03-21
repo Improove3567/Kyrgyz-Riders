@@ -86,6 +86,13 @@ const TourSlider: React.FC = () => {
           slidesToShow: 1.5,
           slidesToScroll: 1
         }
+      },
+      {
+        breakpoint: 385,
+        settings: {
+          slidesToShow: 1.1,
+          slidesToScroll: 1
+        }
       }
     ],
     nextArrow: (
