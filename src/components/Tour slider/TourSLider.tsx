@@ -64,11 +64,59 @@ const TourSlider: React.FC = () => {
     speed: 500,
     responsive: [
       {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3.9,
+          slidesToScroll: 4,
+          infinite: false,
+          dots: true
+        }
+      },
+      {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 3.7,
+          slidesToScroll: 3,
+          infinite: false,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 997,
+        settings: {
+          slidesToShow: 3.3,
+          slidesToScroll: 3,
+          infinite: false,
+          dots: true
+        }
+      },
+      
+      {
+        breakpoint: 845,
+        settings: {
+          slidesToShow: 2.8,
           slidesToScroll: 2,
-          infinite: true,
+          infinite: false,
+          dots: true
+        }
+      },
+      
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 2,
+          infinite: false,
+          dots: true
+        }
+      },
+      
+      {
+        breakpoint: 685,
+        settings: {
+          slidesToShow: 2.2,
+          slidesToScroll: 2,
+          infinite: false,
           dots: true
         }
       },
@@ -77,6 +125,14 @@ const TourSlider: React.FC = () => {
         settings: {
           slidesToShow: 2.1,
           slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1.9,
+          slidesToScroll: 1,
           initialSlide: 2
         }
       },
