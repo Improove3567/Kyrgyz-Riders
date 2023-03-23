@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import SightCard from "./SightsCard/SightsCard";
 import scss from "./SightsBlock.module.scss";
-import { SightsList } from "../../constants/SightsBlock";
 import Divider from "../Divider/Divider";
 import useSights from "../../hooks/useSights";
 
@@ -16,7 +15,7 @@ const SightsBlock: React.FC = () => {
             <SightCard {...el} key={index} />
         ))
     ), [sights])
-    
+
     return (
         <div className={scss.wrapper}>
             <div className="container">

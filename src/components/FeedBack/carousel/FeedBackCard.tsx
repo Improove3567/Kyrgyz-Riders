@@ -12,6 +12,7 @@ const FeedbackCard: React.FC<IFeedback> = ({
   link,
   stars,
   name,
+  lastName,
 }) => {
   return (
     <div className={scss.wrapper}>
@@ -20,7 +21,7 @@ const FeedbackCard: React.FC<IFeedback> = ({
         <img width={90} height={90} src={img} alt="avatar" />
         <div className={scss.title}>
           <h1>
-            {name}
+            {name + " " + lastName}
             <p>
               / {stars}
               <Image

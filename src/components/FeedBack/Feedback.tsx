@@ -11,6 +11,7 @@ export interface IFeedback {
   link?: string;
   img?: string;
   name?: string;
+  lastName?: string;
 }
 
 const Feedback: React.FC = () => {
