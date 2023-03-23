@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import scss from "./TravelBlock.module.scss";
 import Divider from "../Divider/Divider";
 import { TravelData } from "../../constants/TravelData";
@@ -16,7 +16,7 @@ const TravelBlock: React.FC = () => {
             <TravelCard {...el} key={index} />
         ))
     ), [travel])
-    console.log(travel)
+
     return (
         <div className={scss.wrapper}>
             <div className="container">
