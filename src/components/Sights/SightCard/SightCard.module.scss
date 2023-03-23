@@ -1,8 +1,6 @@
 .card {
   position: relative;
   z-index: 20;
-  width: 23%;
-  height: 330px;
 
   .front {
     width: 100%;
@@ -50,10 +48,41 @@
     }
   }
 }
-@media (max-width:576px) {
+@media (min-width:375px) {
   .card{
     width: 70%;
     height: 250px;
     margin-right: 12px;
   }
 }
+@media (min-width:500px) {
+  .card{
+    width: 50%;
+    height: 250px;
+    margin-right: 12px;
+  }
+}
+@media (min-width:700px) {
+  .card{
+    width: 40%;
+    height: 300px;
+    margin-right: 12px;
+  }
+  
+}
+@media (min-width:900px) {
+  .card{
+    width: 32%;
+    height: 310px;
+    margin-right: 12px;
+  }
+  
+}
+@media (min-width:1100px) {
+  .card{
+    width: 23%;
+    height: 330px;
+    margin-right: 12px;
+  }
+}
+
