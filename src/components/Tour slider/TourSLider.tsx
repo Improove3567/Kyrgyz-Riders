@@ -1,5 +1,5 @@
 import React, { useMemo, useEffect, useState } from "react";
-import scss from './TourSlider.module.scss';
+import scss from "./TourSlider.module.scss";
 import SliderCard from "./SliderCard/SliderCard";
 import Slider from "react-slick";
 import Image from "next/image";
@@ -8,49 +8,31 @@ import FilterTour from "../Tour filter/FilterTour";
 import useTours from "../../hooks/useTours";
 
 interface ArrowProps {
-  onClick: React.MouseEventHandler<HTMLDivElement>
+  onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const TourSlider: React.FC = () => {
-
-  const { tours, getTours } = useTours()
+  const { tours, getTours } = useTours();
 
   useEffect(() => {
-    getTours()
-  }, [])
-
+    getTours();
+  }, []);
 
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
-      <div
-        className={scss.nextArrow_container}
-        onClick={onClick}
-      >
-        <Image
-          src="/images/Vector.svg"
-          alt="NextArrow"
-          width="6"
-          height="12" />
+      <div className={scss.nextArrow_container} onClick={onClick}>
+        <Image src="/images/Vector.svg" alt="NextArrow" width="6" height="12" />
       </div>
     );
   }
 
   function SamplePrevArrow({ onClick }: ArrowProps) {
     return (
-      <div
-        className={scss.prevArrow_container}
-        onClick={onClick}
-      >
-        <Image
-          src="/images/Vector.svg"
-          alt="PrevArrow"
-          width="6"
-          height="12"
-        />
+      <div className={scss.prevArrow_container} onClick={onClick}>
+        <Image src="/images/Vector.svg" alt="PrevArrow" width="6" height="12" />
       </div>
     );
   }
-
 
   const settings = {
     className: "center",
@@ -76,7 +58,7 @@ const TourSlider: React.FC = () => {
         }}
       />
     ),
-    dotsClass: `slick-dots dots`
+    dotsClass: `slick-dots dots`,
   };
 
   const render = useMemo(
@@ -84,22 +66,19 @@ const TourSlider: React.FC = () => {
     [tours]
   );
 
-
   return (
     <div className={scss.wrapper}>
       <div className="container">
-      <Divider title="Select Tour">
-        <FilterTour />
-      </Divider>
-      <div className="mainSliders">
-        <Slider {...settings} >
-          {render}
-        </Slider>
-      </div>
+        <div className={scss.containerDivider}>
+          <Divider title="Select Tour">
+            <FilterTour />
+          </Divider>
+        </div>
+        <div className="mainSliders">
+          <Slider {...settings}>{render}</Slider>
+        </div>
       </div>
     </div>
-
-
   );
 };
 
