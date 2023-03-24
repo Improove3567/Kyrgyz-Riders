@@ -151,19 +151,12 @@
 
       cursor: pointer;
 
-      &:hover {
-        background: #2e325a;
-        color: #ffffff;
-      }
-
       &::before {
         content: none;
       }
     }
 
     p:hover {
-      color: #ffffff;
-
       &::before {
         content: none;
       }
@@ -185,11 +178,6 @@
     padding: 10px 30px;
 
     cursor: pointer;
-
-    &:hover {
-      background: #2e325a;
-      color: #ffffff;
-    }
 
     &::before {
       content: none;

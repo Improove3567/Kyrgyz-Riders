@@ -25,3 +25,9 @@
     gap: 44px;
   }
 }
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0px;
+  }
+}
