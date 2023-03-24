@@ -5,13 +5,13 @@ import scss from "./feedback.module.scss";
 import FeedbackCarousel from "./carousel/FeedbackCarousel";
 
 export interface IFeedback {
-  id: number;
-  title: string;
-  country: string;
-  stars: number;
-  desc: string;
-  link: string;
-  img: string;
+  country?: string;
+  stars?: number;
+  desc?: string;
+  link?: string;
+  img?: string;
+  name?: string;
+  lastName?: string;
 }
 
 const Feedback: React.FC = () => {

@@ -62,7 +62,7 @@ const TourSlider: React.FC = () => {
   };
 
   const render = useMemo(
-    () => tours.map((el: any) => <SliderCard key={"test"} {...el} />),
+    () => tours.map((el, index ) => <SliderCard key={index} {...el} />),
     [tours]
   );
 

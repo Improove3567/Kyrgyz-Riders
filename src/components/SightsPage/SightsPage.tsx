@@ -3,22 +3,17 @@ import Divider from "../Divider/Divider";
 import { SightsPageArr } from "../../constants/SightsPage";
 import scss from './SightsPage.module.scss'
 
-const SightsPage: FC = () => {
-    const showWork = React.useMemo(
-        () =>
-            SightsPageArr.map((item) => (
-                <div className={scss.line} key={item.id}>
-                    <p>{item.title}</p>
-                </div>
-            )),
-        [SightsPageArr]
-    )
+interface SightsText {
+    aboutSight: string;
+}
+
+const SightsPage: FC<SightsText> = ({ aboutSight }) => {
     return (
         <div className={scss.title_block}>
             <div className='container'>
                 <Divider title='Sights / Cholpon - Ata' variant='light' />
                 <div className={scss.text}>
-                    {showWork}
+                    {aboutSight}
                 </div>
             </div>
         </div>

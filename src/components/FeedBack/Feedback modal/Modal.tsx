@@ -4,7 +4,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import scss from './Modal.module.scss'
 
 interface ModalProps {
-    desc: string;
+    desc?: string;
 }
 
 const Modal: React.FC<ModalProps> = ({ desc }) => {

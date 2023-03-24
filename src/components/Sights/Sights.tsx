@@ -6,10 +6,10 @@ import SightCard from "./SightCard/SightCard";
 import useSights from "../../hooks/useSights";
 
 export interface ISights {
-  id: number;
-  img: string | undefined | any;
-  title: string;
-  tours: Array<string>;
+  id?: number;
+  img?: string | undefined;
+  title?: string;
+  tours?: Array<string>;
   isEdgeRight?: boolean;
   isEdgeLeft?: boolean;
 }
@@ -21,8 +21,10 @@ const Sights: React.FC = () => {
     getSights();
   }, []);
 
+  const sightList = sights.slice(0, 4)
+
   const renderCards = React.useMemo(
-    () => sights.map((item: any) => <SightCard key={item.id} {...item} />),
+    () => sightList.map((item, index) => <SightCard key={index} {...item} />),
     [sights]
   );
   return (

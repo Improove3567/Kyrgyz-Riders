@@ -5,12 +5,17 @@ import { PhotoesItem } from "../../constants/PhotoesItems";
 import Divider from "../Divider/Divider";
 import PhotoesItems from "./PhotoesItems/PhotoesItems";
 import scss from "./PhotoesSlider.module.scss";
+import useTours from "../../hooks/useTours";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const PhotosSlider: FC = () => {
+interface PhotosProps {
+  photos: Array<string>;
+}
+
+const PhotosSlider: FC<PhotosProps> = ({ photos }) => {
   function SampleNextArrow({ onClick }: ArrowProps) {
     return (
       <div className={scss.nextArrow_container} onClick={onClick}>
@@ -56,10 +61,10 @@ const PhotosSlider: FC = () => {
 
   const renderPhotoesItems = useMemo(
     () =>
-      PhotoesItem.map((item) => (
-        <PhotoesItems key={item.id} image={item.image} />
+      photos?.map((item) => (
+        <PhotoesItems image={item} key={item} />
       )),
-    []
+    [photos]
   );
 
   return (

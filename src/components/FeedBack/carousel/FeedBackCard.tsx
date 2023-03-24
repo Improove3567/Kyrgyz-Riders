@@ -8,10 +8,11 @@ import Modal from "../Feedback modal/Modal";
 const FeedbackCard: React.FC<IFeedback> = ({
   desc,
   img,
-  title,
   country,
   link,
   stars,
+  name,
+  lastName,
 }) => {
   return (
     <div className={scss.wrapper}>
@@ -20,7 +21,7 @@ const FeedbackCard: React.FC<IFeedback> = ({
         <img width={90} height={90} src={img} alt="avatar" />
         <div className={scss.title}>
           <h1>
-            {title}
+            {name + " " + lastName}
             <p>
               / {stars}
               <Image

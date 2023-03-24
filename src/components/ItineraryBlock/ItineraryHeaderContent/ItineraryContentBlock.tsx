@@ -5,19 +5,19 @@ import ArrowDown from "../../../../public/images/TourFeatures/VectorDown.svg";
 import ArrowUP from "../../../../public/images/TourFeatures/VectorUp.svg";
 
 interface ItineraryProps {
-  title: string;
-  desc: string;
-  image: string;
-  shortDesc1: string;
-  shortDesc2: string;
+  itinerary?: string;
+  desc?: string;
+  image?: string;
+  facts?: string;
+  overnight?: string;
 }
 
 const ItineraryContentBlock: React.FC<ItineraryProps> = ({
-  title,
+  itinerary,
   desc,
   image,
-  shortDesc1,
-  shortDesc2,
+  facts,
+  overnight,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -29,7 +29,7 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({
       >
         <div className={scss.accordion}>
           <div className={scss.accordionTitleMain}>
-            <h3>{title}</h3>
+            <h3>{itinerary}</h3>
           </div>
           <div className={scss.accordionArrows}>
             {!isActive ? (
@@ -48,8 +48,8 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({
           </div>
           <div className={scss.line}></div>
           <div className={scss.shortDescItinerary}>
-            <p className={scss.shortDesc1}>{shortDesc1}</p>
-            <p className={scss.shortDesc2}>{shortDesc2}</p>
+            <p className={scss.facts}>{facts}</p>
+            <p className={scss.overnight}>{overnight}</p>
           </div>
         </div>
       )}

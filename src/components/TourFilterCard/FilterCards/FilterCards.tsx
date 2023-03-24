@@ -2,43 +2,27 @@ import React, { FC } from "react";
 import scss from './FilterCards.module.scss'
 import Image from "next/image";
 import Link from "next/link";
+import TourInfoTypes from "../../../constants/SightTourBlock";
 
 interface TourFilterCardArr {
-  title: string;
-  img: string;
-  id: number;
-  stars: string;
-  typeOf: typeOf;
-  timeof: typeOf;
-  starImg: string;
-  activities: typeOf;
-  days: string;
-  btn: string;
-}
-
-interface typeOf {
-  title: string;
-  text: string;
+  title?: string;
+  image?: string;
+  tourInfo?: TourInfoTypes;
+  tid?: string;
 }
 
 const FilterCads: FC<TourFilterCardArr> = ({
-  img,
   title,
-  days,
-  timeof,
-  activities,
-  starImg,
-  typeOf,
-  stars,
-  btn,
-  id
+  image,
+  tourInfo,
+  tid,
 }) => {
   return (
     <div className={scss.block}>
       <div className={scss.img}>
-        <Image src={img} alt="img" width={392} height={293} />
+        <img src={image} alt="img" width={392} height={293} />
         <div className={scss.days}>
-          <span>{days}</span>
+          <span>{tourInfo?.duration.days} days</span>
         </div>
       </div>
       <div className={scss.textContainer}>
@@ -47,24 +31,24 @@ const FilterCads: FC<TourFilterCardArr> = ({
         </div>
         <div className={scss.typeof}>
           <div className={scss.type}>
-            <p>{typeOf.title}</p>
-            <span>{typeOf.text}</span>
+            <p>Type of tour</p>
+            <span>{tourInfo?.category}</span>
           </div>
         </div>
         <div className={scss.timeof}>
           <div className={scss.time}>
-            <p>{timeof.title}</p>
-            <span>{timeof.text}</span>
+            <p>Time of year</p>
+            <span>{tourInfo?.time}</span>
           </div>
         </div>
         <div className={scss.typeof}>
           <div className={scss.activities}>
-            <p>{activities.title}</p>
-            <span>{activities.text}</span>
+            <p>Activities:</p>
+            <span>Activities</span>
           </div>
         </div>
         <div className={scss.btn}>
-          <Link href={`/tour/${id}`}>{btn}</Link>
+          <Link href={`/tour/${tid}`}>View trip</Link>
         </div>
       </div>
     </div>

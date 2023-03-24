@@ -53,7 +53,7 @@
   .shortDescItinerary {
     margin: 20px 0;
 
-    .shortDesc1 {
+    .facts {
       font-family: "Montserrat";
       font-weight: 500;
       font-size: 16px;
@@ -62,7 +62,7 @@
       margin-bottom: 10px;
     }
 
-    .shortDesc2 {
+    .overnight {
       font-family: "Montserrat";
       font-weight: 500;
       font-size: 16px;
@@ -76,6 +76,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
