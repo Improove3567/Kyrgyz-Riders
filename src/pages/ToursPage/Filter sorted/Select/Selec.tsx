@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, {  useState,useMemo, useEffect } from "react";
 import scss from './Select.module.scss';
 import Option from "../Option/Option";
 import Image from "next/image";
@@ -17,6 +17,10 @@ const Select : React.FC<Tours> = ({name,option,valueIndex,select}) => {
 
     const [arrow,setArrow] = useState(false)
 
+    const result = useMemo( () => {
+        return arrow ? <Image src={'assets/images/arrow.svg'} width={10} height={5} alt={"arrow"}/> : <Image src={'assets/images/arrowUp.svg'} width={10} height={5} alt={"arrow"}/>
+    },[arrow]);
+
     const click = ():void => {
         setArrow(!arrow)
     }
@@ -25,7 +29,7 @@ const Select : React.FC<Tours> = ({name,option,valueIndex,select}) => {
         <div>
             <div onClick = {click} className={scss.select}>
                 <span className={scss.span}>{name}</span>
-                {arrow ? <Image src={'assets/images/arrow.svg'} width={10} height={5} alt={"arrow"}/> : <Image src={'assets/images/arrowUp.svg'} width={10} height={5} alt={"arrow"}/>}
+                {result}
             </div>
             {
             arrow && (
