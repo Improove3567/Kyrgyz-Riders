@@ -28,18 +28,31 @@ const Footer: React.FC = () => {
         <div key={item.id} className={scss.card}>
           <h1>{item.title}</h1>
           {item.desc ? (
-            <p className={isActive ? scss.descAc : scss.desc}>
-              {item.desc && item.desc + " " && item.desc.length > 129
-                ? `${item.desc.substring(0, 129)}...`
-                : item.desc}{" "}
+            <>
+              <p className={isActive ? scss.descAc : scss.desc}>
+                {item.desc && item.desc + " " && item.desc.length > 129
+                  ? `${item.desc.substring(0, 129)}...`
+                  : item.desc}{" "}
+                {item.desc ? (
+                  <Link
+                    href="/about-us"
+                    className={scss.read}
+                    id={scss.hidenBefor}
+                  >
+                    Read More
+                  </Link>
+                ) : (
+                  ""
+                )}
+              </p>
               {item.desc ? (
-                <Link href="/about-us" className={scss.read}>
+                <Link href="/about-us" className={scss.read} id={scss.hiden}>
                   Read More
                 </Link>
               ) : (
                 ""
               )}
-            </p>
+            </>
           ) : (
             ""
           )}

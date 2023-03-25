@@ -17,6 +17,9 @@
       color: #2e325a;
       margin-bottom: 14px;
     }
+    #hiden {
+      display: none ;
+    }
     .desc {
       font-weight: 500;
       font-size: 14px;
@@ -127,12 +130,6 @@
   }
 }
 
-@media (max-width: 912px) {
-  .footer {
-    padding: 30px 24px;
-  }
-}
-
 @media (max-width: 760px) {
   .footer {
     flex-direction: column;
@@ -143,6 +140,15 @@
   .footer {
     gap: 60px;
     .card {
+      .desc {
+        width: 100%;
+      }
+      #hidenBefor {
+        display: none;
+      }
+      #hiden {
+        display: block;
+      }
       .second {
         &::before {
           position: absolute;
@@ -164,6 +170,10 @@
         }
       }
     }
+  }
+
+  .read {
+    margin-left: 0;
   }
 
   .underFooter {
