@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
     <>
       <footer className={scss.footer}>{render}</footer>
       <div className={scss.underFooter}>
-        <p>@ 2023 Kyrgyz Riders. All rights reserved</p>
+        <p className={scss.rights}>@ 2023 Kyrgyz Riders. All rights reserved</p>
         <p>Design by @SolidDevs</p>
       </div>
     </>

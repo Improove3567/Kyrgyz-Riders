@@ -9,6 +9,7 @@
   transition: ease-in-out 0.3s;
   background: white;
   .card {
+    position: relative;
     h1 {
       font-weight: 600;
       font-size: 18px;
@@ -116,4 +117,61 @@
   width: fit-content;
   transition: ease-in-out 0.3s;
   margin-left: 10px;
+}
+
+@media (max-width: 1280px) {
+  .footer {
+    padding: 30px 24px;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 912px) {
+  .footer {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 760px) {
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 474px) {
+  .footer {
+    gap: 60px;
+    .card {
+      .second {
+        &::before {
+          position: absolute;
+          content: "";
+          top: -32px;
+          left: 0;
+          height: 1px;
+          background-color: #C7C7C7;
+          width: 355px;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: -32px;
+          left: 0;
+          height: 1px;
+          background-color: #C7C7C7;
+          width: 355px;
+        }
+      }
+    }
+  }
+
+  .underFooter {
+    padding: 15px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    .rights {
+      margin-bottom: 10px;
+    }
+  }
 }
