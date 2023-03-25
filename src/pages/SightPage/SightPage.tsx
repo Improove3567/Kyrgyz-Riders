@@ -19,7 +19,6 @@ const SightPage = () => {
             getSightsDetail(id)
         }
     }, [id])
-    console.log(sightsDetail)
     return (
         <>
             <Header isMain={false} />
