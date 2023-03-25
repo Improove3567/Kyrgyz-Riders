@@ -15,9 +15,9 @@ interface Tours{
 
 const Select : React.FC<Tours> = ({name,option,valueIndex,select}) => {
 
-    const [arrow,setArrow] = React.useState(false)
+    const [arrow,setArrow] = useState(false)
 
-    const result = useMemo( () => {
+    const result = React.useMemo( () => {
         return arrow ? <Image src={'assets/images/arrow.svg'} width={10} height={5} alt={"arrow"}/> : <Image src={'assets/images/arrowUp.svg'} width={10} height={5} alt={"arrow"}/>
     },[arrow]);
 
