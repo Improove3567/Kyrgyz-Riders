@@ -1,4 +1,4 @@
-import React, {  useState,useMemo, useEffect } from "react";
+import React, {  useState } from "react";
 import scss from './Select.module.scss';
 import Option from "../Option/Option";
 import Image from "next/image";
