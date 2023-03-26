@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   margin-right: 10px;
-
+  cursor: pointer;
   .subtitle {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -18,13 +18,30 @@
   img {
     position: relative;
     left: 0;
-    transition: ease-in-out .3s;
+    transition: ease-in-out 0.3s;
   }
 
   &:hover {
     img {
       position: relative;
       left: 10px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .subtitle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .moreBlock {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    .subtitle {
+      display: none;
     }
   }
 }

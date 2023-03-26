@@ -1,7 +1,26 @@
 .section{
-  padding: 70px 32px;
+  padding: 70px 0px;
   height: 482px ;
   position: relative;
   overflow: hidden;
   margin-bottom: 50px;
+}
+
+.minDivider {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mainDivider {
+    display: none;
+  }
+  
+  .minDivider {
+    display: block;
+  }  
+
+  .section{
+    padding: 0px;
+    margin-top: 20px;
+  }
 }

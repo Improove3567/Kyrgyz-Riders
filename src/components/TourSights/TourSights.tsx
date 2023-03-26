@@ -1,26 +1,24 @@
-import React, { useEffect } from "react";
-import useSights from "../../hooks/useSights";
+import React, { useMemo } from "react";
 import Divider from "../Divider/Divider";
-import SightCard from "../Sights/SightCard/SightCard";
 import scss from "./TourSights.module.scss";
-const TourSights = () => {
-  const { sights, getSights } = useSights();
+import TourSightsCard from "./TourSightsCards/TourSightsCard";
 
-  useEffect(() => {
-    getSights();
-  }, []);
+interface SightsTypes {
+  sights: Array<object>;
+}
 
-  const renderCards = React.useMemo(
-    () => sights.map((item: any) => <SightCard key={item.id} {...item} />),
-    [sights]
-  );
+const TourSights: React.FC<SightsTypes> = ({ sights }) => {
+  const renderCards = useMemo(() => (
+    sights?.map((el, index) => (
+      <TourSightsCard {...el} key={index} />
+    ))
+  ), [sights])
   return (
     <div className={scss.Toursights}>
-        <div className={scss.container}>
-            
-      <Divider title="Sights visited on this tour" variant="dark" />
-      <div className={scss.Tourcards}>{renderCards}</div>
-        </div>
+      <div className='container'>
+        <Divider title="Sights visited on this tour" variant="dark" />
+        <div className={scss.Tourcards}>{renderCards}</div>
+      </div>
     </div>
   );
 };

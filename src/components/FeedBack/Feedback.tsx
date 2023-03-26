@@ -5,24 +5,31 @@ import scss from "./feedback.module.scss";
 import FeedbackCarousel from "./carousel/FeedbackCarousel";
 
 export interface IFeedback {
-  id: number;
-  title: string;
-  country: string;
-  stars: number;
-  desc: string;
-  link: string;
-  img:string;
+  country?: string;
+  stars?: number;
+  desc?: string;
+  link?: string;
+  img?: string;
+  name?: string;
+  lastName?: string;
 }
 
-
 const Feedback: React.FC = () => {
-
   return (
     <section className={scss.section}>
-      <Divider title="Travelers Love Kyrgyz Riders" variant="light">
-        <MoreBlock title="More reviews on Tripadvisor" />
-      </Divider>
-      <FeedbackCarousel />
+      <div className="container">
+        <div className={scss.mainDivider}>
+          <Divider title="Travelers Love Kyrgyz Riders" variant="light">
+            <MoreBlock title="More reviews on Tripadvisor" />
+          </Divider>
+        </div>
+        <div className={scss.minDivider}>
+          <Divider title="Reviews" variant="light">
+            <MoreBlock title="More reviews on Tripadvisor" />
+          </Divider>
+        </div>
+        <FeedbackCarousel />
+      </div>
     </section>
   );
 };

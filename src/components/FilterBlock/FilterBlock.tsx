@@ -17,6 +17,7 @@ const FilterBlock = ({change}:Function) => {
 
   return (
     <div className={scss.filter}>
+      <div className="container">
       <div className={scss.block}>
         <div className={scss.filters}>
           <div className={scss.arrows}>
@@ -38,6 +39,7 @@ const FilterBlock = ({change}:Function) => {
             </button>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

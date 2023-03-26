@@ -4,24 +4,31 @@ import Divider from "../Divider/Divider";
 import scss from './TourFeatures.module.scss'
 import Image from "next/image";
 import checkMark from "../../../public/images/TourFeatures/checkMark.svg"
-const TourFeatures: FC = () => {
+
+interface ReasonsType {
+    reasons: Array<string>
+}
+
+const TourFeatures: FC<ReasonsType> = ({ reasons }) => {
     const showText = React.useMemo(
         () =>
-            TourFeaturesArr.map((item) => (
-                <div className={scss.line} key={item.id}>
+            reasons?.map((item) => (
+                <div className={scss.line} key={item}>
                     <div className={scss.title_mark}>
                         <Image src={checkMark} alt='checkmark' width={16} height={12} />
-                        <p>{item.title}</p>
+                        <p>{item}</p>
                     </div>
                 </div>
             )),
-        [TourFeaturesArr]
+        [reasons]
     )
     return (
         <div className={scss.content}>
-            <div className={scss.title_block}>
-                <Divider title='Why you will love this tour' variant='dark' />
-                {showText}
+            <div className="container">
+                <div className={scss.title_block}>
+                    <Divider title='Why you will love this tour' variant='dark' />
+                    {showText}
+                </div>
             </div>
         </div>
     )

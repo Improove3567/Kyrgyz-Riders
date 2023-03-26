@@ -2,18 +2,34 @@
   width: calc(33.3% - 20px);
   height: 283px;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
-  background-image: url(https://sp-ao.shortpixel.ai/client/to_auto,q_lossless,ret_img,w_500,h_500/https://norfolkpathways.ca/wp-content/uploads/2000/02/img_0246-384x384.jpg);
   position: relative;
-  transition: 0.3s ease-in-out;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   cursor: pointer;
-
   &:hover {
     box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.4);
   }
-
+  .travelVideo{
+    width: 100%;
+    height: 100%;
+  }
+  .iVideo{
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none;
+  }
+.unvisibleBlock{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
   .playBtn {
     position: absolute;
     width: 75px;
@@ -25,7 +41,7 @@
 
     img {
       position: absolute;
-      top: 40%;
+      top: 38%;
       left: 41%;
     }
   }
@@ -58,5 +74,34 @@
       position: absolute;
       right: 25px;
     }
+  }
+}
+
+.active {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  z-index: 10000;
+  left: 0;
+  transition: ease 0.2s;
+  opacity: 1;
+  .close {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+  }
+  .video {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 70%;
+    height: 60vh;
+    border: none;
   }
 }

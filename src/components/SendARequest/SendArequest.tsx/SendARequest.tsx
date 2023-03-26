@@ -42,11 +42,14 @@ const SendARequest: React.FC = () => {
 
   return (
     <div className={scss.wrapper}>
-      <div className={scss.header}>
+     <div className="container">
+     <div className={scss.header}>
         <Divider title="Send a request" variant="dark" />
       </div>
-      <div className={scss.description}>{showText}</div>
-      <form onSubmit={submit}>
+      <div className={scss.description}>
+        <div className={scss.text_container}>{showText}</div>
+      </div>
+      <form onSubmit={submit} className={scss.form}>
         <div className={scss.inputs}>
           <input
             className={scss.input}
@@ -79,6 +82,7 @@ const SendARequest: React.FC = () => {
           <p className={scss.text}>Send now</p>
         </button>
       </form>
+     </div>
     </div>
   );
 };

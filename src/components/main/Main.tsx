@@ -5,10 +5,6 @@ import Link from "next/link";
 import Slider from "react-slick";
 import { useRouter } from "next/router";
 
-
-
-
-
 interface MainProps {
   imgPageSliders: Sliders[];
 }
@@ -62,8 +58,6 @@ const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
       )),
     [imgPageSliders, renderBtns]
   );
-
-  
 
   return (
     <div className="main">

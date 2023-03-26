@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  width: 23.3%;
+  width: 100%;
   height: 153px;
   cursor: pointer;
 
@@ -71,18 +71,18 @@
     }
   }
 }
-@media screen and (min-width: 1440px) {
-  .container {
-    width: 23.2%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .container {
-    width: 22.5%;
-  }
-}
-@media screen and (min-width: 768px) {
-  .container {
-    width: 21.5%;
-  }
-}
+// @media (min-width: 1440px) {
+//   .container {
+//     width: 23.2%;
+//   }
+// }
+// @media (min-width: 1024px) {
+//   .container {
+//     width: 22.5%;
+//   }
+// }
+// @media (min-width: 768px) {
+//   .container {
+//     width: 21.5%;
+//   }
+// }
