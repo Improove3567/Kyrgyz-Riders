@@ -7,6 +7,7 @@ import Divider from "../Divider/Divider";
 import FilterTour from "../Tour filter/FilterTour";
 import useTours from "../../hooks/useTours";
 import Preloader from "../Preloader/Preloader";
+import MoreBlock from "../Divider/More block/MoreBlock";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -74,7 +75,12 @@ const TourSlider: React.FC = () => {
       <div className="container">
         <div className={scss.containerDivider}>
           <Divider title="Select Tour">
-            <FilterTour />
+            <>
+              <FilterTour />
+              <div className={scss.selectsArrow}>
+                <MoreBlock title="Select Tour" />
+              </div>
+            </>
           </Divider>
         </div>
         <div className="mainSliders">
