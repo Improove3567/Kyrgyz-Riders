@@ -1,12 +1,12 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import scss from "./TravelBlock.module.scss";
 import Divider from "../Divider/Divider";
-import { TravelData } from "../../constants/TravelData";
 import TravelCard from "./TravelCard/TravelCard";
 import useTravel from "../../hooks/useTravel";
+import Preloader from "../Preloader/Preloader";
 
 const TravelBlock: React.FC = () => {
-    const { getTravel, travel } = useTravel();
+    const { getTravel, travel, isLoading } = useTravel();
 
     useEffect(() => {
         getTravel();
@@ -16,6 +16,8 @@ const TravelBlock: React.FC = () => {
             <TravelCard {...el} key={index} />
         ))
     ), [travel])
+
+    if (isLoading) return <Preloader full />
 
     return (
         <div className={scss.wrapper}>

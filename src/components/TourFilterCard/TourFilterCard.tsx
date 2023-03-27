@@ -1,11 +1,11 @@
 import React, { FC, useEffect } from "react";
-import { TourFilterCards } from "../../constants/TourFilterCard";
 import useTours from "../../hooks/useTours";
+import Preloader from "../Preloader/Preloader";
 import FilterCads from "./FilterCards/FilterCards";
 import scss from "./TourFilterCard.module.scss";
 
 const TourFilterCard: FC = () => {
-  const { getTours, tours } = useTours();
+  const { getTours, tours, isLoading } = useTours();
 
   useEffect(() => {
     getTours();
@@ -15,6 +15,8 @@ const TourFilterCard: FC = () => {
     () => tours?.slice(0, 4).map((el, index) => <FilterCads {...el} key={index} />),
     [tours]
   );
+
+  if (isLoading) return <Preloader full />
 
   return (
     <div className={scss.tour_card}>

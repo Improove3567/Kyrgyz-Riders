@@ -6,13 +6,14 @@ import Image from "next/image";
 import Divider from "../Divider/Divider";
 import FilterTour from "../Tour filter/FilterTour";
 import useTours from "../../hooks/useTours";
+import Preloader from "../Preloader/Preloader";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const TourSlider: React.FC = () => {
-  const { tours, getTours } = useTours();
+  const { tours, getTours, isLoading } = useTours();
 
   useEffect(() => {
     getTours();
@@ -62,9 +63,11 @@ const TourSlider: React.FC = () => {
   };
 
   const render = useMemo(
-    () => tours.map((el, index ) => <SliderCard key={index} {...el} />),
+    () => tours.map((el, index) => <SliderCard key={index} {...el} />),
     [tours]
   );
+
+  if (isLoading) return <Preloader full />
 
   return (
     <div className={scss.wrapper}>

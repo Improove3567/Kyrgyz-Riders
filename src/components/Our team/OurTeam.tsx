@@ -3,9 +3,10 @@ import Divider from "../Divider/Divider";
 import scss from "./OurTeam.module.scss";
 import TeamCard from "./Team card/TeamCard";
 import useTeam from "../../hooks/useTeam";
+import Preloader from "../Preloader/Preloader";
 
 const OurTeam: React.FC = () => {
-  const { team, getTeam } = useTeam();
+  const { team, getTeam, isLoading } = useTeam();
 
   useEffect(() => {
     getTeam();
@@ -15,6 +16,8 @@ const OurTeam: React.FC = () => {
     () => team.map((el, index) => <TeamCard {...el} key={index} />),
     [team]
   );
+
+  if (isLoading) return <Preloader full />
 
   return (
     <div className={scss.wrapper}>
