@@ -6,7 +6,6 @@ import Image from "next/image";
 import Divider from "../Divider/Divider";
 import FilterTour from "../Tour filter/FilterTour";
 import useTours from "../../hooks/useTours";
-import "slick-carousel/slick/slick.css"; 
 // import "slick-carousel/slick/slick-theme.css";
 
 interface ArrowProps {
@@ -128,7 +127,6 @@ const TourSlider: React.FC = () => {
       </Divider>
       <div className="mainSliders">
         <Slider {...settings} >
-          {render}
           {render}
         </Slider>
       </div>
