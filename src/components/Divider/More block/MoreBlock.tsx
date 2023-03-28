@@ -3,7 +3,7 @@ import scss from "./MoreBlock.module.scss"
 import Image from "next/image";
 
 interface MoreBlockProps {
-  title: string;
+  title?: string;
 }
 
 const MoreBlock: React.FC<MoreBlockProps> = ({ title }) => {

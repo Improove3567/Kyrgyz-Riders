@@ -71,18 +71,13 @@
     }
   }
 }
-// @media (min-width: 1440px) {
-//   .container {
-//     width: 23.2%;
-//   }
-// }
-// @media (min-width: 1024px) {
-//   .container {
-//     width: 22.5%;
-//   }
-// }
-// @media (min-width: 768px) {
-//   .container {
-//     width: 21.5%;
-//   }
-// }
+@media (max-width: 912px) {
+  .container {
+    width: 242px;
+    
+    .back {
+      width: 0;
+      height: 0;
+    }
+  }
+}
