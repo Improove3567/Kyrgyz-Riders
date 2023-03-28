@@ -3,7 +3,19 @@ import scss from "./BlogMain.module.scss";
 import { newsData, networksData } from "../../constants/BlogAndNews";
 import Image from "next/image";
 import Divider from "../Divider/Divider";
-const BlogMain: React.FC = () => {
+
+interface blogDetailTypes {
+  title?: string;
+  content?: Array<object>;
+  type?: string;
+  urlContent?: string;
+}
+
+interface BlogProps {
+  blogDetail?: blogDetailTypes;
+}
+
+const BlogMain: React.FC<BlogProps> = ({ blogDetail }) => {
   const networksList = useMemo(
     () =>
       networksData.map((el) => (
@@ -23,30 +35,47 @@ const BlogMain: React.FC = () => {
       )),
     []
   );
+
+
+
+  const urlContentRender = useMemo(() => {
+    if (blogDetail?.urlContent) {
+      if (blogDetail?.urlContent.includes("youtube")) {
+        return (
+          <iframe className={scss.frameForVideo} width="100%" height="508" src={blogDetail?.urlContent} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+        )
+      } else {
+        return (
+          <img src={blogDetail?.urlContent} className={scss.frameForVideo} />
+        )
+      }
+    }
+  }, [blogDetail?.urlContent])
+
   return (
     <div className={scss.wrapper}>
       <div className="container">
-      <Divider title="Blog and news" variant={"dark"} />
-      <div className={scss.mainContent}>
-        <div className={scss.videoContainer}>
-          <div className={scss.mainBtn}>
-            <p>How Lake Issyk - Kul appeared</p>
+        <Divider title="Blog and news" variant={"dark"} />
+        <div className={scss.mainContent}>
+          <div className={scss.videoContainer}>
+            <div className={scss.mainBtn}>
+              <p>{blogDetail?.title}</p>
+            </div>
+            {urlContentRender}
           </div>
-        <iframe className={scss.frameForVideo} width="100%" height="508" src="https://www.youtube.com/embed/ACuLf_AYixU" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          <div className={scss.rightBlock}>
+            <div className={scss.networksBlock}>
+              <p>Find out more about us on social networks</p>
+              <hr />
+              <div className={scss.socialNetworks}>{networksList}</div>
+            </div>
+            <div className={scss.newsContainer}>
+              <p className={scss.title}>News</p>
+              <hr />
+              <div className={scss.cardContainer}>{newsList}</div>
+            </div>
+          </div>
         </div>
-        <div className={scss.rightBlock}>
-          <div className={scss.networksBlock}>
-            <p>Find out more about us on social networks</p>
-            <hr />
-            <div className={scss.socialNetworks}>{networksList}</div>
-          </div>
-          <div className={scss.newsContainer}>
-            <p className={scss.title}>News</p>
-            <hr />
-            <div className={scss.cardContainer}>{newsList}</div>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
   );

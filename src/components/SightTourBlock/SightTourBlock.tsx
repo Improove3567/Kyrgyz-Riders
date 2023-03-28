@@ -21,8 +21,6 @@ const SightTourBlock: React.FC<TourProps> = ({ tours }) => {
     [tours]
   );
 
-  console.log(tours)
-
   return (
     <div className={scss.wrapper}>
       <div className="container">

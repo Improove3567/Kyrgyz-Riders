@@ -11,16 +11,23 @@ export interface IFeedback {
   link?: string;
   img?: string;
   name?: string;
+  lastName?: string;
 }
 
 const Feedback: React.FC = () => {
-
   return (
     <section className={scss.section}>
       <div className="container">
-        <Divider title="Travelers Love Kyrgyz Riders" variant="light">
-          <MoreBlock title="More reviews on Tripadvisor" />
-        </Divider>
+        <div className={scss.mainDivider}>
+          <Divider title="Travelers Love Kyrgyz Riders" variant="light">
+            <MoreBlock title="More reviews on Tripadvisor" />
+          </Divider>
+        </div>
+        <div className={scss.minDivider}>
+          <Divider title="Reviews" variant="light">
+            <MoreBlock title="More reviews on Tripadvisor" />
+          </Divider>
+        </div>
         <FeedbackCarousel />
       </div>
     </section>

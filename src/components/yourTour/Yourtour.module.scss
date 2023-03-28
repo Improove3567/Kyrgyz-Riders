@@ -27,7 +27,7 @@
       justify-content: center;
       &:hover {
         background: #2e325a;
-        p{
+        p {
           color: #ffff;
         }
       }
@@ -47,6 +47,27 @@
         font-size: 14px;
         line-height: 17px;
         color: #333333;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    .yourTour {
+      .front {
+        width: 181px;
+        &:hover {
+          background: #fff;
+          p {
+            color: #2e325a;
+          }
+        }
+        .back {
+          width: 181px;
+          top: -6px;
+          right: -6px;
+        }
       }
     }
   }

@@ -7,6 +7,7 @@ import YourTours from '../../components/yourTour/YourTours';
 import { blogNewsSlider } from '../../constants/MainSliders';
 
 const BlogsPage = () => {
+
     return (
         <>
             <Header />

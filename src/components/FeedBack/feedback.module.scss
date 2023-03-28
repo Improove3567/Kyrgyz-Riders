@@ -5,3 +5,22 @@
   overflow: hidden;
   margin-bottom: 50px;
 }
+
+.minDivider {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mainDivider {
+    display: none;
+  }
+  
+  .minDivider {
+    display: block;
+  }  
+
+  .section{
+    padding: 0px;
+    margin-top: 20px;
+  }
+}

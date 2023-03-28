@@ -1,5 +1,5 @@
 import React from 'react';
-import DetailPage from '../../src/pages/DetailPage/DetailPage';
+import DetailPage from '../../src/pages/TeamDetailPage/TeamDetailPage';
 const ourTeam = () => {
     return (
         <>

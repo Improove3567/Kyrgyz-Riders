@@ -13,7 +13,6 @@ const TourSights: React.FC<SightsTypes> = ({ sights }) => {
       <TourSightsCard {...el} key={index} />
     ))
   ), [sights])
-  console.log(sights)
   return (
     <div className={scss.Toursights}>
       <div className='container'>

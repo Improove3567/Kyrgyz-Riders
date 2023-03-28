@@ -7,21 +7,53 @@
   padding: 40px 0px;
 }
 
+.ourTeamArrow {
+  display: none;
+}
+
 .content {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 30px 0 10px 0;
   display: grid;
   gap: 32px;
   grid-template-columns: repeat(4, 1fr);
 }
-@media (max-width: 1440px) {
+@media (max-width: 1280px) {
   .content {
-    gap: 64px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: 1024px) {
-  .content {
-    gap: 44px;
+@media (max-width: 912px) {
+  .wrapper {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    padding: 40px 0 0 0;
+    .content {
+      grid-template-columns: repeat(12, 1fr);
+      overflow-x: scroll;
+      padding: 10px 0 10px 2px;
+      margin: 10px 0 0 0;
+      gap: 12px;
+
+      a:last-child {
+        margin-right: 25px;
+      }
+    }
+    .content::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0;
+
+    .ourTeamArrow {
+      display: block;
+    }
+    
+    .content {
+      padding-left: 24px;
+    }
   }
 }
