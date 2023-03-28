@@ -48,10 +48,10 @@
   .wrapper {
     padding: 30px 0 0 24px;
     position: relative;
+    margin-bottom: 20px;
 
     .content {
       display: block;
-      height: 112px;
 
       .title, .dark_title {
         margin: 0;
@@ -70,7 +70,6 @@
 
 @media (max-width: 600px) {
   .wrapper {
-    margin-bottom: 20px;
     .content::after {
       width: 92%;
     }
