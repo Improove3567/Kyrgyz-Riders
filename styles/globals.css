@@ -92,9 +92,6 @@ a {
   margin: 0 5px;
 }
 
-.mainSliders .slick-slide>div {
-  width: 10px;
-}
 
 /* Родительский элемент */
 .mainSliders .slick-list {

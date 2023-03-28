@@ -3,7 +3,11 @@
     @media (max-width: 1600px) {
       @content;
     }
-  } @else if $point==md {
+  }@else if $point==ms{
+    @media (max-width: 1200p) {
+      @content;
+    }
+  }@else if $point==md {
     @media (max-width: 997px) {
       @content;
     }

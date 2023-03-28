@@ -14,7 +14,7 @@
 }
 
 .nextArrow_container {
-  @include breackpoint(md){
+  @include breackpoint(sm){
     display: none;
   }
   position: absolute;
@@ -46,7 +46,7 @@
 }
 
 .prevArrow_container {
-  @include breackpoint(md){
+  @include breackpoint(sm){
     display: none;
   }
   position: absolute;

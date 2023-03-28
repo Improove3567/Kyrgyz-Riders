@@ -7,7 +7,7 @@ import Divider from "../Divider/Divider";
 import FilterTour from "../Tour filter/FilterTour";
 import useTours from "../../hooks/useTours";
 import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+// import "slick-carousel/slick/slick-theme.css";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>
@@ -64,66 +64,20 @@ const TourSlider: React.FC = () => {
     speed: 500,
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 3.5,
+          slidesToShow: 3,
           slidesToScroll: 3,
+          infinite: true,
           dots: true
         }
       },
       {
-        breakpoint: 992,
+        breakpoint: 600,
         settings: {
-          slidesToShow: 3.5,
-          slidesToScroll: 3,
-          initialSlide: 2,
-          dots: true
-        }
-      },
-      
-      {
-        breakpoint: 938,
-        settings: {
-          slidesToShow: 3.2,
+          slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
-        }
-      },
-      {
-        breakpoint: 854,
-        settings: {
-          slidesToShow: 2.9,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2.5,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: 674,
-        settings: {
-          slidesToShow: 2.4,
-          slidesToScroll: 2
-        }
-      },
-      
-      {
-        breakpoint: 644,
-        settings: {
-          slidesToShow: 2.2,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: 608,
-        settings: {
-          slidesToShow: 1.9,
-          slidesToScroll: 1
+          initialSlide: 2
         }
       },
       {
@@ -134,31 +88,9 @@ const TourSlider: React.FC = () => {
         }
       },
       {
-        breakpoint: 410,
-        settings: {
-          slidesToShow: 1.4,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 380,
-        settings: {
-          slidesToShow: 1.2,
-          slidesToScroll: 1
-        }
-      },
-      
-      {
         breakpoint: 320,
         settings: {
-          slidesToShow: 1.1,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 300,
-        settings: {
-          slidesToShow: 1.1,
+          slidesToShow: 1.2,
           slidesToScroll: 1
         }
       }
@@ -196,6 +128,7 @@ const TourSlider: React.FC = () => {
       </Divider>
       <div className="mainSliders">
         <Slider {...settings} >
+          {render}
           {render}
         </Slider>
       </div>
