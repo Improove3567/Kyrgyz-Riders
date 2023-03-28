@@ -4,6 +4,7 @@ import Divider from "../Divider/Divider";
 import MoreBlock from "../Divider/More block/MoreBlock";
 import SightCard from "./SightCard/SightCard";
 import useSights from "../../hooks/useSights";
+import Preloader from "../Preloader/Preloader";
 
 export interface ISights {
   id?: number;
@@ -15,7 +16,7 @@ export interface ISights {
 }
 
 const Sights: React.FC = () => {
-  const { sights, getSights } = useSights();
+  const { sights, getSights, isLoading } = useSights();
 
   useEffect(() => {
     getSights();
@@ -27,6 +28,9 @@ const Sights: React.FC = () => {
     () => sightList.map((item, index) => <SightCard key={index} {...item} />),
     [sights]
   );
+
+  if (isLoading) return <Preloader full />
+
   return (
     <section className={scss.sights}>
       <div className="container">

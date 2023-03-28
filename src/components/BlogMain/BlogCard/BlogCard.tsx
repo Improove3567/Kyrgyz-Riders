@@ -4,16 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 interface BlogCardProps {
     title?: string,
-    urlContent?: string,
+    mainImage?: string,
     type?: string;
     tid?: string;
 }
-const BlogCard: FC<BlogCardProps> = ({ urlContent, title, type, tid }) => {
+const BlogCard: FC<BlogCardProps> = ({ mainImage, title, type, tid }) => {
 
     return (
         <div className={scss.card}>
             <div className={scss.img}>
-                <img src={urlContent} width={280} height={280} alt='news' />
+                <img src={mainImage} width={280} height={280} alt='news' />
             </div>
             <div className={scss.card_bottom}>
                 <p>{type}</p>

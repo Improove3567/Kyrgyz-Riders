@@ -12,6 +12,7 @@ import { db } from "../firebase/firebase-config";
 const useTours = () => {
     const [tours, setTours] = useState<Array<object>>([]);
     const [tourDetail, setTourDetail] = useState<object>();
+    const [isLoading, setLoading] = useState(true);
 
     const getTours = async () => {
         const touSliderData: Array<object> | ((prevState: never[]) => never[]) = []
@@ -19,12 +20,14 @@ const useTours = () => {
         const querySnapshot = await getDocs(getFireStore);
         querySnapshot.forEach((doc: DocumentData) => touSliderData.push({ tid: doc.id, ...doc.data() }));
         setTours(touSliderData);
+        setLoading(false)
     }
 
 
     const getTourDetail = async (id: string) => {
         const docRef = doc(db, "tours", id);
         const res = await getDoc(docRef);
+        setLoading(false)
         if (res.exists()) {
             setTourDetail(res.data());
         }
@@ -34,7 +37,8 @@ const useTours = () => {
         tours,
         getTours,
         getTourDetail,
-        tourDetail
+        tourDetail,
+        isLoading
     };
 };
 

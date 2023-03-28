@@ -5,9 +5,10 @@ import Image from "next/image";
 import BlogCard from "./BlogCard/BlogCard";
 import Divider from "../Divider/Divider";
 import useBlogs from "../../hooks/useBlogs";
+import Preloader from "../Preloader/Preloader";
 
 const BlogMain = () => {
-  const { getBlogs, blogs } = useBlogs();
+  const { getBlogs, blogs, isLoading } = useBlogs();
   useEffect(() => {
     getBlogs();
   }, [])
@@ -36,6 +37,9 @@ const BlogMain = () => {
     () => blogs?.map((el, index) => <BlogCard {...el} key={index} />),
     [blogs]
   );
+
+  if (isLoading) return <Preloader full />
+
   return (
     <div className={scss.wrapper}>
       <div className="container">
