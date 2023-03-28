@@ -75,7 +75,7 @@ const TourSlider: React.FC = () => {
             <>
               <FilterTour />
               <div className={scss.selectsArrow}>
-                <MoreBlock title="" />
+                <MoreBlock />
               </div>
             </>
           </Divider>

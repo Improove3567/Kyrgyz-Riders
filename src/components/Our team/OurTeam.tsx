@@ -22,7 +22,7 @@ const OurTeam: React.FC = () => {
       <div className="container">
         <Divider title="Our Team" variant={"dark"}>
           <div className={scss.ourTeamArrow}>
-            <MoreBlock title="" />
+            <MoreBlock />
           </div>
         </Divider>
         <div className={scss.content}>{render}</div>
