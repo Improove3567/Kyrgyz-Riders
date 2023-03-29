@@ -27,24 +27,31 @@ const Footer: React.FC = () => {
       footerConsts.map((item) => (
         <div key={item.id} className={scss.card}>
           <h1>{item.title}</h1>
-          {item.desc ? (
-            <p className={isActive ? scss.descAc : scss.desc}>
-              {item.desc && item.desc + " " && item.desc.length > 129
-                ? `${item.desc.substring(0, 129)}...`
-                : item.desc}{" "}
-              {item.desc ? (
-                <Link href="/about-us" className={scss.read}>
+          {item.desc && (
+            <>
+              <p className={isActive ? scss.descAc : scss.desc}>
+                {item.desc && item.desc + " " && item.desc.length > 129
+                  ? `${item.desc.substring(0, 129)}...`
+                  : item.desc}
+                {item.desc && (
+                  <Link
+                    href="/about-us"
+                    className={scss.read}
+                    id={scss.hidenBefor}
+                  >
+                    Read More
+                  </Link>
+                )}
+              </p>
+              {item.desc && (
+                <Link href="/about-us" className={scss.read} id={scss.hiden}>
                   Read More
                 </Link>
-              ) : (
-                ""
               )}
-            </p>
-          ) : (
-            ""
+            </>
           )}
 
-          {item.email ? (
+          {item.email && (
             <div className={scss.second}>
               <div>
                 <p> Email: </p>
@@ -59,8 +66,6 @@ const Footer: React.FC = () => {
                 {item.contact && item.contact}
               </div>
             </div>
-          ) : (
-            ""
           )}
           <div className={scss.thirth}>
             {item.img
@@ -70,6 +75,11 @@ const Footer: React.FC = () => {
                 </Link>
               ))
               : ""}
+              && item.img.map((el) => (
+                  <Link key={el.id} href={el.link}>
+                    <Image src={el.logo} width={20} height={20} alt="logo" />
+                  </Link>
+                ))}
           </div>
         </div>
       )),
@@ -79,7 +89,7 @@ const Footer: React.FC = () => {
     <>
       <footer className={scss.footer}>{render}</footer>
       <div className={scss.underFooter}>
-        <p>@ 2023 Kyrgyz Riders. All rights reserved</p>
+        <p className={scss.rights}>@ 2023 Kyrgyz Riders. All rights reserved</p>
         <p>Design by @SolidDevs</p>
       </div>
     </>

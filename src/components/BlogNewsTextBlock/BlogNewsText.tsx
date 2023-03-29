@@ -1,33 +1,45 @@
 import React, { FC } from "react";
-import { BlogsCardProps, descriptionArrProps } from "../../constants/BlogsCard";
 import scss from "./BlogNewsTextBlock.module.scss";
-interface BlogNewsTextProps {
-  description: BlogsCardProps[];
+
+interface contentTypes {
+  title: string;
+  desc: string;
 }
-const BlogNewsText: FC<BlogNewsTextProps> = ({ description }) => {
+
+interface blogDetailTypes {
+  title?: string;
+  content?: Array<contentTypes>;
+  type?: string;
+  urlContent?: string;
+}
+
+interface BlogNewsTypes {
+  blogDetail?: blogDetailTypes;
+}
+
+const BlogNewsText: FC<BlogNewsTypes> = ({ blogDetail }) => {
   const renderText = React.useMemo(
-    () =>
-      description.map((item) => (
-        <div className={scss.title} key={item.id}>
-          {item.descriptionArr.map((el) => (
-            <>
-              <h1>{el.text}</h1>
-              <div className={scss.text}>
-                {el.textArr.map((al, index) => (
+    () => {
+      if (blogDetail?.content) {
+        return (
+          blogDetail?.content.map((el: { title: string }, index: number) => (
+            <div className={scss.title} key={`${el.title}_${index}`}>
+              <>
+                <h1>{el.title}</h1>
+                <div className={scss.text}>
                   <div
                     className={scss.paragraph}
-                    key={`${al.paragraph}_${index}`}
+                    key={`${el.title}_${index}`}
                   >
-                    {al.paragraph}
+                    {el.title}
                   </div>
-                ))}
-              </div>
-            </>
-          ))}
-        </div>
-      )),
-    [description]
-  );
+                </div>
+              </>
+            </div>
+          ))
+        )
+      }
+    }, [blogDetail?.content]);
 
   return (
     <div className={scss.title_block}>

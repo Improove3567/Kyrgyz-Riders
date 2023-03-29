@@ -1,11 +1,11 @@
 import React, { FC, useEffect } from "react";
-import { TourFilterCards } from "../../constants/TourFilterCard";
 import useTours from "../../hooks/useTours";
+import Preloader from "../Preloader/Preloader";
 import FilterCads from "./FilterCards/FilterCards";
 import scss from "./TourFilterCard.module.scss";
 
 const TourFilterCard: FC = () => {
-  const { getTours, tours } = useTours();
+  const { getTours, tours, isLoading } = useTours();
 
   useEffect(() => {
     getTours();
@@ -16,12 +16,16 @@ const TourFilterCard: FC = () => {
     [tours]
   );
 
+  if (isLoading) return <Preloader full />
+
   return (
     <div className={scss.tour_card}>
+      <div className={scss.tour_back}>
       <div className={scss.tour_container}>
         {CardList}
-        <div className={scss.btn_more}>
-          <button style={{ width: "208%" }}>More Tours</button>
+      </div>
+      <div className={scss.btn_more}>
+          <button style={{ width: "100%" }}>More Tours</button>
         </div>
       </div>
     </div>

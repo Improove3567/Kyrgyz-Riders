@@ -1,11 +1,18 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { networksData, newsData } from "../../constants/BlogAndNews";
 import scss from "./BlogMain.module.scss";
 import Image from "next/image";
-import { BlogsCardArr } from "../../constants/BlogsCard";
 import BlogCard from "./BlogCard/BlogCard";
 import Divider from "../Divider/Divider";
+import useBlogs from "../../hooks/useBlogs";
+import Preloader from "../Preloader/Preloader";
+
 const BlogMain = () => {
+  const { getBlogs, blogs, isLoading } = useBlogs();
+  useEffect(() => {
+    getBlogs();
+  }, [])
+
   const networksList = useMemo(
     () =>
       networksData.map((el) => (
@@ -27,34 +34,36 @@ const BlogMain = () => {
     []
   );
   const renderCard = useMemo(
-    () => BlogsCardArr.map((el) => <BlogCard {...el} key={el.id}/>),
-    []
+    () => blogs?.map((el, index) => <BlogCard {...el} key={index} />),
+    [blogs]
   );
+
+  if (isLoading) return <Preloader full />
+
   return (
     <div className={scss.wrapper}>
       <div className="container">
-      <Divider title="Blog and news" variant="dark" />
-      <div className={scss.container}>
-        <div className={scss.wrapperCard}>
-          <div className={scss.wrap}>{renderCard}</div>
-          <div className={scss.btn_more}>
-            <button>More</button>
+        <Divider title="Blog and news" variant="dark" />
+        <div className={scss.container}>
+          <div className={scss.wrapperCard}>
+            <div className={scss.wrap}>{renderCard}</div>
+            <div className={scss.btn_more}>
+              <button>More</button>
+            </div>
+          </div>
+          <div className={scss.rightBlock}>
+            <div className={scss.networksBlock}>
+              <p>Find out more about us on social networks</p>
+              <hr />
+              <div className={scss.socialNetworks}>{networksList}</div>
+            </div>
+            <div className={scss.newsContainer}>
+              <p className={scss.title}>News</p>
+              <hr />
+              <div className={scss.cardContainer}>{newsList}</div>
+            </div>
           </div>
         </div>
-
-        <div className={scss.rightBlock}>
-          <div className={scss.networksBlock}>
-            <p>Find out more about us on social networks</p>
-            <hr />
-            <div className={scss.socialNetworks}>{networksList}</div>
-          </div>
-          <div className={scss.newsContainer}>
-            <p className={scss.title}>News</p>
-            <hr />
-            <div className={scss.cardContainer}>{newsList}</div>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
   );

@@ -53,12 +53,12 @@
       width: 0;
       right: 0;
       z-index: 10;
-      height: 2px;
+      height: 3px;
     }
 
     &::before {
       transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-      background: black;
+      background: #2e325a;
       left: 0;
     }
   }
@@ -81,7 +81,106 @@
     top: 21.5px;
     width: 100%;
     z-index: 11;
-    height: 2px;
-    background: black;
+    height: 3px;
+    background: #2e325a;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wrapper::-webkit-scrollbar {
+    width: 0;
+  }
+  .wrapper {
+    max-width: 700px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    height: 75px;
+
+    .inactive_title {
+      margin-top: 21px;
+    }
+
+    p:hover {
+      &::before {
+        top: 22px;
+        height: 2px;
+      }
+    }
+  }
+
+  .active_title {
+    margin-top: 21px;
+
+    &::before {
+      top: 22px;
+      height: 2px;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .wrapper {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 910px) {
+  .wrapper {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 100%;
+    height: fit-content;
+    gap: 10px;
+    margin-right: 0;
+
+    .inactive_title {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      color: #333333;
+      text-align: center;
+      height: fit-content;
+
+      border: 1px solid #828282;
+      padding: 10px 30px;
+      margin-top: 30px;
+
+      cursor: pointer;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    p:hover {
+      &::before {
+        content: none;
+      }
+    }
+
+    p:last-child {
+      margin-right: 15px;
+    }
+  }
+
+  .active_title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    background: #2e325a;
+    color: #ffffff;
+    margin-top: 30px;
+
+    padding: 10px 30px;
+
+    cursor: pointer;
+
+    &::before {
+      content: none;
+    }
   }
 }

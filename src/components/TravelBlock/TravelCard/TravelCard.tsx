@@ -23,7 +23,7 @@ const TravelCard: React.FC<SightCardProps> = ({ date, title, link}) => {
             if (video.tagName.toLowerCase() === 'video') {
                 video.pause();
             } else {
-                var src = video.src;
+                let src = video.src;
                 video.src = src;
             }
         });

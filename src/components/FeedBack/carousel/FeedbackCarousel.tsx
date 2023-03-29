@@ -6,13 +6,14 @@ import scss from "./feedBackCarousel.module.scss";
 import Image from "next/image";
 import FeedBackCard from "./FeedBackCard";
 import useFeedback from "../../../hooks/useFeedback";
+import Preloader from "../../Preloader/Preloader";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const FeedbackCarousel = () => {
-  const { feedback, getFeedback } = useFeedback();
+  const { feedback, getFeedback, isLoading } = useFeedback();
 
   useEffect(() => {
     getFeedback();
@@ -65,6 +66,7 @@ const FeedbackCarousel = () => {
     ),
   };
 
+  if (isLoading) return <Preloader full />
   return (
     <div className={scss.container}>
       <div className="mainSliders">
