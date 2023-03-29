@@ -36,15 +36,17 @@ const SightsBlock: React.FC = () => {
         <div className={scss.wrapper}>
             <div className="container">
                 <Divider title={"Sights"} />
-                <div className={scss.card_container}>
-                    {sightsList}
+                <div className={scss.mainCardContainer}>
+                    <div className={scss.card_container}>
+                        {sightsList}
+                    </div>
+                    <button onClick={() => onMore()} className={limit >= len.length ? scss.nonAcbutton : scss.button}>
+                        <p>More Sights</p>
+                    </button>
                 </div>
-                <button onClick={() => onMore()} className={limit >= len.length ? scss.nonAcbutton : scss.button}>
-                    <p>More Sights</p>
-                </button>
             </div>
         </div>
-    );
+    )
 };
 
 export default SightsBlock;

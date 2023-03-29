@@ -20,10 +20,12 @@ const TourFilterCard: FC = () => {
 
   return (
     <div className={scss.tour_card}>
+      <div className={scss.tour_back}>
       <div className={scss.tour_container}>
         {CardList}
-        <div className={scss.btn_more}>
-          <button style={{ width: "208%" }}>More Tours</button>
+      </div>
+      <div className={scss.btn_more}>
+          <button style={{ width: "100%" }}>More Tours</button>
         </div>
       </div>
     </div>

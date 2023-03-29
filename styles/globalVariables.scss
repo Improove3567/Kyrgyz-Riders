@@ -3,12 +3,20 @@
     @media (max-width: 1600px) {
       @content;
     }
-  } @else if $point==md {
+  }@else if $point==ms{
+    @media (max-width: 1200p) {
+      @content;
+    }
+  }@else if $point==md {
     @media (max-width: 997px) {
       @content;
     }
   } @else if $point==sm {
     @media (max-width: 776px) {
+      @content;
+    }
+  } @else if $point==xm {
+    @media (max-width: 600px) {
       @content;
     }
   } @else if $point==xs {

@@ -1,8 +1,12 @@
 @import "../../../styles//variables.scss";
+@import "../../../styles//globalVariables.scss";
 
 .wrapper {
   position: relative;
   margin-bottom: 40px;
+  @include breackpoint(xxl){
+    margin-bottom: 0;
+  }
   .content {
     display: flex;
     justify-content: space-between;
@@ -44,11 +48,16 @@
   width: fit-content;
 }
 
+@media (max-width: 912px) {
+  .wrapper {
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .wrapper {
     padding: 30px 0 0 24px;
     position: relative;
-    margin-bottom: 20px;
 
     .content {
       display: block;
