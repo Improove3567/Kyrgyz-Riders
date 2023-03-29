@@ -6,32 +6,33 @@ import useTravel from "../../hooks/useTravel";
 import Preloader from "../Preloader/Preloader";
 
 const TravelBlock: React.FC = () => {
-    const { getTravel, travel, isLoading } = useTravel();
+  const { getTravel, travel, isLoading } = useTravel();
 
-    useEffect(() => {
-        getTravel();
-    }, [])
-    const sightsList = useMemo(() => (
-        travel?.map((el, index) => (
-            <TravelCard {...el} key={index} />
-        ))
-    ), [travel])
+  useEffect(() => {
+    getTravel();
+  }, []);
+  const sightsList = useMemo(
+    () => travel?.map((el, index) => <TravelCard {...el} key={index} />),
+    [travel]
+  );
 
-    if (isLoading) return <Preloader full />
+  if (isLoading) return <Preloader full />;
 
-    return (
-        <div className={scss.wrapper}>
-            <div className="container">
-                <Divider title={"Travel & Stories"} variant={"dark"} />
-                <div className={scss.card_container}>
-                    {sightsList}
-                </div>
-                <div className={scss.button}>
-                    <p>More Sights</p>
-                </div>
-            </div>
+  return (
+    <div className={scss.wrapper}>
+      <div className="container">
+        <Divider title={"Travel & Stories"} variant={"dark"} />
+        <div className={scss.back}>
+        <div className={scss.card_container}>{sightsList}</div>
+        <div className={scss.btn}>
+          <div className={scss.button}>
+            <p>More Sights</p>
+          </div>
         </div>
-    );
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default TravelBlock;

@@ -11,7 +11,7 @@ const BlogMain = () => {
   const { getBlogs, blogs, isLoading } = useBlogs();
   useEffect(() => {
     getBlogs();
-  }, [])
+  }, []);
 
   const networksList = useMemo(
     () =>
@@ -38,7 +38,7 @@ const BlogMain = () => {
     [blogs]
   );
 
-  if (isLoading) return <Preloader full />
+  if (isLoading) return <Preloader full />;
 
   return (
     <div className={scss.wrapper}>
@@ -47,6 +47,7 @@ const BlogMain = () => {
         <div className={scss.container}>
           <div className={scss.wrapperCard}>
             <div className={scss.wrap}>{renderCard}</div>
+
             <div className={scss.btn_more}>
               <button>More</button>
             </div>

@@ -13,9 +13,10 @@
 }
 @media (max-width:375px) , (max-width:1200px){
   .sights{
-    padding: 30px 0 30px 24px;
     .cards{
       padding: 0;
+      width: 95%;
+      margin: 0 auto;
       margin-top: 25px;
       overflow: auto;
     }
@@ -24,3 +25,17 @@
     }
   }
 }
+@media (max-width: 768px) {
+    .cards{
+      width: 95%;
+      margin:  0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+  .cards{
+    width: 85%;
+    margin:  0 auto;
+  }
+}
+
