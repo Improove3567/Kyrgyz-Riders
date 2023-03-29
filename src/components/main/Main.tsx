@@ -1,4 +1,4 @@
-import React, {useMemo } from "react";
+import React, { useMemo } from "react";
 import scss from "./main.module.scss";
 import { MainLinks } from "../../constatnts/Main/HeaderConsts";
 import Link from "next/link";
@@ -12,14 +12,13 @@ import { useRouter } from "next/router";
 interface MainProps {
   imgPageSliders: Sliders[];
 }
-interface Sliders{
-  className : string;
+interface Sliders {
+  className: string;
   title?: string;
 }
 
 const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
   const { route } = useRouter();
-
   const renderBtns = React.useMemo(
     () =>
       MainLinks.map((item) => (
@@ -51,9 +50,9 @@ const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
           <div className="container">
             <div className={scss.buttons}>
               {el.title && (
-               <div className={(route != "/tour/[id]") && (route != "/our-team/[id]")   ? scss.imgText : scss.imgTextTour }>
-                {el.title}
-               </div>
+                <div className={(route != "/tour/[id]") && (route != "/our-team/[id]") ? scss.imgText : scss.imgTextTour}>
+                  {el.title}
+                </div>
               )}
               {renderBtns}
             </div>
@@ -63,7 +62,6 @@ const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
     [imgPageSliders, renderBtns]
   );
 
-  
 
   return (
     <div className="main">
