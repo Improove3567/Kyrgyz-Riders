@@ -15,9 +15,9 @@ const useSights = () => {
   const [sightsDetail, setSightsDetail] = useState<DocumentData>();
   const [isLoading, setLoading] = useState(true);
 
-  const getSights = async (lmt: number) => {
+  const getSights = async (lmt?: number | any) => {
     const touSliderData: Array<object> | ((prevState: never[]) => never[]) = [];
-    const getFireStore = query(collection(db, "sights"), limit(lmt));
+    const getFireStore = query(collection(db, "sights"), lmt && limit(lmt));
     const querySnapshot = await getDocs(getFireStore);
     querySnapshot.forEach((doc: DocumentData) =>
       touSliderData.push({ tid: doc.id, ...doc.data() })
@@ -41,7 +41,7 @@ const useSights = () => {
     getSightsDetail,
     sightsDetail,
     isLoading,
-    setSights
+    setSights,
   };
 };
 

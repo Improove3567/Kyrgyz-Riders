@@ -15,9 +15,9 @@ const useBlogs = () => {
     const [blogDetail, setBlogDetail] = useState<object>();
     const [isLoading, setLoading] = useState(true);
 
-    const getBlogs = async (lmt:number) => {
+    const getBlogs = async (lmt?:number  |any) => {
         const touSliderData: Array<object> | ((prevState: never[]) => never[]) = []
-        const getFireStore = query(collection(db, "blogs"), limit(lmt))
+        const getFireStore = query(collection(db, "blogs"), lmt && limit(lmt))
         const querySnapshot = await getDocs(getFireStore);
         querySnapshot.forEach((doc: DocumentData) => touSliderData.push({ tid: doc.id, ...doc.data() }));
         setBlogs(touSliderData);

@@ -12,9 +12,9 @@ const useTravel = () => {
   const [travel, setTravel] = useState<Array<object>>([]);
   const [isLoading, setLoading] = useState(true);
 
-  const getTravel = async (lmt: number) => {
+  const getTravel = async (lmt?: number | any) => {
     const travelData: Array<object> | ((prevState: never[]) => never[]) = [];
-    const getFireStore = query(collection(db, "travel"), limit(lmt));
+    const getFireStore = query(collection(db, "travel"), lmt && limit(lmt));
     const querySnapshot = await getDocs(getFireStore);
     querySnapshot.forEach((doc: DocumentData) =>
       travelData.push({ tid: doc.id, ...doc.data() })
