@@ -60,3 +60,53 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 327px;
+    height: 207px;
+
+    img {
+      width: 327px;
+      height: 207px;
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    a:last-child {
+      margin-right: 25px;
+    }
+
+    .days {
+      width: 74px;
+      height: 60px;
+
+      p {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .bottomBlock {
+      height: 43px;
+      p {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .wrapper {
+    filter: none;
+  }
+}
