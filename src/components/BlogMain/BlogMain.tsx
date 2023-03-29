@@ -9,7 +9,7 @@ import Preloader from "../Preloader/Preloader";
 const BlogCard = React.lazy(() => import("./BlogCard/BlogCard"));
 
 const BlogMain = () => {
-  const { getBlogs, blogs, isLoading } = useBlogs();
+  const { getBlogs, blogs, isLoading, len } = useBlogs();
 
   const [limit, setLimit] = useState<number>(3);
 
@@ -19,7 +19,12 @@ const BlogMain = () => {
 
 
   const onMore = () => {
-    setLimit((prev: number) => prev + 3)
+    if (limit < len.length) {
+      setLimit((prev: number) => prev + 3);
+    }
+    else if (limit - 2 || limit + 2 == len.length) {
+      setLimit(len.length)
+    }
   }
 
 
@@ -57,7 +62,7 @@ const BlogMain = () => {
         <div className={scss.container}>
           <div className={scss.wrapperCard}>
             <div className={scss.wrap}>{renderCard}</div>
-            <div className={scss.btn_more}>
+            <div className={limit >= len.length ? scss.nonAcBtn_more : scss.btn_more}>
               <button onClick={() => onMore()}>More</button>
             </div>
           </div>

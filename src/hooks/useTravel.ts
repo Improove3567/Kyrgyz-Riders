@@ -11,6 +11,7 @@ import { db } from "../firebase/firebase-config";
 const useTravel = () => {
   const [travel, setTravel] = useState<Array<object>>([]);
   const [isLoading, setLoading] = useState(true);
+  const [len, setLen] = useState<Array<object>>([]);
 
   const getTravel = async (lmt?: number | any) => {
     const travelData: Array<object> | ((prevState: never[]) => never[]) = [];
@@ -19,6 +20,13 @@ const useTravel = () => {
     querySnapshot.forEach((doc: DocumentData) =>
       travelData.push({ tid: doc.id, ...doc.data() })
     );
+    const tourData: Array<object> | ((prevState: never[]) => never[]) = [];
+    const getStore = query(collection(db, "sights"));
+    const querySnap = await getDocs(getStore);
+    querySnap.forEach((doc: DocumentData) =>
+      tourData.push({ tid: doc.id, ...doc.data() })
+    );
+    setLen(tourData);
     setTravel(travelData);
     setLoading(false);
   };
@@ -27,6 +35,7 @@ const useTravel = () => {
     travel,
     getTravel,
     isLoading,
+    len,
   };
 };
 

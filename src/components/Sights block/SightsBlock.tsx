@@ -7,7 +7,7 @@ import Preloader from "../Preloader/Preloader";
 const SightCard = React.lazy(() => import("./SightsCard/SightsCard"));
 
 const SightsBlock: React.FC = () => {
-    const { getSights, sights, isLoading } = useSights();
+    const { getSights, sights, isLoading, len } = useSights();
 
     const [limit, setLimit] = useState<number>(3);
 
@@ -16,7 +16,12 @@ const SightsBlock: React.FC = () => {
     }, [limit])
 
     const onMore = () => {
-        setLimit((prev: number) => prev + 3)
+        if (limit < len.length) {
+            setLimit((prev: number) => prev + 3);
+        }
+        else if (limit - 2 || limit + 2 == len.length) {
+            setLimit(len.length)
+        }
     }
 
     const sightsList = useMemo(() => (
@@ -34,7 +39,7 @@ const SightsBlock: React.FC = () => {
                 <div className={scss.card_container}>
                     {sightsList}
                 </div>
-                <button onClick={() => onMore()} className={scss.button}>
+                <button onClick={() => onMore()} className={limit >= len.length ? scss.nonAcbutton : scss.button}>
                     <p>More Sights</p>
                 </button>
             </div>

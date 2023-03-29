@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo , useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import scss from "./TravelBlock.module.scss";
 import Divider from "../Divider/Divider";
 import TravelCard from "./TravelCard/TravelCard";
@@ -6,7 +6,7 @@ import useTravel from "../../hooks/useTravel";
 import Preloader from "../Preloader/Preloader";
 
 const TravelBlock: React.FC = () => {
-    const { getTravel, travel, isLoading } = useTravel();
+    const { getTravel, travel, isLoading, len } = useTravel();
 
     const [limit, setLimit] = useState<number>(3);
 
@@ -18,12 +18,16 @@ const TravelBlock: React.FC = () => {
         travel?.map((el, index) => (
             <TravelCard {...el} key={index} />
         ))
-    ), [travel , limit])
+    ), [travel, limit])
 
     const onMore = () => {
-        setLimit((prev: number) => prev + 3)
+        if (limit < len.length) {
+            setLimit((prev: number) => prev + 3);
+        }
+        else if (limit - 2 || limit + 2 == len.length) {
+            setLimit(len.length)
+        }
     }
-
 
     if (isLoading) return <Preloader full />
 
@@ -34,7 +38,7 @@ const TravelBlock: React.FC = () => {
                 <div className={scss.card_container}>
                     {sightsList}
                 </div>
-                <button onClick={() => onMore()} className={scss.button}>
+                <button onClick={() => onMore()} className={limit >= len.length ? scss.nonAcbutton : scss.button}>
                     <p>More Stories</p>
                 </button>
             </div>
