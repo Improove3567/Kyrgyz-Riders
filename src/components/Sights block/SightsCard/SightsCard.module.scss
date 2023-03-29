@@ -65,7 +65,6 @@
   .wrapper {
     width: 327px;
     height: 207px;
-    // filter: none;
 
     img {
       width: 327px;
@@ -95,10 +94,7 @@
     }
 
     .bottomBlock {
-      // width: 97%;
-      // bottom: 5px;
       height: 43px;
-      // left: 9px;
       p {
         font-weight: 600;
         font-size: 14px;
@@ -109,7 +105,7 @@
   }
 }
 
-@media (max-width: 391px) {
+@media (max-width: 450px) {
   .wrapper {
     filter: none;
   }
