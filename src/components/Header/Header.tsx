@@ -107,7 +107,7 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
                 <hr className={scss.followUS} />
                 {
                   footerConsts.map((item) => (
-                    <div className={scss.icons_footer}>
+                    <div className={scss.icons_footer} key={item.id}>
                       {item.img
                         ? item.img.map((el) => (
                           <Link key={el.id} href={el.link}>
