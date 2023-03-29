@@ -58,7 +58,7 @@ const TourSlider: React.FC = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          dots: true
+          dots: false
         }
       },
       {
@@ -126,7 +126,7 @@ const TourSlider: React.FC = () => {
           </Divider>
         </div>
         <div className="mainSliders">
-          <Slider {...settings}>{render} {render}</Slider>
+          <Slider {...settings}>{render}</Slider>
         </div>
       </div>
     </div>

@@ -214,3 +214,14 @@ input::-webkit-inner-spin-button {
   /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  .mainSliders {
+    padding: 0px 0px 40px 24px;
+  }
+  .mainSliders .slick-list {
+    height: 100% !important;
+  }
+}
