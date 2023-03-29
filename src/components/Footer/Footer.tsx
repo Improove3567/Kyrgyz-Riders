@@ -75,11 +75,6 @@ const Footer: React.FC = () => {
                 </Link>
               ))
               : ""}
-              && item.img.map((el) => (
-                  <Link key={el.id} href={el.link}>
-                    <Image src={el.logo} width={20} height={20} alt="logo" />
-                  </Link>
-                ))}
           </div>
         </div>
       )),
