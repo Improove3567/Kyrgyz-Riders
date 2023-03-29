@@ -30,13 +30,13 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
   }, [isActive]);
 
   useEffect(() => {
-   if (openModal){
-    document.body.style.height = '100vh';
-    document.body.style.overflow = 'hidden';
-   }else{
-    document.body.style.height = 'auto';
-    document.body.style.overflow = 'visible';
-   }
+    if (openModal) {
+      document.body.style.height = '100vh';
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.height = 'auto';
+      document.body.style.overflow = 'visible';
+    }
   }, [openModal]);
 
   const click = () => setOpen(!open)
@@ -60,7 +60,7 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
     HeaderStyles = isActive ? scss.renderActive : scss.renderNonActive;
   }
   return (
-    <header id={scss.header} className={HeaderStyles}>
+    <header className={HeaderStyles}>
       <Link href="/">
         <h1>LOGO</h1>
       </Link>
@@ -86,15 +86,15 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
               </div>
               <div className={scss.titleLink}>
                 <div className={scss.pagesMain}>
-                  <a href="/tours">Tours</a>
+                  <Link href="/tours"><p>Tours</p></Link>
                   <hr className={scss.border} />
-                  <a href="/sights">Sights</a>
+                  <Link href="/sights"><p>Sights</p></Link>
                   <hr className={scss.border} />
-                  <a href="/travel stories">Travel stories</a>
+                  <Link href="/travel stories"><p>Travel stories</p></Link>
                   <hr className={scss.border} />
-                  <a href="about us">About us</a>
+                  <Link href="about us"><p>About us</p></Link>
                   <hr className={scss.border} />
-                  <a href="blogNews">Blog & news</a>
+                  <Link href="blogNews"><p>Blog & news</p></Link>
                   <hr className={scss.border} />
                 </div>
               </div>
