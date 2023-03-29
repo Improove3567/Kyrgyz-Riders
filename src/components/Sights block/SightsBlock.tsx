@@ -6,32 +6,31 @@ import useSights from "../../hooks/useSights";
 import Preloader from "../Preloader/Preloader";
 
 const SightsBlock: React.FC = () => {
-    const { getSights, sights, isLoading } = useSights();
+  const { getSights, sights, isLoading } = useSights();
 
-    useEffect(() => {
-        getSights();
-    }, [])
-    const sightsList = useMemo(() => (
-        sights.map((el, index) => (
-            <SightCard {...el} key={index} />
-        ))
-    ), [sights])
+  useEffect(() => {
+    getSights();
+  }, []);
+  const sightsList = useMemo(
+    () => sights.map((el, index) => <SightCard {...el} key={index} />),
+    [sights]
+  );
 
-    if(isLoading) return <Preloader full />
+  if (isLoading) return <Preloader full />;
 
-    return (
-        <div className={scss.wrapper}>
-            <div className="container">
-                <Divider title={"Sights"} />
-                <div className={scss.card_container}>
-                    {sightsList}
-                </div>
-                <div className={scss.button}>
-                    <p>More Sights</p>
-                </div>
-            </div>
+  return (
+    <div className={scss.wrapper}>
+      <div className="container">
+        <Divider title={"Sights"} />
+        <div className={scss.mainCardContainer}>
+          <div className={scss.card_container}>{sightsList}</div>
+          <div className={scss.button}>
+            <p>More Sights</p>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default SightsBlock;
