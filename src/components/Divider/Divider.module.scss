@@ -1,8 +1,12 @@
 @import "../../../styles//variables.scss";
+@import "../../../styles//globalVariables.scss";
 
 .wrapper {
   position: relative;
   margin-bottom: 40px;
+  @include breackpoint(xxl){
+    margin-bottom: 0;
+  }
   .content {
     display: flex;
     justify-content: space-between;

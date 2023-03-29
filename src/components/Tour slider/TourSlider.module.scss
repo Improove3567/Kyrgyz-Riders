@@ -1,3 +1,4 @@
+@import '../../../styles/globalVariables.scss';
 .wrapper {
   padding: 40px 0px;
   height: 100%;
@@ -13,6 +14,9 @@
 }
 
 .nextArrow_container {
+  @include breackpoint(sm){
+    display: none;
+  }
   position: absolute;
   right: -1.3% !important;
   top: 42%;
@@ -42,6 +46,9 @@
 }
 
 .prevArrow_container {
+  @include breackpoint(sm){
+    display: none;
+  }
   position: absolute;
   left: -0.9% !important;
   top: 42%;
