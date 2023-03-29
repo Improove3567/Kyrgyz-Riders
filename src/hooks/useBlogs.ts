@@ -5,6 +5,7 @@ import {
     DocumentData,
     getDoc,
     getDocs,
+    limit,
     query,
 } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
@@ -14,9 +15,9 @@ const useBlogs = () => {
     const [blogDetail, setBlogDetail] = useState<object>();
     const [isLoading, setLoading] = useState(true);
 
-    const getBlogs = async () => {
+    const getBlogs = async (lmt:number) => {
         const touSliderData: Array<object> | ((prevState: never[]) => never[]) = []
-        const getFireStore = query(collection(db, "blogs"))
+        const getFireStore = query(collection(db, "blogs"), limit(lmt))
         const querySnapshot = await getDocs(getFireStore);
         querySnapshot.forEach((doc: DocumentData) => touSliderData.push({ tid: doc.id, ...doc.data() }));
         setBlogs(touSliderData);

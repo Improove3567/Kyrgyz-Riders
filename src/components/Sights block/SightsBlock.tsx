@@ -1,23 +1,31 @@
-import React, { useEffect, useMemo } from "react";
-import SightCard from "./SightsCard/SightsCard";
+import React, { useEffect, useMemo, useState } from "react";
 import scss from "./SightsBlock.module.scss";
 import Divider from "../Divider/Divider";
 import useSights from "../../hooks/useSights";
 import Preloader from "../Preloader/Preloader";
 
+const SightCard = React.lazy(() => import("./SightsCard/SightsCard"));
+
 const SightsBlock: React.FC = () => {
     const { getSights, sights, isLoading } = useSights();
 
+    const [limit, setLimit] = useState<number>(3);
+
     useEffect(() => {
-        getSights();
-    }, [])
+        getSights(limit);
+    }, [limit])
+
+    const onMore = () => {
+        setLimit((prev: number) => prev + 3)
+    }
+
     const sightsList = useMemo(() => (
         sights.map((el, index) => (
             <SightCard {...el} key={index} />
         ))
-    ), [sights])
+    ), [sights, limit])
 
-    if(isLoading) return <Preloader full />
+    if (isLoading) return <Preloader full />
 
     return (
         <div className={scss.wrapper}>
@@ -26,9 +34,9 @@ const SightsBlock: React.FC = () => {
                 <div className={scss.card_container}>
                     {sightsList}
                 </div>
-                <div className={scss.button}>
+                <button onClick={() => onMore()} className={scss.button}>
                     <p>More Sights</p>
-                </div>
+                </button>
             </div>
         </div>
     );

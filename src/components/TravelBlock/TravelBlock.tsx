@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo , useState } from "react";
 import scss from "./TravelBlock.module.scss";
 import Divider from "../Divider/Divider";
 import TravelCard from "./TravelCard/TravelCard";
@@ -8,14 +8,22 @@ import Preloader from "../Preloader/Preloader";
 const TravelBlock: React.FC = () => {
     const { getTravel, travel, isLoading } = useTravel();
 
+    const [limit, setLimit] = useState<number>(3);
+
     useEffect(() => {
-        getTravel();
-    }, [])
+        getTravel(limit);
+    }, [limit])
+
     const sightsList = useMemo(() => (
         travel?.map((el, index) => (
             <TravelCard {...el} key={index} />
         ))
-    ), [travel])
+    ), [travel , limit])
+
+    const onMore = () => {
+        setLimit((prev: number) => prev + 3)
+    }
+
 
     if (isLoading) return <Preloader full />
 
@@ -26,9 +34,9 @@ const TravelBlock: React.FC = () => {
                 <div className={scss.card_container}>
                     {sightsList}
                 </div>
-                <div className={scss.button}>
-                    <p>More Sights</p>
-                </div>
+                <button onClick={() => onMore()} className={scss.button}>
+                    <p>More Stories</p>
+                </button>
             </div>
         </div>
     );

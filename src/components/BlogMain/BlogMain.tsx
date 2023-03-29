@@ -1,17 +1,27 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { networksData, newsData } from "../../constants/BlogAndNews";
 import scss from "./BlogMain.module.scss";
 import Image from "next/image";
-import BlogCard from "./BlogCard/BlogCard";
 import Divider from "../Divider/Divider";
 import useBlogs from "../../hooks/useBlogs";
 import Preloader from "../Preloader/Preloader";
 
+const BlogCard = React.lazy(() => import("./BlogCard/BlogCard"));
+
 const BlogMain = () => {
   const { getBlogs, blogs, isLoading } = useBlogs();
+
+  const [limit, setLimit] = useState<number>(3);
+
   useEffect(() => {
-    getBlogs();
-  }, [])
+    getBlogs(limit);
+  }, [limit])
+
+
+  const onMore = () => {
+    setLimit((prev: number) => prev + 3)
+  }
+
 
   const networksList = useMemo(
     () =>
@@ -20,7 +30,7 @@ const BlogMain = () => {
           <Image src={el.img} width={20} height={20} alt="social_network" />
         </div>
       )),
-    []
+    [networksData]
   );
 
   const newsList = useMemo(
@@ -31,11 +41,11 @@ const BlogMain = () => {
           <p className={scss.date}>{el.date}</p>
         </div>
       )),
-    []
+    [newsData]
   );
   const renderCard = useMemo(
     () => blogs?.map((el, index) => <BlogCard {...el} key={index} />),
-    [blogs]
+    [blogs, limit]
   );
 
   if (isLoading) return <Preloader full />
@@ -48,7 +58,7 @@ const BlogMain = () => {
           <div className={scss.wrapperCard}>
             <div className={scss.wrap}>{renderCard}</div>
             <div className={scss.btn_more}>
-              <button>More</button>
+              <button onClick={() => onMore()}>More</button>
             </div>
           </div>
           <div className={scss.rightBlock}>
