@@ -29,19 +29,41 @@
   }
 }
 
-@media (max-width: 900px) {
-  .subtitle {
-    display: none;
+@media (max-width: 912px) {
+  .moreBlock {
+    margin-right: 0;
+    .subtitle {
+      display: none;
+    }
   }
 }
 
 @media (max-width: 768px) {
   .moreBlock {
+    margin-right: 5px;
     position: absolute;
     top: 30px;
     right: 20px;
     .subtitle {
       display: none;
     }
+  }
+}
+
+@media (max-width: 540px) {
+  .moreBlock {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .moreBlock {
+    margin-right: -2px;
+  }
+}
+
+@media (max-width: 376px) {
+  .moreBlock {
+    margin-right: -6px;
   }
 }

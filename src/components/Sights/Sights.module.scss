@@ -11,10 +11,31 @@
     padding: 10px;
   }
 }
-
-@media (max-width: 768px) {
-  .sights {
-    padding: 0px;
-    margin-top: 40px;
-  } 
+@media (max-width:375px) , (max-width:1200px){
+  .sights{
+    .cards{
+      padding: 0;
+      width: 95%;
+      margin: 0 auto;
+      margin-top: 25px;
+      overflow: auto;
+    }
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+  }
 }
+@media (max-width: 768px) {
+    .cards{
+      width: 95%;
+      margin:  0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+  .cards{
+    width: 85%;
+    margin:  0 auto;
+  }
+}
+
