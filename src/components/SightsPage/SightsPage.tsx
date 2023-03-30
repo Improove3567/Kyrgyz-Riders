@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Divider from "../Divider/Divider";
-import { SightsPageArr } from "../../constants/SightsPage";
 import scss from './SightsPage.module.scss'
 
 interface SightsText {

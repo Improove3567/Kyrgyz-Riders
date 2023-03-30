@@ -22,7 +22,7 @@ const Preloader: React.FC<PreloaderProps> = ({ full }) => {
                         cx="170"
                         cy="170"
                         r="135"
-                        stroke="#2E325A"
+                        stroke="#3B636F"
                     />
                     <circle
                         className={css.circle}
@@ -36,7 +36,7 @@ const Preloader: React.FC<PreloaderProps> = ({ full }) => {
                         cx="170"
                         cy="170"
                         r="85"
-                        stroke="#2E325A"
+                        stroke="#3B636F"
                     />
                 </svg>
             </div>
@@ -44,4 +44,4 @@ const Preloader: React.FC<PreloaderProps> = ({ full }) => {
     );
 };
 
-export default Preloader;
+export default React.memo(Preloader);

@@ -1,36 +1,52 @@
-import React, { useEffect, useMemo } from "react";
-import SightCard from "./SightsCard/SightsCard";
+import React, { useEffect, useMemo, useState } from "react";
 import scss from "./SightsBlock.module.scss";
 import Divider from "../Divider/Divider";
 import useSights from "../../hooks/useSights";
 import Preloader from "../Preloader/Preloader";
 
+const SightCard = React.lazy(() => import("./SightsCard/SightsCard"));
+
 const SightsBlock: React.FC = () => {
-  const { getSights, sights, isLoading } = useSights();
+    const { getSights, sights, isLoading, len } = useSights();
 
-  useEffect(() => {
-    getSights();
-  }, []);
-  const sightsList = useMemo(
-    () => sights.map((el, index) => <SightCard {...el} key={index} />),
-    [sights]
-  );
+    const [limit, setLimit] = useState<number>(3);
 
-  if (isLoading) return <Preloader full />;
+    useEffect(() => {
+        getSights(limit);
+    }, [limit])
 
-  return (
-    <div className={scss.wrapper}>
-      <div className="container">
-        <Divider title={"Sights"} />
-        <div className={scss.mainCardContainer}>
-          <div className={scss.card_container}>{sightsList}</div>
-          <div className={scss.button}>
-            <p>More Sights</p>
-          </div>
+    const onMore = () => {
+        if (limit < len.length) {
+            setLimit((prev: number) => prev + 3);
+        }
+        else if (limit - 2 || limit + 2 == len.length) {
+            setLimit(len.length)
+        }
+    }
+
+    const sightsList = useMemo(() => (
+        sights.map((el, index) => (
+            <SightCard {...el} key={index} />
+        ))
+    ), [sights, limit])
+
+    if (isLoading) return <Preloader full />
+
+    return (
+        <div className={scss.wrapper}>
+            <div className="container">
+                <Divider title={"Sights"} />
+                <div className={scss.mainCardContainer}>
+                    <div className={scss.card_container}>
+                        {sightsList}
+                    </div>
+                    <button onClick={() => onMore()} className={limit >= len.length ? scss.nonAcbutton : scss.button}>
+                        <p>More Sights</p>
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    )
 };
 
 export default SightsBlock;

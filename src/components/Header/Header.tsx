@@ -1,4 +1,4 @@
-import React, { SetStateAction, useEffect, useState } from "react";
+import React, { SetStateAction, useEffect, useState, useCallback } from "react";
 import scss from "./Header.module.scss";
 import Link from "next/link";
 import { HeaderLinks } from "../../constatnts/Main/HeaderConsts";
@@ -19,15 +19,20 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
   const router = useRouter();
   const currentRoute = router.pathname;
 
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > 50) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, []);
+
   useEffect(() => {
-    addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        setActive(true);
-      } else {
-        setActive(false);
-      }
-    });
-  }, [isActive]);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
 
   useEffect(() => {
     if (openModal) {
