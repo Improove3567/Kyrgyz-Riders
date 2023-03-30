@@ -19,7 +19,7 @@ const AboutUsText: FC = () => {
           <Divider title="About us" variant="dark" />
         </div>
         <div className={scss.text}>
-          <div className={scss.paragraph}>{renderText}</div>
+          {renderText}
         </div>
       </div>
     </div>
