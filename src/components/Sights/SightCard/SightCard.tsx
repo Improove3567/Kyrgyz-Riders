@@ -14,7 +14,6 @@ const SightCard: React.FC<ISights> = ({
       <div className={scss.front}>
         {/* eslint-disable-next-line no-use-before-define */}
         <img src={img} alt="image" />
-        {/* <Image src={img} alt="test" width={50} height={50} /> */}
         <div className={scss.btm}>
           <p>{title}</p>
           <p>{tours?.length} tours</p>
