@@ -29,21 +29,25 @@ const TravelBlock: React.FC = () => {
         }
     }
 
-    if (isLoading) return <Preloader full />
+  if (isLoading) return <Preloader full />;
 
     return (
         <div className={scss.wrapper}>
             <div className="container">
                 <Divider title={"Travel & Stories"} variant={"dark"} />
+                <div className={scss.back}>
                 <div className={scss.card_container}>
                     {sightsList}
                 </div>
+                <div className={scss.btn}>
                 <button onClick={() => onMore()} className={limit >= len.length ? scss.nonAcbutton : scss.button}>
                     <p>More Stories</p>
                 </button>
+                </div>
+                </div>
             </div>
         </div>
-    );
+  );
 };
 
 export default TravelBlock;
