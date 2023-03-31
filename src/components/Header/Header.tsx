@@ -72,9 +72,6 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
       <nav>{renderLinks}</nav>
       <div></div>
       <div className={scss.dynamic_burger}>
-        <div className={scss.title_main}>
-          <p>Kyrgyz Riders</p>
-        </div>
         <div className={scss.menu_burger}>
           <div onClick={click}>
             <Image src={menu} alt={"burger_menu"} className={scss.menuBurger} onClick={() => setOpenModal(true)} />

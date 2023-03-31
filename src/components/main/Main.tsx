@@ -60,10 +60,14 @@ const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
 
   return (
     <div className="main">
+      <div className={scss.title_main}>
+        <h3 className={scss.title}><span>K</span>YRGYZ RIDERS</h3>
+      </div>
       <Slider {...settings} className={scss.slider}>
         {sliderList}
       </Slider>
     </div>
+    
   );
 };
 

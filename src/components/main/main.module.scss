@@ -237,7 +237,10 @@
     }
   }
 }
-@media (max-width: 576px) {
+.title {
+  display: none;
+}
+@media (max-width: 768px) {
   .main {
     height: 283px;
     filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
@@ -246,6 +249,27 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .title_main {
+    .title {
+      display: block;
+      font-family: "Montserrat";
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 49px;
+      color: rgba(255, 255, 255, 0.8);
+      position: absolute;
+      left: 22%;
+      top: 85px;
+      z-index: 10;
+
+      span {
+        font-weight: 700;
+        font-size: 55px;
+      }
+    }
+  }
+
   .buttons {
     width: 100%;
     display: flex;
@@ -289,18 +313,73 @@
     }
   }
 }
-@media (max-width: 500px) {
-  .buttons {
-    & a {
-      width: 200px;
+@media (max-width: 651px) {
+  .title_main {
+    .title {
+      left: 17%;
+      top: 95px;
     }
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 551px) {
+  .title_main {
+    .title {
+      font-size: 35px;
+      left: 23%;
+      top: 95px;
+
+      span {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .buttons {
+    & a {
+      width: 200px;
+      height: 45px;
+    }
+  }
+}
+
+@media (max-width: 451px) {
+  .title_main {
+    .title {
+      left: 16%;
+      top: 102px;
+    }
+  }
   .buttons {
     & a {
       width: 160px;
-      height: 45px;
+    }
+  }
+}
+@media (max-width: 391px) {
+  .title_main {
+    .title {
+      font-weight: 600;
+      font-size: 32px;
+      left: 14%;
+
+      span {
+        font-weight: 700;
+        font-size: 40px;
+      }
+    }
+  }
+}
+@media (max-width: 376px) {
+  .title_main {
+    .title {
+      left: 12%;
+    }
+  }
+}
+@media (max-width: 350px) {
+  .buttons {
+    & a {
+      width: 135px;
     }
   }
 }
