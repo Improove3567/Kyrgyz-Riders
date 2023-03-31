@@ -36,30 +36,32 @@
     }
   }
 
-  p:hover {
-    color: $active-text;
+  @media (min-width: 769px) {
+    p:hover {
+      color: $active-text;
 
-    &:hover {
-      &::before {
-        width: 100%;
-        left: 100;
+      &:hover {
+        &::before {
+          width: 100%;
+          left: 100;
+        }
       }
-    }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 21.5px;
-      width: 0;
-      right: 0;
-      z-index: 10;
-      height: 3px;
-    }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 21.5px;
+        width: 0;
+        right: 0;
+        z-index: 10;
+        height: 3px;
+      }
 
-    &::before {
-      transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
-      background: #2e325a;
-      left: 0;
+      &::before {
+        transition: width 0.2s cubic-bezier(0.51, 0.18, 0, 0.88);
+        background: #2e325a;
+        left: 0;
+      }
     }
   }
 }
@@ -141,25 +143,13 @@
       font-weight: 500;
       font-size: 12px;
       line-height: 15px;
-      color: #333333;
+      color: $team-title;
       text-align: center;
       height: fit-content;
 
       border: 1px solid #828282;
       padding: 10px 30px;
       margin-top: 30px;
-
-      cursor: pointer;
-
-      &::before {
-        content: none;
-      }
-    }
-
-    p:hover {
-      &::before {
-        content: none;
-      }
     }
 
     p:last-child {
@@ -174,6 +164,7 @@
     background: #2e325a;
     color: #ffffff;
     margin-top: 30px;
+    margin-bottom: 5px;
 
     padding: 10px 30px;
 
