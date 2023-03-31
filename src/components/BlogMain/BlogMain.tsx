@@ -53,7 +53,7 @@ const BlogMain = () => {
     [blogs, limit]
   );
 
-  if (isLoading) return <Preloader full />
+  if (isLoading) return <Preloader full />;
 
   return (
     <div className={scss.wrapper}>

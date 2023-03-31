@@ -4,7 +4,7 @@
       @content;
     }
   }@else if $point==ms{
-    @media (max-width: 1200p) {
+    @media (max-width: 1200px) {
       @content;
     }
   }@else if $point==md {
