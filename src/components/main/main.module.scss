@@ -325,7 +325,7 @@
   .title_main {
     .title {
       font-size: 35px;
-      left: 23%;
+      left: 22%;
       top: 95px;
 
       span {
@@ -341,12 +341,18 @@
     }
   }
 }
-
 @media (max-width: 451px) {
   .title_main {
     .title {
       left: 16%;
       top: 102px;
+    }
+  }
+}
+@media (max-width: 413px) {
+  .title_main {
+    .title {
+      left: 13%;
     }
   }
   .buttons {
