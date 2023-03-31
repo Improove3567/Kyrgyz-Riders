@@ -92,11 +92,11 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
                   <hr className={scss.border} />
                   <Link href="/sights"><p>Sights</p></Link>
                   <hr className={scss.border} />
-                  <Link href="/travel stories"><p>Travel stories</p></Link>
+                  <Link href="/travel"><p>Travel stories</p></Link>
                   <hr className={scss.border} />
-                  <Link href="about us"><p>About us</p></Link>
+                  <Link href="/aboutus"><p>About us</p></Link>
                   <hr className={scss.border} />
-                  <Link href="blogNews"><p>Blog & news</p></Link>
+                  <Link href="/blogAndNews"><p>Blog & News</p></Link>
                   <hr className={scss.border} />
                 </div>
               </div>
