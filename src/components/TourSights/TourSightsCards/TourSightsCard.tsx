@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
-import Image from 'next/image';
 import scss from './TourSightsCard.module.scss'
 import { TourSightsArrProps } from '../../../constants/TourSitghts';
-const TourSightsCard: FC<TourSightsArrProps> = ({ img, title, aboutSight }) => {
+const TourSightsCard: FC<TourSightsArrProps> = ({ img, title, category }) => {
   return (
     <div className={scss.card}>
       <div className={scss.front}>
@@ -11,7 +10,7 @@ const TourSightsCard: FC<TourSightsArrProps> = ({ img, title, aboutSight }) => {
         </div>
         <div className={scss.btm}>
           <p>{title}</p>
-          <p>{aboutSight}</p>
+          <p>{category}</p>
         </div>
       </div>
     </div>
