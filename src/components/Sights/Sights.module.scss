@@ -3,7 +3,7 @@
   background-color: #efefef;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
 
-  .cards{
+  .cards {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,12 +11,12 @@
     padding: 10px;
   }
 }
-@media (max-width:375px) , (max-width:1200px){
-  .sights{
-    .cards{
-      padding: 0;
-      width: 95%;
-      margin: 0 auto;
+@media (max-width: 768px) {
+  .sights {
+    padding: 0 0 20px 0;
+    .cards {
+      padding: 0 0 0 24px;
+      width: 100%;
       margin-top: 25px;
       overflow: auto;
     }
@@ -25,17 +25,3 @@
     }
   }
 }
-@media (max-width: 768px) {
-    .cards{
-      width: 95%;
-      margin:  0 auto;
-    }
-}
-
-@media (max-width: 576px) {
-  .cards{
-    width: 85%;
-    margin:  0 auto;
-  }
-}
-
