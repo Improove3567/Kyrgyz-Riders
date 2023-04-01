@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import scss from "./SendARequest.module.scss";
 import Divider from "../../Divider/Divider";
 import { TourAboutTextArr } from "../../../constants/TourAboutText";
@@ -6,27 +6,48 @@ import useRequest from "../../../hooks/useRequest";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import emailjs from "@emailjs/browser";
+import useTours from "../../../hooks/useTours";
 
-const SendARequest: React.FC = () => {
+interface ITourData {
+  createdAt: object,
+  image: string,
+  subtitle: string,
+  title: string,
+  tourInfo: Array<object>
+  requests: number
+}
+
+interface ITour {
+  tour?: ITourData
+}
+
+const SendARequest: React.FC<ITour> = ({ tour }) => {
   const { addRequest } = useRequest();
-
+  const { updateRequests } = useTours();
   const router = useRouter();
+
+  const { id }: any = router.query;
+
+  useEffect(() => {
+    setRequests(tour?.requests)
+  }, [tour])
 
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
+  const [countOfRequests, setRequests] = useState<any>(tour?.requests);
 
+  const data = {
+    tourName: tour?.title,
+    name: name,
+    lastName: lastName,
+    email: email,
+    number: number
+  }
 
   const onSendEmail = async (e: { preventDefault: () => void; }) => {
-
     e.preventDefault()
-    const data = {
-      name: name,
-      lastName: lastName,
-      email: email,
-      number: number
-    }
 
     await addRequest({
       name,
@@ -51,6 +72,7 @@ const SendARequest: React.FC = () => {
     }, (error) => {
       console.log(error);
     })
+    await updateRequests(id, { ...tour, requests: countOfRequests + 1 })
   }
 
 

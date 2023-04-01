@@ -42,7 +42,7 @@ const TourPage = () => {
             <TourMapsBlock />
             <PriceIncludes />
             <PriceDoesntInclude />
-            <SendARequest />
+            <SendARequest tour={tourDetail} />
             <YourTours />
             <Footer />
         </>

@@ -6,6 +6,7 @@ import {
     getDoc,
     getDocs,
     query,
+    updateDoc,
 } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
 
@@ -33,12 +34,18 @@ const useTours = () => {
         }
     };
 
+    const updateRequests = async (id:string,data:object) => {
+        const ref = doc(db, "tours" , id);
+        const res = await updateDoc(ref, data);
+        return res;
+    }
     return {
         tours,
         getTours,
         getTourDetail,
         tourDetail,
-        isLoading
+        isLoading,
+        updateRequests
     };
 };
 
