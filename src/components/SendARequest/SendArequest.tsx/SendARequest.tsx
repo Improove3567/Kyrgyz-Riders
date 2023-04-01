@@ -47,17 +47,9 @@ const SendARequest: React.FC<ITour> = ({ tour }) => {
   }
 
   const onSendEmail = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    await addRequest({
-      name,
-      lastName,
-      email,
-      number
-    }).then(() => {
-      router.push("/")
-      toast.success("Тур был успешно создан!")
-    })
+    updateRequests(id, { ...tour, requests: countOfRequests + 1 })
 
     await emailjs.send(
       "service_lcl44ys",
@@ -70,16 +62,24 @@ const SendARequest: React.FC<ITour> = ({ tour }) => {
       setName("")
       setNumber("")
     }, (error) => {
-      console.log(error);
+      alert("something went wrong!" + error);
     })
-    await updateRequests(id, { ...tour, requests: countOfRequests + 1 })
-  }
 
+    await addRequest({
+      name,
+      lastName,
+      email,
+      number
+    }).then(() => {
+      router.push("/")
+      toast.success("Запрос успешно отправлен!")
+    })
+  }
 
   const showText = React.useMemo(
     () =>
-      TourAboutTextArr.map((item) => (
-        <div className={scss.paragraph} key={item.id}>
+      TourAboutTextArr.map((item, i) => (
+        <div className={scss.paragraph} key={`${item.id}_${i}`}>
           {item.title}
         </div>
       )),
