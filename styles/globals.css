@@ -92,6 +92,13 @@ a {
   margin: 0 5px;
 }
 
+@media (max-width: 1025px) {
+  .mainSliders .slick-slide {
+    width: 319px !important;
+    margin: 0 5px;
+  }
+}
+
 
 /* Родительский элемент */
 .mainSliders .slick-list {
@@ -216,7 +223,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 768px) {
   .container {
-    width: 90%;
+    width: 100%;
   }
   .mainSliders {
     padding: 0px 2px 40px 24px;

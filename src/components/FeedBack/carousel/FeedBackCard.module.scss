@@ -25,7 +25,7 @@
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-      
+
       gap: 5px;
 
       h1 {
@@ -141,5 +141,10 @@
 @media (max-width: 1200px) {
   .wrapper {
     width: 335px !important;
+  }
+}
+@media (max-width: 1025px) {
+  .wrapper{
+    width: 302px !important;
   }
 }
