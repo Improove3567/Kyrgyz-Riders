@@ -73,6 +73,14 @@ const FeedbackCarousel = () => {
           arrows: false,
         },
       },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
     ],
   };
 

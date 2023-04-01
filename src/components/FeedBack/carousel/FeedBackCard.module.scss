@@ -15,7 +15,10 @@
     display: flex;
     align-items: center;
     gap: 15px;
-
+    position: relative;
+    @media (max-width: 425px) {
+      flex-direction: column;
+    }
     img {
       width: 15%;
       height: 100%;
@@ -34,12 +37,25 @@
         color: #474747;
         display: flex;
         align-items: center;
-
+        @media (max-width: 425px) {
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
         p {
           display: flex;
           align-items: center;
           margin-left: 10px;
           font-size: 90%;
+          @media (max-width: 425px) {
+            border: 1px solid #DBDBDB;
+            position: absolute;
+            padding: 0 20px;
+          right: 10px;
+            top: 75px;
+          width: 44%;
+            justify-content: center;
+            height: 27px;
+          }
         }
 
         img {
@@ -50,11 +66,23 @@
         }
       }
 
-      p {
+      >p {
         font-weight: 600;
         font-size: 12px;
         line-height: 15px;
         color: #707070;
+        @media (max-width: 425px) {
+          border: 1px solid #DBDBDB;
+          position: absolute;
+          top: 75px;
+          padding: 0 20px;
+          left: 10px;
+          height: 27px;
+          display: flex;
+          align-items: center;
+          width: 44%;
+          justify-content: center;
+        }
       }
     }
   }
@@ -94,6 +122,9 @@
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  @media (max-width: 425px) {
+    -webkit-line-clamp: 7;
+  }
 }
 
 .active {
@@ -134,7 +165,7 @@
 
 @media (max-width: 1335px) {
   .wrapper {
-    width: 380px;
+    width: 365px;
   }
 }
 
@@ -143,8 +174,34 @@
     width: 335px !important;
   }
 }
+@media (max-width: 1100px) {
+  .wrapper {
+    width: 335px !important;
+  }
+}
 @media (max-width: 1025px) {
-  .wrapper{
+  .wrapper {
     width: 302px !important;
+  }
+}
+@media (max-width: 950px) {
+  .wrapper {
+    width: 278px !important;
+  }
+}
+@media (max-width: 850px) {
+  .wrapper {
+    width: 240px !important;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    height: 380px;
+  }
+}
+@media (max-width: 425px) {
+  .wrapper {
+    width: 242px !important;
+    height: 455px;
   }
 }
