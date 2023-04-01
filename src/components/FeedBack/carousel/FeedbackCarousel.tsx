@@ -64,9 +64,27 @@ const FeedbackCarousel = () => {
         }}
       />
     ),
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
+    ],
   };
 
-  if (isLoading) return <Preloader full />
+  if (isLoading) return <Preloader full />;
   return (
     <div className={scss.container}>
       <div className="mainSliders">
