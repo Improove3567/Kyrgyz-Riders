@@ -3,6 +3,9 @@
   width: 100%;
   height: 286px;
   padding: 23px;
+  @media (max-width: 700px) {
+    height: fit-content;
+  }
   .img {
     display: flex;
     align-items: center;
