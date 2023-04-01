@@ -155,7 +155,7 @@
 
 @media (min-width: 1440px) {
   .wrapper {
-    width: 438px !important;
+    width: 431px !important;
   }
 
   .read {
@@ -194,9 +194,15 @@
     width: 240px !important;
   }
 }
+
 @media (max-width: 768px) {
   .wrapper {
     height: 380px;
+  }
+}
+@media (max-width: 700px) {
+  .wrapper {
+    width: 312px !important;
   }
 }
 @media (max-width: 425px) {
