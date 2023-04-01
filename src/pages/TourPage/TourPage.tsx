@@ -34,11 +34,11 @@ const TourPage = () => {
             <Header />
             <Main imgPageSliders={tourSlider} />
             <TourAbout tour={tourDetail} />
-            <TourAboutText aboutTour={tourDetail?.tourInfo.aboutTour} />
-            <TourSights sights={tourDetail?.tourInfo.sights} />
-            <TourFeatures reasons={tourDetail?.tourInfo.loveReasons} />
-            <PhotoesSlider photos={tourDetail?.tourInfo.photoes} />
-            <ItineraryBlock itineraries={tourDetail?.tourInfo.itenerariesDays} />
+            <TourAboutText aboutTour={tourDetail?.tourInfo?.aboutTour} />
+            <TourSights sights={tourDetail?.tourInfo?.sights} />
+            <TourFeatures reasons={tourDetail?.tourInfo?.loveReasons} />
+            <PhotoesSlider photos={tourDetail?.tourInfo?.photoes} />
+            <ItineraryBlock itineraries={tourDetail?.tourInfo?.itenerariesDays} />
             <TourMapsBlock />
             <PriceIncludes />
             <PriceDoesntInclude />
