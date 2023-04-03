@@ -1,23 +1,50 @@
+@import "../../../styles/globalVariables.scss";
+
 .content {
   background-color: #efefef;
-  border: 2px solid #C3C3C3;
+  border: 2px solid #c3c3c3;
   padding: 40px 0px;
+  @include breackpoint(sm) {
+    padding: 0;
+  }
   .title_block {
     width: 100%;
     margin: 0 auto;
-    .line {
-      margin-bottom: 1%;
-      .title_mark {
-        display: flex;
-        align-items: center;
-        p {
-          margin-left: 15px;
-          font-family: "Montserrat";
-          font-style: normal;
-          font-weight: 500;
-          font-size: 18px;
-          line-height: 33px;
-          color: #757575;
+    .test {
+      @include breackpoint(sm) {
+        padding: 24px;
+        padding-top: 10px;
+        padding-bottom: 15px;
+      }
+      .line {
+        margin-bottom: 1%;
+        @include breackpoint(sm) {
+          margin-bottom: 25px;
+        }
+        .title_mark {
+          display: flex;
+          align-items: center;
+          @include breackpoint(sm) {
+            align-items: flex-start;
+            img {
+              margin-top: 7px;
+            }
+          }
+          p {
+            margin-left: 15px;
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 33px;
+            color: #757575;
+            @include breackpoint(sm) {
+              font-weight: 500;
+              font-size: 15px;
+              line-height: 22px;
+              color: #757575;
+            }
+          }
         }
       }
     }
