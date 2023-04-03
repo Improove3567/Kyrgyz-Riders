@@ -21,7 +21,9 @@ const PriceDoesntInclude: FC = () => {
     <div className={scss.title_block}>
       <div className="container">
         <Divider title="Price does not include" variant="dark" />
-        {showText}
+        <div className={scss.text}>
+          {showText}
+        </div>
       </div>
     </div>
   );
