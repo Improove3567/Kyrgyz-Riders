@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import scss from "./SliderCard.module.scss";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import useTours from "../../../hooks/useTours";
 
 interface CardProps {
   title?: string;
@@ -10,8 +12,8 @@ interface CardProps {
 }
 
 const SliderCard: React.FC<CardProps> = ({ title, subtitle, days, image}) => {
-  return (
-    <Link href={'/our-team/id'} >
+    return (
+    <Link href={'/tour/id'} >
       <div className={scss.card}>
         <div className={scss.days}>
           <p className={scss.days_title}>{days} days</p>
