@@ -8,7 +8,7 @@ const PriceIncludes = () => {
         PriceIncludeArr.map((el) => (
             <div className={scss.line} key={el.id}>
                 <div className={scss.img} key={el.id}>
-                    <Image src={el.img} width={16} height={12} alt='cross'/>
+                    <Image src={el.img} width={16} height={12} alt='cross' />
                     <p>{el.title}</p>
                 </div>
             </div>
@@ -17,8 +17,10 @@ const PriceIncludes = () => {
     return (
         <div className={scss.content}>
             <div className='container'>
-            <Divider title='Price includes' variant='dark'/>
-            {renderIncludes}
+                <Divider title='Price includes' variant='dark' />
+                <div className={scss.text}>
+                    {renderIncludes}
+                </div>
             </div>
         </div>
     );
