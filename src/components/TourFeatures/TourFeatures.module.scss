@@ -4,27 +4,27 @@
   background-color: #efefef;
   border: 2px solid #c3c3c3;
   padding: 40px 0px;
-  @include breackpoint(sm) {
+  @include breackpoint(xs) {
     padding: 0;
   }
   .title_block {
     width: 100%;
     margin: 0 auto;
     .text {
-      @include breackpoint(sm) {
+      @include breackpoint(xs) {
         padding: 24px;
         padding-top: 10px;
         padding-bottom: 15px;
       }
       .line {
         margin-bottom: 1%;
-        @include breackpoint(sm) {
+        @include breackpoint(xs) {
           margin-bottom: 25px;
         }
         .title_mark {
           display: flex;
           align-items: center;
-          @include breackpoint(sm) {
+          @include breackpoint(xs) {
             align-items: flex-start;
             img {
               margin-top: 7px;
@@ -38,7 +38,7 @@
             font-size: 18px;
             line-height: 33px;
             color: #757575;
-            @include breackpoint(sm) {
+            @include breackpoint(xs) {
               font-weight: 500;
               font-size: 15px;
               line-height: 22px;
