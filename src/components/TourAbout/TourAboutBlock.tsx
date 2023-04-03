@@ -18,30 +18,30 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
   const TourAboutArr: TourAboutArrProps[] = [
     {
       title: "Time of year",
-      text: tour?.tourInfo.time,
+      text: tour?.tourInfo?.time,
       isSmall: true,
     },
     {
       title: "Tour category",
-      text: tour?.tourInfo.category,
+      text: tour?.tourInfo?.category,
       isSmall: true,
     },
     {
       title: "Duration",
-      text: tour?.tourInfo.duration.days + " " + tour?.tourInfo.duration.durationType,
+      text: tour?.tourInfo?.duration.days + " " + tour?.tourInfo?.duration.durationType,
       isSmall: true,
     },
     {
       title: "Itinerary",
-      text: tour?.tourInfo.itinerary,
+      text: tour?.tourInfo?.itinerary,
     },
     {
       title: "Accommodation",
-      text: tour?.tourInfo.accommodation,
+      text: tour?.tourInfo?.accommodation,
     },
     {
       title: "What to bring?",
-      text: tour?.tourInfo.bringThings,
+      text: tour?.tourInfo?.bringThings,
     },
   ];
 
