@@ -267,10 +267,15 @@
 }
 
 @media (max-width: 768px) {
-  .nonActive {
+  .nonActive,
+  .renderNonActive {
     border-bottom: none;
     padding: 23px 30px 12px 30px;
     justify-content: space-between;
+    background: none;
+    h1 {
+      color: white;
+    }
     nav {
       display: none;
       & a {
@@ -284,7 +289,8 @@
       }
     }
   }
-  .active {
+  .active,
+  .renderActive {
     padding: 23px 30px 12px 30px;
     justify-content: space-between;
     nav {
@@ -294,11 +300,6 @@
     }
     .menuBurger:hover {
       color: black;
-    }
-  }
-  .title_main {
-    p {
-      display: none;
     }
   }
   .back {
