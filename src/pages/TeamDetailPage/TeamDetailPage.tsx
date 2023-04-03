@@ -20,7 +20,6 @@ const TeamDetailPage = () => {
         getTeamDetail(id);
       }
     }, [id]);
-    console.log(teamDetail);
     return (
         <>
             <Header isMain={true} />

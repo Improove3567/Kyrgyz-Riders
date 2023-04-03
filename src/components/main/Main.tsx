@@ -29,7 +29,6 @@ const Main: React.FC<MainProps> = ({
   tourDetail,
 }) => {
   const { route } = useRouter();
-  console.log(tourDetail);
 
   const renderBtns = React.useMemo(
     () =>
