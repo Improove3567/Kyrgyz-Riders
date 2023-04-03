@@ -10,7 +10,7 @@
   .title_block {
     width: 100%;
     margin: 0 auto;
-    .test {
+    .text {
       @include breackpoint(sm) {
         padding: 24px;
         padding-top: 10px;

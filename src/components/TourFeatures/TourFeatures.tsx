@@ -27,7 +27,7 @@ const TourFeatures: FC<ReasonsType> = ({ reasons }) => {
             <div className="container">
                 <div className={scss.title_block}>
                     <Divider title='Why you will love this tour' variant='dark' />
-                    <div className={scss.test}>
+                    <div className={scss.text}>
                     {showText}
                     </div>
                 </div>
