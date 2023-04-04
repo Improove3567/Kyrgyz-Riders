@@ -7,6 +7,7 @@ interface SightsText {
 }
 
 const SightsPage: FC<SightsText> = ({ aboutSight }) => {
+    
     return (
         <div className={scss.title_block}>
             <div className='container'>
