@@ -53,7 +53,26 @@ const Main: React.FC<MainProps> = ({
     autoplaySpeed: 5000,
     cssEase: "linear",
   };
-
+  const titles =
+    route == "/"
+      ? "Kyrgyz Riders"
+      : route == "/tours"
+      ? "Tours"
+      : route == "/sights"
+      ? "sights"
+      : route == "/travel"
+      ? "Travel Stories"
+      : route == "/aboutus"
+      ? "About Us"
+      : route == "/blogAndNews"
+      ? "BLOG & NEWS"
+      : route == "/our-team/[id]"
+      ? `${teamDetail?.name} ${teamDetail?.lastName}`
+      : route == "/tour/[id]"
+      ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
+      : route == "/sight/[id]"
+      ? "Chlpon - Ata"
+      : "";
   const sliderList = useMemo(
     () =>
       imgPageSliders.map((el) => (
@@ -62,28 +81,12 @@ const Main: React.FC<MainProps> = ({
             <div className={scss.buttons}>
               <div
                 className={
-                  route != "/tour/[id]" && route != "/our-team/[id]"
+                  route != "/tour/[id]" && route != "/our-team/[id]" && route != "/sight/[id]"
                     ? scss.imgText
                     : scss.imgTextTour
                 }
               >
-                {route == "/"
-                  ? "Kyrgyz Riders"
-                  : route == "/tours"
-                  ? "Tours"
-                  : route == "/sights"
-                  ? "sights"
-                  : route == "/travel"
-                  ? "Travel Stories"
-                  : route == "/aboutus"
-                  ? "About Us"
-                  : route == "/blogAndNews"
-                  ? "BLOG & NEWS"
-                  : route == "/our-team/[id]"
-                  ? `${teamDetail?.name} ${teamDetail?.lastName}`
-                  : route == "/tour/[id]"
-                  ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
-                  : ""}
+                {titles}
               </div>
               {renderBtns}
             </div>
