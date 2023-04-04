@@ -1,19 +1,33 @@
-import React, {useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import scss from "./main.module.scss";
 import { MainLinks } from "../../constatnts/Main/HeaderConsts";
 import Link from "next/link";
 import Slider from "react-slick";
 import { useRouter } from "next/router";
+import { SightTourArrProps } from "../../constants/SightTourBlock";
 
 interface MainProps {
   imgPageSliders: Sliders[];
+  teamDetail?: TeamDetailTypes;
+  tourDetail?: SightTourArrProps | object | undefined | any;
 }
-interface Sliders{
-  className : string;
+interface Sliders {
+  className: string;
   title?: string;
 }
+interface TeamDetailTypes {
+  image?: string;
+  name?: string;
+  lastName?: string;
+  speciality?: string;
+  description?: string;
+}
 
-const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
+const Main: React.FC<MainProps> = ({
+  imgPageSliders,
+  teamDetail,
+  tourDetail,
+}) => {
   const { route } = useRouter();
 
   const renderBtns = React.useMemo(
@@ -46,17 +60,37 @@ const Main: React.FC<MainProps> = ({ imgPageSliders }) => {
         <main className={el.className} key={el.className}>
           <div className="container">
             <div className={scss.buttons}>
-              {el.title && (
-               <div className={(route != "/tour/[id]") && (route != "/our-team/[id]")   ? scss.imgText : scss.imgTextTour }>
-                {el.title}
-               </div>
-              )}
+              <div
+                className={
+                  route != "/tour/[id]" && route != "/our-team/[id]"
+                    ? scss.imgText
+                    : scss.imgTextTour
+                }
+              >
+                {route == "/"
+                  ? "Kyrgyz Riders"
+                  : route == "/tours"
+                  ? "Tours"
+                  : route == "/sights"
+                  ? "sights"
+                  : route == "/travel"
+                  ? "Travel Stories"
+                  : route == "/aboutus"
+                  ? "About Us"
+                  : route == "/blogAndNews"
+                  ? "BLOG & NEWS"
+                  : route == "/our-team/[id]"
+                  ? `${teamDetail?.name} ${teamDetail?.lastName}`
+                  : route == "/tour/[id]"
+                  ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
+                  : ""}
+              </div>
               {renderBtns}
             </div>
           </div>
         </main>
       )),
-    [imgPageSliders, renderBtns]
+    [imgPageSliders, renderBtns, teamDetail, tourDetail]
   );
 
   return (

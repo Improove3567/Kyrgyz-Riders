@@ -147,24 +147,25 @@
     width: 100%;
     color: rgba(255, 255, 255, 0.8);
   }
+  $variableSize: calc(6vw  + 6vh);
   .imgText::first-letter {
     font-size: 150px;
   }
-
+  $variable: calc(4vw + 4vh);
   .imgTextTour {
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     font-style: normal;
     position: absolute;
     top: 35%;
-    font-size: 100px;
+    font-size: $variable ;
     font-weight: 900;
     text-align: center;
     max-width: 94%;
     color: rgba(255, 255, 255, 0.8);
   }
   .imgTextTour::first-letter {
-    font-size: 110px;
+    font-size: $variableSize;
   }
 
   a {
