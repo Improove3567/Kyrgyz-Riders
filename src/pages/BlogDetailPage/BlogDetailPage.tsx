@@ -19,6 +19,7 @@ const BlogPage = () => {
       getBlogsDetail(id)
     }
   }, [id])
+  
   return (
     <>
       <Header />
