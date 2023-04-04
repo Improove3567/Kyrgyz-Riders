@@ -9,12 +9,14 @@ const SightMap = () => {
     <div className={scss.wrapper}>
       <div className="container">
       <Divider title="Map" variant="dark" />
+      <div className={scss.img}>
       <div className={scss.map}>
         <PhotoProvider>
           <PhotoView src={"/assets/images/map.jpg"}>
             <Image src={"/assets/images/map.jpg"} width={780} height={376} alt={"map"} />
           </PhotoView>
         </PhotoProvider>
+      </div>
       </div>
       </div>
     </div>
