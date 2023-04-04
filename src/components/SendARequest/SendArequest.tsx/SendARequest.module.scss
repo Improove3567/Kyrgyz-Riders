@@ -5,7 +5,21 @@
   margin-top: 6%;
   background: #efefef;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-
+  @media (max-width: 600px) {
+    height: 870px;
+  }
+  @media (max-width: 500px) {
+    height: 880px;
+  }
+  @media (max-width: 450px) {
+    height: 900px;
+  }
+  @media (max-width: 400px) {
+    height: 940px;
+  }
+  @media (max-width: 352px) {
+    height: 970px;
+  }
   .header {
     margin: 40px 0px;
     width: 100%;
@@ -41,11 +55,34 @@
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   margin: 1% 0px;
   padding: 30px 208px;
+  @media (max-width: 1024px) {
+    padding: 30px 100px;
+  }
+  @media (max-width: 768px) {
+    padding: 30px 60px;
+  }
+  @media (max-width: 600px) {
+    padding: 30px 60px;
+    height: 435px;
+  }
 
+  @media (max-width: 445px) {
+    width: 95%;
+    padding: 10px;
+    height: 370px;
+    margin: 0 auto;
+  }
   .inputs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 32px 50px;
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @media (max-width: 445px) {
+      grid-gap: 22px 10px
+      
+    }
   }
 
   .button {
@@ -58,7 +95,16 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
+    @media (max-width: 600px) {
+      margin: 20px;
+      width: 100%;
+      margin-left: 0;
+    }
+    @media (max-width: 450px) {
+      margin: 20px;
+      width: 100%;
+      margin-left: 0;
+    }
     .text {
       width: fit-content;
       height: 20px;
