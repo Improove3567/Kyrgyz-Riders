@@ -2,6 +2,17 @@
   width: 100%;
   left: 32px;
   margin-bottom: 15px;
+  margin: 0 auto 15px auto;
+  @media (max-width: 768px) {
+    width: 93.5%;
+  }
+  @media (max-width: 600px) {
+    width: 92%;
+  }
+  @media (max-width: 450px) {
+    width: 90%;
+  }
+  
 
   .accordion {
     display: flex;
@@ -17,17 +28,28 @@
       font-size: 16px;
       line-height: 20px;
       color: #333333;
+      @media (max-width: 450px) {
+        font-size: 14px;
+      }
     }
   }
 }
 
 #accordionContentMain {
-  margin-bottom: 30px;
   padding: 30px 30px;
   background: #ffffff;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
   animation: 1s show ease;
-
+  margin: 0 auto 30px auto;
+  @media (max-width: 768px) {
+    width: 93.5%;
+  }
+  @media (max-width: 600px) {
+    width: 92%;
+  }
+  @media (max-width: 450px) {
+    width: 90%;
+  }
   p {
     font-family: "Montserrat";
     font-weight: 500;
@@ -43,6 +65,9 @@
     img {
       width: 565px;
       height: 250px;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
     }
   }
 
