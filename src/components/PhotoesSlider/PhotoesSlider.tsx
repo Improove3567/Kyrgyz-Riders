@@ -37,9 +37,51 @@ const PhotosSlider: FC<PhotosProps> = ({ photos }) => {
     dots: true,
     arrows: true,
     infinite: false,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     speed: 500,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 1.2,
+          slidesToScroll: 1,
+          dots: false
+        }
+      }
+    ],
     nextArrow: (
       <SampleNextArrow
         onClick={function (): void {
@@ -70,8 +112,33 @@ const PhotosSlider: FC<PhotosProps> = ({ photos }) => {
   return (
     <div className={scss.photoesMain}>
       <Divider title="Photos" />
-      <div id={scss.mainSliders}>
-        <Slider {...settings}>{renderPhotoesItems}</Slider>
+      <div className="mainSliders">
+        <Slider {...settings}>
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+          {renderPhotoesItems}
+        </Slider>
       </div>
     </div>
   );

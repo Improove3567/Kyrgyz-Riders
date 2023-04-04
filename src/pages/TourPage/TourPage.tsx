@@ -32,7 +32,7 @@ const TourPage = () => {
     return (
         <>
             <Header />
-            <Main imgPageSliders={tourSlider} />
+            <Main imgPageSliders={tourSlider} tourDetail={tourDetail} />
             <TourAbout tour={tourDetail} />
             <TourAboutText aboutTour={tourDetail?.tourInfo?.aboutTour} />
             <TourSights sights={tourDetail?.tourInfo?.sights} />

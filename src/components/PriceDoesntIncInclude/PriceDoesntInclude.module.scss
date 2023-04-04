@@ -1,24 +1,32 @@
+@import "../../../styles/globalVariables.scss";
+
 .title_block {
-    background-color: #fff;
-    padding: 40px 0;
-      div {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 33px;
-        color: #757575;
-        text-align: left;
-      }
-    }
-  .title_mark {
-    display: flex;
-    align-items: center;
-    img {
-      margin-bottom: 15px;
-    }
-    p {
-        padding-left: 17px;
-        margin-bottom: 15px;
+  background-color: #fff;
+  padding: 40px 0;
+  @include breackpoint(xs) {
+    padding: 0;
+  }
+  .text {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 33px;
+    color: #757575;
+    text-align: left;
+    @include breackpoint(xs) {
+      padding-left: 24px;
     }
   }
+}
+.title_mark {
+  display: flex;
+  align-items: center;
+  img {
+    margin-bottom: 15px;
+  }
+  p {
+    padding-left: 17px;
+    margin-bottom: 15px;
+  }
+}
