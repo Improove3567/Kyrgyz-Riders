@@ -115,29 +115,6 @@ const PhotosSlider: FC<PhotosProps> = ({ photos }) => {
       <div className="mainSliders">
         <Slider {...settings}>
           {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
-          {renderPhotoesItems}
         </Slider>
       </div>
     </div>
