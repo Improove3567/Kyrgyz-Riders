@@ -77,23 +77,7 @@ const Main: React.FC<MainProps> = ({
                     : scss.imgTextTour
                 }
               >
-                {route == "/"
-                  ? "Kyrgyz Riders"
-                  : route == "/tours"
-                    ? "Tours"
-                    : route == "/sights"
-                      ? "sights"
-                      : route == "/travel"
-                        ? "Travel Stories"
-                        : route == "/aboutus"
-                          ? "About Us"
-                          : route == "/blogAndNews"
-                            ? "BLOG & NEWS"
-                            : route == "/our-team/[id]"
-                              ? `${teamDetail?.name} ${teamDetail?.lastName}`
-                              : route == "/tour/[id]"
-                                ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
-                                : ""}
+                {titles ? titles : el.title}
               </div>
               {renderBtns}
             </div>
