@@ -10,20 +10,22 @@ import PhotoesSlider from '../../components/PhotoesSlider/PhotoesSlider';
 import SightTourBlock from '../../components/SightTourBlock/SightTourBlock';
 import useSights from '../../hooks/useSights';
 import { useRouter } from 'next/router';
+import Preloader from '../../components/Preloader/Preloader';
 const SightPage = () => {
     const router = useRouter()
     const { id }: any = router.query
-    const { getSightsDetail, sightsDetail } = useSights();
+    const { getSightsDetail, sightsDetail, isLoading } = useSights();
     useEffect(() => {
         if (id != undefined) {
             getSightsDetail(id)
         }
     }, [id])
+    if(isLoading) return <Preloader full/>
     return (
         <>
             <Header isMain={false} />
             <Main imgPageSliders={OneSightSlider} sightsDetail={sightsDetail?.title} />
-            <SightsPage aboutSight={sightsDetail?.aboutSight} />
+            <SightsPage aboutSight={sightsDetail?.aboutSight} title={sightsDetail?.title} />
             <SightTourBlock tours={sightsDetail?.tour} />
             <PhotoesSlider photos={sightsDetail?.photos} />
             <SightMap />

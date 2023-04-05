@@ -16,18 +16,20 @@ import PhotoesSlider from '../../components/PhotoesSlider/PhotoesSlider';
 import TourMapsBlock from '../../components/TourMapBlock/TourMapBlock';
 import { useRouter } from 'next/router';
 import useTours from '../../hooks/useTours';
+import Preloader from '../../components/Preloader/Preloader';
 
 
 
 const TourPage = () => {
     const router = useRouter();
     const { id }: any = router.query
-    const { getTourDetail, tourDetail }: any = useTours();
+    const { getTourDetail, tourDetail, isLoading }: any = useTours();
     useEffect(() => {
         if (id != undefined) {
             getTourDetail(id)
         }
     }, [id])
+    if(isLoading) return <Preloader full/>
 
     return (
         <>
