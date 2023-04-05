@@ -58,10 +58,10 @@ const Main: React.FC<MainProps> = ({
     route == "/our-team/[id]"
       ? `${teamDetail?.name} ${teamDetail?.lastName}`
       : route == "/tour/[id]"
-      ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
-      : route == "/sight/[id]"
-      ? sightsDetail
-      : "";
+        ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
+        : route == "/sight/[id]"
+          ? sightsDetail
+          : "";
   const sliderList = useMemo(
     () =>
       imgPageSliders.map((el) => (
@@ -71,8 +71,8 @@ const Main: React.FC<MainProps> = ({
               <div
                 className={
                   route != "/tour/[id]" &&
-                  route != "/our-team/[id]" &&
-                  route != "/sight/[id]"
+                    route != "/our-team/[id]" &&
+                    route != "/sight/[id]"
                     ? scss.imgText
                     : scss.imgTextTour
                 }
@@ -94,7 +94,8 @@ const Main: React.FC<MainProps> = ({
                               : route == "/tour/[id]"
                                 ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
                                 : ""}
-              {renderBtns}
+                {renderBtns}
+              </div>
             </div>
           </div>
         </main>
