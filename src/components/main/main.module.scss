@@ -241,12 +241,28 @@
 .title {
   display: none;
 }
+@media (max-width: 1640px) {
+  .buttons {
+    .imgText {
+      top: 30%;
+      font-size: 110px;
+    }
+    $variableSize: calc(6vw + 6vh);
+    .imgText::first-letter {
+      font-size: 130px;
+    }
+  }
+}
 @media (max-width: 1196px) {
   .buttons {
     .imgText {
       font-weight: 900;
       top: 27%;
-      font-size: 125px;
+      font-size: 110px;
+    }
+    $variableSize: calc(6vw + 6vh);
+    .imgText::first-letter {
+      font-size: 120px;
     }
   }
 }
