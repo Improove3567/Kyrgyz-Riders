@@ -22,7 +22,7 @@ const SightPage = () => {
     return (
         <>
             <Header isMain={false} />
-            <Main imgPageSliders={OneSightSlider} />
+            <Main imgPageSliders={OneSightSlider} sightsDetail={sightsDetail?.title} />
             <SightsPage aboutSight={sightsDetail?.aboutSight} />
             <SightTourBlock tours={sightsDetail?.tour} />
             <PhotoesSlider photos={sightsDetail?.photos} />

@@ -10,6 +10,7 @@ interface MainProps {
   imgPageSliders: Sliders[];
   teamDetail?: TeamDetailTypes;
   tourDetail?: SightTourArrProps | object | undefined | any;
+  sightsDetail?: string;
 }
 interface Sliders {
   className: string;
@@ -27,6 +28,7 @@ const Main: React.FC<MainProps> = ({
   imgPageSliders,
   teamDetail,
   tourDetail,
+  sightsDetail,
 }) => {
   const { route } = useRouter();
 
@@ -71,7 +73,7 @@ const Main: React.FC<MainProps> = ({
       : route == "/tour/[id]"
       ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
       : route == "/sight/[id]"
-      ? "Chlpon - Ata"
+      ? sightsDetail
       : "";
   const sliderList = useMemo(
     () =>
@@ -81,7 +83,9 @@ const Main: React.FC<MainProps> = ({
             <div className={scss.buttons}>
               <div
                 className={
-                  route != "/tour/[id]" && route != "/our-team/[id]" && route != "/sight/[id]"
+                  route != "/tour/[id]" &&
+                  route != "/our-team/[id]" &&
+                  route != "/sight/[id]"
                     ? scss.imgText
                     : scss.imgTextTour
                 }
@@ -93,7 +97,7 @@ const Main: React.FC<MainProps> = ({
           </div>
         </main>
       )),
-    [imgPageSliders, renderBtns, teamDetail, tourDetail]
+    [imgPageSliders, renderBtns, teamDetail, tourDetail, sightsDetail]
   );
 
   return (
