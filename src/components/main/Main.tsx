@@ -94,8 +94,8 @@ const Main: React.FC<MainProps> = ({
                               : route == "/tour/[id]"
                                 ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
                                 : ""}
-                {renderBtns}
               </div>
+               {renderBtns}
             </div>
           </div>
         </main>
