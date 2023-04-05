@@ -95,7 +95,7 @@ const Main: React.FC<MainProps> = ({
                                 ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
                                 : ""}
               </div>
-               {renderBtns}
+              {renderBtns}
             </div>
           </div>
         </main>
