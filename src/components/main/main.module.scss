@@ -280,11 +280,11 @@
 @media (max-width: 1040px) {
   .buttons {
     .imgText {
-      font-size: 110px;
+      font-size: 100px;
     }
     $variableSize: calc(6vw + 6vh);
     .imgText::first-letter {
-      font-size: 125px;
+      font-size: 120px;
     }
   }
 }
@@ -292,6 +292,7 @@
   .buttons {
     .imgText {
       font-size: 100px;
+      top: 35%;
     }
     $variableSize: calc(6vw + 6vh);
     .imgText::first-letter {
@@ -341,7 +342,6 @@
     .imgText {
       font-size: 52px;
       font-weight: 700;
-      margin-top: 20px;
     }
     $variableSize: calc(6vw + 6vh);
     .imgText::first-letter {
