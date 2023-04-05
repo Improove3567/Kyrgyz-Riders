@@ -11,6 +11,20 @@
     padding: 10px;
   }
 }
+@media (max-width: 1100px) {
+  .sights {
+    padding: 0 0 20px 0;
+    .cards {
+      padding: 0 5px 0 24px;
+      width: 100%;
+      margin-top: 25px;
+      overflow: auto;
+    }
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+}
 @media (max-width: 768px) {
   .sights {
     padding: 0 0 20px 0;
