@@ -17,6 +17,7 @@ export interface ISights {
 
 const Sights: React.FC = () => {
   const { sights, getSights, isLoading } = useSights();
+    
 
   useEffect(() => {
     getSights();
