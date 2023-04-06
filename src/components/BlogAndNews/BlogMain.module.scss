@@ -73,6 +73,9 @@
           font-size: 20px;
           line-height: 27px;
           color: #333333;
+          @media (max-width: 360px) {
+            font-size: 15px;
+          }
         }
 
         hr {
@@ -85,7 +88,7 @@
         .socialNetworks {
           display: flex;
           justify-content: space-around;
-
+       
           .network {
             cursor: pointer;
             display: flex;
@@ -132,6 +135,7 @@
         font-size: 14px;
         line-height: 17px;
         color: #333333;
+        
       }
 
       .date {
@@ -149,6 +153,11 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        @media (max-width: 768px) {
+            >div:not(:first-child){
+                margin-top: 10px;
+            }
+          }
       }
 
       .newsCard {
