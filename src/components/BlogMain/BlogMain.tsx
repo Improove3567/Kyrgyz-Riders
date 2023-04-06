@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { networksData, newsData } from "../../constants/BlogAndNews";
+import { networksData } from "../../constants/BlogAndNews";
 import scss from "./BlogMain.module.scss";
 import Image from "next/image";
 import Divider from "../Divider/Divider";
@@ -9,14 +9,13 @@ import Preloader from "../Preloader/Preloader";
 const BlogCard = React.lazy(() => import("./BlogCard/BlogCard"));
 
 const BlogMain = () => {
-  const { getBlogs, blogs, isLoading, len } = useBlogs();
+  const { getBlogs, blogs, isLoading, len, news } = useBlogs();
 
   const [limit, setLimit] = useState<number>(3);
 
   useEffect(() => {
     getBlogs(limit);
   }, [limit])
-
 
   const onMore = () => {
     if (limit < len.length) {
@@ -26,7 +25,6 @@ const BlogMain = () => {
       setLimit(len.length)
     }
   }
-
 
   const networksList = useMemo(
     () =>
@@ -40,14 +38,15 @@ const BlogMain = () => {
 
   const newsList = useMemo(
     () =>
-      newsData.map((el) => (
-        <div className={scss.newsCard} key={el.date}>
-          <p className={scss.newsTitle}>{el.title}</p>
-          <p className={scss.date}>{el.date}</p>
+      news.map((el: any) => (
+        <div className={scss.newsCard} key={el.tid}>
+          <p className={scss.newsTitle}>{el.content[0].desc}</p>
+          <p className={scss.date}>{el.type}</p>
         </div>
       )),
-    [newsData]
+    [news]
   );
+
   const renderCard = useMemo(
     () => blogs?.map((el, index) => <BlogCard {...el} key={index} />),
     [blogs, limit]
