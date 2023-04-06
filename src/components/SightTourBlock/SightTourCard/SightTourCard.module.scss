@@ -72,3 +72,34 @@
     }
   }
 }
+
+@media (max-width: 912px) {
+  .card {
+    width: 242px;
+      height: 234px;
+    .front {
+      width: 242px;
+      height: 234px;
+      .img {
+        .days {
+          top: -12px;
+          span {
+            font-size: 12px;
+            line-height: 15px;
+          }
+        }
+      }
+
+      .btm {
+        height: 78px;
+        & p:nth-child(1) {
+          font-weight: 600;
+        }
+        & p:nth-child(2) {
+          font-weight: 500;
+          color: #c0c0c0;
+        }
+      }
+    }
+  }
+}

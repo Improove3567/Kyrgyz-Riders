@@ -2,12 +2,36 @@
   background: #efefef;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
   height: 100%;
-  width: 100%; 
-    padding: 40px 0;
-    .cards{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 30px;
+  width: 100%;
+  padding: 40px 0;
+  .cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 912px) {
+  .wrapper {
+    padding: 40px 0 20px 0;
+    .cards {
+      padding: 0;
+      gap: 12px;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0;
+    .cards {
+      padding: 0 15px 20px 24px;
+    }
   }
 }
