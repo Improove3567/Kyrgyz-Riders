@@ -10,15 +10,17 @@ interface CardProps {
   days?: number;
   image?: string;
   tid?: string;
+  tourInfo?: object | undefined | any;
 }
 
 const SliderCard: React.FC<CardProps> = ({
   title,
   subtitle,
-  days,
   image,
   tid,
+  tourInfo,
 }) => {
+  const days = tourInfo?.duration?.days
   return (
     <Link href={`tour/${tid}`}>
       <div className={scss.card}>
