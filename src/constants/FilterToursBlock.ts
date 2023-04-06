@@ -67,7 +67,7 @@ export const PlacesIWantOptions:Option[]  = [
     {
         name: "Song-Kol Lake",
         id: 1,
-        status:true
+        status:false
     },
     {
         name: "Kel-Suu Lake",
@@ -241,7 +241,7 @@ export const Duraion:Option[] = [
     {
         name: "1 day",
         id: 1,
-        status:true
+        status:false
     },
     {
         name: "2 days",
@@ -461,7 +461,7 @@ export const StartFrom: Option[] = [
     {
         name: "Bishkek",
         id: 1,
-        status:true
+        status:false
     },
     {
         name: "Karakol",
@@ -496,7 +496,7 @@ export const StartFrom: Option[] = [
 ]
 export const Tours:ToursSelect[] = [
     {
-        name : 'Tours',
+        name : 'Type of tour',
         option: ToursOptions,
         status : false,
         id:1,

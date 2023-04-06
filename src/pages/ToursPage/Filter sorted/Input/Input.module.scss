@@ -1,11 +1,10 @@
-.label {
+.label ,.labelBack{
   display: flex;
   align-items: center;
   margin: 14px 15px;
   height: 17px;
   cursor: pointer;
   width: 100%;
-
   .span {
     font-family: "Montserrat";
     font-style: normal;
@@ -13,6 +12,7 @@
     font-size: 14px;
     line-height: 17px;
     color: #333333;
+    
   }
 
   .input {
@@ -57,4 +57,45 @@
       }
     }
   }
+}
+
+@media (min-width:900px),(max-width:1100px){
+  .label,.labelBack{
+    .span{
+      font-size: 12px;
+    }
+  }
+}
+
+
+@media (max-width:900px) {
+  .label{
+    justify-content: center;
+    width: 40%;
+    height: auto;
+    padding: 10px 0;
+    border: 1px solid #828282;
+    .input{
+      display: none;
+    }
+    .span{
+      text-align: center;
+    }
+  }
+  .labelBack{
+    justify-content: center;
+    width: 40%;
+    height: auto;
+    padding: 10px 0;
+    border: 1px solid #828282;
+    background: #2E325A;
+    .input{
+      display: none;
+    }
+    .span{
+      text-align: center;
+      color:#ffffff
+    }
+  }
+
 }

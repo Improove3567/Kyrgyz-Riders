@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import scss from './Input.module.scss'
-import { Option } from "../../../../constants/FilterToursBlock";
+
 
 interface Iname {
   name?: string;
@@ -19,20 +19,28 @@ const Input: React.FC<Iname> = ({
   select
 }) => {
   const [index, setIndex] = useState(false);
+  const [windowSize, setWindowSize] = useState({
+    width: 0
+  });
+
+  useEffect(() => {
+    setWindowSize({
+      width: window.innerWidth
+    });
+  }, []);
 
   const click = () => {
     changeStatus(myKey);
-    valueIndex == 1 ? setIndex(!index) : ''
   };
   return (
-    <label className={scss.label} onClick={click}>
+    <label className={statusEl && windowSize.width < 900 ?  scss.labelBack : scss.label } onClick={click} >
       <div className={scss.input}>
         {!select ? (
-          <div className={index ? scss.inputOne : ''}>
+          <div className={statusEl ? scss.inputOne : ''}>
             <div className={scss.checkedOne}></div>
           </div>
         ) : (
-          <div className={statusEl ? scss.inputSome : scss.inputW}>
+          <div className={statusEl ? scss.inputSome : ''}>
             <div className={scss.checkedSome}></div>
           </div>
         )}
