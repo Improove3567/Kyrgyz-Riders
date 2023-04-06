@@ -9,18 +9,30 @@ interface CardProps {
   subtitle?: string;
   days?: number;
   image?: string;
+  tid?: string;
 }
 
-const SliderCard: React.FC<CardProps> = ({ title, subtitle, days, image}) => {
-    return (
-    <Link href={'/tour/id'} >
+const SliderCard: React.FC<CardProps> = ({
+  title,
+  subtitle,
+  days,
+  image,
+  tid,
+}) => {
+  return (
+    <Link href={`tour/${tid}`}>
       <div className={scss.card}>
         <div className={scss.days}>
           <p className={scss.days_title}>{days} days</p>
         </div>
         <div className={scss.front}>
           {/* eslint-disable-next-line no-use-before-define */}
-          <img className={scss.img} src={image}  alt="background-image" height={280} />
+          <img
+            className={scss.img}
+            src={image}
+            alt="background-image"
+            height={280}
+          />
           <div className={scss.bottomContent}>
             <div className={scss.textContainer}>
               <p className={scss.title}>{title}</p>
@@ -29,7 +41,7 @@ const SliderCard: React.FC<CardProps> = ({ title, subtitle, days, image}) => {
           </div>
         </div>
       </div>
-    </Link>  
+    </Link>
   );
 };
 
