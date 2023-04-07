@@ -3,6 +3,7 @@ import scss from "./SightMap.module.scss";
 import Divider from "../Divider/Divider";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import Image from "next/image";
+import 'react-photo-view/dist/react-photo-view.css';
 
 const SightMap = () => {
   return (

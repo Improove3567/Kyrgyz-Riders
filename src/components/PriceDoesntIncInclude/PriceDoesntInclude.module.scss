@@ -3,9 +3,6 @@
 .title_block {
   background-color: #fff;
   padding: 40px 0;
-  @include breackpoint(xs) {
-    padding: 0;
-  }
   .text {
     font-family: "Montserrat";
     font-style: normal;
@@ -14,9 +11,6 @@
     line-height: 33px;
     color: #757575;
     text-align: left;
-    @include breackpoint(xs) {
-      padding-left: 24px;
-    }
   }
 }
 .title_mark {
@@ -29,4 +23,13 @@
     padding-left: 17px;
     margin-bottom: 15px;
   }
+}
+
+@media (max-width: 768px) {
+    .title_block{
+      padding: 0;
+      .text{
+        padding: 20px 24px 0px 24px;
+      }
+    }
 }
