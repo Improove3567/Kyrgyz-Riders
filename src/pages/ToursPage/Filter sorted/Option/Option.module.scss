@@ -23,7 +23,7 @@
 @media (max-width: 900px) {
   .option {
     height: 100%;
-    width: 100vw;
+    width: 100%;
     position: fixed;
     top: 0%;
     z-index: 999999999999999999;
@@ -79,6 +79,17 @@
       flex-wrap: wrap;
       text-align: center;
       justify-content: space-between;
+    }
+  }
+}
+
+
+@media (max-width:375px) {
+  .option{
+    .header{
+      p{
+        font-size: 14px;
+      }
     }
   }
 }
