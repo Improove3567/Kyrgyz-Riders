@@ -1,10 +1,13 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { useMultiStepForm } from "../../hooks/useMultiStepForm";
 import scss from "./CreateTour.module.scss"
 import ProgressStep from "./ProgressStep/ProgressStep";
-import GroupSize from "./subcomponents/GroupSize";
 
-const CreateTour: React.FC = () => {
+interface CrateTourProps {
+    children: React.ReactElement;
+}
+
+const CreateTour: React.FC<CrateTourProps> = ({ children }) => {
     const progressData = ["Group size", "Travel dates", "Start/End", "Trip details", "Details"]
     const { steps, currentStepIndex } = useMultiStepForm([])
     return (
@@ -16,7 +19,7 @@ const CreateTour: React.FC = () => {
                             <ProgressStep title={el} />
                         ))}
                     </div>
-                    <GroupSize />
+                    {children}
                 </div>
             </form>
         </div>
