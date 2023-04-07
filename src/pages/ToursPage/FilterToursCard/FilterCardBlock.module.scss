@@ -2,7 +2,8 @@
     display: flex;
     justify-content: space-between !important;
     padding: 0 32px 32px;
-    @media (max-width: 776px) {
+    @media (max-width: 900px) {
         flex-direction: column;
+        padding: 0;
     }
 }

@@ -94,3 +94,36 @@
     }
   }
 }
+
+@media (max-width:900px){
+  .filter{
+    padding: 40px 24px;
+    .filters{
+      margin-bottom: 15px;
+      grid-gap : 12px;
+      .arrows{
+        display: none;
+      }
+    }
+    .types{
+      justify-content: space-between;
+      button{
+        padding: 10px 15px;
+      }
+      .nonActive, .active{
+        font-size: 12px;
+      }
+    }
+  }
+}
+@media (max-width:375px) {
+  .filter{
+   .types{
+    grid-gap: 12px;
+    .nonActive, .active{
+      font-size: 10px;
+      white-space: wrap;
+    }
+   }
+  }
+}

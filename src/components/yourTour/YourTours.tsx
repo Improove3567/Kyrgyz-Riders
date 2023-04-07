@@ -7,7 +7,7 @@ const YourTours: React.FC = () => {
     <section className={scss.section}>
       <div className={scss.line}></div>
       <div className={scss.yourTour}>
-        <Link href='create-your-tour'>
+        <Link href='createTour'>
           <div className={scss.front}>
             <p>Create Your Tour</p>
             <div className={scss.back}></div>
