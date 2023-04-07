@@ -15,8 +15,8 @@ const CreateTour: React.FC<CrateTourProps> = ({ children }) => {
             <form>
                 <div>
                     <div className={scss.progressWrapper}>
-                        {progressData.map((el) => (
-                            <ProgressStep title={el} />
+                        {progressData.map((el, index) => (
+                            <ProgressStep title={el} key={index} />
                         ))}
                     </div>
                     {children}
