@@ -26,7 +26,6 @@
   }
 }
 
-
 @media (max-width: 900px) {
   .select {
     width: auto;
@@ -39,6 +38,13 @@
       font-size: 12px;
       margin: 10px 15px 10px 0;
       white-space: nowrap;
+    }
+  }
+}
+@media (max-width:375px) {
+  .select{
+    .span{
+      font-size: 9px;
     }
   }
 }

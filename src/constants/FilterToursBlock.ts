@@ -535,7 +535,7 @@ export const DetailTours: ToursSelect[]= [
         select:true
     },
     {
-        name : 'Start form',
+        name : 'Start from',
         option: StartFrom,
         status : false,
         id:4,

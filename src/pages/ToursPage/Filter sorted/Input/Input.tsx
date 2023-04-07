@@ -9,16 +9,16 @@ interface Iname {
   myKey: any;
   valueIndex: number;
   select: boolean
+  title : string
 }
 const Input: React.FC<Iname> = ({
   name,
-  valueIndex,
   changeStatus,
   myKey,
   statusEl,
-  select
+  select,
+  title
 }) => {
-  const [index, setIndex] = useState(false);
   const [windowSize, setWindowSize] = useState({
     width: 0
   });
@@ -33,7 +33,7 @@ const Input: React.FC<Iname> = ({
     changeStatus(myKey);
   };
   return (
-    <label className={statusEl && windowSize.width < 900 ?  scss.labelBack : scss.label } onClick={click} >
+    <label className={statusEl && windowSize.width < 900 ?  scss.labelBack : scss.label } onClick={click}  style={ windowSize.width < 900  ? title == "Duration" || title == "Start from"  ?  {width:"30%"} : {width:"47%"} : {width: "100%"}} >
       <div className={scss.input}>
         {!select ? (
           <div className={statusEl ? scss.inputOne : ''}>

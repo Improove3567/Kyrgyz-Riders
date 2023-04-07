@@ -57,6 +57,7 @@ interface Input {
           changeStatus={changeStatus}
           statusEl={el.status}
           valueIndex={valueIndex}
+          title = {title}
         />
       );
     });

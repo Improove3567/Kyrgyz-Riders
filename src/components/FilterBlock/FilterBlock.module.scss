@@ -95,7 +95,6 @@
   }
 }
 
-
 @media (max-width:900px){
   .filter{
     padding: 40px 24px;
@@ -113,8 +112,18 @@
       }
       .nonActive, .active{
         font-size: 12px;
-        white-space: nowrap;
       }
     }
+  }
+}
+@media (max-width:375px) {
+  .filter{
+   .types{
+    grid-gap: 12px;
+    .nonActive, .active{
+      font-size: 10px;
+      white-space: wrap;
+    }
+   }
   }
 }

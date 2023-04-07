@@ -68,13 +68,15 @@
 }
 
 
+
 @media (max-width:900px) {
   .label{
     justify-content: center;
-    width: 40%;
+    width: 45%;
     height: auto;
     padding: 10px 0;
     border: 1px solid #828282;
+    margin: 14px 0;
     .input{
       display: none;
     }
@@ -84,11 +86,12 @@
   }
   .labelBack{
     justify-content: center;
-    width: 40%;
+    width: 45%;
     height: auto;
     padding: 10px 0;
     border: 1px solid #828282;
     background: #2E325A;
+    margin: 14px 0;
     .input{
       display: none;
     }
@@ -98,4 +101,12 @@
     }
   }
 
+}
+
+@media (max-width:375px) {
+  .label,.labelBack{
+    .span{
+      font-size: 10px;
+    }
+  }
 }
