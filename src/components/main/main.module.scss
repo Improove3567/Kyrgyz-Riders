@@ -343,16 +343,17 @@
       font-size: 52px;
       font-weight: 700;
     }
-    $variableSize: calc(3vw + 3vh);
+    $variableSize: calc(5vw + 5vh);
     .imgText::first-letter {
       font-size: 61px;
     }
-    $variable: calc(2vw + 2vh);
+    $variable: calc(3vw + 4vh);
     .imgTextTour {
       font-weight: 700;
       font-size: $variable;
+      top: 25%;
     }
-    .imgTextTour::first-letter{
+    .imgTextTour::first-letter {
       font-size: $variableSize;
     }
 
@@ -396,6 +397,7 @@
     $variable: calc(4vw + 4vh);
     .imgTextTour {
       font-weight: 700;
+      top: 30%;
     }
   }
 }
@@ -415,6 +417,7 @@
     $variable: calc(4vw + 4vh);
     .imgTextTour {
       font-weight: 700;
+      top: 33%;
     }
   }
 }
