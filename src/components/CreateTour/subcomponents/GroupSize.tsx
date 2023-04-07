@@ -64,7 +64,7 @@ const GroupSize: React.FC = () => {
         </div>
       </div>
       <div className={scss.multistepButtons}>
-        <button>
+        <button className={scss.multistepButtons_left_group_content}>
           <Image src={arrowLeft} alt="arrow" /> Go back
         </button>
         <button>
