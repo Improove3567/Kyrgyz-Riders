@@ -4,27 +4,24 @@
   background-color: #efefef;
   border: 2px solid #c3c3c3;
   padding: 40px 0px;
-  @include breackpoint(xs) {
-    padding: 0;
-  }
   .title_block {
     width: 100%;
     margin: 0 auto;
     .text {
-      @include breackpoint(xs) {
+      @include breackpoint(sm) {
         padding: 24px;
         padding-top: 10px;
         padding-bottom: 15px;
       }
       .line {
         margin-bottom: 1%;
-        @include breackpoint(xs) {
+        @include breackpoint(sm) {
           margin-bottom: 25px;
         }
         .title_mark {
           display: flex;
           align-items: center;
-          @include breackpoint(xs) {
+          @include breackpoint(sm) {
             align-items: flex-start;
             img {
               margin-top: 7px;
@@ -38,7 +35,7 @@
             font-size: 18px;
             line-height: 33px;
             color: #757575;
-            @include breackpoint(xs) {
+            @include breackpoint(sm) {
               font-weight: 500;
               font-size: 15px;
               line-height: 22px;
@@ -47,6 +44,15 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .content{
+    padding: 0;
+    .text{
+      padding: 20px 24px 0px 24px;
     }
   }
 }

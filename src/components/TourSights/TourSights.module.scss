@@ -1,6 +1,5 @@
 .Toursights {
   padding: 40px 0px;
-  background-color: #efefef;
   box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
 
   .Tourcards {
@@ -15,7 +14,7 @@
   .Toursights{
     padding: 30px 0px;
     .Tourcards{
-      padding: 24px 0 24px 24px;
+      padding: 0px 0 24px 24px;
       margin-top: 25px;
       overflow: auto;
     }
