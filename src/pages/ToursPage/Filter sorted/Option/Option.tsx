@@ -6,10 +6,13 @@ import { Option } from "../../../../constants/FilterToursBlock";
 interface Input {
     value: Option[];
     valueIndex: number;
-    select: boolean
+    select: boolean;
+    name: string;
+    setTour: (value: string) => void;
+    setDuration: (value: string) => void;
   }
   
-  const Option: React.FC<Input> = ({ value, select, valueIndex }) => {
+  const Option: React.FC<Input> = ({ value, select, valueIndex, name, setTour, setDuration }) => {
     const [arrayO, setArray] = useState(value);
     const changeStatus = (myKey: number | string) => {
       const newArrOptions = arrayO.map((item) => {
@@ -33,6 +36,9 @@ interface Input {
           changeStatus={changeStatus}
           statusEl={el.status}
           valueIndex={valueIndex}
+          filterName={name}
+          setTour={setTour}
+          setDuration={setDuration}
         />
       );
     });
