@@ -14,6 +14,24 @@ const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
 
   const click = () => setArrow(!arrow);
 
+  const result = React.useMemo(() => {
+    return arrow ? (
+      <Image
+        src={"/assets/images/arrow.svg"}
+        width={10}
+        height={5}
+        alt={"arrow"}
+      />
+    ) : (
+      <Image
+        src={"/assets/images/arrowUp.svg"}
+        width={10}
+        height={5}
+        alt={"arrow"}
+      />
+    );
+  }, [arrow]);
+
   const newImg = useMemo(
     () =>
       option.map((el) => {
@@ -23,7 +41,7 @@ const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
         } else {
           return (
             <PhotoView src={el} key={id}>
-              <Image src={el} alt="Map of the Kyrgyzstan" width={780} height={376} />
+              {result}
             </PhotoView>
           );
         }

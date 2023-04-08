@@ -104,7 +104,8 @@ const TourSlider: React.FC = () => {
     ),
     dotsClass: `slick-dots dots`,
   };
-
+  
+  
   const render = useMemo(
     () => tours.map((el, index) => <SliderCard key={index} {...el} />),
     [tours]
