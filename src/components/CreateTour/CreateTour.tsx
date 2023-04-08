@@ -7,7 +7,7 @@ import GroupSize from "./forms/groupsize/groupsize";
 
 const CreateTour: React.FC = () => {
     const progressData = [" Group size", " Travel dates", " Start/End", " Trip details", " Details"]
-    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize />, <div>hello</div>])
+    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize key={"firstElem"}/>, <div key={"secondElem"}>hello</div>])
 
     return (
         <div className={scss.wrapper}>
