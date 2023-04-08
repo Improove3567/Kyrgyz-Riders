@@ -8,13 +8,80 @@ import FilterTour from "../Tour filter/FilterTour";
 import useTours from "../../hooks/useTours";
 import Preloader from "../Preloader/Preloader";
 import MoreBlock from "../Divider/More block/MoreBlock";
+import { useRouter } from "next/router";
+import { WhereFilterOp, collection, getDocs, orderBy, query, where } from "firebase/firestore";
+import { db } from "../../firebase/firebase-config";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
+interface filteringProps {
+  category: string;
+  operator: WhereFilterOp;
+  comparison: string;
+}
+
 const TourSlider: React.FC = () => {
   const { tours, getTours, isLoading } = useTours();
+  const [sliderData, setSliderData] = useState<Array<object>>();
+  const router = useRouter();
+  const { tour } = router.query
+
+  const filtering = async ({ category, operator, comparison }: filteringProps) => {
+    const q = query(collection(db, "tours"),
+      where(category, operator, comparison))
+    const data: { tid: string; }[] = []
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      let obj: any = {
+        docId: doc.id,
+        ...doc.data(),
+      };
+      data.push(obj);
+    });
+    setSliderData(data)
+  }
+
+  useMemo(async () => {
+    if (tour === "Most popular") {
+      const q = query(collection(db, "tours"), orderBy("requests"))
+      const data: { tid: string; }[] = []
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        let obj: any = {
+          docId: doc.id,
+          ...doc.data(),
+        };
+        data.push(obj);
+      });
+      const sortedNumbers = data.sort((a: any, b: any) => a.requests - b.requests);
+      const finalData = sortedNumbers.slice(-10)
+      setSliderData(finalData.reverse())
+      console.log(finalData)
+    } else if (!tour) {
+      getTours();
+      if (!tour) {
+        setSliderData(tours)
+      }
+    } else if (tour === "All tours") {
+      setSliderData(tours)
+    } else if (tour === "Multi-active") {
+      filtering({ category: "tourInfo.category", operator: "==", comparison: "Multi-active" })
+    } else if (tour === "Road trip") {
+      filtering({ category: "tourInfo.category", operator: "==", comparison: "Road trip" })
+    } else if (tour === "Horse riding") {
+      filtering({ category: "tourInfo.category", operator: "==", comparison: "Horse riding" })
+    } else if (tour === "Trekking") {
+      filtering({ category: "tourInfo.category", operator: "==", comparison: "Trekking" })
+    } else if (tour === "Winter tours") {
+      filtering({ category: "tourInfo.category", operator: "==", comparison: "Winter tours" })
+    } else if (tour === "Cultural") {
+      filtering({ category: "tourInfo.category", operator: "==", comparison: "Cultural" })
+    }
+  }, [tour])
+
+
 
   useEffect(() => {
     getTours();
@@ -106,8 +173,14 @@ const TourSlider: React.FC = () => {
   };
 
   const render = useMemo(
-    () => tours.map((el, index) => <SliderCard key={index} {...el} />),
-    [tours]
+    () => sliderData?.map((el, index) => <SliderCard key={index} {...el} />),
+    [sliderData]
+  );
+
+
+  const renderAllTours = useMemo(
+    () => tours?.map((el, index) => <SliderCard key={index} {...el} />),
+    [tours, tour]
   );
 
   if (isLoading) return <Preloader full />
@@ -126,7 +199,7 @@ const TourSlider: React.FC = () => {
           </Divider>
         </div>
         <div className="mainSliders">
-          <Slider {...settings}>{render}</Slider>
+          <Slider {...settings}>{!tour ? renderAllTours : render}</Slider>
         </div>
       </div>
     </div>

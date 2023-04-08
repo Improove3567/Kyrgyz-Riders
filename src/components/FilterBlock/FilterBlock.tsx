@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FilterRenderType } from "../../constants/FilterBlockBtn";
 import scss from "./FilterBlock.module.scss";
 
