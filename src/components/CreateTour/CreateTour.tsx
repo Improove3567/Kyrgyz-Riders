@@ -10,12 +10,9 @@ interface CrateTourProps {
 const CreateTour: React.FC<CrateTourProps> = ({ children }) => {
     const progressData = ["Group size", "Travel dates", "Start/End", "Trip details", "Details"]
     const { steps, currentStepIndex } = useMultiStepForm([])
-    const submit = (e:React.FormEvent) => {
-        e.preventDefault()
-    }
     return (
         <div className={scss.wrapper}>
-            <form onSubmit={submit}>
+            <form>
                 <div>
                     <div className={scss.progressWrapper}>
                         {progressData.map((el, index) => (
