@@ -33,9 +33,9 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({
           </div>
           <div className={scss.accordionArrows}>
             {!isActive ? (
-              <Image src={ArrowDown} alt="arrowDown" />
+              <Image src={ArrowDown} width={16} height={8} alt="arrowDown" />
             ) : (
-              <Image src={ArrowUP} alt="arrowUp" />
+              <Image src={ArrowUP} width={16} height={8} alt="arrowUp" />
             )}
           </div>
         </div>
