@@ -1,6 +1,11 @@
 .DImage {
   display: flex;
 
+  img {
+    width: 384px;
+    height: 384px;
+  }
+
   .blocDPage {
     margin-left: 30px;
     display: flex;
@@ -30,8 +35,6 @@
 .title_block {
   height: fit-content;
   padding: 70px 32px 70px 110px;
-  display: flex;
-  align-items: center;
   background-color: #fff;
   margin: 0px auto;
   .title {
@@ -54,11 +57,9 @@
 
 @media (max-width: 1200px) {
   .DImage {
-    align-items: center;
-
     .blocDPage {
       .description {
-        width: 80%;
+        width: 85%;
       }
     }
   }
@@ -66,6 +67,8 @@
 
 @media (max-width: 912px) {
   .DImage {
+    display: block;
+
     img {
       display: none;
     }
@@ -73,8 +76,16 @@
     .blocDPage {
       margin: 0;
 
+      .containerDivider {
+        padding: 30px 0 23px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+      }
+
       img {
         display: block;
+        padding: 0 40px;
+        width: 100%;
+        height: 100%;
       }
 
       .divider {
@@ -83,6 +94,8 @@
 
       .description {
         margin: 0;
+        padding: 0 40px;
+        width: 100%;
         font-size: 16px;
         line-height: 27px;
       }
@@ -90,6 +103,8 @@
   }
 
   .title_block {
+    padding: 0 0 30px 0;
+
     .containerForAdap {
       margin-top: 30px;
       display: flex;
@@ -101,22 +116,10 @@
 }
 
 @media (max-width: 768px) {
-  .containerDivider {
-    padding: 10px 0 23px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  }
-  .title_block {
-    padding: 0 0 30px 0;
-  }
-}
-
-@media (max-width: 576px) {
   .DImage {
     .blocDPage {
-      img {
-        padding: 0 40px;
-        width: 100%;
-        height: 100%;
+      .containerDivider {
+        padding: 10px 0 23px;
       }
     }
   }
