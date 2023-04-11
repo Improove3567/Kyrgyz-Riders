@@ -14,9 +14,11 @@ const Modal: React.FC<ModalProps> = ({ desc }) => {
             buttons: [
                 {
                     label: "Close",
+                    
                 },
             ]
-        });
+            
+        } );
     };
 
     return <button className={scss.title} onClick={submit}>Read all</button>

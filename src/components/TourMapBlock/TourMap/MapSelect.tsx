@@ -18,15 +18,15 @@ const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
     return arrow ? (
       <Image
         src={"/assets/images/arrow.svg"}
-        width={10}
-        height={5}
+        width={16}
+        height={8}
         alt={"arrow"}
       />
     ) : (
       <Image
         src={"/assets/images/arrowUp.svg"}
-        width={10}
-        height={5}
+        width={16}
+        height={8}
         alt={"arrow"}
       />
     );
@@ -53,7 +53,7 @@ const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
     <>
       <div className={scss.select} onClick={click}>
         <div className={scss.text}>{title}</div>
-        <div className={scss.arrowDown}></div>
+        {result}
       </div>
       {arrow && (
         <div className={scss.map}>
