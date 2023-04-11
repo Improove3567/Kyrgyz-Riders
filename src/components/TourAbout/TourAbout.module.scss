@@ -17,3 +17,13 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .content {
+    margin-top: 0;
+    .containerDivider {
+      padding: 10px 0 18px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import React, { FC, useMemo } from "react";
-import Divider from "../Divider/Divider";
-import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./TourAbout.module.scss";
 import TourAboutCard from "./TourAboutCard/TourAboutCard";
 import TourInfoTypes from "../../constants/SightTourBlock";
 import { SightTourArrProps } from "../../constants/SightTourBlock";
+import Divider2 from "../Divider2/Divider2";
+import MoreBlock2 from "../Divider2/MoreBlock/MoreBlock2";
 interface TourAboutProps {
   tour: SightTourArrProps | object | undefined | any;
 }
@@ -28,7 +28,10 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
     },
     {
       title: "Duration",
-      text: tour?.tourInfo?.duration.days + " " + tour?.tourInfo?.duration.durationType,
+      text:
+        tour?.tourInfo?.duration.days +
+        " " +
+        tour?.tourInfo?.duration.durationType,
       isSmall: true,
     },
     {
@@ -46,21 +49,21 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
   ];
 
   const renderCard = useMemo(
-    () =>
-      TourAboutArr.map((el) => (
-        <TourAboutCard {...el} key={el.title} />
-      )),
+    () => TourAboutArr.map((el) => <TourAboutCard {...el} key={el.title} />),
     [tour]
   );
   return (
     <div className={scss.content}>
       <div className="container">
-        <Divider title={`Tours / Highlights around ${tour?.title}`} variant="light">
-          <MoreBlock title={"More tours"} />
-        </Divider>
-        <div className={scss.wrapper}>
-          {renderCard}
+        <div className={scss.containerDivider}>
+          <Divider2
+            title={`Tours / Highlights around ${tour?.title}`}
+            variant="light"
+          >
+            <MoreBlock2 title={"More tours"} />
+          </Divider2>
         </div>
+        <div className={scss.wrapper}>{renderCard}</div>
       </div>
     </div>
   );
