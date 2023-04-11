@@ -16,10 +16,10 @@ const Layout: React.FC<IComponent> = ({ children, next, back }) => {
                     {children}
                 </div>
                 <div className={scss.btns}>
-                    <button onClick={back}>
+                    <button onClick={(e) => back(e)}>
                         <p>Go Back</p>
                     </button>
-                    <button onClick={next}>
+                    <button onClick={(e) => next(e)}>
                         <p>Next Step</p>
                     </button>
                 </div>

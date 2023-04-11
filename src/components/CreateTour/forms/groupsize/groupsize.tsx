@@ -1,13 +1,13 @@
 import React from "react";
 import scss from "./groupsize.module.scss";
 import Image from "next/image";
-import { useReducer } from "react";
-import { initialState } from "../../../../hooks/useCreateTour";
-import { Reducer } from "../../../../hooks/useCreateTour";
 
-const GroupSize: React.FC = () => {
-    const [state, dispatch] = useReducer(Reducer, initialState);
+interface IGroup {
+    state: any;
+    dispatch: any;
+}
 
+const GroupSize: React.FC<IGroup> = ({ state, dispatch }) => {
     return (
         <div className={scss.content}>
             <div className={scss.textWrapper}>
@@ -22,7 +22,7 @@ const GroupSize: React.FC = () => {
                     <div className={scss.number_index_left_bottom_content}>
                         <div className={scss.number_index_bottom_left_content}>
                             <button
-                                onClick={() => dispatch({ type: "decrementAdult" })}
+                                onClick={() => dispatch({ type: "decrementAdult", payload: 1 })}
                             >
                                 <div className={scss.minus}></div>
                             </button>
@@ -30,7 +30,7 @@ const GroupSize: React.FC = () => {
                                 <p>{state.adults}</p>
                             </div>
                             <button
-                                onClick={() => dispatch({ type: "incrementAdult" })}
+                                onClick={() => dispatch({ type: "incrementAdult", payload: 1 })}
                             >
                                 <div className={scss.plus}></div>
                             </button>
@@ -44,7 +44,7 @@ const GroupSize: React.FC = () => {
                     </div>
                     <div className={scss.number_index_bottom_right_content}>
                         <button
-                            onClick={() => dispatch({ type: "decrementChild" })}
+                            onClick={() => dispatch({ type: "decrementChild", payload: 1 })}
                         >
                             <div className={scss.minus}></div>
                         </button>
@@ -52,7 +52,7 @@ const GroupSize: React.FC = () => {
                             <p>{state.childs}</p>
                         </div>
                         <button
-                            onClick={() => dispatch({ type: "incrementChild" })}
+                            onClick={() => dispatch({ type: "incrementChild", payload: 1 })}
                         >
                             <div className={scss.plus}></div>
                         </button>
