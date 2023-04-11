@@ -38,10 +38,15 @@ const TeamDetailBlock: FC<TeamDetailProps> = () => {
         return ( 
             <div className={scss.paragraph}> 
                 <div className={scss.DImage}> 
-                    <img src={teamDetail?.image} alt='detail image' width={384} height={384} /> 
+                    <img src={teamDetail?.image} alt='detail image' /> 
                     <div className={scss.blocDPage}> 
-                        <div className={scss.divider}><Divider title={fullName} variant='dark' /></div> 
-                        <p className={scss.description}>{teamDetail?.description}</p> 
+                        <div className={scss.containerDivider}> 
+                            <div className={scss.divider}><Divider title={fullName} variant='dark' /></div> 
+                        </div>
+                        <div className={scss.containerForAdap}>
+                            <img src={teamDetail?.image} alt='detail image' /> 
+                            <p className={scss.description}>{teamDetail?.description}</p> 
+                        </div>
                     </div> 
                 </div> 
             </div> 

@@ -1,27 +1,29 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { useMultiStepForm } from "../../hooks/useMultiStepForm";
 import scss from "./CreateTour.module.scss"
 import ProgressStep from "./ProgressStep/ProgressStep";
+import Layout from "./layout/layout";
+import GroupSize from "./forms/groupsize/groupsize";
+import StartEnd from "./forms/start-end/start_end";
+import { Reducer, initialState } from "../../hooks/useCreateTour";
 
-interface CrateTourProps {
-    children: React.ReactElement;
-}
+const CreateTour: React.FC = () => {
+    const progressData = [" Group size", " Travel dates", " Start/End", " Trip details", " Details"]
+    const [state, dispatch] = useReducer(Reducer, initialState);
+    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize state={state} dispatch={dispatch} key={"firstElem"} />, <div key={"secondElem"}>hello</div>, <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />])
 
-const CreateTour: React.FC<CrateTourProps> = ({ children }) => {
-    const progressData = ["Group size", "Travel dates", "Start/End", "Trip details", "Details"]
-    const { steps, currentStepIndex } = useMultiStepForm([])
     return (
         <div className={scss.wrapper}>
-            <form>
+            <div>
                 <div>
                     <div className={scss.progressWrapper}>
                         {progressData.map((el, index) => (
-                            <ProgressStep title={el} key={index} />
+                            <ProgressStep currentStepIndex={currentStepIndex} i={index} title={el} key={index} />
                         ))}
                     </div>
-                    {children}
+                    <Layout next={next} back={back} >{step}</Layout>
                 </div>
-            </form>
+            </div>
         </div>
     );
 };

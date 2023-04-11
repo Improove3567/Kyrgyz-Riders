@@ -208,3 +208,18 @@
     }
   }
 }
+
+@media (max-width: 340px) {
+  .footer {
+    .card {
+      .second {
+        &::before {
+          width: 240px;
+        }
+        &::after {
+          width: 240px;
+        }
+      }
+    }
+  }
+}
