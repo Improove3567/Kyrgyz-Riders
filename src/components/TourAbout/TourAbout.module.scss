@@ -18,6 +18,12 @@
   }
 }
 
+@media (max-width: 912px) {
+  .forAdaptive {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .content {
     margin-top: 0;

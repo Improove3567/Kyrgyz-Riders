@@ -3,8 +3,8 @@ import scss from "./TourAbout.module.scss";
 import TourAboutCard from "./TourAboutCard/TourAboutCard";
 import TourInfoTypes from "../../constants/SightTourBlock";
 import { SightTourArrProps } from "../../constants/SightTourBlock";
-import Divider2 from "../Divider2/Divider2";
-import MoreBlock2 from "../Divider2/MoreBlock/MoreBlock2";
+import Divider from "../Divider/Divider";
+import MoreBlock from "../Divider/More block/MoreBlock";
 interface TourAboutProps {
   tour: SightTourArrProps | object | undefined | any;
 }
@@ -56,12 +56,14 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
     <div className={scss.content}>
       <div className="container">
         <div className={scss.containerDivider}>
-          <Divider2
+          <Divider
             title={`Tours / Highlights around ${tour?.title}`}
             variant="light"
           >
-            <MoreBlock2 title={"More tours"} />
-          </Divider2>
+            <div className={scss.forAdaptive}>
+              <MoreBlock title={"More tours"} />
+            </div>
+          </Divider>
         </div>
         <div className={scss.wrapper}>{renderCard}</div>
       </div>
