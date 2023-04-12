@@ -7,10 +7,6 @@
   padding: 40px 0px;
 }
 
-.ourTeamArrow {
-  display: none;
-}
-
 .content {
   margin: 30px 0 10px 0;
   display: grid;
@@ -47,10 +43,6 @@
 @media (max-width: 768px) {
   .wrapper {
     padding: 0;
-
-    .ourTeamArrow {
-      display: block;
-    }
     
     .content {
       padding-left: 24px;
