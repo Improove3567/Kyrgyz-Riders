@@ -4,7 +4,6 @@ import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./feedback.module.scss";
 import FeedbackCarousel from "./carousel/FeedbackCarousel";
 import Modal2 from "../Modal/Modal2";
-import { title } from "process";
 
 export interface IFeedback {
   country?: string;
