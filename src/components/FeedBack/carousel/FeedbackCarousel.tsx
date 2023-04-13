@@ -13,10 +13,10 @@ interface ArrowProps {
 }
 
 interface FeedbackCI{
-  click : () => void
+  change : (desc:string | undefined) => void
 }
 
-const FeedbackCarousel:React.FC<FeedbackCI> = ({click}) => {
+const FeedbackCarousel:React.FC<FeedbackCI> = ({change }) => {
   const { feedback, getFeedback, isLoading } = useFeedback();
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const FeedbackCarousel:React.FC<FeedbackCI> = ({click}) => {
   }, []);
 
   const render = React.useMemo(
-    () => feedback.map((item, index) => <FeedBackCard key={index} {...item} click={click} />),
+    () => feedback.map((item, index) => <FeedBackCard key={index} {...item} change={change} />),
     [feedback]
   );
 

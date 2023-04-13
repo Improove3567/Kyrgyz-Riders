@@ -4,6 +4,7 @@ import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./feedback.module.scss";
 import FeedbackCarousel from "./carousel/FeedbackCarousel";
 import Modal2 from "../Modal/Modal2";
+import { title } from "process";
 
 export interface IFeedback {
   country?: string;
@@ -13,16 +14,24 @@ export interface IFeedback {
   img?: string;
   name?: string;
   lastName?: string;
-  click : () => void
+  change: (desc:string | undefined) => void;
 }
 
 const Feedback: React.FC = () => {
+  const [index, setIndex] = useState(false);
+  const [title,setTitle] = useState<string | undefined>()
 
-  const [index,setIndex] = useState(false)
+  const click = () => {
+    setIndex(!index);
+  };
 
-  const click = () => setIndex(!index)
+  const change = (desc: string | undefined) => {
+    click()
+    setTitle(desc)
+  };
 
-  
+
+
   return (
     <section className={scss.section}>
       <div className="container">
@@ -36,8 +45,8 @@ const Feedback: React.FC = () => {
             <MoreBlock title="More reviews on Tripadvisor" />
           </Divider>
         </div>
-        <FeedbackCarousel click = {click}/>
-        <Modal2 index = {index} click = {click}/>
+        <FeedbackCarousel change={change} />
+        <Modal2 index={index} click={click} title={title} />
       </div>
     </section>
   );
