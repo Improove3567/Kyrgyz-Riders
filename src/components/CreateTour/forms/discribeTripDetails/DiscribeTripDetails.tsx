@@ -11,7 +11,7 @@ const DiscribeTripDetails: React.FC = () => {
       </div>
 
       {DiscribeTripDetailsData.map((item) => (
-        <div className={scss.listItems}>
+        <div className={scss.listItems} key={item.id}>
           <DiscribeList key={item.id} {...item} />
         </div>
       ))}

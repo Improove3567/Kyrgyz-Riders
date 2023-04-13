@@ -11,7 +11,7 @@ import DiscribeTripDetails from "./forms/discribeTripDetails/DiscribeTripDetails
 const CreateTour: React.FC = () => {
     const progressData = [" Group size", " Travel dates", " Start/End", " Trip details", " Details"]
     const [state, dispatch] = useReducer(Reducer, initialState);
-    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize state={state} dispatch={dispatch} key={"firstElem"} />, <div key={"secondElem"}>hello</div>, <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />, <DiscribeTripDetails/>])
+    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize state={state} dispatch={dispatch} key={"firstElem"} />, <div key={"secondElem"}>hello</div>, <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />, <DiscribeTripDetails key={"fourth"}/>])
 
     return (
         <div className={scss.wrapper}>
