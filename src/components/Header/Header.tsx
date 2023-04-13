@@ -116,7 +116,7 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
                             <Image src={el.logo} width={21} height={12} alt="logo" />
                           </Link>
                         ))
-                        }
+                      }
                     </div>
                   ))
                 }
