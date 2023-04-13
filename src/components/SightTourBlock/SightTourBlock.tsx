@@ -8,6 +8,7 @@ import { SightTourArrProps } from "../../constants/SightTourBlock";
 import TourInfoTypes from "../../constants/SightTourBlock";
 import Link from "next/link";
 
+
 interface TourProps {
   tours: Array<object>;
 }
