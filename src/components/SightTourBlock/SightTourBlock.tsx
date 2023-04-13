@@ -3,6 +3,10 @@ import Divider from "../Divider/Divider";
 import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./SightTourBlock.module.scss";
 import SightTourCard from "./SightTourCard/SightTourCard";
+import useTours from "../../hooks/useTours";
+import { SightTourArrProps } from "../../constants/SightTourBlock";
+import TourInfoTypes from "../../constants/SightTourBlock";
+import Link from "next/link";
 
 interface TourProps {
   tours: Array<object>;
@@ -18,7 +22,9 @@ const SightTourBlock: React.FC<TourProps> = ({ tours }) => {
       <div className="container">
         <div className={scss.container}>
           <Divider title="Tours in Cholpon-Ata" variant="dark">
-            <MoreBlock title="More tours" />
+            <Link href="/sights">
+              <MoreBlock title="More tours" />
+            </Link>
           </Divider>
           <div className={scss.cards}>{renderCards}</div>
         </div>

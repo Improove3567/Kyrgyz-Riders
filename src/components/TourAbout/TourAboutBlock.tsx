@@ -1,10 +1,11 @@
 import React, { FC, useMemo } from "react";
-import Divider from "../Divider/Divider";
-import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./TourAbout.module.scss";
 import TourAboutCard from "./TourAboutCard/TourAboutCard";
 import TourInfoTypes from "../../constants/SightTourBlock";
 import { SightTourArrProps } from "../../constants/SightTourBlock";
+import Divider from "../Divider/Divider";
+import MoreBlock from "../Divider/More block/MoreBlock";
+import Link from "next/link";
 interface TourAboutProps {
   tour: SightTourArrProps | object | undefined | any;
 }
@@ -28,7 +29,10 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
     },
     {
       title: "Duration",
-      text: tour?.tourInfo?.duration.days + " " + tour?.tourInfo?.duration.durationType,
+      text:
+        tour?.tourInfo?.duration.days +
+        " " +
+        tour?.tourInfo?.duration.durationType,
       isSmall: true,
     },
     {
@@ -46,21 +50,25 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
   ];
 
   const renderCard = useMemo(
-    () =>
-      TourAboutArr.map((el) => (
-        <TourAboutCard {...el} key={el.title} />
-      )),
+    () => TourAboutArr.map((el) => <TourAboutCard {...el} key={el.title} />),
     [tour]
   );
   return (
     <div className={scss.content}>
       <div className="container">
-        <Divider title={`Tours / Highlights around ${tour?.title}`} variant="light">
-          <MoreBlock title={"More tours"} />
-        </Divider>
-        <div className={scss.wrapper}>
-          {renderCard}
+        <div className={scss.containerDivider}>
+          <Divider
+            title={`Tours / Highlights around ${tour?.title}`}
+            variant="light"
+          >
+            <div className={scss.forAdaptive}>
+              <Link href="/tours">
+                <MoreBlock title={"More tours"} />
+              </Link>
+            </div>
+          </Divider>
         </div>
+        <div className={scss.wrapper}>{renderCard}</div>
       </div>
     </div>
   );

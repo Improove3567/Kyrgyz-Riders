@@ -8,6 +8,7 @@ import FilterTour from "../Tour filter/FilterTour";
 import useTours from "../../hooks/useTours";
 import Preloader from "../Preloader/Preloader";
 import MoreBlock from "../Divider/More block/MoreBlock";
+import Link from "next/link";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -121,7 +122,9 @@ const TourSlider: React.FC = () => {
             <>
               <FilterTour />
               <div className={scss.selectsArrow}>
-                <MoreBlock />
+                <Link href="/tours">
+                  <MoreBlock />
+                </Link>
               </div>
             </>
           </Divider>
