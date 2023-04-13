@@ -8,9 +8,6 @@ interface Modal2I{
 }
 
 const Modal2:React.FC<Modal2I> = ({index,click,title}) => {
-
-    const stop = (event: React.MouseEvent<HTMLDivElement>) => event.stopPropagation()
-
     return(
         <div className={index ? scss.modal : 'hideSelect'} onClick={click}>
             <div className={scss.main} onClick={event => event.stopPropagation() }>
