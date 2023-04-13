@@ -12,7 +12,7 @@ import { Reducer, initialState } from "../../hooks/useCreateTour";
 const CreateTour: React.FC = () => {
     const progressData = [" Group size", " Travel dates", " Start/End", " Trip details", " Details"]
     const [state, dispatch] = useReducer(Reducer, initialState);
-    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize state={state} dispatch={dispatch} key={"firstElem"} />, <GroupData key={"secondElem"}, <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />])
+    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize state={state} dispatch={dispatch} key={"firstElem"} />, <GroupData key={"secondElem"} />, <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />])
 
     return (
         <div className={scss.wrapper}>
