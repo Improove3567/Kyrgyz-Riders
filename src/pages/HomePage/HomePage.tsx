@@ -27,7 +27,6 @@ const HomePage = () => {
       <OurTeam />
       <YourTours />
       <Footer />
-      <Modal2/>
     </Suspense>
   );
 };
