@@ -1,10 +1,10 @@
 import React, { FC, useMemo } from "react";
-import Divider from "../Divider/Divider";
-import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./TourAbout.module.scss";
 import TourAboutCard from "./TourAboutCard/TourAboutCard";
 import TourInfoTypes from "../../constants/SightTourBlock";
 import { SightTourArrProps } from "../../constants/SightTourBlock";
+import Divider from "../Divider/Divider";
+import MoreBlock from "../Divider/More block/MoreBlock";
 interface TourAboutProps {
   tour: SightTourArrProps | object | undefined | any;
 }
@@ -28,7 +28,10 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
     },
     {
       title: "Duration",
-      text: tour?.tourInfo?.duration.days + " " + tour?.tourInfo?.duration.durationType,
+      text:
+        tour?.tourInfo?.duration.days +
+        " " +
+        tour?.tourInfo?.duration.durationType,
       isSmall: true,
     },
     {
@@ -46,10 +49,7 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
   ];
 
   const renderCard = useMemo(
-    () =>
-      TourAboutArr.map((el) => (
-        <TourAboutCard {...el} key={el.title} />
-      )),
+    () => TourAboutArr.map((el) => <TourAboutCard {...el} key={el.title} />),
     [tour]
   );
   return (
@@ -61,6 +61,7 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
         <div className={scss.wrapper}>
           {renderCard}
         </div>
+        <div className={scss.wrapper}>{renderCard}</div>
       </div>
     </div>
   );

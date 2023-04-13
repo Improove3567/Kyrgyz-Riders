@@ -1,19 +1,18 @@
-.wrapper{
-    background: white;
-    padding: 40px 0;
-    .header{
-        width: 100%;
-        font-family: 'Montserrat';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 32px;
-        line-height: 39px;
-        color: #474747;
-    }
-    
+.wrapper {
+  background: white;
+  padding: 40px 0;
+  .header {
+    width: 100%;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    color: #474747;
+  }
 }
-@media (max-width:768px) {
-    .wrapper{
-        padding: 0px 0px 20px 0px;
-    }
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0px 0px 20px 0px;
+  }
 }
