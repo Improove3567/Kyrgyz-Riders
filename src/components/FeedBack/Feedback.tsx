@@ -3,7 +3,7 @@ import Divider from "../Divider/Divider";
 import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./feedback.module.scss";
 import FeedbackCarousel from "./carousel/FeedbackCarousel";
-import Modal2 from "../Modal/Modal2";
+import DescWindow from "../Modal/DescWindow";
 
 export interface IFeedback {
   country?: string;
@@ -45,7 +45,7 @@ const Feedback: React.FC = () => {
           </Divider>
         </div>
         <FeedbackCarousel change={change} />
-        <Modal2 index={index} click={click} title={title} />
+        <DescWindow index={index} click={click} title={title} />
       </div>
     </section>
   );
