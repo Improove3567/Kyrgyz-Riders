@@ -4,10 +4,11 @@ import scss from "./CreateTour.module.scss"
 import ProgressStep from "./ProgressStep/ProgressStep";
 import Layout from "./layout/layout";
 import GroupSize from "./forms/groupsize/groupsize";
+import GroupData from "./forms/groupdata/GroupData";
 
 const CreateTour: React.FC = () => {
     const progressData = [" Group size", " Travel dates", " Start/End", " Trip details", " Details"]
-    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize key={"firstElem"}/>, <div key={"secondElem"}>hello</div>])
+    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize key={"firstElem"}/>, <GroupData key={"secondElem"} />])
 
     return (
         <div className={scss.wrapper}>
