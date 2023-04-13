@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Divider from "../Divider/Divider";
 import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./feedback.module.scss";
 import FeedbackCarousel from "./carousel/FeedbackCarousel";
+import DescWindow from "../Modal/DescWindow";
 import Link from "next/link";
 
 export interface IFeedback {
@@ -13,9 +14,24 @@ export interface IFeedback {
   img?: string;
   name?: string;
   lastName?: string;
+  change: (desc:string | undefined) => void;
 }
 
 const Feedback: React.FC = () => {
+  const [index, setIndex] = useState(false);
+  const [title,setTitle] = useState<string | undefined>()
+
+  const click = () => {
+    setIndex(!index);
+  };
+
+  const change = (desc: string | undefined) => {
+    click()
+    setTitle(desc)
+  };
+
+
+
   return (
     <section className={scss.section}>
       <div className="container">
@@ -33,7 +49,8 @@ const Feedback: React.FC = () => {
             </Link>
           </Divider>
         </div>
-        <FeedbackCarousel />
+        <FeedbackCarousel change={change} />
+        <DescWindow index={index} click={click} title={title} />
       </div>
     </section>
   );

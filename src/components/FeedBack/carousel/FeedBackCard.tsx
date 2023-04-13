@@ -13,6 +13,8 @@ const FeedbackCard: React.FC<IFeedback> = ({
   stars,
   name,
   lastName,
+  change
+
 }) => {
   return (
     <div className={scss.wrapper}>
@@ -40,7 +42,7 @@ const FeedbackCard: React.FC<IFeedback> = ({
       <p
         className={scss.read}
       >
-        <Modal desc={desc} />
+        <Modal change={change} desc={desc} />
       </p>
       <div className={scss.line}></div>
       <Link href={`${link}`}>
