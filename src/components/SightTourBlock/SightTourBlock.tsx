@@ -1,6 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/router";
-import useSights from "../../hooks/useSights";
+import React, { useMemo } from "react";
 import Divider from "../Divider/Divider";
 import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./SightTourBlock.module.scss";
@@ -10,18 +8,15 @@ import { SightTourArrProps } from "../../constants/SightTourBlock";
 import TourInfoTypes from "../../constants/SightTourBlock";
 import Link from "next/link";
 
-
 interface TourProps {
   tours: Array<object>;
 }
 
 const SightTourBlock: React.FC<TourProps> = ({ tours }) => {
-
   const renderCards = useMemo(
     () => tours?.map((el, index) => <SightTourCard {...el} key={index} />),
     [tours]
   );
-
   return (
     <div className={scss.wrapper}>
       <div className="container">
