@@ -12,7 +12,11 @@ interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const FeedbackCarousel = () => {
+interface FeedbackCI{
+  change : (desc:string | undefined) => void
+}
+
+const FeedbackCarousel:React.FC<FeedbackCI> = ({change }) => {
   const { feedback, getFeedback, isLoading } = useFeedback();
 
   useEffect(() => {
@@ -20,7 +24,7 @@ const FeedbackCarousel = () => {
   }, []);
 
   const render = React.useMemo(
-    () => feedback.map((item, index) => <FeedBackCard key={index} {...item} />),
+    () => feedback.map((item, index) => <FeedBackCard key={index} {...item} change={change} />),
     [feedback]
   );
 
