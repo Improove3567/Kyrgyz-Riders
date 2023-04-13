@@ -78,7 +78,10 @@
   .wrapper {
     .content{
       .title, .dark_title {
+        margin: 0;
+        font-weight: 500;
         font-size: 18px;
+        line-height: 29px;
       }
     }
     .content::after {
@@ -91,7 +94,10 @@
   .wrapper {
     .content{
       .title, .dark_title {
+        margin: 0;
+        font-weight: 500;
         font-size: 14px;
+        line-height: 29px;
       }
     }
     .content::after {

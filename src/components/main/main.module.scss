@@ -343,16 +343,16 @@
       font-size: 52px;
       font-weight: 700;
     }
-    $variableSize: calc(5vw + 5vh);
     .imgText::first-letter {
       font-size: 61px;
     }
-    $variable: calc(3vw + 4vh);
+    $variable: calc(3vw + 2vh);
     .imgTextTour {
       font-weight: 700;
       font-size: $variable;
-      top: 25%;
+      top: 31%;
     }
+    $variableSize: calc(4vw + 3vh);
     .imgTextTour::first-letter {
       font-size: $variableSize;
     }
@@ -390,14 +390,8 @@
       font-size: 45px;
       font-weight: 700;
     }
-    $variableSize: calc(6vw + 6vh);
     .imgText::first-letter {
       font-size: 52px;
-    }
-    $variable: calc(4vw + 4vh);
-    .imgTextTour {
-      font-weight: 700;
-      top: 30%;
     }
   }
 }
@@ -410,33 +404,28 @@
       font-size: 35px;
       font-weight: 700;
     }
-    $variableSize: calc(6vw + 6vh);
     .imgText::first-letter {
       font-size: 42px;
-    }
-    $variable: calc(4vw + 4vh);
-    .imgTextTour {
-      font-weight: 700;
-      top: 33%;
     }
   }
 }
 @media (max-width: 350px) {
   .buttons {
+    gap: 15px;
+
     & a {
-      width: 135px;
+      width: 115px;
+      height: 30px;
+      padding: 5px 8px;
+      font-weight: 600;
+      font-size: 12px;
     }
     .imgText {
       font-size: 30px;
       font-weight: 700;
     }
-    $variableSize: calc(6vw + 6vh);
     .imgText::first-letter {
       font-size: 37px;
-    }
-    $variable: calc(4vw + 4vh);
-    .imgTextTour {
-      font-weight: 700;
     }
   }
 }

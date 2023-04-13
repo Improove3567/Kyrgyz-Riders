@@ -1,0 +1,32 @@
+.wrapper {
+  width: fit-content;
+  background-color: #8389c9;
+  border: 1px solid #333333;
+  color: white;
+  padding: 15px 30px;
+  cursor: pointer;
+  p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.wrapperNonActive {
+  width: fit-content;
+  background-color: white;
+  border: 1px solid #8389c9;
+  color: #6f6f66;
+  padding: 15px 30px;
+  transition: all ease-in-out .4s;
+  cursor: pointer;
+  p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  &:hover{
+  background-color: #8389c9;
+    color: white;
+  }
+}

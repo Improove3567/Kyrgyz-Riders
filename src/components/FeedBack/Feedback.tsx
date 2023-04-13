@@ -4,6 +4,7 @@ import MoreBlock from "../Divider/More block/MoreBlock";
 import scss from "./feedback.module.scss";
 import FeedbackCarousel from "./carousel/FeedbackCarousel";
 import DescWindow from "../Modal/DescWindow";
+import Link from "next/link";
 
 export interface IFeedback {
   country?: string;
@@ -36,12 +37,16 @@ const Feedback: React.FC = () => {
       <div className="container">
         <div className={scss.mainDivider}>
           <Divider title="Travelers Love Kyrgyz Riders" variant="light">
-            <MoreBlock title="More reviews on Tripadvisor" />
+          <Link target="_blank" href="https://www.tripadvisor.ru/">
+              <MoreBlock title="More reviews on Tripadvisor" />
+            </Link>
           </Divider>
         </div>
         <div className={scss.minDivider}>
           <Divider title="Reviews" variant="light">
-            <MoreBlock title="More reviews on Tripadvisor" />
+            <Link target="_blank" href="https://www.tripadvisor.ru/">
+              <MoreBlock title="More reviews on Tripadvisor" />
+            </Link>
           </Divider>
         </div>
         <FeedbackCarousel change={change} />
