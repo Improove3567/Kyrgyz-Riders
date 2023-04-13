@@ -25,7 +25,7 @@ const CreateTour: React.FC = () => {
                 </div>
             </div>
         </div>
-    );
+    ); 
 };
 
 export default CreateTour;

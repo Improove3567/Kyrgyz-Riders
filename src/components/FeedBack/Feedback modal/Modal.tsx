@@ -16,6 +16,7 @@ const Modal: React.FC<ModalProps> = ({ desc }) => {
           label: "Close",
         },
       ]
+
     });
   };
 

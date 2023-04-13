@@ -19,6 +19,7 @@
 
     img {
       height: 100%;
+      object-fit: cover;
     }
 
     .btm {
@@ -48,56 +49,53 @@
     }
   }
 }
-@media (max-width:200px){
-  .card{
+@media (max-width: 200px) {
+  .card {
     width: 95%;
     height: 200px;
     margin-right: 12px;
   }
 }
 
-@media (min-width:200px){
-  .card{
+@media (min-width: 200px) {
+  .card {
     width: 80%;
     height: 215px;
     margin-right: 12px;
   }
 }
-@media (min-width:375px) {
-  .card{
+@media (min-width: 375px) {
+  .card {
     width: 70%;
     height: 250px;
     margin-right: 12px;
   }
 }
-@media (min-width:500px) {
-  .card{
+@media (min-width: 500px) {
+  .card {
     width: 48.2%;
     height: 250px;
     margin-right: 12px;
   }
 }
-@media (min-width:700px) {
-  .card{
+@media (min-width: 700px) {
+  .card {
     width: 40%;
     height: 300px;
     margin-right: 12px;
   }
-  
 }
-@media (min-width:900px) {
-  .card{
+@media (min-width: 900px) {
+  .card {
     width: 32.2%;
     height: 310px;
     margin-right: 12px;
   }
-  
 }
-@media (min-width:1100px) {
-  .card{
+@media (min-width: 1100px) {
+  .card {
     width: 23%;
     height: 330px;
     margin-right: 12px;
   }
 }
-
