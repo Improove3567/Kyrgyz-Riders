@@ -4,6 +4,7 @@ import { IFeedback } from "../Feedback";
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "../Feedback modal/Modal";
+import Modal2 from "../../Modal/Modal2";
 
 const FeedbackCard: React.FC<IFeedback> = ({
   desc,
@@ -13,7 +14,9 @@ const FeedbackCard: React.FC<IFeedback> = ({
   stars,
   name,
   lastName,
+  click
 }) => {
+  console.log(desc)
   return (
     <div className={scss.wrapper}>
       <header>
@@ -40,7 +43,7 @@ const FeedbackCard: React.FC<IFeedback> = ({
       <p
         className={scss.read}
       >
-        <Modal desc={desc} />
+        <Modal click={click} />
       </p>
       <div className={scss.line}></div>
       <Link href={`${link}`}>

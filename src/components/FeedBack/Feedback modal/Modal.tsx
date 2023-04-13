@@ -1,27 +1,16 @@
 import React from "react";
 import { confirmAlert } from "react-confirm-alert";
-import "react-confirm-alert/src/react-confirm-alert.css";
 import scss from './Modal.module.scss'
+import "react-confirm-alert/src/react-confirm-alert.css";
+
 
 interface ModalProps {
-    desc?: string;
+    click : () => void
 }
 
-const Modal: React.FC<ModalProps> = ({ desc }) => {
-    const submit = () => {
-        confirmAlert({
-            message: desc,
-            buttons: [
-                {
-                    label: "Close",
-                    
-                },
-            ]
-            
-        } );
-    };
+const Modal: React.FC<ModalProps> = ({ click }) => {
 
-    return <button className={scss.title} onClick={submit}>Read all</button>
+    return <button className={scss.title} onClick={click}>Read all</button>
 
 }
 
