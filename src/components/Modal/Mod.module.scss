@@ -77,3 +77,12 @@
     opacity: 1;
   }
 }
+
+
+@media (max-width:576px) {
+  .modal{
+    .main{
+      width: 90%;
+    }
+  }
+}

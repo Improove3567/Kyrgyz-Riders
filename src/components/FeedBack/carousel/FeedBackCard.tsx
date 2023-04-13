@@ -16,7 +16,6 @@ const FeedbackCard: React.FC<IFeedback> = ({
   lastName,
   click
 }) => {
-  console.log(desc)
   return (
     <div className={scss.wrapper}>
       <header>
