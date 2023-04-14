@@ -1,13 +1,15 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import scss from "./layout.module.scss";
 
 interface IComponent {
     children?: React.ReactNode | ReactElement;
     next: (e: any) => void;
     back: (e: any) => void;
+    currentStepIndex: number;
+    setCurrentStepIndex: any;
 }
 
-const Layout: React.FC<IComponent> = ({ children, next, back }) => {
+const Layout: React.FC<IComponent> = ({ children, next, back, currentStepIndex, setCurrentStepIndex }) => {
 
     return (
         <div className={scss.wrapper}>

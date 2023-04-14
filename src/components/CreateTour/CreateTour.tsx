@@ -6,11 +6,19 @@ import Layout from "./layout/layout";
 import GroupSize from "./forms/groupsize/groupsize";
 import StartEnd from "./forms/start-end/start_end";
 import { Reducer, initialState } from "../../hooks/useCreateTour";
+import SightsStep from "./forms/sightsStep/sightsStep";
+import ActivitesStep from "./forms/activitesStep/activitesStep";
 
 const CreateTour: React.FC = () => {
     const progressData = [" Group size", " Travel dates", " Start/End", " Trip details", " Details"]
     const [state, dispatch] = useReducer(Reducer, initialState);
-    const { step, currentStepIndex, next, back } = useMultiStepForm([<GroupSize state={state} dispatch={dispatch} key={"firstElem"} />, <div key={"secondElem"}>hello</div>, <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />])
+    const { step, currentStepIndex, next, back, setCurrentStepIndex } = useMultiStepForm([<GroupSize state={state} dispatch={dispatch} key={"firstElem"} />,
+    <div key={"secondElem"}>hello</div>,
+    <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />,
+    <SightsStep key={"heuwheqjehj"} dispatch={dispatch} />,
+    <ActivitesStep dispatch={dispatch} />])
+
+    console.log(state);
 
     return (
         <div className={scss.wrapper}>
@@ -21,7 +29,7 @@ const CreateTour: React.FC = () => {
                             <ProgressStep currentStepIndex={currentStepIndex} i={index} title={el} key={index} />
                         ))}
                     </div>
-                    <Layout next={next} back={back} >{step}</Layout>
+                    <Layout next={next} back={back} currentStepIndex={currentStepIndex} setCurrentStepIndex={setCurrentStepIndex}>{step}</Layout>
                 </div>
             </div>
         </div>
