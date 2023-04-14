@@ -8,6 +8,7 @@ interface ICreateTour {
   activities: Array<object>;
   activitiesDuration: string;
   ownVersionActivities: string;
+  discribeTrip: string;
 }
 
 export const initialState: ICreateTour = {
@@ -20,6 +21,7 @@ export const initialState: ICreateTour = {
   activities: [],
   activitiesDuration: "Not Choosen yet",
   ownVersionActivities: "",
+  discribeTrip: "Fast-paced: See as much as possible within your trip duration",
 };
 
 export function Reducer(state: any, action: any) {
@@ -113,6 +115,8 @@ export function Reducer(state: any, action: any) {
         ...state,
         ownVersionActivities: newActivitiesValue,
       };
+    case "discribeTrip":
+      return { ...state, discribeTrip: action.payload };
     default:
       throw new Error();
   }

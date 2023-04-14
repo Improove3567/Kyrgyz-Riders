@@ -19,7 +19,7 @@ const CreateTour: React.FC = () => {
     <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />,
     <SightsStep key={"heuwheqjehj"} dispatch={dispatch} />,
     <ActivitesStep dispatch={dispatch} />, 
-    <DiscribeTripDetails key={"hheheheheheheh"} />])
+    <DiscribeTripDetails key={"hheheheheheheh"} dispatch={dispatch}/>])
 
     console.log(state);
 
