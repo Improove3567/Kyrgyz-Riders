@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import scss from "./SightMap.module.scss";
 import Divider from "../Divider/Divider";
 import { PhotoProvider, PhotoView } from "react-photo-view";

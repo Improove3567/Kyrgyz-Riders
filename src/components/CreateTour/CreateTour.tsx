@@ -6,8 +6,10 @@ import Layout from "./layout/layout";
 import GroupSize from "./forms/groupsize/groupsize";
 import StartEnd from "./forms/start-end/start_end";
 import { Reducer, initialState } from "../../hooks/useCreateTour";
+
 import SightsStep from "./forms/sightsStep/sightsStep";
 import ActivitesStep from "./forms/activitesStep/activitesStep";
+import DiscribeTripDetails from "./forms/discribeTripDetails/DiscribeTripDetails";
 
 const CreateTour: React.FC = () => {
     const progressData = [" Group size", " Travel dates", " Start/End", " Trip details", " Details"]
@@ -16,7 +18,8 @@ const CreateTour: React.FC = () => {
     <div key={"secondElem"}>hello</div>,
     <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />,
     <SightsStep key={"heuwheqjehj"} dispatch={dispatch} />,
-    <ActivitesStep dispatch={dispatch} />])
+    <ActivitesStep dispatch={dispatch} />, 
+    <DiscribeTripDetails key={"hheheheheheheh"} />])
 
     console.log(state);
 
