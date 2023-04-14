@@ -7,6 +7,9 @@ import GroupSize from "./forms/groupsize/groupsize";
 import GroupData from "./forms/groupdata/GroupData";
 import StartEnd from "./forms/start-end/start_end";
 import { Reducer, initialState } from "../../hooks/useCreateTour";
+import DiscribeTripDetails from "./forms/discribeTripDetails/DiscribeTripDetails";
+import YourDetails from "./forms/yourDetails/YourDetails";
+import DetailsEnd from "./forms/detailsEnd/DetailsEnd";
 
 
 const CreateTour: React.FC = () => {
