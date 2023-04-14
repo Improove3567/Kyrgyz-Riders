@@ -1,8 +1,8 @@
 import Image from "next/image";
 import scss from "./GroupData.module.scss";
 import { useState } from "react";
-import DatePicker from "react-widgets/DatePicker";
 import "react-widgets/scss/styles.scss";
+import DatePicker from "react-widgets/DatePicker";
 
 const GroupData = () => {
   const [travelDates, setTravelDates] = useState(true);
@@ -65,7 +65,7 @@ const GroupData = () => {
             </div>
             <div className={scss.number_index_left_bottom_content}>
               <div className={scss.calendar}>
-                <DatePicker placeholder="m/dd/yy" />;
+                <DatePicker placeholder="m/dd/yy" />
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ const GroupData = () => {
               <p>End date</p>
             </div>
             <div className={scss.calendar}>
-              <DatePicker placeholder="m/dd/yy" />;
+              <DatePicker placeholder="m/dd/yy" />
             </div>
           </div>
         </div>
@@ -96,9 +96,9 @@ const GroupData = () => {
               />
               <p className={scss.image_title}>Month of departure</p>
             </div>
-            <div className={scss.number_index_left_bottom_content  + " " + scss.calendar}>
+            <div className={scss.number_index_left_bottom_content + " " + scss.calendar}>
               <div>
-                <DatePicker placeholder="m/dd/yy" />;
+                <DatePicker placeholder="m/dd/yy" />
               </div>
             </div>
           </div>

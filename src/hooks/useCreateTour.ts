@@ -9,6 +9,7 @@ interface ICreateTour {
   activitiesDuration: string;
   ownVersionActivities: string;
   discribeTrip: string;
+  watchShows: Array<object>;
 }
 
 export const initialState: ICreateTour = {
@@ -22,6 +23,7 @@ export const initialState: ICreateTour = {
   activitiesDuration: "Not Choosen yet",
   ownVersionActivities: "",
   discribeTrip: "Fast-paced: See as much as possible within your trip duration",
+  watchShows: [],
 };
 
 export function Reducer(state: any, action: any) {
@@ -117,6 +119,35 @@ export function Reducer(state: any, action: any) {
       };
     case "discribeTrip":
       return { ...state, discribeTrip: action.payload };
+    case "addWatchShows":
+      return {
+        ...state,
+        watchShows: [
+          ...state?.watchShows,
+          { ...action.payload, visit: "Nice to visit" },
+        ],
+      };
+    case "removeWatchShows":
+      const filteredArr = state?.watchShows.filter(
+        (el: any) => el.tid != action.payload
+      );
+      return { ...state, watchShows: filteredArr };
+    case "updateWatchShows":
+      const { indx, data } = action.payload;
+      const updatedArrWatch = [...state.watchShows];
+      updatedArrWatch[indx] = {
+        ...data,
+        visit: data.visit ? "Nice to Visit" : "Must visit",
+      };
+      const seen: any = {};
+      const uniqueArrWatch = updatedArrWatch.filter((obj) => {
+        if (!seen[obj.tid]) {
+          seen[obj.tid] = true;
+          return true;
+        }
+        return false;
+      });
+      return { ...state, watchShows: uniqueArrWatch };
     default:
       throw new Error();
   }

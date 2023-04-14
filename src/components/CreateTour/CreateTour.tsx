@@ -13,18 +13,25 @@ import ActivitesStep from "./forms/activitesStep/activitesStep";
 import DiscribeTripDetails from "./forms/discribeTripDetails/DiscribeTripDetails";
 import YourDetails from "./forms/yourDetails/YourDetails";
 import DetailsEnd from "./forms/detailsEnd/DetailsEnd";
+import AnythingAdd from "./forms/anythingAdd/AnythingAdd";
+import SeeShows from "./forms/seeShows/SeeShows";
 
 
 const CreateTour: React.FC = () => {
     const progressData = [" Group size", " Travel dates", " Start/End", " Trip details", " Details"]
     const [state, dispatch] = useReducer(Reducer, initialState);
 
-    const { step, currentStepIndex, next, back, setCurrentStepIndex } = useMultiStepForm([<GroupSize state={state} dispatch={dispatch} key={"firstElem"} />,
-    <GroupSize state={state} dispatch={dispatch} key={"firstElem"} />, <GroupData key={"secondElem"} />, <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />,
+    console.log(state);
+
+    const { step, currentStepIndex, next, back, setCurrentStepIndex } = useMultiStepForm([<GroupSize state={state} dispatch={dispatch} key={"firstElem"} />, <GroupData key={"secondElem"} />,
     <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />,
     <SightsStep key={"heuwheqjehj"} dispatch={dispatch} />,
     <ActivitesStep dispatch={dispatch} />,
-    <DiscribeTripDetails key={"hheheheheheheh"} dispatch={dispatch} />])
+    <SeeShows key={"hehehaoheo"} dispatch={dispatch} />,
+    <DiscribeTripDetails key={"hheheheheheheh"} dispatch={dispatch} />,
+    <AnythingAdd key={"ksdafnl"} />,
+    <YourDetails key={"lsdmad"} />,
+    <DetailsEnd key={"jsadfkjhalf"} />])
 
     return (
         <div className={scss.wrapper}>
