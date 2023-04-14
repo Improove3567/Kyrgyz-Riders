@@ -53,3 +53,38 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .DiscribeListItem {
+    background: #8389c9;
+    padding: 15px 20px;
+
+    .mainCircule {
+      border: 1px solid #8389c9;
+      box-shadow: none;
+
+      .innerCircule {
+        width: 21px;
+        height: 21px;
+        box-shadow: none;
+        background: #fff !important;
+      }
+
+      .innerCirculeChecked {
+        border-top: 1px solid #8389c9;
+        border-right: 1px solid #8389c9;
+      }
+    }
+
+    .rectangle {
+      border: none;
+      box-shadow: none;
+      padding: 0;
+
+      .textContent {
+        font-weight: 600;
+        color: #ffffff;
+      }
+    }
+  }
+}
