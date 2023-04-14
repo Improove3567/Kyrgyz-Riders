@@ -1,0 +1,78 @@
+.yourDetailsMain {
+  padding: 40px 60px 10px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
+  .textWrapper {
+    border-bottom: 2px solid #c3c3c3;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+    h2 {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 39px;
+      color: #adadad;
+      text-align: center;
+    }
+  }
+
+  .yourDetailsContent {
+    p {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 25px;
+      text-align: center;
+      color: #adadad;
+
+      @media (max-width: 768px) {
+        width: 85%;
+        margin: 0 auto;
+      }
+    }
+
+    .form {
+      margin: 1.5% 0px;
+      padding: 0 45px;
+
+      @media (max-width: 768px) {
+        padding: 0;
+      }
+      .inputs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px 32px;
+        margin: 20px 0 10px;
+        
+        @media (max-width: 768px) {
+          grid-template-columns: repeat(1, 1fr);
+          grid-gap: 10px;
+        }
+      }
+    }
+
+    .input {
+      padding: 0 30px;
+      outline: none;
+      border: none;
+      width: 100%;
+      height: 50px;
+      cursor: pointer;
+      background: #efefef;
+      border: 1px solid #9c9c9c;
+
+      &::placeholder {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #9c9c9c;
+      }
+
+      @media (max-width: 768px) {
+        padding: 0 45px;
+      }
+    }
+  }
+}
