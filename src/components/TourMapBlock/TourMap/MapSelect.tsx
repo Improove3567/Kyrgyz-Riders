@@ -41,7 +41,7 @@ const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
         } else {
           return (
             <PhotoView src={el} key={id}>
-              {result}
+              <img src={el} alt="map" />
             </PhotoView>
           );
         }

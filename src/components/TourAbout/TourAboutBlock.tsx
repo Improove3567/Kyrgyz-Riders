@@ -49,18 +49,16 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
   ];
 
   const renderCard = useMemo(
-    () => TourAboutArr.map((el) => <TourAboutCard {...el} key={el.title} />),
+    () => TourAboutArr.map((el, index) => <TourAboutCard {...el} key={`${index}_${el.title}`} />),
     [tour]
   );
+
   return (
     <div className={scss.content}>
       <div className="container">
         <Divider title={`Tours / Highlights around ${tour?.title}`} variant="light">
           <MoreBlock title={"More tours"} />
         </Divider>
-        <div className={scss.wrapper}>
-          {renderCard}
-        </div>
         <div className={scss.wrapper}>{renderCard}</div>
       </div>
     </div>

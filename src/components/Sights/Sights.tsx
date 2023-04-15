@@ -6,20 +6,20 @@ import SightCard from "./SightCard/SightCard";
 import useSights from "../../hooks/useSights";
 import Preloader from "../Preloader/Preloader";
 import Link from "next/link";
-import SightPage from "../../pages/SightPage/SightPage";
 
 export interface ISights {
   id?: number;
   img?: string | undefined;
   title?: string;
-  tours?: Array<string>;
+  tour?: Array<string>;
   isEdgeRight?: boolean;
   isEdgeLeft?: boolean;
+  tid?: string;
 }
 
 const Sights: React.FC = () => {
   const { sights, getSights, isLoading } = useSights();
-    
+
 
   useEffect(() => {
     getSights();

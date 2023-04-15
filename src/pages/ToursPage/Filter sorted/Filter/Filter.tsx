@@ -1,5 +1,5 @@
 import React from "react";
-import Select from "../Select/Selec";
+import Select from "../Select/Select";
 import css from "./Filter.module.scss";
 import { Tours } from "../../../../constants/FilterToursBlock";
 import { DetailTours } from "../../../../constants/FilterToursBlock";

@@ -48,8 +48,8 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({
           </div>
           <div className={scss.line}></div>
           <div className={scss.shortDescItinerary}>
-            <p className={scss.facts}>{facts}</p>
-            <p className={scss.overnight}>{overnight}</p>
+            <p className={scss.facts}>Fast facts: {facts}</p>
+            <p className={scss.overnight}>Overnight: {overnight}</p>
           </div>
         </div>
       )}

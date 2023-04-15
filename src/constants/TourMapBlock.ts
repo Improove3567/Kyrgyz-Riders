@@ -18,12 +18,5 @@ export const TourSelectMap:Select[]  = [
         option: ImgMap,
         id: 1
 
-    },
-    {
-        title : "Text",
-        status: false,
-        option: Text,
-        id:2
-       
     }
 ]
