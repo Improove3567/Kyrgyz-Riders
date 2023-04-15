@@ -1,14 +1,31 @@
 import Image from "next/image";
 import scss from "./GroupData.module.scss";
-import { useState } from "react";
+import React, { useState } from "react";
 import "react-widgets/scss/styles.scss";
 import DatePicker from "react-widgets/DatePicker";
 
-const GroupData = () => {
+interface IGroupData {
+  dispatch: any;
+}
+
+const GroupData: React.FC<IGroupData> = ({ dispatch }) => {
   const [travelDates, setTravelDates] = useState(true);
   const [approximateDates, setApproximateDates] = useState(false);
   const [myDates, setMyDates] = useState(false);
-  console.log(`travel${travelDates} appo${approximateDates} dates${myDates}`);
+  const [duration, setDuration] = useState(0);
+  const [dontHaveDates, setDontHave] = useState(0);
+
+  const onIncrement = (type: string, setState: any, state: number, title: string) => {
+    setState((prev: number) => prev + 1)
+    dispatch({ type: type, payload: { date: state + 1, title: title } })
+  }
+
+  const onDecrement = (type: string, setState: any, state: number, title: string) => {
+    if (state > 0) {
+      setState((prev: number) => prev - 1);
+      dispatch({ type: type, payload: { date: state - 1, title: title } })
+    }
+  }
 
   return (
     <div className={scss.content}>
@@ -65,7 +82,7 @@ const GroupData = () => {
             </div>
             <div className={scss.number_index_left_bottom_content}>
               <div className={scss.calendar}>
-                <DatePicker placeholder="m/dd/yy" />
+                <DatePicker onChange={(date) => dispatch({ type: "tripDatesStart", payload: { date, title: "I have my exact travel dates" } })} placeholder="m/dd/yy" />
               </div>
             </div>
           </div>
@@ -80,7 +97,7 @@ const GroupData = () => {
               <p>End date</p>
             </div>
             <div className={scss.calendar}>
-              <DatePicker placeholder="m/dd/yy" />
+              <DatePicker onChange={(date) => dispatch({ type: "tripDatesEnd", payload: { date, title: "I have my exact travel dates" } })} placeholder="m/dd/yy" />
             </div>
           </div>
         </div>
@@ -98,7 +115,7 @@ const GroupData = () => {
             </div>
             <div className={scss.number_index_left_bottom_content + " " + scss.calendar}>
               <div>
-                <DatePicker placeholder="m/dd/yy" />
+                <DatePicker onChange={(date) => dispatch({ type: "tripDatesStart", payload: { date, title: "I have approximate dates" } })} placeholder="m/dd/yy" />
               </div>
             </div>
           </div>
@@ -113,14 +130,16 @@ const GroupData = () => {
               <p>Approximately duration in days</p>
             </div>
             <div className={scss.number_index_bottom_right_content}>
-              <button>
-                <div className={scss.minus}></div>
+              <button onClick={() => onDecrement("tripDatesEnd", setDuration, duration, "I have approximate dates")}>
+                <div className={scss.minus} ></div>
               </button>
               <div>
-                <p>0</p>
+                <p>
+                  {duration}
+                </p>
               </div>
-              <button>
-                <div className={scss.plus}></div>
+              <button onClick={() => onIncrement("tripDatesEnd", setDuration, duration, "I have approximate dates")}>
+                <div className={scss.plus} ></div>
               </button>
             </div>
           </div>
@@ -138,13 +157,13 @@ const GroupData = () => {
               <p>Approximately duration in days</p>
             </div>
             <div className={scss.number_index_bottom_right_content}>
-              <button>
+              <button onClick={() => onDecrement("tripDatesEnd", setDontHave, dontHaveDates, "I dont have my dates yet")}>
                 <div className={scss.minus}></div>
               </button>
               <div>
-                <p>0</p>
+                <p>{dontHaveDates}</p>
               </div>
-              <button>
+              <button onClick={() => onIncrement("tripDatesEnd", setDontHave, dontHaveDates, "I dont have my dates yet")}>
                 <div className={scss.plus}></div>
               </button>
             </div>

@@ -10,6 +10,13 @@ interface ICreateTour {
   ownVersionActivities: string;
   discribeTrip: string;
   watchShows: Array<object>;
+  ownWatchShows: string;
+  tripDates: object;
+  anythingAdd: string;
+  name: string;
+  lastName: string;
+  email: string;
+  number: string;
 }
 
 export const initialState: ICreateTour = {
@@ -24,6 +31,17 @@ export const initialState: ICreateTour = {
   ownVersionActivities: "",
   discribeTrip: "Fast-paced: See as much as possible within your trip duration",
   watchShows: [],
+  tripDates: {
+    start: "",
+    end: "",
+    title: "",
+  },
+  ownWatchShows: "",
+  anythingAdd: "",
+  name: "",
+  lastName: "",
+  email: "",
+  number: "",
 };
 
 export function Reducer(state: any, action: any) {
@@ -148,6 +166,66 @@ export function Reducer(state: any, action: any) {
         return false;
       });
       return { ...state, watchShows: uniqueArrWatch };
+    case "tripDatesStart":
+      return {
+        ...state,
+        tripDates: {
+          ...state.tripDates,
+          start: action.payload?.date.toString(),
+          title: action.payload?.title,
+        },
+      };
+    case "tripDatesEnd":
+      return {
+        ...state,
+        tripDates: {
+          ...state.tripDates,
+          end: action.payload?.date.toString(),
+          title: action.payload?.title,
+        },
+      };
+    case "ownWatchShows":
+      const eventWatch = action.payload;
+      const newWatchValue = eventWatch.target.value;
+      return {
+        ...state,
+        ownWatchShows: newWatchValue,
+      };
+    case "anythinAdd":
+      const eve = action.payload;
+      const anythinRes = eve.target.value;
+      return {
+        ...state,
+        anythingAdd: anythinRes,
+      };
+    case "addName":
+      const eName = action.payload;
+      const nameRes = eName.target.value;
+      return {
+        ...state,
+        name: nameRes,
+      };
+    case "addLastName":
+      const eLastName = action.payload;
+      const lastNameRes = eLastName.target.value;
+      return {
+        ...state,
+        lastName: lastNameRes,
+      };
+    case "addEmail":
+      const eEmail = action.payload;
+      const emailRes = eEmail.target.value;
+      return {
+        ...state,
+        email: emailRes,
+      };
+    case "addNumber":
+      const eNumber = action.payload;
+      const NumberRes = eNumber.target.value;
+      return {
+        ...state,
+        number: NumberRes,
+      };
     default:
       throw new Error();
   }

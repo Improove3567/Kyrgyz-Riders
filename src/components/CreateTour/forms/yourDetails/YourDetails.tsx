@@ -1,7 +1,12 @@
 import React from "react";
 import scss from "./YourDetails.module.scss";
 
-const YourDetails: React.FC = () => {
+interface IDetails {
+  dispatch: any;
+}
+
+const YourDetails: React.FC<IDetails> = ({ dispatch }) => {
+
   return (
     <div className={scss.yourDetailsMain}>
       <div className={scss.textWrapper}>
@@ -15,20 +20,26 @@ const YourDetails: React.FC = () => {
               className={scss.input}
               type='text'
               placeholder="First name"
+              onChange={(e) => dispatch({ type: "addName", payload: e })}
             />
             <input
               className={scss.input}
               type='text'
-              placeholder="Last name"/>
+              placeholder="Last name"
+              onChange={(e) => dispatch({ type: "addLastName", payload: e })}
+            />
             <input
               className={scss.input}
               type='text'
               placeholder="E-mail"
-              required/>
+              required
+              onChange={(e) => dispatch({ type: "addEmail", payload: e })}
+            />
             <input
               className={scss.input}
               type='number'
               placeholder="What`s up number"
+              onChange={(e) => dispatch({ type: "addNumber", payload: e })}
             />
           </div>
         </form>

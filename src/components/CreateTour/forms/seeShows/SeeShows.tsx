@@ -24,7 +24,7 @@ const SeeShows: React.FC<ISeeShow> = ({ dispatch }) => {
                 <div className={scss.header}>
                     <h1>Your own version</h1>
                 </div>
-                <textarea onChange={(e) => dispatch({ type: "addOwnSights", payload: e })}>
+                <textarea onChange={(e) => dispatch({ type: "ownWatchShows", payload: e })}>
                 </textarea>
             </div>
         </div>
