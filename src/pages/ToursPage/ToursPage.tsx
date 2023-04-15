@@ -13,7 +13,6 @@ import { toursSliders } from '../../constants/MainSliders';
 const ToursPage = () => {
   const [index, setIndex] = useState(0)
 
-
   const change = (value: number): void => {
     setIndex(value)
   }

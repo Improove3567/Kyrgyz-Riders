@@ -496,7 +496,7 @@ export const StartFrom: Option[] = [
 ]
 export const Tours:ToursSelect[] = [
     {
-        name : 'Type of tour',
+        name : 'Tours',
         option: ToursOptions,
         status : false,
         id:1,
