@@ -6,7 +6,7 @@ import Link from "next/link";
 const SightCard: React.FC<ISights> = ({
   img,
   title,
-  tours,
+  tour,
   tid
 }) => {
 
@@ -18,7 +18,7 @@ const SightCard: React.FC<ISights> = ({
           <img src={img} alt="image" />
           <div className={scss.btm}>
             <p>{title}</p>
-            <p>{tours?.length} tours</p>
+            <p>{tour?.length} tours</p>
           </div>
         </div>
       </Link>

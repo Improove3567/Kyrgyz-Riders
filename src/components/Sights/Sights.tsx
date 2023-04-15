@@ -11,7 +11,7 @@ export interface ISights {
   id?: number;
   img?: string | undefined;
   title?: string;
-  tours?: Array<string>;
+  tour?: Array<string>;
   isEdgeRight?: boolean;
   isEdgeLeft?: boolean;
   tid?: string;

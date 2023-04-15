@@ -1,19 +1,18 @@
 import React, { FC } from 'react';
 import scss from './TourSightsCard.module.scss'
 import { TourSightsArrProps } from '../../../constants/TourSitghts';
-import Link from 'next/link';
-const TourSightsCard: FC<TourSightsArrProps> = ({ img, title, category, tid }) => {
+
+const TourSightsCard: FC<TourSightsArrProps> = ({ img, title, category }) => {
+
   return (
     <div className={scss.card}>
-      <Link href={`${tid}`}>
-        <div className={scss.front}>
-          <img src={img} alt={title} />
-          <div className={scss.btm}>
-            <p>{title}</p>
-            <p>{category}</p>
-          </div>
+      <div className={scss.front}>
+        <img src={img} alt={title} />
+        <div className={scss.btm}>
+          <p>{title}</p>
+          <p>{category}</p>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };
