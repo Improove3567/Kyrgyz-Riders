@@ -35,7 +35,6 @@ const TourAboutCard: FC<TourAboutCardProps> = ({
     cardClassName = scss.card_height
   }
 
-
   return (
     <div className={cardClassName}>
       <div className={scss.img}>

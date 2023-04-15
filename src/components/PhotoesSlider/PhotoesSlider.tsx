@@ -38,7 +38,7 @@ const PhotosSlider: FC<PhotosProps> = ({ photos }) => {
     arrows: true,
     infinite: false,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     speed: 500,
     responsive: [
       {
@@ -101,9 +101,11 @@ const PhotosSlider: FC<PhotosProps> = ({ photos }) => {
     dotsClass: `slick-dots dots`,
   };
 
+  const data = [...photos, ...photos]
+
   const renderPhotoesItems = useMemo(
     () =>
-      photos?.map((item) => (
+    data?.map((item) => (
         <PhotoesItems image={item} key={item} />
       )),
     [photos]
