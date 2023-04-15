@@ -53,7 +53,7 @@ export const ToursOptions:Option[]  = [
         status : false
     },
     {
-        name: "Treking",
+        name: "Trekking",
         id: 9,
         status : false
     },
