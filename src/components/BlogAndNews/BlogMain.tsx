@@ -1,8 +1,10 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import scss from "./BlogMain.module.scss";
-import { newsData, networksData } from "../../constants/BlogAndNews";
+import { networksData } from "../../constants/BlogAndNews";
 import Image from "next/image";
 import Divider from "../Divider/Divider";
+import Link from "next/link";
+import useBlogs from "../../hooks/useBlogs";
 
 interface blogDetailTypes {
   title?: string;
@@ -16,6 +18,12 @@ interface BlogProps {
 }
 
 const BlogMain: React.FC<BlogProps> = ({ blogDetail }) => {
+  const { getBlogs, news } = useBlogs();
+
+  useEffect(() => {
+    getBlogs();
+  })
+
   const networksList = useMemo(
     () =>
       networksData.map((el) => (
@@ -25,15 +33,18 @@ const BlogMain: React.FC<BlogProps> = ({ blogDetail }) => {
       )),
     []
   );
+
   const newsList = useMemo(
     () =>
-      newsData.map((el) => (
-        <div className={scss.newsCard} key={el.date}>
-          <p className={scss.newsTitle}>{el.title}</p>
-          <p className={scss.date}>{el.date}</p>
-        </div>
+      news.map((el: any) => (
+        <Link href={el.tid}>
+          <div className={scss.newsCard} key={el.date}>
+            <p className={scss.newsTitle}>{el.title}</p>
+            <p className={scss.date}>{el.newsDate}</p>
+          </div>
+        </Link>
       )),
-    []
+    [news]
   );
 
 
