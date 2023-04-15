@@ -124,7 +124,7 @@ const Input: React.FC<Iname> = ({
           </div>
         ) :
           tour || duration ? (
-            <div className={name == tour || name == duration + " days" ? scss.inputSome : scss.inputW}>
+            <div className={name == tour || name == duration + " days" || name == startFrom? scss.inputSome : scss.inputW}>
               <div className={scss.checkedSome}></div>
             </div>
           ) : (

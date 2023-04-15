@@ -239,7 +239,7 @@ export const PlacesIWantOptions:Option[]  = [
 ]
 export const Duraion:Option[] = [
     {
-        name: "1 day",
+        name: "1 days",
         id: 1,
         status:false
     },
