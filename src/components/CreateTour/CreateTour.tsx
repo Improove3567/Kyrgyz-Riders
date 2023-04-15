@@ -24,7 +24,7 @@ const CreateTour: React.FC = () => {
         <GroupData dispatch={dispatch} key={"secondElem"} />,
         <StartEnd state={state} dispatch={dispatch} key={"thirthElem"} />,
         <SightsStep key={"heuwheqjehj"} dispatch={dispatch} />,
-        <ActivitesStep dispatch={dispatch} />,
+        <ActivitesStep key={"dfhoisudfhsuodhfoui"} dispatch={dispatch} />,
         <SeeShows key={"hehehaoheo"} dispatch={dispatch} />,
         <DiscribeTripDetails key={"hheheheheheheh"} dispatch={dispatch} />,
         <AnythingAdd key={"ksdafnl"} dispatch={dispatch} />,
