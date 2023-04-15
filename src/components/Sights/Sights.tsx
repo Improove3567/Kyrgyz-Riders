@@ -6,7 +6,6 @@ import SightCard from "./SightCard/SightCard";
 import useSights from "../../hooks/useSights";
 import Preloader from "../Preloader/Preloader";
 import Link from "next/link";
-import SightPage from "../../pages/SightPage/SightPage";
 
 export interface ISights {
   id?: number;

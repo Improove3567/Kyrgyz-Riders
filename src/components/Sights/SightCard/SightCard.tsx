@@ -11,8 +11,8 @@ const SightCard: React.FC<ISights> = ({
 }) => {
 
   return (
-    <Link href={`sight/${tid}`}>
-      <div className={scss.card}>
+    <div className={scss.card}>
+      <Link href={`sight/${tid}`}>
         <div className={scss.front}>
           {/* eslint-disable-next-line no-use-before-define */}
           <img src={img} alt="image" />
@@ -21,8 +21,9 @@ const SightCard: React.FC<ISights> = ({
             <p>{tours?.length} tours</p>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div >
+
   );
 };
 
