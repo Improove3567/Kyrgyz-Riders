@@ -21,12 +21,13 @@ const TourAboutCard: FC<TourAboutCardProps> = ({
       )
     } else {
       return (
-        text.map((el) => (
-          <li key={id}>{el}</li>
+        text.map((el, index) => (
+          <li key={`${index}_${el}`}>{el}</li>
         ))
       )
     }
   }, [text])
+
 
 
   let cardClassName = scss.card
@@ -36,8 +37,8 @@ const TourAboutCard: FC<TourAboutCardProps> = ({
 
 
   return (
-    <div className={cardClassName} key={id}>
-      <div className={scss.img} key={id}>
+    <div className={cardClassName}>
+      <div className={scss.img}>
         <Image
           src="/images/calendar.svg"
           width={23}
@@ -46,8 +47,8 @@ const TourAboutCard: FC<TourAboutCardProps> = ({
         />
         <p>{title}</p>
       </div>
-      <div className={scss.card_bottom} key={id}>
-        <div key={id}>
+      <div className={scss.card_bottom}>
+        <div>
           <ul>
             {renderCards}
           </ul>
