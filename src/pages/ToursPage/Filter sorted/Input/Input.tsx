@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import scss from './Input.module.scss'
-import { Option } from "../../../../constants/FilterToursBlock";
-import useFilter from "../../../../hooks/useFilter";
+import { useRouter } from "next/router";
 
 interface Iname {
   name?: string;
@@ -11,28 +10,27 @@ interface Iname {
   valueIndex: number;
   select: boolean;
   filterName: string;
-  setTour: (value: string) => void;
-  setDuration: (value: string) => void;
+  setPlaces: any;
+  places: any;
+  setActivities: any;
+  activities: any;
 }
 const Input: React.FC<Iname> = ({
   name,
   valueIndex,
   changeStatus,
   myKey,
-  statusEl,
   select,
   filterName,
-  setTour,
-  setDuration
+  statusEl,
+  setPlaces,
+  places,
+  setActivities,
+  activities
 }) => {
   const [index, setIndex] = useState(false);
-
-
-  // const { request } = useFilter();
-
-  // useEffect(() => {
-  //   request();
-  // }, [])
+  const router: any = useRouter();
+  const { tour, duration }: any = router.query;
 
   const click = () => {
     changeStatus(myKey);
@@ -40,29 +38,64 @@ const Input: React.FC<Iname> = ({
     switch (filterName) {
       case "Tours":
         if (name) {
-          setTour(name)
+          const path = {
+            pathname: router.pathname,
+            query: { ...router.query, tour: name }
+          }
+          router.push(path, path, { shallow: true })
         }
         break;
       case "Duration":
         const splitName = name?.split(" ")
         if (splitName) {
           const res = splitName[0].trim();
-          setDuration(res)
+          const path = {
+            pathname: router.pathname,
+            query: { ...router.query, duration: res }
+          }
+          router.push(path, path, { shallow: true })
         }
         break;
       case "Places i want to visit":
-        console.log('Places i want to visit');
+        if (name) {
+          setPlaces([...places, name])
+        }
         break;
       case "Activities i want to do":
-        console.log('Activities i want to do');
+        if (name) {
+          setActivities([...activities, name])
+        }
         break;
       case "Start form":
-        console.log('StartFrom');
+        if (name) {
+          const path = {
+            pathname: router.pathname,
+            query: { ...router.query, startFrom: name }
+          }
+          router.push(path, path, { shallow: true })
+        }
         break;
       default:
         console.log("Нет таких значений");
     }
   };
+
+  useEffect(() => {
+    const handleBodyScroll = () => {
+      document.body.style.overflow = 'hidden'
+    }
+    const handleRouteChangeComplete = () => {
+      document.body.style.overflow = 'auto'
+    }
+    router.events.on('routeChangeStart', handleBodyScroll)
+    router.events.on('routeChangeComplete', handleRouteChangeComplete)
+    return () => {
+      router.events.off('routeChangeStart', handleBodyScroll)
+      router.events.off('routeChangeComplete', handleRouteChangeComplete)
+      document.body.style.overflow = 'auto'
+    }
+  }, [router])
+
   return (
     <label className={scss.label} onClick={click}>
       <div className={scss.input}>
@@ -70,11 +103,19 @@ const Input: React.FC<Iname> = ({
           <div className={index ? scss.inputOne : ''}>
             <div className={scss.checkedOne}></div>
           </div>
-        ) : (
-          <div className={statusEl ? scss.inputSome : scss.inputW}>
-            <div className={scss.checkedSome}></div>
-          </div>
-        )}
+        ) :
+
+          tour || duration ? (
+            <div className={name == tour || name == duration + " days" ? scss.inputSome : scss.inputW}>
+              <div className={scss.checkedSome}></div>
+            </div>
+          ) : (
+            <div className={name === "All tours" ? scss.inputSome : scss.inputW}>
+              <div className={scss.checkedSome}></div>
+            </div>
+          )
+
+        }
       </div>
       <span className={scss.span}>{name}</span>
     </label>

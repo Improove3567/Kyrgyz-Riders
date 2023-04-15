@@ -78,10 +78,23 @@ const TourSlider: React.FC = () => {
       filtering({ category: "tourInfo.category", operator: "==", comparison: "Winter tours" })
     } else if (tour === "Cultural") {
       filtering({ category: "tourInfo.category", operator: "==", comparison: "Cultural" })
+    } else if (tour === "Upcoming") {
+      const q = query(collection(db, "tours"), orderBy("tourInfo.startDate"))
+      const data: { tid: string; }[] = []
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        let obj: any = {
+          docId: doc.id,
+          ...doc.data(),
+        };
+        data.push(obj);
+      });
+      const sortedNumbers = data.sort((a: any, b: any) => a.requests - b.requests);
+      const finalData: any = sortedNumbers.slice(-10)
+      setSliderData(finalData)
+      const date: any = finalData[0].tourInfo.startDate
     }
   }, [tour])
-
-
 
   useEffect(() => {
     getTours();
@@ -176,7 +189,6 @@ const TourSlider: React.FC = () => {
     () => sliderData?.map((el, index) => <SliderCard key={index} {...el} />),
     [sliderData]
   );
-
 
   const renderAllTours = useMemo(
     () => tours?.map((el, index) => <SliderCard key={index} {...el} />),

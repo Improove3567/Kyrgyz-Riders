@@ -6,21 +6,19 @@ import { DetailTours } from "../../../../constants/FilterToursBlock";
 
 interface Index {
   value: number;
-  setTour: (value: string) => void;
-  setDuration: (value: string) => void;
 }
 
-const Filter: React.FC<Index> = ({ value, setTour, setDuration }) => {
+const Filter: React.FC<Index> = ({ value }) => {
   return (
     <div className={css.filter}>
       <div className={value == 1 ? "hideSelect" : ""}>
         {Tours.map((el) => (
-          <Select {...el} key={el.id} valueIndex={value} setTour={setTour} setDuration={setDuration} />
+          <Select {...el} key={el.id} valueIndex={value} />
         ))}
       </div>
       <div className={value == 0 ? "hideSelect" : ""}>
         {DetailTours.map((el) => (
-          <Select {...el} key={el.id} valueIndex={value} setTour={setTour} setDuration={setDuration} />
+          <Select {...el} key={el.id} valueIndex={value} />
         ))}
       </div>
     </div>

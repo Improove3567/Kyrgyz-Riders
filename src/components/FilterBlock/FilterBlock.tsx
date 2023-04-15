@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FilterRenderType } from "../../constants/FilterBlockBtn";
 import scss from "./FilterBlock.module.scss";
+import { useRouter } from "next/router";
 
 interface Function {
   change: (value: number) => void
@@ -8,11 +9,12 @@ interface Function {
 
 const FilterBlock = ({ change }: Function) => {
   const [active, setActive] = useState<number>(0);
-  const [filterData, setFilterData] = useState([])
+  const router = useRouter();
 
 
   const click = (value: number) => {
     change(value)
+    router.push(router.pathname, {}, { shallow: true });
   }
 
   return (

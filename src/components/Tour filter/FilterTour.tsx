@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import scss from "./FilterTour.module.scss";
 import { filterData } from "../../constants/FilterTour";
 import { useRouter } from "next/router";
@@ -17,7 +17,7 @@ const FilterTour: React.FC = () => {
           key={el.id}
           onClick={() => {
             router.push({
-              pathname: "/",
+              pathname: "",
               search: `?tour=${el.title}`,
             });
           }}

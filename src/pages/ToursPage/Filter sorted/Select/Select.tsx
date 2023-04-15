@@ -11,11 +11,9 @@ interface Tours {
     status: boolean
     id: number;
     select: boolean;
-    setTour: (value: string) => void;
-    setDuration: (value: string) => void;
 }
 
-const Select: React.FC<Tours> = ({ name, option, valueIndex, select, setTour, setDuration }) => {
+const Select: React.FC<Tours> = ({ name, option, valueIndex, select }) => {
     const [arrow, setArrow] = useState(false)
     const result = React.useMemo(() => {
         return arrow ? <Image src={'assets/images/arrow.svg'} width={10} height={5} alt={"arrow"} /> : <Image src={'assets/images/arrowUp.svg'} width={10} height={5} alt={"arrow"} />
@@ -33,8 +31,7 @@ const Select: React.FC<Tours> = ({ name, option, valueIndex, select, setTour, se
             </div>
             {
                 arrow && (
-                    <Option valueIndex={valueIndex} select={select} value={option} name={name} setTour={setTour} setDuration={setDuration} />
-
+                    <Option valueIndex={valueIndex} select={select} value={option} name={name} />
                 )}
         </div>
     )
