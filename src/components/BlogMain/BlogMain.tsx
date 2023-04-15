@@ -5,12 +5,12 @@ import Image from "next/image";
 import Divider from "../Divider/Divider";
 import useBlogs from "../../hooks/useBlogs";
 import Preloader from "../Preloader/Preloader";
+import Link from "next/link";
 
 const BlogCard = React.lazy(() => import("./BlogCard/BlogCard"));
 
 const BlogMain = () => {
   const { getBlogs, blogs, isLoading, len, news } = useBlogs();
-
   const [limit, setLimit] = useState<number>(3);
 
   useEffect(() => {
@@ -39,10 +39,12 @@ const BlogMain = () => {
   const newsList = useMemo(
     () =>
       news.map((el: any) => (
-        <div className={scss.newsCard} key={el.tid}>
-          <p className={scss.newsTitle}>{el.content[0].desc}</p>
-          <p className={scss.date}>{el.type}</p>
-        </div>
+        <Link href={`blogAndNews/${el.tid}`} key={el.tid}>
+          <div className={scss.newsCard}>
+            <p className={scss.newsTitle}>{el.title}</p>
+            <p className={scss.date}>{el.newsDate}</p>
+          </div>
+        </Link>
       )),
     [news]
   );

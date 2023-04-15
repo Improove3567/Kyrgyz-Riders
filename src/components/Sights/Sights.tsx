@@ -15,11 +15,12 @@ export interface ISights {
   tours?: Array<string>;
   isEdgeRight?: boolean;
   isEdgeLeft?: boolean;
+  tid?: string;
 }
 
 const Sights: React.FC = () => {
   const { sights, getSights, isLoading } = useSights();
-    
+
 
   useEffect(() => {
     getSights();

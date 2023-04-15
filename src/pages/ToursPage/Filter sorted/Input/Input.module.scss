@@ -25,21 +25,17 @@
     align-items: center;
     justify-content: center;
     .inputSome {
-      height: 12px;
-      width: 12px;
+      height: 10px;
+      width: 10px;
       border-radius: 50%;
       background: #333333;
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       .checkedSome {
         background: #333333;
       }
     }
     .inputOne {
-      height: 12px;
-      width: 12px;
+      height: 10px;
+      width: 10px;
       border-radius: 50%;
       background: #2e325a;
       position: absolute;
@@ -49,8 +45,8 @@
       .checkedOne {
         border-top: 1px solid #ffffff;
         border-right: 1px solid #ffffff;
-        width: 8px;
-        height: 5px;
+        width: 6px;
+        height: 4px;
         margin-bottom: 2px;
         transform: rotate(135deg);
         -webkit-transform: rotate(135deg);

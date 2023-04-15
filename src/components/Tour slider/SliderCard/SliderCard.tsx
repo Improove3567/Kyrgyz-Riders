@@ -38,7 +38,7 @@ const SliderCard: React.FC<CardProps> = ({
           <div className={scss.bottomContent}>
             <div className={scss.textContainer}>
               <p className={scss.title}>{title}</p>
-              <p className={scss.subtitle}>{subtitle}</p>
+              <p className={scss.subtitle}>{tourInfo?.category}</p>
             </div>
           </div>
         </div>

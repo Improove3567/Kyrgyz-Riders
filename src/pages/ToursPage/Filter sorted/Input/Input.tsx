@@ -10,7 +10,7 @@ interface Iname {
   valueIndex: number;
   filterName: string;
   setPlaces: any;
-  places: any;
+  placesState: any;
   setActivities: any;
   activities: any;
   select: boolean
@@ -24,7 +24,7 @@ const Input: React.FC<Iname> = ({
   filterName,
   statusEl,
   setPlaces,
-  places,
+  placesState,
   setActivities,
   activities,
   valueIndex,
@@ -35,12 +35,11 @@ const Input: React.FC<Iname> = ({
     width: 0
   });
   const router: any = useRouter();
-  const { tour, duration }: any = router.query;
+  const { tour, duration, places, startFrom }: any = router.query;
 
   const click = () => {
     changeStatus(myKey);
     valueIndex == 1 ? setIndex(!index) : ''
-    console.log(filterName)
     switch (filterName) {
       case "Tours":
         if (name) {
@@ -62,12 +61,20 @@ const Input: React.FC<Iname> = ({
           router.push(path, path, { shallow: true })
         }
         break;
-      case "Places i want to visit":
+      case "Places I want to visit":
         if (name) {
-          setPlaces([...places, name])
+          if (places) {
+            if (places.includes(name)) {
+              return
+            } else {
+              setPlaces([...placesState, name])
+            }
+          } else {
+            setPlaces([...placesState, name])
+          }
         }
         break;
-      case "Activities i want to do":
+      case "Activities I want to do":
         if (name) {
           setActivities([...activities, name])
         }
@@ -116,9 +123,8 @@ const Input: React.FC<Iname> = ({
             <div className={scss.checkedOne}></div>
           </div>
         ) :
-
           tour || duration ? (
-            <div className={name == tour || name == duration + " days" ? scss.inputSome : scss.inputW}>
+            <div className={name == tour || name == duration + " days" || name == startFrom? scss.inputSome : scss.inputW}>
               <div className={scss.checkedSome}></div>
             </div>
           ) : (
