@@ -1,24 +1,29 @@
 import scss from "./DiscribeList.module.scss";
-import React, { useState } from "react";
+import React from "react";
 
 interface DiscribeListI {
   id?: number;
   description: string;
+  handleClick: any;
+  active: boolean;
+  dispatch: any;
 }
 
-const DiscribeList: React.FC<DiscribeListI> = ({ id, description }) => {
-  const [index, setIndex] = useState(false);
+const DiscribeList: React.FC<DiscribeListI> = ({ id, description, handleClick, active, dispatch }) => {
 
-  const click = () => setIndex(!index);
+  const click = () => {
+    handleClick(id, "toActive")
+    dispatch({ type: "discribeTrip", payload: description })
+  };
 
   return (
     <div className={scss.DiscribeListItem} onClick={click}>
       <div className={scss.mainCircule}>
         <div
           className={scss.innerCircule}
-          style={!index ? { background: "#adadad" } : { background: "#8389C9" }}
+          style={!active ? { background: "#adadad" } : { background: "#8389C9" }}
         >
-          <div className={index ? scss.innerCirculeChecked : ""}></div>
+          <div className={!active ? "" : scss.innerCirculeChecked}></div>
         </div>
       </div>
       <div className={scss.rectangle}>
