@@ -39,8 +39,8 @@ const BlogMain = () => {
   const newsList = useMemo(
     () =>
       news.map((el: any) => (
-        <Link href={`blogAndNews/${el.tid}`}>
-          <div className={scss.newsCard} key={el.tid}>
+        <Link href={`blogAndNews/${el.tid}`} key={el.tid}>
+          <div className={scss.newsCard}>
             <p className={scss.newsTitle}>{el.title}</p>
             <p className={scss.date}>{el.newsDate}</p>
           </div>

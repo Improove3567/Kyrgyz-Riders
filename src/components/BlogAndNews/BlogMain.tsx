@@ -36,9 +36,9 @@ const BlogMain: React.FC<BlogProps> = ({ blogDetail }) => {
 
   const newsList = useMemo(
     () =>
-      news.map((el: any) => (
-        <Link href={el.tid}>
-          <div className={scss.newsCard} key={el.date}>
+      news.map((el: any, index) => (
+        <Link href={el.tid} key={index}>
+          <div className={scss.newsCard}>
             <p className={scss.newsTitle}>{el.title}</p>
             <p className={scss.date}>{el.newsDate}</p>
           </div>
