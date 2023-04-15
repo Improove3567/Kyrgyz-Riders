@@ -195,12 +195,12 @@ export const PlacesIWantOptions:Option[]  = [
         status : false
     },
     {
-        name: "Burana Tower",
+        name: "Karakol",
         id: 27,
         status : false
     },
     {
-        name: "Karakol",
+        name: "Burana Tower",
         id: 28,
         status : false
     },
@@ -396,7 +396,7 @@ export const ActivateDuration:Option[] = [
         status:false
     },
     {
-        name: "Visiting the locals",
+        name: "Visiting local bazaars",
         id: 11,
         status:false
     },
@@ -436,24 +436,14 @@ export const ActivateDuration:Option[] = [
         status:false
     },
     {
-        name: "Visiting local",
-        id: 19,
-        status:false
-    },
-    {
-        name: "Bazaars",
-        id: 20,
-        status:false
-    },
-    {
         name: "Agro-tourism",
-        id: 21,
+        id: 19,
         status:false
     }
     ,
     {
         name: "Watching Kyrgyz movies",
-        id: 22,
+        id: 20,
         status:false
     }
 ]
@@ -514,14 +504,14 @@ export const Tours:ToursSelect[] = [
 ]
 export const DetailTours: ToursSelect[]= [
     {
-        name : 'Places i want to visit',
+        name : 'Places I want to visit',
         option: PlacesIWantOptions,
         status : false,
         id: 1,
         select:false
     },
     {
-        name : 'Activities i want to do',
+        name : 'Activities I want to do',
         option: ActivateDuration,
         status : false,
         id: 2,

@@ -20,7 +20,7 @@ const BlogCard: FC<BlogCardProps> = ({ mainImage, title, type, tid }) => {
                 <h1>{title}</h1>
                 <div className={scss.btn}>
                     <Link href={`/blogAndNews/${tid}`}>Read more</Link>
-                    <Image src='/images/vectorBlogCard.svg' width={4} height={7} alt={'vector'} />
+                    <Image src='/images/vectorBlogCard.svg' width={5} height={8} alt={'vector'} />
                 </div>
             </div>
         </div>

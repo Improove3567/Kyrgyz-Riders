@@ -9,6 +9,7 @@ const FilterTour: React.FC = () => {
   if (tour === undefined) {
     tour = "1";
   }
+
   const render = useMemo(
     () =>
       filterData.map((el) => (
@@ -16,10 +17,11 @@ const FilterTour: React.FC = () => {
           className={tour === el.title ? scss.active_title : scss.inactive_title}
           key={el.id}
           onClick={() => {
-            router.push({
+            const path = {
               pathname: "",
               search: `?tour=${el.title}`,
-            });
+            }
+            router.push(path, path, { shallow: true });
           }}
         >
           {el.title}
