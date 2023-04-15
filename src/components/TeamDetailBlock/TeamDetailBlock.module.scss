@@ -1,49 +1,127 @@
 .DImage {
   display: flex;
 
-.blocDPage {
-  margin-left: 10px;
-  display: flex;
-  flex-direction: column;
-  .divider {
-    padding-top: 20px;
+  img {
+    width: 384px;
+    height: 384px;
+    object-fit: cover;
   }
 
-  .description {
-    width: 76%;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 32px;
-    color: #757575;
-    margin-left: 40px;
+  .blocDPage {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+
+    img {
+      display: none;
+    }
+
+    .divider {
+      padding-top: 20px;
+    }
+
+    .description {
+      width: 90%;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 32px;
+      color: #757575;
+      margin-left: 40px;
+    }
   }
-}
 }
 
 .title_block {
-    height: 500px;
-    padding: 0px 32px 0px 110px;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
+  height: fit-content;
+  padding: 70px 32px 70px 110px;
+  background-color: #fff;
+  margin: 0px auto;
+  .title {
     margin: 0px auto;
-    .title {
-        margin: 0px auto;
-        padding-top: 2%;
-        width: 95%;
-      }
-    .text {
-      div {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 33px;
-        color: #757575;
-        text-align: left;
-        left: 26px;
+    padding-top: 2%;
+    width: 95%;
+  }
+  .text {
+    div {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 33px;
+      color: #757575;
+      text-align: left;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .DImage {
+    .blocDPage {
+      .description {
+        width: 85%;
       }
     }
   }
+}
+
+@media (max-width: 912px) {
+  .DImage {
+    display: block;
+
+    img {
+      display: none;
+    }
+
+    .blocDPage {
+      margin: 0;
+
+      .containerDivider {
+        padding: 30px 0 23px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+      }
+
+      img {
+        display: block;
+        padding: 0 40px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .divider {
+        padding-top: 0;
+      }
+
+      .description {
+        margin: 0;
+        padding: 0 40px;
+        width: 100%;
+        font-size: 16px;
+        line-height: 27px;
+      }
+    }
+  }
+
+  .title_block {
+    padding: 0 0 30px 0;
+
+    .containerForAdap {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .DImage {
+    .blocDPage {
+      .containerDivider {
+        padding: 10px 0 23px;
+      }
+    }
+  }
+}

@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import scss from './Select.module.scss';
+import React, { useState, useEffect } from "react";
+import scss from "./Select.module.scss";
 import Option from "../Option/Option";
 import Image from "next/image";
-
 
 interface Tours {
     name: string
@@ -22,6 +21,27 @@ const Select: React.FC<Tours> = ({ name, option, valueIndex, select }) => {
     const click = (): void => {
         setArrow(!arrow)
     }
+    const [windowSize, setWindowSize] = useState({
+        width: 0,
+        height: 0,
+    });
+
+    useEffect(() => {
+        setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+        });
+    }, []);
+    useEffect(() => {
+        if (!arrow && windowSize.width < 900) {
+            document.body.style.height = "auto";
+            document.body.style.overflow = "visible";
+        }
+        if (arrow && windowSize.width < 900) {
+            document.body.style.height = "100vh";
+            document.body.style.overflow = "hidden";
+        }
+    }, [arrow]);
 
     return (
         <div>
@@ -29,12 +49,20 @@ const Select: React.FC<Tours> = ({ name, option, valueIndex, select }) => {
                 <span className={scss.span}>{name}</span>
                 {result}
             </div>
-            {
-                arrow && (
-                    <Option valueIndex={valueIndex} select={select} value={option} name={name} />
-                )}
+            {arrow && (
+                <div className={scss.inputs}>
+                    <Option
+                        valueIndex={valueIndex}
+                        click={click}
+                        title={name}
+                        select={select}
+                        value={option}
+                        name={name}
+                    />
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
-export default Select
+export default Select;

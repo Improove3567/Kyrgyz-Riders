@@ -1,11 +1,10 @@
-.label {
+.label ,.labelBack{
   display: flex;
   align-items: center;
   margin: 14px 15px;
   height: 17px;
   cursor: pointer;
   width: 100%;
-
   .span {
     font-family: "Montserrat";
     font-style: normal;
@@ -13,11 +12,12 @@
     font-size: 14px;
     line-height: 17px;
     color: #333333;
+    
   }
 
   .input {
-    height: 22px;
-    width: 22px;
+    height: 20px;
+    width: 20px;
     border: 1px solid #333333;
     margin-right: 5px;
     border-radius: 50%;
@@ -25,8 +25,8 @@
     align-items: center;
     justify-content: center;
     .inputSome {
-      height: 13px;
-      width: 13px;
+      height: 12px;
+      width: 12px;
       border-radius: 50%;
       background: #333333;
       position: absolute;
@@ -38,8 +38,8 @@
       }
     }
     .inputOne {
-      height: 13px;
-      width: 13px;
+      height: 12px;
+      width: 12px;
       border-radius: 50%;
       background: #2e325a;
       position: absolute;
@@ -55,6 +55,60 @@
         transform: rotate(135deg);
         -webkit-transform: rotate(135deg);
       }
+    }
+  }
+}
+
+@media (min-width:900px),(max-width:1100px){
+  .label,.labelBack{
+    .span{
+      font-size: 12px;
+    }
+  }
+}
+
+
+
+@media (max-width:900px) {
+  .label{
+    justify-content: center;
+    width: 45%;
+    height: auto;
+    padding: 10px 0;
+    border: 1px solid #828282;
+    margin: 14px 0;
+    padding: 10px;
+    .input{
+      display: none;
+    }
+    .span{
+      text-align: center;
+    }
+  }
+  .labelBack{
+    justify-content: center;
+    width: 45%;
+    height: auto;
+    padding: 10px 0;
+    border: 1px solid #828282;
+    background: #2E325A;
+    margin: 14px 0;
+    padding: 10px;
+    .input{
+      display: none;
+    }
+    .span{
+      text-align: center;
+      color:#ffffff
+    }
+  }
+
+}
+
+@media (max-width:375px) {
+  .label,.labelBack{
+    .span{
+      font-size: 10px;
     }
   }
 }

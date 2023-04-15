@@ -1,13 +1,26 @@
+@import "../../../styles/globalVariables.scss";
+
 .content {
   background-color: #efefef;
   height: 100%;
-  border: 2px solid #C3C3C3;
-  padding:  40px 0px;
+  border: 2px solid #c3c3c3;
+  padding: 40px 0px;
+  .text {
     .line {
       margin-bottom: 1%;
+      @include breackpoint(sm) {
+        margin-bottom: 25px;
+      }
       .img {
         display: flex;
         align-items: center;
+        @include breackpoint(sm) {
+          align-items: flex-start;
+          gap: 15px;
+          img {
+            margin-top: 4px;
+          }
+        }
         p {
           margin-left: 1%;
           font-family: "Montserrat";
@@ -16,7 +29,23 @@
           font-size: 18px;
           line-height: 33px;
           color: #757575;
+          @include breackpoint(sm) {
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 22px;
+            color: #757575;
+          }
         }
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+  .content{
+    padding: 0;
+    .text{
+      padding: 20px 24px 0px 24px;
+    }
+  }
+}

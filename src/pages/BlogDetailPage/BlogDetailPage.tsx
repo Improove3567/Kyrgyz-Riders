@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 
 const BlogPage = () => {
   const { getBlogsDetail, blogDetail } = useBlogs();
-  const router = useRouter()
+  const router = useRouter();
   const { id }: any = router.query
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const BlogPage = () => {
       getBlogsDetail(id)
     }
   }, [id])
+  
   return (
     <>
       <Header />

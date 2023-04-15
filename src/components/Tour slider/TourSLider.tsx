@@ -11,6 +11,7 @@ import MoreBlock from "../Divider/More block/MoreBlock";
 import { useRouter } from "next/router";
 import { WhereFilterOp, collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../firebase/firebase-config";
+import Link from "next/link";
 
 interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -184,7 +185,8 @@ const TourSlider: React.FC = () => {
     ),
     dotsClass: `slick-dots dots`,
   };
-
+  
+  
   const render = useMemo(
     () => sliderData?.map((el, index) => <SliderCard key={index} {...el} />),
     [sliderData]
@@ -205,7 +207,9 @@ const TourSlider: React.FC = () => {
             <>
               <FilterTour />
               <div className={scss.selectsArrow}>
-                <MoreBlock />
+                <Link href="/tours">
+                  <MoreBlock />
+                </Link>
               </div>
             </>
           </Divider>

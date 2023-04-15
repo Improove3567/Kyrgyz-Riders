@@ -26,6 +26,7 @@ export const imgList = [
 export const mainSlider = [
   {
     className: scss.main,
+    title: "Kyrgyz Riders",
   },
 ];
 export const toursSliders = [

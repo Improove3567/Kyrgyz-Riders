@@ -5,6 +5,7 @@ import TeamCard from "./Team card/TeamCard";
 import useTeam from "../../hooks/useTeam";
 import MoreBlock from "../Divider/More block/MoreBlock";
 import Preloader from "../Preloader/Preloader";
+import Link from "next/link";
 const OurTeam: React.FC = () => {
   const { team, getTeam, isLoading } = useTeam();
 
@@ -23,9 +24,6 @@ const OurTeam: React.FC = () => {
     <div className={scss.wrapper}>
       <div className="container">
         <Divider title="Our Team" variant={"dark"}>
-          <div className={scss.ourTeamArrow}>
-            <MoreBlock />
-          </div>
         </Divider>
         <div className={scss.content}>{render}</div>
       </div>

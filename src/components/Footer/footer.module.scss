@@ -66,7 +66,6 @@
       justify-content: space-between;
       gap: 25px;
       a {
-        padding: 20px;
         border: 1px solid #2e325a;
         border-radius: 50%;
         width: 44px;
@@ -204,6 +203,21 @@
         }
         &::after {
           width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 340px) {
+  .footer {
+    .card {
+      .second {
+        &::before {
+          width: 240px;
+        }
+        &::after {
+          width: 240px;
         }
       }
     }

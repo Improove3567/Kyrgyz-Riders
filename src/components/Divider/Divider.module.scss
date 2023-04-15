@@ -76,6 +76,11 @@
 
 @media (max-width: 600px) {
   .wrapper {
+    .content{
+      .title, .dark_title {
+        font-size: 18px;
+      }
+    }
     .content::after {
       width: 92%;
     }
@@ -84,6 +89,11 @@
 
 @media (max-width: 450px) {
   .wrapper {
+    .content{
+      .title, .dark_title {
+        font-size: 14px;
+      }
+    }
     .content::after {
       width: 90%;
     }

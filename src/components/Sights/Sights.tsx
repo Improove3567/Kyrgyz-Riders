@@ -5,6 +5,8 @@ import MoreBlock from "../Divider/More block/MoreBlock";
 import SightCard from "./SightCard/SightCard";
 import useSights from "../../hooks/useSights";
 import Preloader from "../Preloader/Preloader";
+import Link from "next/link";
+import SightPage from "../../pages/SightPage/SightPage";
 
 export interface ISights {
   id?: number;
@@ -17,6 +19,7 @@ export interface ISights {
 
 const Sights: React.FC = () => {
   const { sights, getSights, isLoading } = useSights();
+    
 
   useEffect(() => {
     getSights();
@@ -35,7 +38,9 @@ const Sights: React.FC = () => {
     <section className={scss.sights}>
       <div className="container">
         <Divider title="Sights" variant="dark">
-          <MoreBlock title="More Sights" />
+          <Link href="/sights">
+            <MoreBlock title="More Sights" />
+          </Link>
         </Divider>
         <div className={scss.cards}>{renderCards}</div>
       </div>

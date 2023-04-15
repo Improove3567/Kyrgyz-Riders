@@ -11,12 +11,12 @@ interface Index {
 const Filter: React.FC<Index> = ({ value }) => {
   return (
     <div className={css.filter}>
-      <div className={value == 1 ? "hideSelect" : ""}>
+      <div className={value == 1 ? "hideSelect" : css.selects}>
         {Tours.map((el) => (
           <Select {...el} key={el.id} valueIndex={value} />
         ))}
       </div>
-      <div className={value == 0 ? "hideSelect" : ""}>
+      <div className={value == 0 ? "hideSelect" : css.selects}>
         {DetailTours.map((el) => (
           <Select {...el} key={el.id} valueIndex={value} />
         ))}

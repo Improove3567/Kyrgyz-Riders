@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import scss from './Input.module.scss'
 import { useRouter } from "next/router";
+import scss from './Input.module.scss'
 
 interface Iname {
   name?: string;
@@ -8,16 +8,16 @@ interface Iname {
   statusEl?: boolean;
   myKey: any;
   valueIndex: number;
-  select: boolean;
   filterName: string;
   setPlaces: any;
   places: any;
   setActivities: any;
   activities: any;
+  select: boolean
+  title: string
 }
 const Input: React.FC<Iname> = ({
   name,
-  valueIndex,
   changeStatus,
   myKey,
   select,
@@ -26,15 +26,21 @@ const Input: React.FC<Iname> = ({
   setPlaces,
   places,
   setActivities,
-  activities
+  activities,
+  valueIndex,
+  title
 }) => {
   const [index, setIndex] = useState(false);
+  const [windowSize, setWindowSize] = useState({
+    width: 0
+  });
   const router: any = useRouter();
   const { tour, duration }: any = router.query;
 
   const click = () => {
     changeStatus(myKey);
     valueIndex == 1 ? setIndex(!index) : ''
+    console.log(filterName)
     switch (filterName) {
       case "Tours":
         if (name) {
@@ -66,7 +72,7 @@ const Input: React.FC<Iname> = ({
           setActivities([...activities, name])
         }
         break;
-      case "Start form":
+      case "Start from":
         if (name) {
           const path = {
             pathname: router.pathname,
@@ -78,7 +84,13 @@ const Input: React.FC<Iname> = ({
       default:
         console.log("Нет таких значений");
     }
-  };
+  }
+
+  useEffect(() => {
+    setWindowSize({
+      width: window.innerWidth
+    });
+  }, []);
 
   useEffect(() => {
     const handleBodyScroll = () => {
@@ -97,10 +109,10 @@ const Input: React.FC<Iname> = ({
   }, [router])
 
   return (
-    <label className={scss.label} onClick={click}>
+    <label className={statusEl && windowSize.width < 900 ? scss.labelBack : scss.label} onClick={click} style={windowSize.width < 900 ? title == "Duration" || title == "Start from" ? { width: "30%" } : { width: "47%" } : { width: "100%" }} >
       <div className={scss.input}>
         {!select ? (
-          <div className={index ? scss.inputOne : ''}>
+          <div className={statusEl ? scss.inputOne : ''}>
             <div className={scss.checkedOne}></div>
           </div>
         ) :

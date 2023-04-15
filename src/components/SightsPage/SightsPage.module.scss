@@ -1,21 +1,31 @@
+@import "../../../styles/globalVariables.scss";
+
 .title_block {
   padding: 70px 0px;
-    width: 100%;
-      div {
-        font-family: "Montserrat";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 36px;
-        color: #757575;
-        text-align: left;
-        .line {
-          margin-bottom: 1%;
-          p {
-            padding-left: 20px;
-            width: 100%;
-          }
-        }
-      }
+  width: 100%;
+  @include breackpoint(xm) {
+    padding: 0;
   }
 
+  .text {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 36px;
+    color: #757575;
+    text-align: left;
+    @include breackpoint(xm) {
+      padding: 0px 24px 20px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .text {
+    padding: 0px 24px 20px;
+  }
+}
