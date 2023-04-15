@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import Filter from "../Filter sorted/Filter/Filter";
 import TourFilterCard from "../../../components/TourFilterCard/TourFilterCard";
 import scss from './FilterCardBlock.module.scss'
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../../firebase/firebase-config";
 import { useRouter } from "next/router";
 import useTours from "../../../hooks/useTours";
@@ -26,7 +26,41 @@ const FilterToursCardBlock: React.FC<Select> = ({ index }) => {
     const newFilter = async ({ places, startFrom, duration, activities }: any) => {
         const arr = []
         if (tour) {
-            arr.push(where("tourInfo.category", "==", tour))
+            if (tour === 'Most popular') {
+                const q = query(collection(db, "tours"), orderBy("requests"))
+                const data: { tid: string; }[] = []
+                const querySnapshot = await getDocs(q);
+                querySnapshot.forEach((doc) => {
+                    let obj: any = {
+                        docId: doc.id,
+                        ...doc.data(),
+                    };
+                    data.push(obj);
+                });
+                const sortedNumbers = data.sort((a: any, b: any) => a.requests - b.requests);
+                const finalData = sortedNumbers.slice(-10)
+                setData(finalData.reverse())
+            } else if (tour === "Upcoming") {
+                const q = query(collection(db, "tours"), orderBy("tourInfo.startDate"))
+                const data: { tid: string; }[] = []
+                const querySnapshot = await getDocs(q);
+                querySnapshot.forEach((doc) => {
+                    let obj: any = {
+                        docId: doc.id,
+                        ...doc.data(),
+                    };
+                    data.push(obj);
+                });
+                const sortedNumbers = data.sort((a: any, b: any) => a.requests - b.requests);
+                const finalData: any = sortedNumbers.slice(-10)
+                setData(finalData)
+            } else if (tour === "All tours") {
+                getTours();
+                setData(tours)
+            }
+            else {
+                arr.push(where("tourInfo.category", "==", tour))
+            }
         }
         if (places) {
             const p = places.split(',')
@@ -71,8 +105,8 @@ const FilterToursCardBlock: React.FC<Select> = ({ index }) => {
                 data.push(obj);
             });
             setData(data);
-
         }
+
     }
 
     useMemo(() => {
