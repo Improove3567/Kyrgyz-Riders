@@ -1,0 +1,112 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+    .check {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #adadad;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .circleAc {
+        width: 22px;
+        height: 22px;
+        background: #8389c9;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+        opacity: 1;
+        border-radius: 50%;
+        transition: all ease-in-out 0.4s;
+      }
+      .circleNon {
+        width: 22px;
+        height: 22px;
+        background: #adadad;
+        opacity: 1;
+        border-radius: 50%;
+        transition: all ease-in-out 0.4s;
+      }
+    }
+    .right {
+      width: 100%;
+      border: 1px solid #adadad;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 21px 40px 21px 20px;
+      .title {
+        p {
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 17px;
+          color: #474747;
+        }
+        a {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+          color: #adadad;
+        }
+      }
+      .btns {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        width: 60%;
+        transition: all ease-in-out 0.4s;
+        .nice {
+          width: 50%;
+          padding: 8px 45px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #6f6f6f;
+          background: #ebebeb;
+          border: 1px solid #adadad;
+          transition: all ease-in-out 0.4s;
+          opacity: 1;
+        }
+        .niceAc {
+          width: 50%;
+          padding: 8px 45px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #ffffff;
+          background: #8389c9;
+          border: 1px solid #8389c9;
+          transition: all ease-in-out 0.4s;
+          opacity: 1;
+        }
+        .must {
+          width: 50%;
+          padding: 8px 45px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #6f6f6f;
+          background: #ebebeb;
+          border: 1px solid #adadad;
+          transition: all ease-in-out 0.4s;
+          opacity: 1;
+        }
+        .mustAc {
+          width: 50%;
+          padding: 8px 45px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #ffffff;
+          background: #8389c9;
+          border: 1px solid #8389c9;
+          transition: all ease-in-out 0.4s;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
