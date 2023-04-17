@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useState } from "react";
 import useTours from "../../hooks/useTours";
 import Preloader from "../Preloader/Preloader";
 import FilterCads from "./FilterCards/FilterCards";
@@ -9,18 +9,13 @@ interface TourProps {
 }
 
 const TourFilterCard: FC<TourProps> = ({ data }) => {
-  const { getTours, tours, isLoading } = useTours();
-
-  useEffect(() => {
-    getTours();
-  }, [])
 
   const CardList = React.useMemo(
     () => data?.slice(0, 4).map((el, index) => <FilterCads {...el} key={index} />),
     [data]
   );
 
-  if (isLoading) return <Preloader full />
+  if (!data) return <Preloader full />
 
   return (
     <div className={scss.tour_card}>

@@ -61,7 +61,7 @@ const Input: React.FC<Iname> = ({
           router.push(path, path, { shallow: true })
         }
         break;
-      case "Places I want to visit":
+      case "Places":
         if (name) {
           if (places) {
             if (places.includes(name)) {
@@ -74,7 +74,7 @@ const Input: React.FC<Iname> = ({
           }
         }
         break;
-      case "Activities I want to do":
+      case "Activities":
         if (name) {
           setActivities([...activities, name])
         }
