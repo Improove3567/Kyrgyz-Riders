@@ -26,35 +26,7 @@ const FilterToursCardBlock: React.FC<Select> = ({ index }) => {
     const newFilter = async ({ places, startFrom, duration, activities }: any) => {
         const arr = []
         if (tour) {
-            if (tour === 'Most popular') {
-                const q = query(collection(db, "tours"), orderBy("requests"))
-                const data: { tid: string; }[] = []
-                const querySnapshot = await getDocs(q);
-                querySnapshot.forEach((doc) => {
-                    let obj: any = {
-                        docId: doc.id,
-                        ...doc.data(),
-                    };
-                    data.push(obj);
-                });
-                const sortedNumbers = data.sort((a: any, b: any) => a.requests - b.requests);
-                const finalData = sortedNumbers.slice(-10)
-                setData(finalData.reverse())
-            } else if (tour === "Upcoming") {
-                const q = query(collection(db, "tours"), orderBy("tourInfo.startDate"))
-                const data: { tid: string; }[] = []
-                const querySnapshot = await getDocs(q);
-                querySnapshot.forEach((doc) => {
-                    let obj: any = {
-                        docId: doc.id,
-                        ...doc.data(),
-                    };
-                    data.push(obj);
-                });
-                const sortedNumbers = data.sort((a: any, b: any) => a.requests - b.requests);
-                const finalData: any = sortedNumbers.slice(-10)
-                setData(finalData)
-            } else if (tour === "All tours") {
+            if (tour === "All tours") {
                 getTours();
                 setData(tours)
             }
