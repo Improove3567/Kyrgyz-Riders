@@ -19,14 +19,12 @@ const SightTourBlock: React.FC<TourProps> = ({ tours, sight }) => {
   return (
     <div className={scss.wrapper}>
       <div className="container">
-        <div className={scss.container}>
           <Divider title={`Tours in ${sight}`} variant="dark">
             <Link href="/sights">
               <MoreBlock title="More tours" />
             </Link>
           </Divider>
           <div className={scss.cards}>{renderCards}</div>
-        </div>
       </div>
     </div>
   );
