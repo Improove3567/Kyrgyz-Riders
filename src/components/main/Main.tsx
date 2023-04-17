@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, {  useMemo } from "react";
 import scss from "./main.module.scss";
 import { MainLinks } from "../../constatnts/Main/HeaderConsts";
 import Link from "next/link";
@@ -58,7 +58,7 @@ const Main: React.FC<MainProps> = ({
     route == "/our-team/[id]"
       ? `${teamDetail?.name} ${teamDetail?.lastName}`
       : route == "/tour/[id]"
-        ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
+        ? ` ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} days`
         : route == "/sight/[id]"
           ? sightsDetail
           : "";
