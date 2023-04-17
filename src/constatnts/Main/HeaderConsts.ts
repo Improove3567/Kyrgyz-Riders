@@ -46,6 +46,6 @@ export const MainLinks: IHeaderLinks[] = [
   {
     id: 3,
     title: "Find Tours",
-    link: "findtours",
+    link: "/tours",
   },
 ];
