@@ -1,22 +1,50 @@
 .wrapper {
-    width: 230px;
-    height: 49px;
-    background: #8389C9;
-    clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
+  width: 230px;
+  height: 49px;
+  background: #8389c9;
+  clip-path: polygon(95% 0, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
+  display: flex;
+  justify-content: center;
+  color: white;
+
+  .forAdaptive {
+    display: none;
+  }
+
+  .main {
     display: flex;
-    // align-items: center;
-    justify-content: center;
-    color: white;
-    & div{
-        display: flex;
-        align-items:center;
-        gap: 5px;
-        position: relative;
-        h1{
-            position: absolute;
-            left: -15px;
-            top: -3px;
-            bottom: 0;
-        }
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    h1 {
+      position: absolute;
+      left: -15px;
+      top: -3px;
+      bottom: 0;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding-left: 5px;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+
+    &:first-child {
+      padding-left: 0;
+      clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 50%, 0% 0%);
+    }
+
+    .main {
+      display: none;
+    }
+
+    .forAdaptive {
+      display: flex;
+      align-items: center;
+      .title {
+        display: none;
+      }
+    }
+  }
 }
