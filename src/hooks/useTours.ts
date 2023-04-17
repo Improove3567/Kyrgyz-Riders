@@ -32,20 +32,14 @@ const useTours = () => {
         if (res.exists()) {
             setTourDetail(res.data());
         }
-    };
+    };;
 
-    const updateRequests = async (id:string,data:object) => {
-        const ref = doc(db, "tours" , id);
-        const res = await updateDoc(ref, data);
-        return res;
-    }
     return {
         tours,
         getTours,
         getTourDetail,
         tourDetail,
         isLoading,
-        updateRequests
     };
 };
 
