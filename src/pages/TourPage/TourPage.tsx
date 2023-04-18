@@ -17,6 +17,7 @@ import TourMapsBlock from "../../components/TourMapBlock/TourMapBlock";
 import { useRouter } from "next/router";
 import useTours from "../../hooks/useTours";
 import Preloader from "../../components/Preloader/Preloader";
+import TourNotes from "../../components/TourNotes/TourNotes";
 
 const TourPage = () => {
   const router = useRouter();
@@ -28,7 +29,6 @@ const TourPage = () => {
     }
   }, [id, tourDetail]);
   if (isLoading) return <Preloader full />;
-
   return (
     <>
       <Header />
@@ -42,6 +42,7 @@ const TourPage = () => {
       <TourMapsBlock />
       <PriceIncludes />
       <PriceDoesntInclude />
+      <TourNotes notes={tourDetail?.tourInfo?.notes}/>
       <SendARequest tour={tourDetail} />
       <YourTours />
       <Footer />
