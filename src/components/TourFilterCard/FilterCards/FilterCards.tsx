@@ -20,7 +20,7 @@ const FilterCads: FC<TourFilterCardArr> = ({
   return (
     <div className={scss.block}>
       <div className={scss.img}>
-        <img src={image} alt="img" width={392} height={293} />
+        <img src={image} alt="img" />
         <div className={scss.days}>
           <span>{tourInfo?.duration.days} {tourInfo?.duration.days == "1" ? "day" : "days"}</span>
         </div>
