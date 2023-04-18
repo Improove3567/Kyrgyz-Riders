@@ -58,7 +58,7 @@ const Main: React.FC<MainProps> = ({
     route == "/our-team/[id]"
       ? `${teamDetail?.name} ${teamDetail?.lastName}`
       : route == "/tour/[id]"
-        ? ` ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} days`
+        ? ` ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.days == 1 ? 'day' : 'days'}`
         : route == "/sight/[id]"
           ? sightsDetail
           : "";
