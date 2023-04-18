@@ -2,13 +2,22 @@ import React, { useMemo } from "react";
 import scss from "./TourMapBlock.module.scss";
 import TourMap from "./TourMap/MapSelect";
 import Divider from "../Divider/Divider";
-import { TourSelectMap } from "../../constants/TourMapBlock";
 
-const TourMapsBlock: React.FC = () => {
+
+export interface TourMapTypesI{
+  title?: string,
+  image?: string
+}
+
+interface TourMapI {
+  map : TourMapTypesI[]
+}
+
+const TourMapsBlock: React.FC<TourMapI> = ({map}) => {
   const tourSelectMap = useMemo(
     () => 
-      TourSelectMap.map((el) => <TourMap key={el.id} {...el} />)
-  , [TourSelectMap]);
+      map?.map((el) => <TourMap key={el.title} {...el} />)
+  , [map]);
 
   return (
     <div className={scss.wrapper}>
