@@ -66,8 +66,29 @@
 }
 
 .purple {
-  width: 105%;
-  margin-left: -50px;
+  width: 106%;
+  margin-left: -21px;
   height: 30px;
   background-color: #8389c9;
+}
+
+@media (max-width: 912px) {
+  .purple {
+    width: 108%;
+  }
+}
+@media (max-width: 600px) {
+  .purple {
+    width: 110%;
+  }
+}
+@media (max-width: 500px) {
+  .purple {
+    width: 114%;
+  }
+}
+@media (max-width: 380px) {
+  .purple {
+    width: 118%;
+  }
 }
