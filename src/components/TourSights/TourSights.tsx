@@ -18,7 +18,7 @@ const TourSights: React.FC<SightsTypes> = ({ sights }) => {
     <div className={scss.Toursights}>
       <div className='container'>
         <Divider title="Sights visited on this tour" variant="dark" />
-        <div className={scss.Tourcards}>{renderCards}</div>
+        <div className={scss.Tourcards}>{renderCards}{renderCards}{renderCards}{renderCards}</div>
       </div>
     </div>
   );
