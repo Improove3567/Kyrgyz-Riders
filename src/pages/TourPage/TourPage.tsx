@@ -29,7 +29,6 @@ const TourPage = () => {
     }
   }, [id, tourDetail]);
   if (isLoading) return <Preloader full />;
-  // console.log(tourDetail)
   return (
     <>
       <Header />
