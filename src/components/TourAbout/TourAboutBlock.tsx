@@ -56,7 +56,7 @@ const TourAbout: FC<TourAboutProps> = ({ tour }) => {
   return (
     <div className={scss.content}>
       <div className="container">
-        <Divider title={`Tours / Highlights around ${tour?.title}`} variant="light">
+        <Divider title={`Tours /  ${tour?.title}`} variant="light">
           <MoreBlock title={"More tours"} />
         </Divider>
         <div className={scss.wrapper}>{renderCard}</div>
