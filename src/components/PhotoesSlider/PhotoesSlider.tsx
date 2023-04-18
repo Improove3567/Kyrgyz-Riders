@@ -114,7 +114,7 @@ const PhotosSlider: FC<PhotosProps> = ({ photos }) => {
   return (
     <div className={scss.photoesMain}>
       <div className="container">
-      <Divider title="Photos" />
+      <Divider title="Pictures" />
       <div className="mainSliders">
         <Slider {...settings}>
           {renderPhotoesItems}

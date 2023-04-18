@@ -12,11 +12,11 @@ interface ArrowProps {
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
-interface FeedbackCI{
-  change : (desc:string | undefined) => void
+interface FeedbackCI {
+  change: (desc: string | undefined) => void
 }
 
-const FeedbackCarousel:React.FC<FeedbackCI> = ({change }) => {
+const FeedbackCarousel: React.FC<FeedbackCI> = ({ change }) => {
   const { feedback, getFeedback, isLoading } = useFeedback();
 
   useEffect(() => {

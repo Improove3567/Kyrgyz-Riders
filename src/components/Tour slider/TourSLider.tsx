@@ -53,7 +53,7 @@ const TourSlider: React.FC = () => {
         setSliderData(tours)
       }
     } else if (tour === "All tours") {
-        setSliderData(tours)
+        router.push('/tours')
     } else if (tour === "Multi-active") {
       filtering({ category: "tourInfo.category", operator: "==", comparison: "Multi-active" })
     } else if (tour === "Road trip") {
@@ -70,7 +70,6 @@ const TourSlider: React.FC = () => {
       filtering({ category: "tourInfo.category", operator: "==", comparison: "Upcoming" })
     }
   }, [tour])
-
   useEffect(() => {
     getTours();
   }, []);
