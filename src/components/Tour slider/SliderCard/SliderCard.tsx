@@ -25,7 +25,7 @@ const SliderCard: React.FC<CardProps> = ({
     <Link href={`tour/${tid}`}>
       <div className={scss.card}>
         <div className={scss.days}>
-          <p className={scss.days_title}>{days} days</p>
+          <p className={scss.days_title}>{days} {days == 1 ? "day" : "days"}</p>
         </div>
         <div className={scss.front}>
           {/* eslint-disable-next-line no-use-before-define */}

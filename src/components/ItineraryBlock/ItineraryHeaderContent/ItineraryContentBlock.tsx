@@ -16,8 +16,6 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({ item }) => {
     return <img src={el} alt="image" key={el} />;
   });
   
-
-
   return (
     <>
       <div
