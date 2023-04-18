@@ -3,16 +3,14 @@ import scss from "./TourMap.module.scss";
 import "react-photo-view/dist/react-photo-view.css";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import Image from "next/image";
-interface TourSelect {
-  title: string;
-  option: string[];
-  status: boolean;
-}
+import { TourMapTypesI } from "../TourMapBlock";
 
-const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
-  const [arrow, setArrow] = useState(status);
+const TourMap: React.FC<TourMapTypesI> = ({ title, image }) => {
+  const [arrow, setArrow] = useState(false);
 
   const click = () => setArrow(!arrow);
+
+  
 
   const result = React.useMemo(() => {
     return arrow ? (
@@ -32,23 +30,6 @@ const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
     );
   }, [arrow]);
 
-  const newImg = useMemo(
-    () =>
-      option.map((el) => {
-        const id = el + Date.now();
-        if (title == "Text") {
-          return <p key={id}>{el}</p>;
-        } else {
-          return (
-            <PhotoView src={el} key={id}>
-              <img src={el} alt="map" />
-            </PhotoView>
-          );
-        }
-      }),
-    [option]
-  );
-
   return (
     <>
       <div className={scss.select} onClick={click}>
@@ -57,10 +38,13 @@ const TourMap: React.FC<TourSelect> = ({ title, option, status }) => {
       </div>
       {arrow && (
         <div className={scss.map}>
-          {title == "Map of the tour" && (
-            <div className={scss.photo}><PhotoProvider>{newImg}</PhotoProvider></div>
-          )}
-          {title == "Text" && <span>{newImg}</span>}
+            <div className={scss.photo}>
+              <PhotoProvider>
+                <PhotoView src={image}>
+                  <img src={image} alt="map" />
+                </PhotoView>
+              </PhotoProvider>
+            </div>
         </div>
       )}
     </>

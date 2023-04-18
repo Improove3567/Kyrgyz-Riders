@@ -23,6 +23,7 @@ const TourPage = () => {
   const router = useRouter();
   const { id }: any = router.query;
   const { getTourDetail, tourDetail, isLoading }: any = useTours();
+  
   useEffect(() => {
     if (id != undefined) {
       getTourDetail(id);
@@ -39,7 +40,7 @@ const TourPage = () => {
       <TourFeatures reasons={tourDetail?.tourInfo?.loveReasons} />
       <PhotoesSlider photos={tourDetail?.tourInfo?.photoes} />
       <ItineraryBlock itineraries={tourDetail?.tourInfo?.itenerariesDays} />
-      <TourMapsBlock />
+      <TourMapsBlock map = {tourDetail?.tourInfo?.tourMap} />
       <PriceIncludes />
       <PriceDoesntInclude />
       <TourNotes notes={tourDetail?.tourInfo?.notes}/>
