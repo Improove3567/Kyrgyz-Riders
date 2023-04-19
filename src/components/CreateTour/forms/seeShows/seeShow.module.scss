@@ -40,6 +40,9 @@
 
   .ownVersion {
     padding-top: 20px;
+    @media (max-width: 912px) {
+      margin: 0 20px;
+    }
     .header {
       width: 100%;
       border-bottom: 2px solid #adadad;
@@ -67,7 +70,23 @@
 
 .purple {
   width: 105%;
-  margin-left: -50px;
+  margin-left: -21px;
   height: 30px;
   background-color: #8389c9;
+}
+
+@media (max-width: 940px) {
+  .purple {
+    width: 107%;
+  }
+}
+@media (max-width: 780px) {
+  .purple {
+    width: 104%;
+  }
+}
+@media (max-width: 560px) {
+  .purple {
+    width: 108%;
+  }
 }
