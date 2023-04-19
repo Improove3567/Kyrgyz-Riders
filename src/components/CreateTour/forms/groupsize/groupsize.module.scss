@@ -2,7 +2,9 @@
     .textWrapper {
       border-bottom: 2px solid #c3c3c3;
       padding-bottom: 15px;
-
+      @media (max-width: 912px) {
+        margin: 0 20px;
+      }
       h1 {
         font-style: normal;
         text-align: center;
@@ -25,6 +27,9 @@
     grid-gap: 32px;
     @media (max-width: 950px) {
       grid-template-columns: repeat(1, 1fr);
+    }
+    @media (max-width: 912px) {
+      margin: 30px 20px 0;
     }
     .number_index_left_content,
     .number_index_right_content {

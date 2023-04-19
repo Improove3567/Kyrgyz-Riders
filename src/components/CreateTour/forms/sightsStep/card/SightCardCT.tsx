@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement, useState } from "react";
 import scss from "./sightCardCT.module.scss";
 import Link from "next/link";
 import ArrowR from "../../../../../../public/images/TourFeatures/VectorRight.svg";
