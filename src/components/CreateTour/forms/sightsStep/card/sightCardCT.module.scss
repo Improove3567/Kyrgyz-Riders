@@ -3,7 +3,7 @@
   grid-template-columns: 44px 11fr;
   align-items: center;
   gap: 15px;
-  margin: 10px 0;
+  margin: 20px 0;
   .check {
     width: 50px;
     height: 50px;
@@ -151,20 +151,29 @@
 }
 
 .wrapperForAdaptive,
-.bottomContentForAdaptive {
+.bottomContentForAdaptive, .line {
   display: none;
+}
+
+.line {
+  border: 1px solid #C3C3C3;
+  margin: 20px 0;
+  width: 100%;
 }
 
 @media (max-width: 912px) {
   .wrapper {
     display: none;
   }
+  .line {
+    display: block;
+  }
   .wrapperForAdaptive {
     display: grid;
     grid-template-columns: 2fr, 1fr;
     align-items: center;
     gap: 5px;
-    margin: 20px 0 10px;
+    margin: 20px 20px 10px;
     border: 1px solid #adadad;
     transition: all ease-in-out 0.4s;
 
@@ -243,6 +252,7 @@
 
   .bottomContentForAdaptive {
     display: block;
+    margin: 0 20px;
     .top {
       display: flex;
       justify-content: center;

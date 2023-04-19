@@ -120,6 +120,7 @@ const SightCard: React.FC<ICard> = ({ title, tid, dispatch, index }) => {
           <div className={scss.btns}>{activeButtons(isActive)}</div>
         </div>
       </div>
+      <div className={scss.line}></div>
     </>
   );
 };
