@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   color: white;
+  padding-left: 19px;
 
   .forAdaptive {
     display: none;
@@ -25,8 +26,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 912px) {
   .wrapper {
+    padding-left: 0;
     clip-path: polygon(90% 0%, 100% 50%, 90% 100%, 0% 100%, 9% 50%, 0% 0%);
 
     &:first-child {

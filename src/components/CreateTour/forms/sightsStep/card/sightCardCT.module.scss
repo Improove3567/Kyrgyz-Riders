@@ -1,8 +1,9 @@
 .wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 44px 11fr;
   align-items: center;
   gap: 15px;
-  margin: 10px 0;
+  margin: 20px 0;
   .check {
     width: 50px;
     height: 50px;
@@ -20,6 +21,17 @@
       opacity: 1;
       border-radius: 50%;
       transition: all ease-in-out 0.4s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .innerCirculeChecked {
+        border-top: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+        width: 10px;
+        height: 6px;
+        margin-bottom: 3px;
+        transform: rotate(135deg);
+      }
     }
     .circleNon {
       width: 22px;
@@ -58,9 +70,17 @@
       gap: 26px;
       width: 60%;
       transition: all ease-in-out 0.4s;
+      .innerCirculeChecked {
+        border-top: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+        width: 10px;
+        height: 6px;
+        margin-bottom: 3px;
+        transform: rotate(135deg);
+      }
       .nice {
         width: 50%;
-        padding: 8px 45px;
+        padding: 8px 45px 8px 35px;
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
@@ -69,10 +89,15 @@
         border: 1px solid #adadad;
         transition: all ease-in-out 0.4s;
         opacity: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
       }
       .niceAc {
         width: 50%;
-        padding: 8px 45px;
+        padding: 8px 45px 8px 35px;
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
@@ -81,10 +106,15 @@
         border: 1px solid #8389c9;
         transition: all ease-in-out 0.4s;
         opacity: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
       }
       .must {
         width: 50%;
-        padding: 8px 45px;
+        padding: 8px 45px 8px 35px;
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
@@ -93,10 +123,15 @@
         border: 1px solid #adadad;
         transition: all ease-in-out 0.4s;
         opacity: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
       }
       .mustAc {
         width: 50%;
-        padding: 8px 45px;
+        padding: 8px 45px 8px 35px;
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
@@ -105,6 +140,191 @@
         border: 1px solid #8389c9;
         transition: all ease-in-out 0.4s;
         opacity: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+    }
+  }
+}
+
+.wrapperForAdaptive,
+.bottomContentForAdaptive, .line {
+  display: none;
+}
+
+.line {
+  border: 1px solid #C3C3C3;
+  margin: 20px 0;
+  width: 100%;
+}
+
+@media (max-width: 912px) {
+  .wrapper {
+    display: none;
+  }
+  .line {
+    display: block;
+  }
+  .wrapperForAdaptive {
+    display: grid;
+    grid-template-columns: 2fr, 1fr;
+    align-items: center;
+    gap: 5px;
+    margin: 20px 20px 10px;
+    border: 1px solid #adadad;
+    transition: all ease-in-out 0.4s;
+
+    .topContent {
+      display: flex;
+      padding: 0 20px;
+
+      .check {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .circleAc {
+          width: 22px;
+          height: 22px;
+          background: #fff;
+          opacity: 1;
+          border-radius: 50%;
+          transition: all ease-in-out 0.4s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .innerCirculeChecked {
+            border-top: 1px solid #8389c9;
+            border-right: 1px solid #8389c9;
+            width: 10px;
+            height: 6px;
+            margin-bottom: 3px;
+            transform: rotate(135deg);
+          }
+        }
+        .circleNon {
+          width: 22px;
+          height: 22px;
+          background: #ffffff;
+          border: 1px solid #adadad;
+          opacity: 1;
+          border-radius: 50%;
+          transition: all ease-in-out 0.4s;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .innerCirculeOff {
+            border-top: 1px solid #adadad;
+            border-right: 1px solid #adadad;
+            width: 10px;
+            height: 6px;
+            margin-bottom: 3px;
+            transform: rotate(135deg);
+          }
+        }
+      }
+    }
+    .right {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      .title {
+        width: 100%;
+        p {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #6f6f6f;
+        }
+        a {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 17px;
+          color: #adadad;
+        }
+      }
+    }
+  }
+
+  .bottomContentForAdaptive {
+    display: block;
+    margin: 0 20px;
+    .top {
+      display: flex;
+      justify-content: center;
+      background: #ffffff;
+      border: 1px solid #adadad;
+      align-items: center;
+      padding: 10px;
+      gap: 10px;
+      margin-bottom: 10px;
+      .link {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #6f6f6f;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      .btns {
+        display: flex;
+        gap: 26px;
+        width: 100%;
+        transition: all ease-in-out 0.4s;
+        .nice {
+          width: 50%;
+          padding: 10px 8px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #6f6f6f;
+          background: #ebebeb;
+          border: 1px solid #adadad;
+          transition: all ease-in-out 0.4s;
+          opacity: 1;
+        }
+        .niceAc {
+          width: 50%;
+          padding: 10px 8px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #ffffff;
+          background: #8389c9;
+          border: 1px solid #8389c9;
+          transition: all ease-in-out 0.4s;
+          opacity: 1;
+        }
+        .must {
+          width: 50%;
+          padding: 10px 8px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #6f6f6f;
+          background: #ebebeb;
+          border: 1px solid #adadad;
+          transition: all ease-in-out 0.4s;
+          opacity: 1;
+        }
+        .mustAc {
+          width: 50%;
+          padding: 10px 8px;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: #ffffff;
+          background: #8389c9;
+          border: 1px solid #8389c9;
+          transition: all ease-in-out 0.4s;
+          opacity: 1;
+        }
       }
     }
   }
