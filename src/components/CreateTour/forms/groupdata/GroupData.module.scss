@@ -161,6 +161,9 @@
   grid-template-columns: 40%;
   justify-content: center;
   grid-gap: 32px;
+  @media (max-width: 912px) {
+    grid-template-columns: 85%;
+  }
   .number_index_left_content,
   .number_index_right_content {
     background: #ffffff;
