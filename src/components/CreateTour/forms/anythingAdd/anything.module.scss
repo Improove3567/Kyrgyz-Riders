@@ -1,6 +1,9 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  @media (max-width: 912px) {
+    margin: 0 20px;
+  }
   header {
     border-bottom: 1px solid #adadad;
     padding-bottom: 15px;
