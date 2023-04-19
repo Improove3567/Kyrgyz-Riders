@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import scss from "./activitiesCard.module.scss";
 import Radio from "../activitesRadio/activitiesRadio";
 import ArrowR from "../../../../../../public/images/TourFeatures/VectorRight.svg";
@@ -20,6 +20,7 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
   const [isActive, setActive] = useState(false);
   const [isVisit, setVisit] = useState(false);
   const [modalDuration, setDuration] = useState(false);
+  const [modalHeight, setModalHeight] = useState(0);
   const [days, setDays] = useState([
     {
       id: 1,
@@ -64,7 +65,21 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
     tid: index,
     duration: "",
   };
+  const modalRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (modalDuration) {
+      const modal = modalRef.current;
+      if (modal) {
+        setModalHeight(modal.offsetHeight);
+        document.body.style.height = `${modal.offsetHeight + 20}px`;
+        document.body.style.overflow = "hidden";
+      }
+    } else {
+      document.body.style.height = "auto";
+      document.body.style.overflow = "auto";
+    }
+  }, [modalDuration]);
   const handleClick = (id: any, state: any) => {
     const filtered: any = [...days].find((comment) => comment.id === id);
     if (state === "toActive") {
@@ -158,6 +173,7 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
 
   const openModal = () => {
     setDuration(!modalDuration);
+    setModalHeight(window.innerHeight);
   };
 
   return (
@@ -207,13 +223,23 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
           <div className={scss.bottom}>
             <div className={scss.btns}>{activeButtons(isActive)}</div>
           </div>
-          <div className={scss.top}  onMouseLeave={() => setDuration(false)}>
+          <div className={scss.top} onMouseLeave={() => setDuration(false)}>
             <h5 onClick={() => openModal()}>Duration</h5>
-            {modalDuration && <div className={scss.modal}>{renderRadio}</div>}
             <Image src={ArrowR} alt="image" />
           </div>
         </div>
         <div className={scss.line}></div>
+      </div>
+      <div className={modalDuration ? scss.backModal : ''}>
+      {modalDuration && (
+        <div
+          className={scss.modal}
+          ref={modalRef}
+        >
+          <h5>Duration</h5>
+          <div className={scss.wrapModal}>{renderRadio}</div>
+        </div>
+      )}
       </div>
     </div>
   );
