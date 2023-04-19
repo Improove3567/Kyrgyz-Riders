@@ -2,7 +2,7 @@ import React from "react";
 import css from "./Preloader.module.css";
 
 interface PreloaderProps {
-    full: boolean;
+    full?: boolean;
 }
 
 const Preloader: React.FC<PreloaderProps> = ({ full }) => {

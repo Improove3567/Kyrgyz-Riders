@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, {  useMemo } from "react";
 import scss from "./main.module.scss";
 import { MainLinks } from "../../constatnts/Main/HeaderConsts";
 import Link from "next/link";
@@ -51,14 +51,14 @@ const Main: React.FC<MainProps> = ({
     slidesToScroll: 1,
     className: "slides",
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     cssEase: "linear",
   };
   const titles =
     route == "/our-team/[id]"
       ? `${teamDetail?.name} ${teamDetail?.lastName}`
       : route == "/tour/[id]"
-        ? `Highlights around ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.durationType}`
+        ? ` ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.days == 1 ? 'day' : 'days'}`
         : route == "/sight/[id]"
           ? sightsDetail
           : "";

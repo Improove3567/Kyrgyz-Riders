@@ -23,7 +23,6 @@ interface ITour {
 
 const SendARequest: React.FC<ITour> = ({ tour }) => {
   const { addRequest } = useRequest();
-  const { updateRequests } = useTours();
   const router = useRouter();
 
   const { id }: any = router.query;
@@ -48,8 +47,6 @@ const SendARequest: React.FC<ITour> = ({ tour }) => {
 
   const onSendEmail = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-
-    updateRequests(id, { ...tour, requests: countOfRequests + 1 })
 
     await emailjs.send(
       "service_lcl44ys",

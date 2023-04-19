@@ -1,30 +1,29 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useState } from "react";
 import useTours from "../../hooks/useTours";
 import Preloader from "../Preloader/Preloader";
 import FilterCads from "./FilterCards/FilterCards";
 import scss from "./TourFilterCard.module.scss";
 
-const TourFilterCard: FC = () => {
-  const { getTours, tours, isLoading } = useTours();
+interface TourProps {
+  data: Array<object>
+}
 
-  useEffect(() => {
-    getTours();
-  }, [])
+const TourFilterCard: FC<TourProps> = ({ data }) => {
 
   const CardList = React.useMemo(
-    () => tours?.slice(0, 4).map((el, index) => <FilterCads {...el} key={index} />),
-    [tours]
+    () => data?.slice(0, 4).map((el, index) => <FilterCads {...el} key={index} />),
+    [data]
   );
 
-  if (isLoading) return <Preloader full />
+  if (!data) return <Preloader full />
 
   return (
     <div className={scss.tour_card}>
       <div className={scss.tour_back}>
-      <div className={scss.tour_container}>
-        {CardList}
-      </div>
-      <div className={scss.btn_more}>
+        <div className={scss.tour_container}>
+          {CardList}
+        </div>
+        <div className={scss.btn_more}>
           <button style={{ width: "100%" }}>More Tours</button>
         </div>
       </div>

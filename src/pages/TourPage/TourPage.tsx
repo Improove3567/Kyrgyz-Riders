@@ -17,18 +17,19 @@ import TourMapsBlock from "../../components/TourMapBlock/TourMapBlock";
 import { useRouter } from "next/router";
 import useTours from "../../hooks/useTours";
 import Preloader from "../../components/Preloader/Preloader";
+import TourNotes from "../../components/TourNotes/TourNotes";
 
 const TourPage = () => {
   const router = useRouter();
   const { id }: any = router.query;
   const { getTourDetail, tourDetail, isLoading }: any = useTours();
+  
   useEffect(() => {
     if (id != undefined) {
       getTourDetail(id);
     }
   }, [id, tourDetail]);
   if (isLoading) return <Preloader full />;
-
   return (
     <>
       <Header />
@@ -39,9 +40,10 @@ const TourPage = () => {
       <TourFeatures reasons={tourDetail?.tourInfo?.loveReasons} />
       <PhotoesSlider photos={tourDetail?.tourInfo?.photoes} />
       <ItineraryBlock itineraries={tourDetail?.tourInfo?.itenerariesDays} />
-      <TourMapsBlock />
+      <TourMapsBlock map = {tourDetail?.tourInfo?.tourMap} />
       <PriceIncludes />
       <PriceDoesntInclude />
+      <TourNotes notes={tourDetail?.tourInfo?.notes}/>
       <SendARequest tour={tourDetail} />
       <YourTours />
       <Footer />

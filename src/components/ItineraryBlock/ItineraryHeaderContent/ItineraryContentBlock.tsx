@@ -1,26 +1,21 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import scss from "./ItineraryContentBlock.module.scss";
 import ArrowDown from "../../../../public/images/TourFeatures/VectorDown.svg";
 import ArrowUP from "../../../../public/images/TourFeatures/VectorUp.svg";
+import { ItinerariesTypes } from "../ItineraryBlock";
 
 interface ItineraryProps {
-  itinerary?: string;
-  desc?: string;
-  image?: string;
-  facts?: string;
-  overnight?: string;
+  item: ItinerariesTypes;
 }
 
-const ItineraryContentBlock: React.FC<ItineraryProps> = ({
-  itinerary,
-  desc,
-  image,
-  facts,
-  overnight,
-}) => {
+const ItineraryContentBlock: React.FC<ItineraryProps> = ({ item }) => {
   const [isActive, setIsActive] = useState(false);
 
+  const imags = item.images.map((el) => {
+    return <img src={el} alt="image" key={el} />;
+  });
+  
   return (
     <>
       <div
@@ -29,7 +24,7 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({
       >
         <div className={scss.accordion}>
           <div className={scss.accordionTitleMain}>
-            <h3>{itinerary}</h3>
+            <h3>{item.itinerary}</h3>
           </div>
           <div className={scss.accordionArrows}>
             {!isActive ? (
@@ -42,14 +37,12 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({
       </div>
       {isActive && (
         <div id={scss.accordionContentMain}>
-          <p>{desc}</p>
-          <div className={scss.accordionImg}>
-            <img src={image} alt="image" />
-          </div>
+          <p>{item.desc}</p>
+          <div className={scss.accordionImg}>{imags}</div>
           <div className={scss.line}></div>
           <div className={scss.shortDescItinerary}>
-            <p className={scss.facts}>{facts}</p>
-            <p className={scss.overnight}>{overnight}</p>
+            <p className={scss.facts}>Fast facts: {item.facts}</p>
+            <p className={scss.overnight}>Overnight: {item.overnight}</p>
           </div>
         </div>
       )}
