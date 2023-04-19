@@ -1,6 +1,8 @@
 import React, { ReactElement, useState } from "react";
 import scss from "./seeShowCards.module.scss";
 import Link from "next/link";
+import ArrowR from "../../../../../../public/images/TourFeatures/VectorRight.svg";
+import Image from "next/image";
 
 interface ICard {
     title: string;
@@ -39,10 +41,22 @@ const SeeShowCards: React.FC<ICard> = ({ title, tid, dispatch, indx }) => {
         if (state) {
             return (
                 <>
-                    <button onClick={() => onEdit()} className={!isVisit ? scss.niceAc : scss.nice}>
+                    <button
+                        onClick={() => onEdit()}
+                        className={!isVisit ? scss.niceAc : scss.nice}
+                    >
+                        <span>
+                            <div className={isVisit ? "" : scss.innerCirculeChecked}></div>
+                        </span>
                         Nice to visit
-                    </button >
-                    <button onClick={() => onEdit()} className={!isVisit ? scss.must : scss.mustAc}>
+                    </button>
+                    <button
+                        onClick={() => onEdit()}
+                        className={!isVisit ? scss.must : scss.mustAc}
+                    >
+                        <span>
+                            <div className={isVisit ? scss.innerCirculeChecked : ""}></div>
+                        </span>
                         Must visit
                     </button>
                 </>
@@ -61,20 +75,59 @@ const SeeShowCards: React.FC<ICard> = ({ title, tid, dispatch, indx }) => {
 
 
     return (
-        <div className={scss.wrapper}>
-            <div className={scss.check} onClick={() => onSend()}>
-                <div className={isActive ? scss.circleAc : scss.circleNon}></div>
-            </div>
-            <div className={scss.right}>
-                <div className={scss.title}>
-                    <p>{title}</p>
-                    <Link href={`/`}>Read more about this sight</Link>
+        <>
+            <div className={scss.wrapper}>
+                <div className={scss.check} onClick={() => onSend()}>
+                    <div className={isActive ? scss.circleAc : scss.circleNon}>
+                        <div className={!isActive ? "" : scss.innerCirculeChecked}></div>
+                    </div>
                 </div>
-                <div className={scss.btns}>
-                    {activeButtons(isActive)}
+                <div className={scss.right}>
+                    <div className={scss.title}>
+                        <p>{title}</p>
+                        <Link href={`/`}>Read more about this sight</Link>
+                    </div>
+                    <div className={scss.btns}>
+                        {activeButtons(isActive)}
+                    </div>
                 </div>
             </div>
-        </div>
+            <div
+                className={scss.wrapperForAdaptive}
+                style={isActive ? { background: "#8389c9" } : { background: "#ebebeb" }}
+            >
+                <div className={scss.topContent} onClick={() => onSend()}>
+                    <div className={scss.check}>
+                        <div className={isActive ? scss.circleAc : scss.circleNon}>
+                            <div
+                                className={
+                                    isActive ? scss.innerCirculeChecked : scss.innerCirculeOff
+                                }
+                            ></div>
+                        </div>
+                    </div>
+                    <div className={scss.right}>
+                        <div className={scss.title}>
+                            <p style={isActive ? { color: "#fff" } : { color: "" }}>
+                                {title}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={scss.bottomContentForAdaptive}>
+                <div className={scss.bottom}>
+                    <div className={scss.btns}>{activeButtons(isActive)}</div>
+                </div>
+                <div className={scss.top}>
+                    <Link className={scss.link} href={`/sight/${tid}`}>
+                        Read more about this sight
+                    </Link>
+                    <Image src={ArrowR} alt="image" />
+                </div>
+            </div>
+            <div className={scss.line}></div>
+        </>
     )
 }
 
