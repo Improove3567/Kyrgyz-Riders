@@ -1,4 +1,36 @@
-.wrapper {
+.active {
+  background: #ebebeb !important;
+  color: #6f6f6f !important;
+  &::after {
+    content: "";
+    background-color: #adadad;
+    clip-path: polygon(
+      0 0,
+      84% 0%,
+      95% 100%,
+      100% 100%,
+      0 100%,
+      0 85%,
+      0% 50%,
+      5% 49%,
+      1% 97%,
+      83% 97%,
+      87% 50%,
+      83% 3%,
+      0% 3%,
+      0% -7%,
+      5% 49%,
+      3% 70%
+    ) !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 49px;
+  }
+}
+.wrapper,
+.active {
   width: 230px;
   height: 49px;
   background: #8389c9;
@@ -7,7 +39,8 @@
   justify-content: center;
   color: white;
   padding-left: 19px;
-
+  position: relative;
+ 
   .forAdaptive {
     display: none;
   }

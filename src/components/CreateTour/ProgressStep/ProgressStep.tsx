@@ -12,22 +12,10 @@ const ProgressStep: React.FC<progressStepProps> = ({
   currentStepIndex,
   i,
 }) => {
-  const isActive = () => {
-    if (i == currentStepIndex) {
-      return {
-        background: "#8389C9",
-        color: "white",
-      };
-    } else {
-      return {
-        background: "#ccc",
-        color: "#6F6F6F",
-      };
-    }
-  };
+  
 
   return (
-    <div style={isActive()} className={scss.wrapper}>
+    <div className={i == currentStepIndex ? scss.wrapper : scss.active }>
       <div className={scss.main}>
         {i == currentStepIndex && <h1>.</h1>}
         <p className={scss.number}>{i + 1}.</p>
