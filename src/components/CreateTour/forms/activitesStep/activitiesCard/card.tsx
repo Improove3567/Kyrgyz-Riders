@@ -72,7 +72,7 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
       const modal = modalRef.current;
       if (modal) {
         setModalHeight(modal.offsetHeight);
-        document.body.style.height = `${modal.offsetHeight + 20}px`;
+        document.body.style.height = `${modal.offsetHeight}px`;
         document.body.style.overflow = "hidden";
       }
     } else {
@@ -173,7 +173,6 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
 
   const openModal = () => {
     setDuration(!modalDuration);
-    setModalHeight(window.innerHeight);
   };
 
   return (
@@ -223,23 +222,24 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
           <div className={scss.bottom}>
             <div className={scss.btns}>{activeButtons(isActive)}</div>
           </div>
-          <div className={scss.top} onMouseLeave={() => setDuration(false)}>
-            <h5 onClick={() => openModal()}>Duration</h5>
+          <div className={scss.top} onClick={() => openModal()} onMouseLeave={() => setDuration(false)}>
+            <h5>Duration</h5>
+            <div className={modalDuration ? scss.backModal : ''} onClick={() => setDuration(false)}>
+            {modalDuration && (
+              <div
+                className={modalDuration ? scss.modal : scss.modalNon}
+                onClick={(e) => e.stopPropagation()}
+                ref={modalRef}
+              >
+                <h5>Duration</h5>
+                <div className={scss.wrapModal}>{renderRadio}</div>
+              </div>
+            )}
+            </div>
             <Image src={ArrowR} alt="image" />
           </div>
         </div>
         <div className={scss.line}></div>
-      </div>
-      <div className={modalDuration ? scss.backModal : ''}>
-      {modalDuration && (
-        <div
-          className={scss.modal}
-          ref={modalRef}
-        >
-          <h5>Duration</h5>
-          <div className={scss.wrapModal}>{renderRadio}</div>
-        </div>
-      )}
       </div>
     </div>
   );
