@@ -223,7 +223,8 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
             <div className={scss.btns}>{activeButtons(isActive)}</div>
           </div>
           <div className={scss.top} onClick={() => openModal()} onMouseLeave={() => setDuration(false)}>
-            <h5>Duration</h5>
+            <h1>Duration</h1>
+            <Image src={ArrowR} alt="image" />
             <div className={modalDuration ? scss.backModal : ''} onClick={() => setDuration(false)}>
             {modalDuration && (
               <div
@@ -235,8 +236,7 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
                 <div className={scss.wrapModal}>{renderRadio}</div>
               </div>
             )}
-            </div>
-            <Image src={ArrowR} alt="image" />
+            </div>      
           </div>
         </div>
         <div className={scss.line}></div>
