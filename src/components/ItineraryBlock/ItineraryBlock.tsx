@@ -21,7 +21,7 @@ const ItineraryBlock: FC<ItineraryProps> = ({ itineraries }) => {
   const render = useMemo(
     () =>
       itineraries?.map((item, index) => (
-        <ItineraryContentBlock  item = {item }key={index} />
+        <ItineraryContentBlock item={item} key={index} />
       )),
     [itineraries]
   )

@@ -13,7 +13,6 @@ export interface IFeedback {
   link?: string;
   img?: string;
   name?: string;
-  lastName?: string;
   change: (desc:string | undefined) => void;
 }
 
