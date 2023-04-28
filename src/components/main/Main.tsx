@@ -1,4 +1,4 @@
-import React, {  useMemo } from "react";
+import React, { useMemo } from "react";
 import scss from "./main.module.scss";
 import { MainLinks } from "../../constatnts/Main/HeaderConsts";
 import Link from "next/link";
@@ -57,11 +57,9 @@ const Main: React.FC<MainProps> = ({
   const titles =
     route == "/our-team/[id]"
       ? `${teamDetail?.name} ${teamDetail?.lastName}`
-      : route == "/tour/[id]"
-        ? ` ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.days == 1 ? 'day' : 'days'}`
-        : route == "/sight/[id]"
-          ? sightsDetail
-          : "";
+      : route == "/sight/[id]"
+        ? sightsDetail
+        : "";
   const sliderList = useMemo(
     () =>
       imgPageSliders.map((el) => (
@@ -77,7 +75,13 @@ const Main: React.FC<MainProps> = ({
                     : scss.imgTextTour
                 }
               >
-                {titles ? titles : el.title}
+                {titles}
+                {
+                  route == "/tour/[id]"
+                    ? (
+                      <><p>{tourDetail?.title}</p><p>{tourDetail?.tourInfo?.duration?.days} {tourDetail?.tourInfo?.duration?.days == 1 ? 'day' : 'days'}</p></>
+                    ) : ''
+                }
               </div>
               {renderBtns}
             </div>
