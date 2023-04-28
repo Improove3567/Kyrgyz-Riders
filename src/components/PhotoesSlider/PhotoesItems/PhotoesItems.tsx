@@ -1,5 +1,6 @@
 import React, { FC } from "react"
 import scss from "./PhotoesItems.module.scss"
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 interface IPhotoesItemsProps {
   image: string;
@@ -7,10 +8,15 @@ interface IPhotoesItemsProps {
 
 const PhotoesItems: React.FC<IPhotoesItemsProps> = ({ image }) => {
 
+
   return (
-    <div className={scss.photoesItemsMain}>
-      <img src={image} alt="image" height={280}/>
-    </div>
+    <PhotoProvider>
+      <PhotoView src={image}>
+        <div className={scss.photoesItemsMain}>
+          <img src={image} alt="image" height={280} />
+        </div>
+      </PhotoView>
+    </PhotoProvider>
   )
 }
 

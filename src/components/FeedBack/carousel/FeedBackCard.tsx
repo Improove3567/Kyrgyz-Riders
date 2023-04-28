@@ -12,7 +12,6 @@ const FeedbackCard: React.FC<IFeedback> = ({
   link,
   stars,
   name,
-  lastName,
   change
 
 }) => {
@@ -23,7 +22,7 @@ const FeedbackCard: React.FC<IFeedback> = ({
         <img width={90} height={90} src={img} alt="avatar" />
         <div className={scss.title}>
           <h1>
-            {name + " " + lastName}
+            {name}
             <p>
               / {stars}
               <Image

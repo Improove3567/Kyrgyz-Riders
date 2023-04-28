@@ -24,7 +24,7 @@
     .accordionTitleMain h3 {
       font-family: "Montserrat";
       font-weight: 600;
-      font-size: 16px;
+      font-size: 18px;
       line-height: 20px;
       color: #333333;
       @media (max-width: 450px) {
@@ -54,7 +54,7 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 36px;
-    color: #757575;
+    color: #333333;
   }
 
   .accordionImg {
@@ -64,8 +64,8 @@
     grid-gap: 15px;
     img {
       object-fit: cover;
-      width: 500px;
-      height: 250px;
+      width: 400px;
+      height: 200px;
       @media (max-width: 768px) {
         width: 100%;
       }
@@ -84,7 +84,7 @@
       font-weight: 500;
       font-size: 16px;
       line-height: 36px;
-      color: #757575;
+      color: #333333;
       margin-bottom: 10px;
     }
 
@@ -93,7 +93,7 @@
       font-weight: 500;
       font-size: 16px;
       line-height: 36px;
-      color: #757575;
+      color: #333333;
     }
   }
 }

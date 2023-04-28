@@ -8,7 +8,7 @@ export const filterData = [
     id: '2',
   },
   {
-    title: 'Multi-active',
+    title: 'Combined',
     id: '3',
   },
   {

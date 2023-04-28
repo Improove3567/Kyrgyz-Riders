@@ -23,7 +23,7 @@ const TourPage = () => {
   const router = useRouter();
   const { id }: any = router.query;
   const { getTourDetail, tourDetail, isLoading }: any = useTours();
-  
+
   useEffect(() => {
     if (id != undefined) {
       getTourDetail(id);
@@ -33,17 +33,17 @@ const TourPage = () => {
   return (
     <>
       <Header />
-      <Main imgPageSliders={tourSlider} tourDetail={tourDetail} />
+      <Main imgPageSliders={tourSlider} tourDetail={tourDetail} isTour={true} />
       <TourAbout tour={tourDetail} />
       <TourAboutText aboutTour={tourDetail?.tourInfo?.aboutTour} />
       <TourSights sights={tourDetail?.tourInfo?.sights} />
       <TourFeatures reasons={tourDetail?.tourInfo?.loveReasons} />
       <PhotoesSlider photos={tourDetail?.tourInfo?.photoes} />
       <ItineraryBlock itineraries={tourDetail?.tourInfo?.itenerariesDays} />
-      <TourMapsBlock map = {tourDetail?.tourInfo?.tourMap} />
+      <TourMapsBlock map={tourDetail?.tourInfo?.tourMap} />
       <PriceIncludes />
       <PriceDoesntInclude />
-      <TourNotes notes={tourDetail?.tourInfo?.notes}/>
+      <TourNotes notes={tourDetail?.tourInfo?.notes} />
       <SendARequest tour={tourDetail} />
       <YourTours />
       <Footer />

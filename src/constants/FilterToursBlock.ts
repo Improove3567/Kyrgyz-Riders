@@ -28,7 +28,7 @@ export const ToursOptions: Option[] = [
         status: false
     },
     {
-        name: "Multi-active",
+        name: "Combined",
         id: 4,
         status: false
     },

@@ -15,7 +15,7 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({ item }) => {
   const imags = item.images.map((el) => {
     return <img src={el} alt="image" key={el} />;
   });
-  
+
   return (
     <>
       <div
@@ -42,7 +42,11 @@ const ItineraryContentBlock: React.FC<ItineraryProps> = ({ item }) => {
           <div className={scss.line}></div>
           <div className={scss.shortDescItinerary}>
             <p className={scss.facts}>Fast facts: {item.facts}</p>
-            <p className={scss.overnight}>Overnight: {item.overnight}</p>
+            {
+              item.overnight != null && (
+                <p className={scss.overnight}>Overnight: {item.overnight}</p>
+              )
+            }
           </div>
         </div>
       )}

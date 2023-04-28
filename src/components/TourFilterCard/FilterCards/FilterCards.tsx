@@ -31,24 +31,18 @@ const FilterCads: FC<TourFilterCardArr> = ({
         </div>
         <div className={scss.typeof}>
           <div className={scss.type}>
-            <p>Type of tour</p>
+            <p>Type of tour:</p>
             <span>{tourInfo?.category}</span>
           </div>
         </div>
         <div className={scss.timeof}>
           <div className={scss.time}>
-            <p>Time of year</p>
+            <p>Time of year:</p>
             <span>{tourInfo?.time}</span>
           </div>
         </div>
-        <div className={scss.typeof}>
-          <div className={scss.activities}>
-            <p>Activities:</p>
-            <span>Activities</span>
-          </div>
-        </div>
         <div className={scss.btn}>
-          <Link href={`/tour/${tid}`}>View trip</Link>
+          <Link href={`/tour/${tid}`}>More</Link>
         </div>
       </div>
     </div>

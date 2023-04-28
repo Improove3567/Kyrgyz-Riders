@@ -6,10 +6,10 @@ const TourSightsCard: FC<TourSightsArrProps> = ({ img, title, category }) => {
   return (
     <div className={scss.card}>
       <div className={scss.front}>
-        <img src={img} alt={title} width={280} height={280} />
+          <img src={img} alt={title} width={280} height={280} />
         <div className={scss.btm}>
           <p>{title}</p>
-          <p>{category}</p>
+          <p>zxczxc</p>
         </div>
       </div>
     </div>

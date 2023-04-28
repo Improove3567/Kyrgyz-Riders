@@ -1,4 +1,4 @@
-import React, {  useMemo } from "react";
+import React, { useMemo } from "react";
 import scss from "./main.module.scss";
 import { MainLinks } from "../../constatnts/Main/HeaderConsts";
 import Link from "next/link";
@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { SightTourArrProps } from "../../constants/SightTourBlock";
 
 interface MainProps {
+  isTour?: boolean;
   imgPageSliders: Sliders[];
   teamDetail?: TeamDetailTypes;
   tourDetail?: SightTourArrProps | object | undefined | any;
@@ -25,6 +26,7 @@ interface TeamDetailTypes {
 }
 
 const Main: React.FC<MainProps> = ({
+  isTour,
   imgPageSliders,
   teamDetail,
   tourDetail,
@@ -57,11 +59,9 @@ const Main: React.FC<MainProps> = ({
   const titles =
     route == "/our-team/[id]"
       ? `${teamDetail?.name} ${teamDetail?.lastName}`
-      : route == "/tour/[id]"
-        ? ` ${tourDetail?.title} ${tourDetail?.tourInfo?.duration?.days} ${tourDetail?.tourInfo?.duration?.days == 1 ? 'day' : 'days'}`
-        : route == "/sight/[id]"
-          ? sightsDetail
-          : "";
+      : route == "/sight/[id]"
+        ? sightsDetail
+        : "";
   const sliderList = useMemo(
     () =>
       imgPageSliders.map((el) => (
@@ -70,14 +70,16 @@ const Main: React.FC<MainProps> = ({
             <div className={scss.buttons}>
               <div
                 className={
-                  route != "/tour/[id]" &&
                     route != "/our-team/[id]" &&
-                    route != "/sight/[id]"
+                    route != "/sight/[id]" &&
+                    route != '/tour/[id]'
                     ? scss.imgText
                     : scss.imgTextTour
                 }
               >
-                {titles ? titles : el.title}
+                {isTour && route == '/tour/[id]' ? (
+                  <><p>{tourDetail?.title}</p><p>{tourDetail?.tourInfo?.duration?.days} {tourDetail?.tourInfo?.duration?.days == 1 ? 'day' : 'days'}</p></>
+                ) : el.title}
               </div>
               {renderBtns}
             </div>
