@@ -7,7 +7,7 @@ export const TourFilterCards = [
         id: 1,
         typeOf: {
             title: 'Type of tour:',
-            text: 'Off-road'
+            text: 'Road trip'
         },
         stars: '/ 4.8',
         activities: {
@@ -20,7 +20,7 @@ export const TourFilterCards = [
             title: 'Time of year:',
             text: 'January'
         }
-    },    
+    },
     {
         img: "/images/tourCard.svg",
         title: 'Blue sky',
@@ -28,7 +28,7 @@ export const TourFilterCards = [
         id: 2,
         typeOf: {
             title: 'Type of tour:',
-            text: 'Off-road'
+            text: 'Road trip'
         },
         stars: '/ 4.8',
         activities: {
@@ -49,7 +49,7 @@ export const TourFilterCards = [
         id: 3,
         typeOf: {
             title: 'Type of tour:',
-            text: 'Off-road'
+            text: 'Road trip'
         },
         stars: '/ 4.8',
         activities: {
@@ -69,7 +69,7 @@ export const TourFilterCards = [
         id: 4,
         typeOf: {
             title: 'Type of tour:',
-            text: 'Off-road'
+            text: 'Road trip'
         },
         stars: '/ 4.8',
         starImg: '/images/TourStar.svg',

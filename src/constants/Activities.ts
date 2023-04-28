@@ -3,7 +3,7 @@ export const activitiesData = [
   "High-trekking",
   "Camping",
   "Sleeping at yurt",
-  "Off-road",
+  "Road trip",
   "Expedition",
   "Self-driving",
   "Skkiing",

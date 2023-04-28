@@ -9,7 +9,7 @@ const FeedbackCard: React.FC<IFeedback> = ({
   desc,
   img,
   country,
-  link,
+  links,
   stars,
   name,
   change
@@ -44,7 +44,7 @@ const FeedbackCard: React.FC<IFeedback> = ({
         <Modal change={change} desc={desc} />
       </p>
       <div className={scss.line}></div>
-      <Link href={`${link}`}>
+      <Link href={`${links}`}>
         <Image src={"/images/tripLogo.svg"} alt={""} width={100} height={100} />
       </Link>
     </div>

@@ -38,7 +38,7 @@ export const ToursOptions: Option[] = [
         status: false
     },
     {
-        name: "Off-road",
+        name: "Road trip",
         id: 6,
         status: false
     },
@@ -366,7 +366,7 @@ export const ActivateDuration: Option[] = [
         status: false
     },
     {
-        name: "Off-road",
+        name: "Road trip",
         id: 5,
         status: false
     },

@@ -2,13 +2,23 @@
   margin: 3% 0;
   .text {
     padding: 0px 0px 0px 20px;
-    div {
+    .paragraph {
       font-family: "Montserrat";
       font-style: normal;
       font-weight: 500;
       font-size: 20px;
       line-height: 32px;
       color: #757575;
+      margin-top: 3%;
+      text-align: left;
+    }
+    .boldParagraph {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 32px;
+      color: #444444;
       margin-top: 3%;
       text-align: left;
     }

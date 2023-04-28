@@ -29,12 +29,12 @@ export const footerConsts: IFooter[] = [
         {
           id: 3,
           logo: "/images/facebook.svg",
-          link: "",
+          link: "https://www.facebook.com/kyrgyzriders",
         },
         {
           id: 4,
           logo: "/images/insta.svg",
-          link: "",
+          link: "https://instagram.com/kyrgyz_riders_travel?igshid=MTIyMzRjYmRlZg==",
         },
       ],
     },

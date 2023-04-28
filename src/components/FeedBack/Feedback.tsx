@@ -10,7 +10,7 @@ export interface IFeedback {
   country?: string;
   stars?: number;
   desc?: string;
-  link?: string;
+  links?: string;
   img?: string;
   name?: string;
   change: (desc:string | undefined) => void;

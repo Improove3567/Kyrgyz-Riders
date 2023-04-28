@@ -6,8 +6,8 @@ const AboutUsText: FC = () => {
   const renderText = React.useMemo(
     () =>
       AboutUsTextArr.map((item) => (
-        <div className={scss.paragraph} key={item.id}>
-          {item.title}
+        <div className={item.bold ? scss.boldParagraph : scss.paragraph} key={item.id}>
+          {item.text}
         </div>
       )),
     [AboutUsTextArr]
