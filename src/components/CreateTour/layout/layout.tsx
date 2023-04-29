@@ -21,15 +21,15 @@ const Layout: React.FC<IComponent> = ({ children, next, back, secondCLicker, sta
         e.preventDefault();
         next(e);
         await emailjs.send(
-            "service_lcl44ys",
-            "template_etpb9ah",
+            "service_lzpnztn",
+            "template_mvivcg2",
             {
                 ...state,
                 activities: state.activities.map((el: any) => Object.values(el).toString()).toString(),
                 sights: state.sights?.map((el: any) => Object.values(el).toString()).toString(),
                 watchShows: state.watchShows?.map((el: any) => Object.values(el).toString()).toString()
             },
-            "l0rnMR3YRtcGPvMux"
+            "OejkDER052Yd01Tyj"
         ).then(() => {
         }, (error) => {
             alert("something went wrong!" + error);

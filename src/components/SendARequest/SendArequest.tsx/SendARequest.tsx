@@ -49,10 +49,10 @@ const SendARequest: React.FC<ITour> = ({ tour }) => {
     e.preventDefault();
 
     await emailjs.send(
-      "service_lcl44ys",
-      "template_ea4180q",
+      "service_lzpnztn",
+      "template_cqvcp2q",
       { ...data },
-      "l0rnMR3YRtcGPvMux"
+      "OejkDER052Yd01Tyj"
     ).then(() => {
       setEmail("")
       setLastName("")
