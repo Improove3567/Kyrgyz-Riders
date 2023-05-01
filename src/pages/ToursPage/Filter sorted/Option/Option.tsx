@@ -22,25 +22,21 @@ const Option: React.FC<Input> = ({ value, click, title, select, valueIndex, name
 
 
   useMemo(() => {
-    if (places.length > 0) {
-      const placesArr = places.join(',')
-      const path = {
-        pathname: router.pathname,
-        query: { ...router.query, places: placesArr }
-      }
-      router.push(path, path, { shallow: true });
+    const placesArr = places.join(',')
+    const path = {
+      pathname: router.pathname,
+      query: { ...router.query, places: placesArr }
     }
+    router.push(path, path, { shallow: true });
   }, [places])
 
   useMemo(() => {
-    if (activities.length > 0) {
-      const activitiesArr = activities.join(',')
-      const path = {
-        pathname: router.pathname,
-        query: { ...router.query, activities: activitiesArr }
-      }
-      router.push(path, path, { shallow: true });
+    const activitiesArr = activities.join(',')
+    const path = {
+      pathname: router.pathname,
+      query: { ...router.query, activities: activitiesArr }
     }
+    router.push(path, path, { shallow: true });
   }, [activities])
 
 
@@ -90,7 +86,7 @@ const Option: React.FC<Input> = ({ value, click, title, select, valueIndex, name
         setPlaces={setPlaces}
         placesState={places}
         setActivities={setActivities}
-        activities={activities}
+        activitiesState={activities}
         title={title}
       />
     );

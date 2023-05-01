@@ -38,12 +38,12 @@ export const ToursOptions: Option[] = [
         status: false
     },
     {
-        name: "Road trip",
+        name: "Trekking",
         id: 6,
         status: false
     },
     {
-        name: "Road",
+        name: "Road trip",
         id: 7,
         status: false
     },
@@ -53,13 +53,8 @@ export const ToursOptions: Option[] = [
         status: false
     },
     {
-        name: "Trekking",
-        id: 9,
-        status: false
-    },
-    {
         name: "Winter tours",
-        id: 10,
+        id: 9,
         status: false
     }
 ]
@@ -371,7 +366,7 @@ export const ActivateDuration: Option[] = [
         status: false
     },
     {
-        name: "Expedition",
+        name: "Off road expedition",
         id: 6,
         status: false
     },
@@ -411,7 +406,7 @@ export const ActivateDuration: Option[] = [
         status: false
     },
     {
-        name: "Boat riding",
+        name: "Kayaking",
         id: 14,
         status: false
     },

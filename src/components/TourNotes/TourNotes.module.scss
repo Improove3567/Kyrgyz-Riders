@@ -16,9 +16,9 @@
 }
 .title_mark {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   img {
-    margin-bottom: 15px;
+    margin-top: 10px;
   }
   p {
     padding-left: 17px;

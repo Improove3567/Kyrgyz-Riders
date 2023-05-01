@@ -2,7 +2,7 @@ import {IFooter} from "../components/Footer/Footer";
 export const footerConsts: IFooter[] = [
     {
       id: 1,
-      title: "OFFICIAL WEBSITE OF CENTRAL ASIA TOURS",
+      title: "TRAVEL WEBSITE OF KYRGYZSTAN TOURS",
       desc: " We are proudly the Best Inside Travel DMCs & Tour Operators in each destination where you travel to, our local professional teamWe are proudly the Best Inside Travel DMCs & Tour Operators in each destination where you travel to, our local professional team",
     },
     {

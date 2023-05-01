@@ -12,7 +12,7 @@ interface Iname {
   setPlaces: any;
   placesState: any;
   setActivities: any;
-  activities: any;
+  activitiesState: any;
   select: boolean
   title: string
 }
@@ -26,7 +26,7 @@ const Input: React.FC<Iname> = ({
   setPlaces,
   placesState,
   setActivities,
-  activities,
+  activitiesState,
   valueIndex,
   title
 }) => {
@@ -35,7 +35,7 @@ const Input: React.FC<Iname> = ({
     width: 0
   });
   const router: any = useRouter();
-  const { tour, duration, places, startFrom }: any = router.query;
+  const { tour, duration, places, startFrom, activities }: any = router.query;
 
   const click = () => {
     changeStatus(myKey);
@@ -65,7 +65,13 @@ const Input: React.FC<Iname> = ({
         if (name) {
           if (places) {
             if (places.includes(name)) {
-              return
+              const placesArr = places.split(',')
+              if (placesArr.length > 1) {
+                const updatedPlaces = placesArr.filter((c: string) => c !== name);
+                setPlaces(updatedPlaces)
+              } else if (placesArr.length == 1 && placesArr[0] == name) {
+                setPlaces([])
+              }
             } else {
               setPlaces([...placesState, name])
             }
@@ -76,7 +82,21 @@ const Input: React.FC<Iname> = ({
         break;
       case "Activities":
         if (name) {
-          setActivities([...activities, name])
+          if (activities) {
+            if (activities.includes(name)) {
+              const activitiesArr = activities.split(',')
+              if (activitiesArr.length > 1) {
+                const updatedActivities = activitiesArr.filter((c: string) => c != name);
+                setActivities(updatedActivities)
+              } else if (activitiesArr.length == 1 && activitiesArr[0] == name) {
+                setActivities([])
+              }
+            } else {
+              setActivities([...activitiesState, name])
+            }
+          } else {
+            setActivities([...activitiesState, name])
+          }
         }
         break;
       case "Start from":
@@ -118,13 +138,13 @@ const Input: React.FC<Iname> = ({
   return (
     <label className={statusEl && windowSize.width < 900 ? scss.labelBack : scss.label} onClick={click} style={windowSize.width < 900 ? title == "Duration" || title == "Start from" ? { width: "30%" } : { width: "47%" } : { width: "100%" }} >
       <div className={scss.input}>
-        {!select ? (
+        {!select && places?.split(',').includes(name) || !select && activities?.split(',').includes(name) ? (
           <div className={statusEl ? scss.inputOne : ''}>
             <div className={scss.checkedOne}></div>
           </div>
         ) :
-          tour || duration ? (
-            <div className={name == tour || name == duration + " days" || name == startFrom? scss.inputSome : scss.inputW}>
+          tour || duration || startFrom ? (
+            <div className={name == tour || name == duration + " days" || name == startFrom ? scss.inputSome : scss.inputW}>
               <div className={scss.checkedSome}></div>
             </div>
           ) : (

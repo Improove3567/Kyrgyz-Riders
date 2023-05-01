@@ -41,7 +41,7 @@ export const MainLinks: IHeaderLinks[] = [
   {
     id: 2,
     title: "Watch video",
-    link: "watchvideo",
+    link: "watchVideo",
   },
   {
     id: 3,
