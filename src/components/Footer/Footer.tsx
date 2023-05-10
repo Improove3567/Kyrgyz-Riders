@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
                   : item.desc}
                 {item.desc && (
                   <Link
-                    href="/about-us"
+                    href="/aboutus"
                     className={scss.read}
                     id={scss.hidenBefor}
                   >
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                 )}
               </p>
               {item.desc && (
-                <Link href="/about-us" className={scss.read} id={scss.hiden}>
+                <Link href="/aboutus" className={scss.read} id={scss.hiden}>
                   Read More
                 </Link>
               )}
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
           <div className={scss.thirth}>
             {item.img
               ? item.img.map((el) => (
-                <Link key={el.id} href={el.link}>
+                <Link target="_blank" key={el.id} href={el.link}>
                   <Image src={el.logo} width={20} height={20} alt="logo" />
                 </Link>
               ))
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
       <footer className={scss.footer}>{render}</footer>
       <div className={scss.underFooter}>
         <p className={scss.rights}>@ 2023 Kyrgyz Riders. All rights reserved</p>
-        <p>Design by @SolidDevs</p>
+        <p>Created by @SolidDevs</p>
       </div>
     </>
   );

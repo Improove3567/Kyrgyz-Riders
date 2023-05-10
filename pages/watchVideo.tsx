@@ -14,7 +14,7 @@ const BlogMain = () => {
         return (
             <div className="modal-overlay">
                 <div className="modal">
-                    <h2 className="modal-title">What device are you using?</h2>
+                    <h2 className="modal-title">What device are you using currenlty?</h2>
                     <div className="modal-buttons">
                         <button className="modal-button" onClick={() => handleSelect("Phone")}>
                             Phone

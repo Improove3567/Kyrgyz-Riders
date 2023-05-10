@@ -3,7 +3,7 @@ export const footerConsts: IFooter[] = [
     {
       id: 1,
       title: "TRAVEL WEBSITE OF KYRGYZSTAN TOURS",
-      desc: " We are proudly the Best Inside Travel DMCs & Tour Operators in each destination where you travel to, our local professional teamWe are proudly the Best Inside Travel DMCs & Tour Operators in each destination where you travel to, our local professional team",
+      desc: "Kyrgyz Riders Travel company is a family owned and operated, wilderness guiding company based in Bishkek, Kyrgyzstan. We specialize in 1 day to 3 weeks, fully guided and outfitted adventures across Kyrgyzstan. Our professional guides can take you to the most remote, beautiful and wildlife rich areas in the country. Our dedication to your enjoyment and learning is why people travel with us to enjoy the majestic beauty of the country. Read their testimonials to learn more about why we are considered the one of the best guide services in Kyrgyzstan.",
     },
     {
       id: 2,

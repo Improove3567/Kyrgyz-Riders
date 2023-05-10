@@ -1,23 +1,23 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
 import Divider from "../Divider/Divider";
 import scss from './TourNotes.module.scss'
 import Image from "next/image";
 import cross from "../../../public/images/PriceDoesntInclude/cross.svg";
 
-interface NotesProps{
-    notes: string;
+interface NotesProps {
+  notes: string;
 }
-const TourNotes: FC<NotesProps> = ({notes}) => {
-    const showText = React.useMemo(
-        () =>
-            <div className={scss.paragraph} key={notes}>
-              <div className={scss.title_mark}>
-                <Image src={cross} alt="cross" width={16} height={12} />
-                <p>{notes}</p>
-              </div>
-            </div>
-        ,[notes]
-      );
+const TourNotes: FC<NotesProps> = ({ notes }) => {
+  const showText = React.useMemo(
+    () =>
+      <div className={scss.paragraph} key={notes}>
+        <div className={scss.title_mark}>
+          <li></li>
+          <p>{notes}</p>
+        </div>
+      </div>
+    , [notes]
+  );
   return (
     <div className={scss.title_block}>
       <div className="container">

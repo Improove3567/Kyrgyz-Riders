@@ -13,12 +13,12 @@ export interface IFeedback {
   links?: string;
   img?: string;
   name?: string;
-  change: (desc:string | undefined) => void;
+  change: (desc: string | undefined) => void;
 }
 
 const Feedback: React.FC = () => {
   const [index, setIndex] = useState(false);
-  const [title,setTitle] = useState<string | undefined>()
+  const [title, setTitle] = useState<string | undefined>()
 
   const click = () => {
     setIndex(!index);
@@ -36,14 +36,14 @@ const Feedback: React.FC = () => {
       <div className="container">
         <div className={scss.mainDivider}>
           <Divider title="Travelers Love Kyrgyz Riders" variant="light">
-          <Link target="_blank" href="https://www.tripadvisor.ru/">
+            <Link target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g8126098-d14957942-Reviews-Kyrgyz_Riders_Travel_Company-Kochkor_Naryn_Province.html">
               <MoreBlock title="More reviews on Tripadvisor" />
             </Link>
           </Divider>
         </div>
         <div className={scss.minDivider}>
           <Divider title="Reviews" variant="light">
-            <Link target="_blank" href="https://www.tripadvisor.ru/">
+            <Link target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g8126098-d14957942-Reviews-Kyrgyz_Riders_Travel_Company-Kochkor_Naryn_Province.html">
               <MoreBlock title="More reviews on Tripadvisor" />
             </Link>
           </Divider>

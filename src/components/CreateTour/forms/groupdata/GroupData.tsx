@@ -3,6 +3,8 @@ import scss from "./GroupData.module.scss";
 import React, { useState } from "react";
 import "react-widgets/scss/styles.scss";
 import DatePicker from "react-widgets/DatePicker";
+import Localization from "react-widgets/esm/Localization";
+import { DateLocalizer } from 'react-widgets/IntlLocalizer';
 
 interface IGroupData {
   dispatch: any;
@@ -82,7 +84,9 @@ const GroupData: React.FC<IGroupData> = ({ dispatch }) => {
             </div>
             <div className={scss.number_index_left_bottom_content}>
               <div className={scss.calendar}>
-                <DatePicker onChange={(date) => dispatch({ type: "tripDatesStart", payload: { date, title: "I have my exact travel dates" } })} placeholder="m/dd/yy" />
+                <Localization date={new DateLocalizer({culture: 'en-BG'})}>
+                  <DatePicker onChange={(date) => dispatch({ type: "tripDatesStart", payload: { date, title: "I have my exact travel dates" } })} placeholder="m/dd/yy" />
+                </Localization>
               </div>
             </div>
           </div>

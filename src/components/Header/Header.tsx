@@ -112,7 +112,7 @@ const Header: React.FC<IHeader> = ({ isMain = false }) => {
                     <div className={scss.icons_footer} key={item.id}>
                       {item.img
                         && item.img.map((el) => (
-                          <Link key={el.id} href={el.link}>
+                          <Link target="_blank" key={el.id} href={el.link}>
                             <Image src={el.logo} width={21} height={12} alt="logo" />
                           </Link>
                         ))

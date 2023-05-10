@@ -148,7 +148,7 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
             <span>
               <div className={isVisit ? "" : scss.innerCirculeChecked}></div>
             </span>
-            Nice to visit
+            Nice to do
           </button>
           <button
             onClick={() => onEdit()}
@@ -157,15 +157,15 @@ const ActivitiesCard: React.FC<IActivitesCard> = ({
             <span>
               <div className={isVisit ? scss.innerCirculeChecked : ""}></div>
             </span>
-            Must visit
+            Must to do
           </button>
         </>
       );
     } else {
       return (
         <>
-          <button className={scss.nice}>Nice to visit</button>
-          <button className={scss.must}>Must visit</button>
+          <button className={scss.nice}>Nice to do</button>
+          <button className={scss.must}>Must to do</button>
         </>
       );
     }

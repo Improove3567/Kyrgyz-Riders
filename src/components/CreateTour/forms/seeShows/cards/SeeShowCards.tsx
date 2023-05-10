@@ -48,7 +48,7 @@ const SeeShowCards: React.FC<ICard> = ({ title, tid, dispatch, indx }) => {
                         <span>
                             <div className={isVisit ? "" : scss.innerCirculeChecked}></div>
                         </span>
-                        Nice to visit
+                        Nice to watch
                     </button>
                     <button
                         onClick={() => onEdit()}
@@ -57,7 +57,7 @@ const SeeShowCards: React.FC<ICard> = ({ title, tid, dispatch, indx }) => {
                         <span>
                             <div className={isVisit ? scss.innerCirculeChecked : ""}></div>
                         </span>
-                        Must visit
+                        Must watch
                     </button>
                 </>
             )
@@ -65,8 +65,8 @@ const SeeShowCards: React.FC<ICard> = ({ title, tid, dispatch, indx }) => {
         } else {
             return (
                 <>
-                    <button className={scss.nice}>Nice to visit</button>
-                    <button className={scss.must}>Must visit</button>
+                    <button className={scss.nice}>Nice to watch</button>
+                    <button className={scss.must}>Must watch</button>
                 </>
             )
         }
