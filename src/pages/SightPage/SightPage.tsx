@@ -28,7 +28,7 @@ const SightPage = () => {
             <SightsPage aboutSight={sightsDetail?.aboutSight} title={sightsDetail?.title} />
             <SightTourBlock tours={sightsDetail?.tour} sight={sightsDetail?.title} />
             <PhotoesSlider photos={sightsDetail?.photos} />
-            <SightMap />
+            <SightMap map={sightsDetail?.map} />
             <YourTours />
             <Footer />
         </>
