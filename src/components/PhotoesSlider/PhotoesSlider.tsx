@@ -101,11 +101,9 @@ const PhotosSlider: FC<PhotosProps> = ({ photos }) => {
     dotsClass: `slick-dots dots`,
   };
 
-  const data = [...photos, ...photos]
-
   const renderPhotoesItems = useMemo(
     () =>
-    data?.map((item) => (
+    photos?.map((item) => (
         <PhotoesItems image={item} key={item} />
       )),
     [photos]
