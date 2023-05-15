@@ -6,7 +6,6 @@ import {
     getDoc,
     getDocs,
     query,
-    updateDoc,
 } from "firebase/firestore";
 import { db } from "../firebase/firebase-config";
 
@@ -23,7 +22,6 @@ const useTours = () => {
         setTours(touSliderData);
         setLoading(false)
     }
-
 
     const getTourDetail = async (id: string) => {
         const docRef = doc(db, "tours", id);
