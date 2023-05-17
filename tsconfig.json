@@ -16,5 +16,7 @@
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.css", "**/*.scss", "**/*.svg"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "target": "esnext",
+  "module": "esnext",
 }
